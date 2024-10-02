@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use 'variables';
+
+@mixin breakpoint($point, $direction: 'up') {
+  $value: map-get(variables.$breakpoints, '#{$point}-#{$direction}');
+
+  @if $direction == 'up' {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else if $direction == 'down' {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else if $direction == 'only' {
+    $min: map-get(variables.$breakpoints, '#{$point}-up');
+    $max: map-get(variables.$breakpoints, '#{$point}-down');
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-down {
+  @include breakpoint('mobile', 'down') {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-up {
+  @include breakpoint('tablet-portrait', 'up') {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-down {
+  @include breakpoint('tablet-portrait', 'down') {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-only {
+  @include breakpoint('tablet-portrait', 'only') {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-up {
+  @include breakpoint('tablet-landscape', 'up') {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-down {
+  @include breakpoint('tablet-landscape', 'down') {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-only {
+  @include breakpoint('tablet-landscape', 'only') {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @include breakpoint('desktop', 'up') {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @include breakpoint('desktop', 'down') {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @include breakpoint('desktop', 'only') {
+    @content;
+  }
+}
+
+@mixin big-desktop-up {
+  @include breakpoint('big-desktop', 'up') {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

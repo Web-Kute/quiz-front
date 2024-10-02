@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'variables';
+
+@function color($name) {
+  @if map-has-key(variables.$colors, $name) {
+    @return map-get(variables.$colors, $name);
+  }
+}
