@@ -104,7 +104,7 @@ body {
 
 header {
   position: relative;
-  top: -7.4rem;
+  top: -8rem;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -129,7 +129,9 @@ header {
 
 main {
   position: relative;
-  top: -7.4rem;
+  top: -8rem;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 h1 {
@@ -170,5 +172,6 @@ h2 {
 }
 
 .error {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
+  margin-left: 0.325rem;
 }/*# sourceMappingURL=global.css.map */
