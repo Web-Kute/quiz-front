@@ -98,42 +98,42 @@ select {
 }
 @font-face {
   font-family: "Roboto Slab Regular";
-  src: local("Roboto Slab"), url("../assets/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+  src: local("Roboto Slab"), url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto Slab bold";
-  src: local("Roboto Slab"), url("../assets/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  src: local("Roboto Slab"), url("../fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto Regular";
-  src: local("Roboto"), local("Droid Sans"), url("../assets/fonts/roboto/Roboto-Regular.woff") format("woff");
+  src: local("Roboto"), local("Droid Sans"), url("../fonts/roboto/Roboto-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto Light";
-  src: local("Roboto Light"), local("Droid Sans"), url("../assets/fonts/roboto/Roboto-Light.woff") format("woff");
+  src: local("Roboto Light"), local("Droid Sans"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto Medium";
-  src: local("Roboto Medium"), local("Droid Sans"), url("../assets/fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  src: local("Roboto Medium"), local("Droid Sans"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto Bold";
-  src: local("Roboto Bold"), local("Droid Sans"), url("../assets/fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  src: local("Roboto Bold"), local("Droid Sans"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -145,6 +145,7 @@ select {
   --white: hsl(0, 0%, 100%);
   --clouds: hsl(192, 15%, 94%);
   --silver: hsl(204, 8%, 76%);
+  --size: 40em;
 }
 
 *,
@@ -196,15 +197,19 @@ body {
   -ms-flex-direction: column;
       flex-direction: column;
   row-gap: 3rem;
+  background-color: hsl(204, 70%, 53%);
 }
 
 header {
+  position: relative;
+  top: -7.4rem;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: hsl(168, 76%, 36%);
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(48, 89%, 50%);
   text-align: center;
   display: -ms-flexbox;
   display: flex;
@@ -212,11 +217,17 @@ header {
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.05);
 }
 @media (max-width: 599px) {
   header {
     background-color: hsl(192, 15%, 94%);
   }
+}
+
+main {
+  position: relative;
+  top: -7.4rem;
 }
 
 h1 {
@@ -225,23 +236,27 @@ h1 {
   color: hsl(0, 0%, 100%);
   text-align: center;
   letter-spacing: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
-main {
-  width: 80%;
+h2 {
+  font-family: "Roboto Medium", sans-serif;
+  color: hsl(210, 29%, 29%);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .btn {
+  margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.325rem;
   color: hsl(0, 0%, 100%);
   background-color: hsl(282, 44%, 47%);
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  transition: background-color 300ms ease-in-out;
 }
-
-.text-muted {
-  line-height: 0.8rem;
-  font-size: 0.8rem;
+.btn:hover {
+  background-color: hsl(24, 100%, 41%);
 }
 
 .form-group {
@@ -249,5 +264,27 @@ main {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.circles {
+  --colors: #f94144, #f3722c, #f8961e, #f9844a, #f9c74f, #90be6d, #43aa8b, #4d908e, #577590, #277da1;
+  --min-radius: 20;
+  --max-radius: 100;
+  --num-circles: 30;
+  --min-opacity: 10;
+  --max-opacity: 50;
+  --seed: 42;
+  background-image: paint(circles);
+  transition: --num-circles 0.5s ease-in-out;
+}
+
+.circles:hover {
+  --num-circles: 20;
+}
+
+@property --num-circles {
+  syntax: "<number>";
+  initial-value: 5;
+  inherits: false;
 }/*# sourceMappingURL=style.css.map */

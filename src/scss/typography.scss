@@ -2,7 +2,7 @@
   font-family: "Roboto Slab Regular";
   src:
     local("Roboto Slab"),
-    url("../assets/fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+    url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
   font-family: "Roboto Slab bold";
   src:
     local("Roboto Slab"),
-    url("../assets/fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+    url("../fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -23,7 +23,7 @@
   src:
     local("Roboto"),
     local("Droid Sans"),
-    url("../assets/fonts/roboto/Roboto-Regular.woff") format("woff");
+    url("../fonts/roboto/Roboto-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
   src:
     local("Roboto Light"),
     local("Droid Sans"),
-    url("../assets/fonts/roboto/Roboto-Light.woff") format("woff");
+    url("../fonts/roboto/Roboto-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -45,7 +45,7 @@
   src:
     local("Roboto Medium"),
     local("Droid Sans"),
-    url("../assets/fonts/roboto/Roboto-Medium.ttf") format("truetype");
+    url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -56,7 +56,7 @@
   src:
     local("Roboto Bold"),
     local("Droid Sans"),
-    url("../assets/fonts/roboto/Roboto-Bold.ttf") format("truetype");
+    url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
