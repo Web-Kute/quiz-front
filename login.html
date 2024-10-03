@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quiz Front-End - HTML5, CSS3, JavaScript">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./assets/css/reset.min.css">
+
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <title>Quiz Front-End - Login</title>
+</head>
+
+<body>
+  <header>
+    <h1>Quiz</h1>
+    <h2>Front-End</h2>
+  </header>
+  <main>
+    <section>
+      <article class="container">
+        <div id="student"></div>
+        <div id="message" class="hidden"></div>
+        <div id="error" class="hidden"></div>
+        <form action="#" method="POST" id="login" autocomplete="on">
+          <fieldset>
+            <div class="form-group">
+              <label for="name">Nom et Prénom </label>
+              <input type="text" name="name" id="name" placeholder="Nom et Prénom" class="form-control" min="5"
+                max="25">
+            </div>
+            <div id="error-name" class="hide"></div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+            </div>
+            <div id="error-email" class="hide"></div>
+
+            <button type="submit" id="submit" class="btn btn-primary">Enregistrer</button>
+
+          </fieldset>
+        </form>
+      </article>
+    </section>
+
+  </main>
+</body>
+
+</html>

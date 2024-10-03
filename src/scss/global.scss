@@ -1,0 +1,107 @@
+@use 'typography';
+@use 'variables';
+@use 'mixins';
+@use 'functions';
+
+:root {
+  --base-color: #{functions.color('midnight-blue')};
+  --primary-color: #{functions.color('green-sea')};
+  --secondary-color: #{functions.color('sun-flower')};
+  --white: #{functions.color('white')};
+  --clouds: #{functions.color('clouds')};
+  --silver: #{functions.color('silver')};
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+select {
+  &:focus-visible {
+    outline: 2px dotted functions.color('silver');
+    outline-offset: 2px;
+  }
+}
+
+// Reset original HTML button
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  padding: 7px 10px;
+  border-radius: 0.325rem;
+  border: 1px solid functions.color('silver');
+}
+
+/******************/
+body {
+  font-family: 'Roboto Regular', sans-serif;
+  @include mixins.flex-center();
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+header {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: functions.color('green-sea');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mixins.mobile-down {
+    background-color: functions.color('clouds');
+  }
+}
+
+h1 {
+  font-family: variables.$heading-font-family;
+  font-size: 3 * variables.$base-font-size;
+  color: functions.color('white');
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+main {
+  width: 80%;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.325rem;
+  color: functions.color('white');
+  background-color: functions.color('wisteria');
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.text-muted {
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
