@@ -1,0 +1,31 @@
+@use 'typography';
+@use 'variables';
+@use 'mixins';
+@use 'functions';
+
+main {
+  @include mixins.mobile-down {
+    width: 80%;
+  }
+}
+.choose_quiz {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .btn-choose {
+    font-size: 2 * variables.$base-font-size;
+
+    @include mixins.mobile-down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 2rem;
+    }
+  }
+  .skills__icon {
+    width: 60%;
+    @include mixins.mobile-down {
+      width: 40%;
+    }
+  }
+}

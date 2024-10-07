@@ -190,6 +190,7 @@ input#name {
 
 /******************/
 body {
+  height: 100vh;
   font-family: "Roboto Regular", sans-serif;
   display: -ms-flexbox;
   display: flex;
@@ -197,6 +198,8 @@ body {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   -ms-flex-direction: column;
       flex-direction: column;
   row-gap: 3rem;
@@ -205,15 +208,6 @@ body {
 
 header {
   position: relative;
-  top: -8rem;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(48, 89%, 50%);
-  text-align: center;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -222,17 +216,26 @@ header {
       justify-content: center;
   box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.05);
 }
-@media (max-width: 599px) {
-  header {
-    background-color: hsl(192, 15%, 94%);
-  }
-}
 
-main {
+.round {
   position: relative;
-  top: -8rem;
-  width: -moz-min-content;
-  width: min-content;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(48, 89%, 50%);
+}
+.round_login {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -18%;
 }
 
 h1 {
@@ -283,6 +286,43 @@ h2 {
 
 .show {
   visibility: visible;
+}
+
+@media (max-width: 599px) {
+  main {
+    width: 80%;
+  }
+}
+
+.choose_quiz {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+.choose_quiz .btn-choose {
+  font-size: 2rem;
+}
+@media (max-width: 599px) {
+  .choose_quiz .btn-choose {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
+.choose_quiz .skills__icon {
+  width: 60%;
+}
+@media (max-width: 599px) {
+  .choose_quiz .skills__icon {
+    width: 40%;
+  }
 }
 
 .circles {

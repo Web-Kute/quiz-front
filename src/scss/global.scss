@@ -58,8 +58,11 @@ input {
 
 /******************/
 body {
+  height: 100vh;
   font-family: 'Roboto Regular', sans-serif;
   @include mixins.flex-center();
+  justify-content: flex-start;
+
   flex-direction: column;
   row-gap: 3rem;
   background-color: functions.color('peter-river');
@@ -67,28 +70,29 @@ body {
 
 header {
   position: relative;
-  top: -8rem;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  color: functions.color('white');
-  background-color: functions.color('sun-flower');
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.05);
-  @include mixins.mobile-down {
-    background-color: functions.color('clouds');
+}
+.round {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: functions.color('white');
+  background-color: functions.color('sun-flower');
+  &_login {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -18%;
   }
 }
-main {
-  position: relative;
-  top: -8rem;
-  width: min-content;
-}
+
 h1 {
   font-family: variables.$heading-font-family;
   font-size: 3 * variables.$base-font-size;

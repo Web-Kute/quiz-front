@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('login');
     var nameInput = document.getElementById('name');
     var emailInput = document.getElementById('email');
+    var submitBtn = document.getElementById('submit');
     var errorName = document.getElementById('error-name');
     var errorEmail = document.getElementById('error-email');
     var NAME_TEXT_ERROR = 'Le nom doit contenir entre 5 et 25 caractères !';
     var EMAIL_TEXT_ERROR = "Le format email n'est pas valide !";
     var studentId = [];
+    var isValid = false;
     var checkName = (nameInput === null || nameInput === void 0 ? void 0 : nameInput.value.length) < 5 ||
         (nameInput === null || nameInput === void 0 ? void 0 : nameInput.value.length) >= 25 ||
         /\d/.test(nameInput === null || nameInput === void 0 ? void 0 : nameInput.value) ||
@@ -15,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nameInput && emailInput) {
         nameInput.value = connectOnLoad[0] || '';
         emailInput.value = connectOnLoad[1] || '';
+        submitBtn.innerText = 'Se connecter';
+        isValid = true;
     }
     function init() {
         if (connectOnLoad.length > 0) {
@@ -27,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
             studentId = [];
         }
     }
-    init();
     var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     function validateName() {
         var _a, _b, _c;
@@ -49,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (errorName) {
                     errorName.classList.replace('show', 'hide');
                     nameInput.setAttribute('value', nameInput.value);
+                    isValid = true;
                 }
             }
         }
@@ -67,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (errorEmail) {
                 errorEmail.classList.replace('show', 'hide');
                 emailInput.setAttribute('value', emailInput.value);
+                isValid = true;
             }
         }
     }
@@ -106,6 +111,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     /\d/.test(nameInput === null || nameInput === void 0 ? void 0 : nameInput.value) ||
                     (nameInput === null || nameInput === void 0 ? void 0 : nameInput.value) === '';
             sessionStorage.setItem('loginId', JSON.stringify(studentId));
+            if (isValid) {
+                var queryString = window.location.search;
+                // const urlParams = new URLSearchParams(queryString);
+                // const name = urlParams.get('name');
+                document.location.href = "choose.html?name=".concat(nameInput.value);
+                console.log('urlParams', queryString);
+            }
             if (checkName) {
                 if (errorName) {
                     errorName.classList.replace('hide', 'show');

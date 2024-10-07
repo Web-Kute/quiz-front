@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', (): void => {
     'email',
   ) as HTMLInputElement;
 
+  const submitBtn: HTMLInputElement | null = document.getElementById(
+    'submit',
+  ) as HTMLInputElement;
+
   const errorName: HTMLElement | null = document.getElementById('error-name');
   const errorEmail: HTMLElement | null = document.getElementById('error-email');
 
@@ -16,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
   const EMAIL_TEXT_ERROR = "Le format email n'est pas valide !";
 
   let studentId: string[] = [];
-
+  let isValid: boolean = false;
   let checkName =
     nameInput?.value.length < 5 ||
     nameInput?.value.length >= 25 ||
@@ -28,6 +32,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
   if (nameInput && emailInput) {
     nameInput.value = connectOnLoad[0] || '';
     emailInput.value = connectOnLoad[1] || '';
+    submitBtn.innerText = 'Se connecter';
+    isValid = true;
   }
 
   function init(): void {
@@ -41,7 +47,6 @@ document.addEventListener('DOMContentLoaded', (): void => {
       studentId = [];
     }
   }
-  init();
 
   const emailRegex: RegExp =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -63,6 +68,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
         if (errorName) {
           errorName.classList.replace('show', 'hide');
           nameInput.setAttribute('value', nameInput.value);
+          isValid = true;
         }
       }
     }
@@ -81,6 +87,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
       if (errorEmail) {
         errorEmail.classList.replace('show', 'hide');
         emailInput.setAttribute('value', emailInput.value);
+        isValid = true;
       }
     }
   }
@@ -125,6 +132,14 @@ document.addEventListener('DOMContentLoaded', (): void => {
         nameInput?.value === '';
 
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
+
+      if (isValid) {
+        const queryString = window.location.search;
+        // const urlParams = new URLSearchParams(queryString);
+        // const name = urlParams.get('name');
+        document.location.href = `choose.html?name=${nameInput.value}`;
+        console.log('urlParams', queryString);
+      }
 
       if (checkName) {
         if (errorName) {
