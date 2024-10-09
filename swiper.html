@@ -10,10 +10,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assets/css/reset.min.css">
-
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.min.css">
   <title>Quiz Front-End - Choose</title>
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
 
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
@@ -185,41 +223,65 @@
   <h2 id="welcome">Bienvenue</h2>
   <header>
     <div class="round">
-      <h1>Quiz</h1>
+      <h1>Quiz HTML5</h1>
     </div>
   </header>
-  <main>
-    <section>
-      <nav id="choose-nav">
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">HTML5
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#html5"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">CSS3
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#css3"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">JavaScript
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#js"></use>
-            </svg>
-          </a>
+  <!-- Swiper -->
+  <div class="swiper swiper-quiz">
+    <div id="container" class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h3>Que signifie HTML ?</h3>
+        <nav class="swiper__quiz-slider">
+          <button>Hyper Text Markup Language</button>
+          <button>Home Tool Markup Language</button>
+          <button>Hyperlinks and Text Markup Language</button>
+          <button>Hyperlinks Tools and Market Library</button>
+        </nav>
+      </div>
+      <div class="swiper-slide">
+        <h3>Qui élabore les normes du Web ?</h3>
+        <nav class="swiper__quiz-slider">
+          <button class="answer-item">Microsoft</button>
+          <button class="answer-item">Google</button>
+          <button class="answer-item">Mozilla</button>
+          <button class="answer-item">W3C</button>
+        </nav>
+      </div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
 
-        </div>
-
-      </nav>
-    </section>
-  </main>
   <script type="module" src="./dist/js/quiz.js"></script>
   <script type="module" src="./dist/js/valid-form.js"></script>
   <script type="module" src="./dist/js/choose.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".swiper-quiz", {
+      cssMode: true,
+      direction: "vertical",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 </body>
 
 </html>

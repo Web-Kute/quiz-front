@@ -164,6 +164,10 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   appearance: none;
   -moz-appearance: none;
@@ -179,12 +183,14 @@ fieldset {
   border: none;
 }
 
-input {
+input,
+button {
   padding: 7px 10px;
   border-radius: 0.325rem;
   border: 1px solid hsl(204, 8%, 76%);
 }
-input#name {
+input#name,
+button#name {
   text-transform: capitalize;
 }
 
@@ -249,7 +255,8 @@ h1 {
 
 h2 {
   font-family: "Roboto Medium", sans-serif;
-  color: hsl(210, 29%, 29%);
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -278,6 +285,8 @@ h2 {
 .error {
   font-size: 0.8rem;
   margin-left: 0.325rem;
+  max-width: 11rem;
+  color: hsl(0, 0%, 100%);
 }
 
 .hide {
@@ -345,4 +354,79 @@ h2 {
   syntax: "<number>";
   initial-value: 5;
   inherits: false;
+}
+h3 {
+  font-family: "Roboto light", sans-serif;
+  font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  text-align: center;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: hsl(0, 0%, 100%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: hsl(48, 89%, 50%);
+  transition: background-color 300ms ease-in-out;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: hsl(6, 63%, 46%);
+}
+
+.swiper-button-prev {
+  transform: rotate(90deg);
+  left: 50%;
+  top: 10%;
+}
+
+.swiper-button-next {
+  transform: rotate(90deg);
+  left: 50%;
+  top: 86%;
+}
+
+.swiper__quiz-slider {
+  margin-top: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 1rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+nav button {
+  font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
+  color: hsl(0, 0%, 100%);
+  width: 49%;
+  border-radius: 2rem;
+  border: 2px solid hsl(210, 29%, 24%);
+  padding: 1rem;
+  transition: background-color 300ms ease-in-out;
+}
+nav button:hover {
+  background-color: hsl(210, 29%, 24%);
+}
+
+#container {
+  color: hsl(0, 0%, 100%);
+  max-height: 550px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }/*# sourceMappingURL=style.css.map */

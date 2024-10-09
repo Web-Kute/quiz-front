@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Roboto Slab Regular";
+  src: local("Roboto Slab"), url("../fonts/roboto-slab/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Slab bold";
+  src: local("Roboto Slab"), url("../fonts/roboto-slab/RobotoSlab-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: local("Roboto"), local("Droid Sans"), url("../fonts/roboto/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: local("Roboto Light"), local("Droid Sans"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: local("Roboto Medium"), local("Droid Sans"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: local("Roboto Bold"), local("Droid Sans"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+h3 {
+  font-family: "Roboto light", sans-serif;
+  font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  text-align: center;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: hsl(0, 0%, 100%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: hsl(48, 89%, 50%);
+  transition: background-color 300ms ease-in-out;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: hsl(6, 63%, 46%);
+}
+
+.swiper-button-prev {
+  transform: rotate(90deg);
+  left: 50%;
+  top: 10%;
+}
+
+.swiper-button-next {
+  transform: rotate(90deg);
+  left: 50%;
+  top: 86%;
+}
+
+.swiper__quiz-slider {
+  margin-top: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 1rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+nav button {
+  font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
+  color: hsl(0, 0%, 100%);
+  width: 49%;
+  border-radius: 2rem;
+  border: 2px solid hsl(210, 29%, 24%);
+  padding: 1rem;
+  transition: background-color 300ms ease-in-out;
+}
+nav button:hover {
+  background-color: hsl(210, 29%, 24%);
+}
+
+#container {
+  color: hsl(0, 0%, 100%);
+  max-height: 550px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=quiz.css.map */

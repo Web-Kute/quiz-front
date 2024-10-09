@@ -31,6 +31,9 @@ select {
   }
 }
 
+a {
+  text-decoration: none;
+}
 // Reset original HTML button
 button {
   appearance: none;
@@ -47,7 +50,8 @@ fieldset {
   border: none;
 }
 
-input {
+input,
+button {
   padding: 7px 10px;
   border-radius: 0.325rem;
   border: 1px solid functions.color('silver');
@@ -104,7 +108,8 @@ h1 {
 
 h2 {
   font-family: 'Roboto Medium', sans-serif;
-  color: functions.color('wet-asphalt');
+  font-size: 2 * variables.$base-font-size;
+  color: functions.color('white');
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -131,6 +136,8 @@ h2 {
 .error {
   font-size: 0.8rem;
   margin-left: 0.325rem;
+  max-width: 11rem;
+  color: functions.color('white');
 }
 
 .hide {

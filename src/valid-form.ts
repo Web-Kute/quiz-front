@@ -134,11 +134,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
 
       if (isValid) {
-        const queryString = window.location.search;
-        // const urlParams = new URLSearchParams(queryString);
-        // const name = urlParams.get('name');
         document.location.href = `choose.html?name=${nameInput.value}`;
-        console.log('urlParams', queryString);
       }
 
       if (checkName) {

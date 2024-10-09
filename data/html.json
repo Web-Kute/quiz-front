@@ -1,0 +1,71 @@
+[
+  {
+    "question": "Que signifie HTML ?",
+    "answers": [
+      "Hyper Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Markup Language"
+    ],
+    "correctAnswer": "Hyper Text Markup Language"
+  },
+  {
+    "question": "Qui élabore les normes du Web ?",
+    "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
+    "correctAnswer": "W3C"
+  },
+  {
+    "question": "Choisissez l'élément HTML correct pour le titre le plus grand :",
+    "answers": ["<h1>", "<heading>", "<h6>", "<head>"],
+    "correctAnswer": "<h1>"
+  },
+  {
+    "question": "Quelle balise est utilisée pour définir un lien hypertexte en HTML ?",
+    "answers": ["<link>", "<a>", "<href>", "<hyper>"],
+    "correctAnswer": "<a>"
+  },
+  {
+    "question": "Comment ajouter une image à une page web ?",
+    "answers": [
+      "<src='url'>",
+      "<image='url'>",
+      "<media src='url'>",
+      "<img src='url'>"
+    ],
+    "correctAnswer": "<img src='url'>"
+  },
+  {
+    "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau ?",
+    "answers": ["<table>", " <td>", " <tr>", "<th>"],
+    "correctAnswer": "<td>"
+  },
+  {
+    "question": "Choisissez l'élément HTML approprié pour définir un texte important.",
+    "answers": ["<b>", "<i>", "<important>", "<strong>"],
+    "correctAnswer": "<strong>"
+  },
+  {
+    "question": "Les éléments en ligne sont normalement affichés sans commencer une nouvelle ligne.",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "question": "Comment un commentaire est-il inséré dans un document HTML ?",
+    "answers": [
+      "/* comment */",
+      "<!-- comment -->",
+      "// comment //",
+      "# comment"
+    ],
+    "correctAnswer": "<!-- comment -->"
+  },
+  {
+    "question": "Quel attribut spécifie l'URL dans une balise <a> pour la création d'un lien ?",
+    "answers": ["Link", "Href", "URL", "Src"],
+    "correctAnswer": "Href"
+  },
+  {
+    "question": "Quel élément HTML définit le titre d'un document ?",
+    "answers": ["title", "head", "meta", "subject"],
+    "correctAnswer": "Href"
+  }
+]

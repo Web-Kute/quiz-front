@@ -66,6 +66,10 @@ select:focus-visible {
   outline-offset: 2px;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   appearance: none;
   -moz-appearance: none;
@@ -81,12 +85,14 @@ fieldset {
   border: none;
 }
 
-input {
+input,
+button {
   padding: 7px 10px;
   border-radius: 0.325rem;
   border: 1px solid hsl(204, 8%, 76%);
 }
-input#name {
+input#name,
+button#name {
   text-transform: capitalize;
 }
 
@@ -151,7 +157,8 @@ h1 {
 
 h2 {
   font-family: "Roboto Medium", sans-serif;
-  color: hsl(210, 29%, 29%);
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -180,6 +187,8 @@ h2 {
 .error {
   font-size: 0.8rem;
   margin-left: 0.325rem;
+  max-width: 11rem;
+  color: hsl(0, 0%, 100%);
 }
 
 .hide {
