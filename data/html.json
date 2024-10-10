@@ -35,7 +35,7 @@
   },
   {
     "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau ?",
-    "answers": ["<table>", " <td>", " <tr>", "<th>"],
+    "answers": ["<table>", "<td>", " <tr>", "<th>"],
     "correctAnswer": "<td>"
   },
   {
@@ -66,6 +66,6 @@
   {
     "question": "Quel élément HTML définit le titre d'un document ?",
     "answers": ["title", "head", "meta", "subject"],
-    "correctAnswer": "Href"
+    "correctAnswer": "title"
   }
 ]

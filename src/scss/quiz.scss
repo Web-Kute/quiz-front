@@ -6,6 +6,7 @@
 h3 {
   font-family: 'Roboto light', sans-serif;
   font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  color: functions.color('midnight-blue');
   text-align: center;
   width: 85%;
   margin-left: auto;
@@ -16,6 +17,14 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  button {
+    &.correct {
+      background-color: functions.color('green-sea');
+    }
+    &.incorrect {
+      background-color: functions.color('pomegranate');
+    }
+  }
 }
 
 .swiper-button-prev,
@@ -32,13 +41,13 @@ h3 {
 }
 
 .swiper-button-prev {
-  transform: rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
   left: 50%;
-  top: 10%;
+  top: 8%;
 }
 
 .swiper-button-next {
-  transform: rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
   left: 50%;
   top: 86%;
 }
@@ -62,12 +71,38 @@ nav button {
   &:hover {
     background-color: functions.color('midnight-blue');
   }
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 #container {
+  background: linear-gradient(
+    -45deg,
+    hsl(28, 80%, 52%),
+    hsl(6, 63%, 46%),
+    hsl(204, 64%, 44%),
+    hsl(145, 63%, 49%)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: functions.color('white');
   max-height: 550px;
   width: 80%;
+  padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 1rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

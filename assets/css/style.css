@@ -358,6 +358,7 @@ h2 {
 h3 {
   font-family: "Roboto light", sans-serif;
   font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  color: hsl(210, 29%, 24%);
   text-align: center;
   width: 85%;
   margin-left: auto;
@@ -371,6 +372,12 @@ h3 {
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
+}
+.swiper-slide button.correct {
+  background-color: hsl(168, 76%, 36%);
+}
+.swiper-slide button.incorrect {
+  background-color: hsl(6, 63%, 46%);
 }
 
 .swiper-button-prev,
@@ -388,13 +395,13 @@ h3 {
 }
 
 .swiper-button-prev {
-  transform: rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
   left: 50%;
-  top: 10%;
+  top: 8%;
 }
 
 .swiper-button-next {
-  transform: rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
   left: 50%;
   top: 86%;
 }
@@ -422,11 +429,31 @@ nav button {
 nav button:hover {
   background-color: hsl(210, 29%, 24%);
 }
+nav button:disabled {
+  opacity: 0.5;
+}
 
 #container {
+  background: linear-gradient(-45deg, hsl(28, 80%, 52%), hsl(6, 63%, 46%), hsl(204, 64%, 44%), hsl(145, 63%, 49%));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: hsl(0, 0%, 100%);
   max-height: 550px;
   width: 80%;
+  padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 1rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,10 +1,3 @@
-// import Swiper from 'swiper';
-// import { Navigation, Pagination } from 'swiper/modules';
-// // import Swiper and modules styles
-// import './node_modules/swiper/css/bundle';
-// import './node_modules/swiper/css/navigation';
-// import './node_modules/swiper/css/pagination';
-
 document.addEventListener('DOMContentLoaded', (): void => {
   const container: HTMLInputElement | null = document.getElementById(
     'container',
@@ -40,28 +33,34 @@ document.addEventListener('DOMContentLoaded', (): void => {
   }
 
   displayQuestions();
-});
 
-// async function displayQuestions(): Promise<void> {
-//   const data = await fetchData('data/html.json');
-//   const ul = document.createElement('ul');
-//   ul.className = 'questions-list';
-//   container?.appendChild(ul);
-//   if (Array.isArray(data)) {
-//     data.forEach((question: { answers: Array<string>; question: string }) => {
-//       const li = document.createElement('li');
-//       li.className = 'question-item';
-//       li.textContent = question.question;
-//       ul?.appendChild(li);
-//       const answersList = document.createElement('ul');
-//       answersList.className = 'answers-list';
-//       li.appendChild(answersList);
-//       question.answers.forEach((answer: string) => {
-//         const liAnswer = document.createElement('li');
-//         liAnswer.className = 'answer-item';
-//         liAnswer.textContent = answer;
-//         answersList.appendChild(liAnswer);
-//       });
-//     });
-//   }
-// }
+  async function validateAnswer() {
+    const data = await fetchData('data/html.json');
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const selectedQuestion = target.closest('.swiper__quiz-slider');
+      const allButtons = selectedQuestion ? Array.from(selectedQuestion.querySelectorAll('.answer-item')) : [];
+      
+      if (target.tagName === 'BUTTON') {
+        const button = target as HTMLButtonElement;
+        const answer = button.textContent;
+        if (Array.isArray(data)) {
+          data.forEach((question) => {
+            if (question.correctAnswer === answer) {
+              target.classList.add('correct');
+            }
+          });
+        }
+        allButtons.forEach((button) => {
+          if (button instanceof HTMLButtonElement) {
+            if (!button.classList.contains('correct')) {
+              button.disabled = true;
+            }
+          }
+        });
+      }
+    });  }
+
+  validateAnswer();
+});
