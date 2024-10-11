@@ -102,7 +102,6 @@ window.onload = function () {
   swiperSlide.forEach((slide) => {
     const pagination = slide.getAttribute('aria-label');
     if (pagination !== null) {
-      // const scoreUser = localStorage.getItem('score') || '0';
       slide.insertAdjacentHTML(
         'beforeend',
         `<p class="pagination">${pagination}</p>`,

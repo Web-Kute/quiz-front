@@ -192,7 +192,7 @@
   <main>
     <section>
       <progress title="You cannot interact with this cursor" class="update run" role="progressbar" id="progress-bar"
-        value="8.35" max="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0"
+        value="0" max="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0"
         aria-label="Content loading…"></progress>
       <!-- Swiper -->
       <div class="swiper swiper-quiz">
@@ -228,8 +228,7 @@
     swiper.on('slideChange', function () {
       console.log('slide changed');
       const progressBar = document.getElementById("progress-bar");
-      // `${Math.floor(progressBar.value)}%`
-      progressBar.value += (1 / 12) * 100;
+      progressBar.value = swiper.progress * 110;
     });
   </script>
 </body>
