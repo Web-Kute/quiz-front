@@ -119,6 +119,16 @@ nav button {
   border-radius: 1rem;
 }
 
+progress {
+  --widthprogress: 82%;
+  width: var(--widthprogress);
+  margin-left: auto;
+  margin-right: auto;
+  &.update {
+    accent-color: functions.color('wisteria');
+  }
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

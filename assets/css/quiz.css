@@ -155,6 +155,16 @@ nav button:disabled {
   border-radius: 1rem;
 }
 
+progress {
+  --widthprogress: 82%;
+  width: var(--widthprogress);
+  margin-left: auto;
+  margin-right: auto;
+}
+progress.update {
+  accent-color: hsl(282, 44%, 47%);
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
