@@ -1,14 +1,31 @@
 // import { fisherYatesShuffle } from './utils';
 
+function fisherYatesShuffle<T>(array: T[]): T[] {
+  // Clone the array to avoid modifying the original
+  const shuffledArray = [...array];
+
+  // Iterate through the array in reverse order
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    // Generate a random index 'j' between 0 and i (inclusive)
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Swap the elements at indices 'i' and 'j'
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray;
+}
+
 document.addEventListener('DOMContentLoaded', (): void => {
   const container: HTMLInputElement | null = document.getElementById(
     'container',
   ) as HTMLInputElement;
 
-  async function fetchData(endpoint: string): Promise<string> {
+  async function fetchData(endpoint: string): Promise<unknown> {
     const response = await fetch(endpoint);
     const data = await response.json();
-    return data;
+    const shuffledData = fisherYatesShuffle(data);
+    return shuffledData;
   }
 
   async function displayQuestions(): Promise<void> {
@@ -24,9 +41,9 @@ document.addEventListener('DOMContentLoaded', (): void => {
         div.appendChild(title);
         const nav = document.createElement('nav');
         nav.className = 'swiper__quiz-slider';
-        // const slider = document.querySelector('.swiper__quiz-slider');
         div.appendChild(nav);
-        question.answers.forEach((answer: string) => {
+        const shuffleQuestions = fisherYatesShuffle(question.answers);
+        shuffleQuestions.forEach((answer: string) => {
           const button = document.createElement('button');
           button.className = 'answer-item';
           button.textContent = answer;
@@ -64,8 +81,6 @@ document.addEventListener('DOMContentLoaded', (): void => {
           ) {
             target.classList.add('correct');
             scoreUser += 1;
-            // Use scoreUser to update the score display
-            // const scoreElement = document.getElementById('score');
             if (container) {
               const scoreElement = document.querySelector('.score');
               if (scoreElement) {

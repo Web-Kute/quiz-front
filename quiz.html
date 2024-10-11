@@ -207,7 +207,7 @@
   <script type="module" src="./dist/js/quiz.js"></script>
   <script type="module" src="./dist/js/valid-form.js"></script>
   <script type="module" src="./dist/js/choose.js"></script>
-  <script type="module" src="./dist/js/utils.js"></script>
+ 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -227,7 +227,6 @@
       keyboard: true,
     });
     swiper.on('slideChange', function () {
-      console.log('slide changed');
       const progressBar = document.getElementById("progress-bar");
       progressBar.value = swiper.progress * 110;
     });

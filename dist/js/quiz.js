@@ -35,11 +35,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+function fisherYatesShuffle(array) {
+    var _a;
+    // Clone the array to avoid modifying the original
+    var shuffledArray = __spreadArray([], array, true);
+    // Iterate through the array in reverse order
+    for (var i = shuffledArray.length - 1; i > 0; i--) {
+        // Generate a random index 'j' between 0 and i (inclusive)
+        var j = Math.floor(Math.random() * (i + 1));
+        // Swap the elements at indices 'i' and 'j'
+        _a = [shuffledArray[j], shuffledArray[i]], shuffledArray[i] = _a[0], shuffledArray[j] = _a[1];
+    }
+    return shuffledArray;
+}
 document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('container');
     function fetchData(endpoint) {
         return __awaiter(this, void 0, void 0, function () {
-            var response, data;
+            var response, data, shuffledData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, fetch(endpoint)];
@@ -48,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         return [4 /*yield*/, response.json()];
                     case 2:
                         data = _a.sent();
-                        return [2 /*return*/, data];
+                        shuffledData = fisherYatesShuffle(data);
+                        return [2 /*return*/, shuffledData];
                 }
             });
         });
@@ -71,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 div.appendChild(title);
                                 var nav = document.createElement('nav');
                                 nav.className = 'swiper__quiz-slider';
-                                // const slider = document.querySelector('.swiper__quiz-slider');
                                 div.appendChild(nav);
-                                question.answers.forEach(function (answer) {
+                                var shuffleQuestions = fisherYatesShuffle(question.answers);
+                                shuffleQuestions.forEach(function (answer) {
                                     var button = document.createElement('button');
                                     button.className = 'answer-item';
                                     button.textContent = answer;
@@ -113,8 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         findQuestion_1.correctAnswer.includes(target.textContent)) {
                                         target.classList.add('correct');
                                         scoreUser += 1;
-                                        // Use scoreUser to update the score display
-                                        // const scoreElement = document.getElementById('score');
                                         if (container) {
                                             var scoreElement = document.querySelector('.score');
                                             if (scoreElement) {
