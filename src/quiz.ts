@@ -1,3 +1,5 @@
+// import { fisherYatesShuffle } from './utils';
+
 document.addEventListener('DOMContentLoaded', (): void => {
   const container: HTMLInputElement | null = document.getElementById(
     'container',
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
     const data = await response.json();
     return data;
   }
+
   async function displayQuestions(): Promise<void> {
     const data = await fetchData('data/html.json');
 
@@ -37,7 +40,6 @@ document.addEventListener('DOMContentLoaded', (): void => {
 
   async function validateAnswer() {
     const data = await fetchData('data/html.json');
-
     let scoreUser = 0;
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
@@ -56,7 +58,10 @@ document.addEventListener('DOMContentLoaded', (): void => {
             );
           });
 
-          if (findQuestion && findQuestion.correctAnswer.includes(target.textContent)) {
+          if (
+            findQuestion &&
+            findQuestion.correctAnswer.includes(target.textContent)
+          ) {
             target.classList.add('correct');
             scoreUser += 1;
             // Use scoreUser to update the score display
@@ -72,7 +77,10 @@ document.addEventListener('DOMContentLoaded', (): void => {
           }
           allButtons.forEach((button) => {
             if (button instanceof HTMLButtonElement) {
-              if (findQuestion && button.textContent === findQuestion.correctAnswer) {
+              if (
+                findQuestion &&
+                button.textContent === findQuestion.correctAnswer
+              ) {
                 button.classList.add('correct');
               }
               if (
@@ -85,19 +93,12 @@ document.addEventListener('DOMContentLoaded', (): void => {
           });
         }
       }
-    });  }
+    });
+  }
   validateAnswer();
 });
 
-// Vous avez répondu à 2/20 questions.
-// Votre score est de 10%.
-
 window.onload = function () {
-  // const score = document.getElementById('score');
-  // const scoreValue = localStorage.getItem('score');
-  // if (score && scoreValue) {
-  //   score.textContent = `Vous avez répondu à ${scoreValue} questions.`;
-  // }
   const swiperSlide = document.querySelectorAll('.swiper-slide');
   swiperSlide.forEach((slide) => {
     const pagination = slide.getAttribute('aria-label');
@@ -109,6 +110,3 @@ window.onload = function () {
     }
   });
 };
-// si clique sur la bonne réponse, alors on ajoute la classe correct sur le bouton target
-// si clique sur la mauvaise réponse, alors on ajoute la classe incorrect sur le bouton target et on ajoute la classe correct sur le bouton de la bonne réponse.
-// on ajoute la classe disabled sur les autres boutons.

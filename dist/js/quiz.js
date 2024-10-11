@@ -1,3 +1,4 @@
+// import { fisherYatesShuffle } from './utils';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -108,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         return (question.question ===
                                             ((_a = selectedQuestion === null || selectedQuestion === void 0 ? void 0 : selectedQuestion.previousElementSibling) === null || _a === void 0 ? void 0 : _a.textContent));
                                     });
-                                    if (findQuestion_1 && findQuestion_1.correctAnswer.includes(target.textContent)) {
+                                    if (findQuestion_1 &&
+                                        findQuestion_1.correctAnswer.includes(target.textContent)) {
                                         target.classList.add('correct');
                                         scoreUser += 1;
                                         // Use scoreUser to update the score display
@@ -125,7 +127,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
                                     allButtons.forEach(function (button) {
                                         if (button instanceof HTMLButtonElement) {
-                                            if (findQuestion_1 && button.textContent === findQuestion_1.correctAnswer) {
+                                            if (findQuestion_1 &&
+                                                button.textContent === findQuestion_1.correctAnswer) {
                                                 button.classList.add('correct');
                                             }
                                             if (!button.classList.contains('correct') &&
@@ -144,14 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     validateAnswer();
 });
-// Vous avez répondu à 2/20 questions.
-// Votre score est de 10%.
 window.onload = function () {
-    // const score = document.getElementById('score');
-    // const scoreValue = localStorage.getItem('score');
-    // if (score && scoreValue) {
-    //   score.textContent = `Vous avez répondu à ${scoreValue} questions.`;
-    // }
     var swiperSlide = document.querySelectorAll('.swiper-slide');
     swiperSlide.forEach(function (slide) {
         var pagination = slide.getAttribute('aria-label');
@@ -160,6 +156,3 @@ window.onload = function () {
         }
     });
 };
-// si clique sur la bonne réponse, alors on ajoute la classe correct sur le bouton target
-// si clique sur la mauvaise réponse, alors on ajoute la classe incorrect sur le bouton target et on ajoute la classe correct sur le bouton de la bonne réponse.
-// on ajoute la classe disabled sur les autres boutons.
