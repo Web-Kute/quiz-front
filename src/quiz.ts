@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
   async function validateAnswer() {
     const data = await fetchData('data/html.json');
 
+    let scoreUser = 0;
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       const selectedQuestion = target.closest('.swiper__quiz-slider');
@@ -55,14 +56,23 @@ document.addEventListener('DOMContentLoaded', (): void => {
             );
           });
 
-          if (findQuestion.correctAnswer.includes(target.textContent)) {
+          if (findQuestion && findQuestion.correctAnswer.includes(target.textContent)) {
             target.classList.add('correct');
+            scoreUser += 1;
+            // Use scoreUser to update the score display
+            // const scoreElement = document.getElementById('score');
+            if (container) {
+              const scoreElement = document.querySelector('.score');
+              if (scoreElement) {
+                scoreElement.textContent = `Score : ${scoreUser.toString()} / ${data.length}`;
+              }
+            }
           } else {
             target.classList.add('incorrect');
           }
           allButtons.forEach((button) => {
             if (button instanceof HTMLButtonElement) {
-              if (button.textContent === findQuestion.correctAnswer) {
+              if (findQuestion && button.textContent === findQuestion.correctAnswer) {
                 button.classList.add('correct');
               }
               if (
@@ -75,9 +85,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
           });
         }
       }
-    });
-  }
-
+    });  }
   validateAnswer();
 });
 
@@ -85,23 +93,23 @@ document.addEventListener('DOMContentLoaded', (): void => {
 // Votre score est de 10%.
 
 window.onload = function () {
-  const score = document.getElementById('score');
-  const scoreValue = localStorage.getItem('score');
-  if (score && scoreValue) {
-    score.textContent = `Vous avez répondu à ${scoreValue} questions.`;
-  }
+  // const score = document.getElementById('score');
+  // const scoreValue = localStorage.getItem('score');
+  // if (score && scoreValue) {
+  //   score.textContent = `Vous avez répondu à ${scoreValue} questions.`;
+  // }
   const swiperSlide = document.querySelectorAll('.swiper-slide');
   swiperSlide.forEach((slide) => {
     const pagination = slide.getAttribute('aria-label');
     if (pagination !== null) {
+      // const scoreUser = localStorage.getItem('score') || '0';
       slide.insertAdjacentHTML(
         'beforeend',
-        `<p class="pagination"></p><p class="pagination">${pagination}</p>`,
+        `<p class="pagination">${pagination}</p>`,
       );
     }
   });
 };
-
 // si clique sur la bonne réponse, alors on ajoute la classe correct sur le bouton target
 // si clique sur la mauvaise réponse, alors on ajoute la classe incorrect sur le bouton target et on ajoute la classe correct sur le bouton de la bonne réponse.
 // on ajoute la classe disabled sur les autres boutons.

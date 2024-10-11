@@ -86,26 +86,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     displayQuestions();
-    // async function findQuestion(correct: string) {
-    //   const data = await fetchData('data/html.json');
-    //   for (const question of data) {
-    //     if (
-    //       Array.isArray(question.correctAnswer) &&
-    //       question.correctAnswer.includes(correct)
-    //     ) {
-    //       return question;
-    //     }
-    //   }
-    //   return null;
-    // }
     function validateAnswer() {
         return __awaiter(this, void 0, void 0, function () {
-            var data;
+            var data, scoreUser;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, fetchData('data/html.json')];
                     case 1:
                         data = _a.sent();
+                        scoreUser = 0;
                         document.addEventListener('click', function (e) {
                             var target = e.target;
                             var selectedQuestion = target.closest('.swiper__quiz-slider');
@@ -119,15 +108,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                         return (question.question ===
                                             ((_a = selectedQuestion === null || selectedQuestion === void 0 ? void 0 : selectedQuestion.previousElementSibling) === null || _a === void 0 ? void 0 : _a.textContent));
                                     });
-                                    if (findQuestion_1.correctAnswer.includes(target.textContent)) {
+                                    if (findQuestion_1 && findQuestion_1.correctAnswer.includes(target.textContent)) {
                                         target.classList.add('correct');
+                                        scoreUser += 1;
+                                        // Use scoreUser to update the score display
+                                        // const scoreElement = document.getElementById('score');
+                                        if (container) {
+                                            var scoreElement = document.querySelector('.score');
+                                            if (scoreElement) {
+                                                scoreElement.textContent = "Score : ".concat(scoreUser.toString(), " / ").concat(data.length);
+                                            }
+                                        }
                                     }
                                     else {
                                         target.classList.add('incorrect');
                                     }
                                     allButtons.forEach(function (button) {
                                         if (button instanceof HTMLButtonElement) {
-                                            if (button.textContent === findQuestion_1.correctAnswer) {
+                                            if (findQuestion_1 && button.textContent === findQuestion_1.correctAnswer) {
                                                 button.classList.add('correct');
                                             }
                                             if (!button.classList.contains('correct') &&
@@ -149,47 +147,20 @@ document.addEventListener('DOMContentLoaded', function () {
 // Vous avez répondu à 2/20 questions.
 // Votre score est de 10%.
 window.onload = function () {
-    var score = document.getElementById('score');
-    var scoreValue = localStorage.getItem('score');
-    if (score && scoreValue) {
-        score.textContent = "Vous avez r\u00E9pondu \u00E0 ".concat(scoreValue, " questions.");
-    }
+    // const score = document.getElementById('score');
+    // const scoreValue = localStorage.getItem('score');
+    // if (score && scoreValue) {
+    //   score.textContent = `Vous avez répondu à ${scoreValue} questions.`;
+    // }
     var swiperSlide = document.querySelectorAll('.swiper-slide');
     swiperSlide.forEach(function (slide) {
         var pagination = slide.getAttribute('aria-label');
         if (pagination !== null) {
-            slide.insertAdjacentHTML('beforeend', "<p class=\"pagination\"></p><p class=\"pagination\">".concat(pagination, "</p>"));
+            // const scoreUser = localStorage.getItem('score') || '0';
+            slide.insertAdjacentHTML('beforeend', "<p class=\"pagination\">".concat(pagination, "</p>"));
         }
     });
 };
 // si clique sur la bonne réponse, alors on ajoute la classe correct sur le bouton target
 // si clique sur la mauvaise réponse, alors on ajoute la classe incorrect sur le bouton target et on ajoute la classe correct sur le bouton de la bonne réponse.
 // on ajoute la classe disabled sur les autres boutons.
-// async function handleResponse(
-//   question: string,
-//   answer: string,
-//   correctAnswer: string,
-// ): Promise<void> {
-//   const data = await fetchData('data/html.json');
-//   if (Array.isArray(data)) {
-//     data.forEach((questionData) => {
-// });
-//   }
-// }
-// if (questionData.question === question) {
-//   if (questionData.correctAnswer === answer) {
-//     const button = document.querySelector(
-//       `button[data-answer="${answer}"]`,
-//     ) as HTMLButtonElement;
-//     button.classList.add('correct');
-//   } else {
-//     const correctButton = document.querySelector(
-//       `button[data-answer="${correctAnswer}"]`,
-//     ) as HTMLButtonElement;
-//     correctButton.classList.add('correct');
-//     const button = document.querySelector(
-//       `button[data-answer="${answer}"]`,
-//     ) as HTMLButtonElement;
-//     button.classList.add('incorrect');
-//   }
-// }

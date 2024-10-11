@@ -387,9 +387,20 @@ h3 {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
-  bottom: 100px;
+  bottom: 120px;
   color: hsl(210, 29%, 24%);
   font-size: 0.9rem;
+}
+
+.score {
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 100%);
+  width: 100px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .swiper-button-prev,
