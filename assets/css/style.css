@@ -366,6 +366,7 @@ h3 {
 }
 
 .swiper-slide {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -375,9 +376,20 @@ h3 {
 }
 .swiper-slide button.correct {
   background-color: hsl(168, 76%, 36%);
+  pointer-events: none;
 }
 .swiper-slide button.incorrect {
   background-color: hsl(6, 63%, 46%);
+  pointer-events: none;
+}
+
+.pagination {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 100px;
+  color: hsl(210, 29%, 24%);
+  font-size: 0.9rem;
 }
 
 .swiper-button-prev,
@@ -435,7 +447,7 @@ nav button:disabled {
 }
 
 #container {
-  background: linear-gradient(-45deg, hsl(28, 80%, 52%), hsl(6, 63%, 46%), hsl(204, 64%, 44%), hsl(145, 63%, 49%));
+  background: linear-gradient(-45deg, hsl(28, 80%, 52%), hsl(283, 39%, 53%), hsl(204, 64%, 44%), hsl(145, 63%, 49%));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   color: hsl(0, 0%, 100%);

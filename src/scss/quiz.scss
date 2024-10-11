@@ -14,17 +14,29 @@ h3 {
 }
 
 .swiper-slide {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   button {
     &.correct {
       background-color: functions.color('green-sea');
+      pointer-events: none;
     }
     &.incorrect {
       background-color: functions.color('pomegranate');
+      pointer-events: none;
     }
   }
+}
+
+.pagination {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 100px;
+  color: functions.color('midnight-blue');
+  font-size: 0.9rem;
 }
 
 .swiper-button-prev,
@@ -73,7 +85,7 @@ nav button {
   }
   &:disabled {
     opacity: 0.5;
-pointer-events: none;
+    pointer-events: none;
   }
 }
 
@@ -81,7 +93,7 @@ pointer-events: none;
   background: linear-gradient(
     -45deg,
     hsl(28, 80%, 52%),
-    hsl(6, 63%, 46%),
+    hsl(283, 39%, 53%),
     hsl(204, 64%, 44%),
     hsl(145, 63%, 49%)
   );

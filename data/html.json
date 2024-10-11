@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "question": "Que signifie HTML ?",
     "answers": [
       "Hyper Text Markup Language",
@@ -9,21 +10,25 @@
     "correctAnswer": "Hyper Text Markup Language"
   },
   {
+    "id": 2,
     "question": "Qui élabore les normes du Web ?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C"
   },
   {
+    "id": 3,
     "question": "Choisissez l'élément HTML correct pour le titre le plus grand :",
     "answers": ["<h1>", "<heading>", "<h6>", "<head>"],
     "correctAnswer": "<h1>"
   },
   {
+    "id": 4,
     "question": "Quelle balise est utilisée pour définir un lien hypertexte en HTML ?",
     "answers": ["<link>", "<a>", "<href>", "<hyper>"],
     "correctAnswer": "<a>"
   },
   {
+    "id": 5,
     "question": "Comment ajouter une image à une page web ?",
     "answers": [
       "<src='url'>",
@@ -34,21 +39,25 @@
     "correctAnswer": "<img src='url'>"
   },
   {
+    "id": 6,
     "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau ?",
     "answers": ["<table>", "<td>", " <tr>", "<th>"],
     "correctAnswer": "<td>"
   },
   {
+    "id": 7,
     "question": "Choisissez l'élément HTML approprié pour définir un texte important.",
     "answers": ["<b>", "<i>", "<important>", "<strong>"],
     "correctAnswer": "<strong>"
   },
   {
+    "id": 8,
     "question": "Les éléments en ligne sont normalement affichés sans commencer une nouvelle ligne.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },
   {
+    "id": 9,
     "question": "Comment un commentaire est-il inséré dans un document HTML ?",
     "answers": [
       "/* comment */",
@@ -59,13 +68,21 @@
     "correctAnswer": "<!-- comment -->"
   },
   {
+    "id": 10,
     "question": "Quel attribut spécifie l'URL dans une balise <a> pour la création d'un lien ?",
     "answers": ["Link", "Href", "URL", "Src"],
     "correctAnswer": "Href"
   },
   {
+    "id": 11,
     "question": "Quel élément HTML définit le titre d'un document ?",
     "answers": ["title", "head", "meta", "subject"],
     "correctAnswer": "title"
+  },
+  {
+    "id": 12,
+    "question": "Une bonne sémantique HTML aide les moteurs de recherche à indexer votre site.",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
   }
 ]
