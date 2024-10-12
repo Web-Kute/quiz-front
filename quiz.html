@@ -202,12 +202,21 @@
 
       </div>
       <p class="score">Score : <span>0</span></p>
+
+      <progress title="You cannot interact with this cursor" class="" role="progressbar" id="time-bar" value="50"
+        max="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0"
+        aria-label="Content loading…"></progress>
+      <aside>
+        <div class="countdown-container" data-duration="180" data-transition="linear" data-color="#28af60"
+          data-size="100" data-position="up"></div>
+      </aside>
     </section>
   </main>
   <script type="module" src="./dist/js/quiz.js"></script>
   <script type="module" src="./dist/js/valid-form.js"></script>
   <script type="module" src="./dist/js/choose.js"></script>
- 
+
+  <script src="https://cdn.jsdelivr.net/gh/LucaCuello/Circular-Countdown-Template@95af10a/js/index.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -230,6 +239,29 @@
       const progressBar = document.getElementById("progress-bar");
       progressBar.value = swiper.progress * 110;
     });
+
+    const elapsedStartTime = Date.now() / 1000;
+    const startHours = Math.floor((elapsedStartTime / 3600) % 24);
+    const startMinutes = Math.floor((elapsedStartTime / 60) % 60);
+    const startSeconds = Math.floor(elapsedStartTime % 60);
+
+    const currentTime = new Date();
+    console.log("Seconde", currentTime);
+
+    //Update progress bar width
+    const quizDuration = 50000;
+    const timeBar = document.getElementById("time-bar");
+    function setProgress(e) {
+      const width = timeBar.offsetWidth;
+      // const clickX = e.offsetX;
+      // timeBar.style.setProperty('--widthprogress', '100');
+      const duration = isFinite(quizDuration);
+      // timeBar.value = (20 / width) * duration;
+      console.log(width);
+
+    }
+    setProgress();
+    timeBar.addEventListener("click", setProgress);
   </script>
 </body>
 

@@ -68,39 +68,25 @@
   font-style: normal;
   font-display: swap;
 }
-@media (max-width: 599px) {
-  main {
-    width: 80%;
-  }
+aside {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
 }
 
-.choose_quiz {
-  position: relative;
+#clock {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
-.choose_quiz .btn-choose {
-  font-size: 2rem;
-}
-@media (max-width: 599px) {
-  .choose_quiz .btn-choose {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+
+@keyframes progress {
+  100% {
+    stroke-dashoffset: 1256.1293945313;
   }
-}
-.choose_quiz .skills__icon {
-  width: 60%;
-}
-@media (max-width: 599px) {
-  .choose_quiz .skills__icon {
-    width: 40%;
-  }
-}/*# sourceMappingURL=choose.css.map */
+}/*# sourceMappingURL=clock.css.map */

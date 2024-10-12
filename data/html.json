@@ -84,5 +84,11 @@
     "question": "Une bonne sémantique HTML aide les moteurs de recherche à indexer votre site.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
+  },
+  {
+    "id": 13,
+    "question": "Quel attribut type de la balise input n'existe pas.",
+    "answers": ["email", "week", "range", "gender"],
+    "correctAnswer": "gender"
   }
 ]

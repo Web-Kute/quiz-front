@@ -1,11 +1,55 @@
 [
   {
+    "id": 1,
     "question": "Que signifie CSS ?",
     "answers": [
-      "Hyper Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyperlinks and Text Markup Language"
+      "Cascading Style Sheets",
+      "Create Simple Samples",
+      "Create Syntactically Sheets"
     ],
-    "correctAnswer": "Hyper Text Markup Language"
+    "correctAnswer": "Cascading Style Sheets"
+  },
+  {
+    "id": 2,
+    "question": "Lequel des sélecteurs suivants à le poids le plus élevé ?",
+    "answers": ["class", "id", "<p>", "input[type='email']"],
+    "correctAnswer": "id"
+  },
+  {
+    "id": 3,
+    "question": "Pourquoi utilise-t-on généralement des CSS ?",
+    "answers": [
+      "Pour améliorer le code HTML",
+      "Pour séparer le contenu de la présentation pages",
+      "Pour faire des dégradés de couleurs"
+    ],
+    "correctAnswer": "Pour séparer le contenu de la présentation pages"
+  },
+  {
+    "id": 4,
+    "question": "Laquelle de ces propriétés CSS définit une marge interne ?",
+    "answers": ["margin", "spacein", "spaceout", "padding"],
+    "correctAnswer": "padding"
+  },
+  {
+    "id": 5,
+    "question": "Quelle est la syntaxe pour déclarer des propiétés CSS ?",
+    "answers": [
+      "Entre deux crochets séparés par des tirets [ ... - ... ]",
+      "Entre deux guillemets séparés par des slashs  ... / ... ",
+      "Entre deux accolades séparées par des points-virgules { ... ; ... }"
+    ],
+    "correctAnswer": "Entre deux accolades séparées par des points-virgules { ... ; ... }"
+  },
+  {
+    "id": 6,
+    "question": "SASS est :",
+    "answers": [
+      "Un logiciel pour minifier les feuilles de styles",
+      "Un pré-processeur pour feuilles de styles",
+      "Un pont entre les CSS et le JavaScript",
+      "Une feuille de styles simplifiée"
+    ],
+    "correctAnswer": "Un pré-processeur pour feuilles de styles"
   }
 ]

@@ -17,3 +17,37 @@ export function fisherYatesShuffle<T>(array: T[]): T[] {
 
   return shuffledArray;
 }
+
+// Control progress bar
+// let progressTime;
+// const progressBarTime = () => {
+//   const elapsedStartTime = Date.now() / 1000 - startTime;
+//   const startHours = Math.floor((elapsedStartTime / 3600) % 24);
+//   const startMinutes = Math.floor((elapsedStartTime / 60) % 60);
+//   const startSeconds = Math.floor(elapsedStartTime % 60);
+//   progressTime =
+//     startHours === 0
+//       ? `progression: ${startMinutes} minnute ${startSeconds} seconde`
+//       : `progression: ${startHours} heure ${startMinutes} minute ${startSeconds} seconde`;
+// };
+
+// progressBarTime();
+
+// const updateTimers = () => {
+//   const elapsedTime = Date.now() / 1000 - startTime;
+//   const sizeProgress = Math.floor((elapsedTime * 100) / durationData);
+//   progressBar.style.setProperty('--widthprogress', '0');
+//   const percentTime = (originalMediaElement.currentTime * 100) / durationData;
+
+//   const elapsedTimeFromStart = sizeProgress + percentTime;
+
+//   if (elapsedTimeFromStart > 100) {
+//     progressBar.style.setProperty('--widthprogress', '100%');
+//   }
+
+//   progressBar.style.setProperty(
+//     '--widthprogress',
+//     `${Math.min(elapsedTimeFromStart.toFixed(3), 100)}%`,
+//   );
+// };
+

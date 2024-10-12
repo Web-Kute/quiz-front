@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    function displayQuestions() {
+    function displayQuestions(quiz) {
         return __awaiter(this, void 0, void 0, function () {
             var data;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetchData('data/html.json')];
+                    case 0: return [4 /*yield*/, fetchData(quiz)];
                     case 1:
                         data = _a.sent();
                         if (Array.isArray(data)) {
@@ -109,13 +109,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    displayQuestions();
-    function validateAnswer() {
+    displayQuestions("data/css.json");
+    function validateAnswer(quiz) {
         return __awaiter(this, void 0, void 0, function () {
             var data, scoreUser;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetchData('data/html.json')];
+                    case 0: return [4 /*yield*/, fetchData(quiz)];
                     case 1:
                         data = _a.sent();
                         scoreUser = 0;
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    validateAnswer();
+    validateAnswer('data/css.json');
 });
 window.onload = function () {
     var swiperSlide = document.querySelectorAll('.swiper-slide');

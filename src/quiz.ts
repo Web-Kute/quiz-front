@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
     return shuffledData;
   }
 
-  async function displayQuestions(): Promise<void> {
-    const data = await fetchData('data/html.json');
+  async function displayQuestions(quiz: string): Promise<void> {
+    const data = await fetchData(quiz);
 
     if (Array.isArray(data)) {
       data.forEach((question: { answers: Array<string>; question: string }) => {
@@ -52,11 +52,10 @@ document.addEventListener('DOMContentLoaded', (): void => {
       });
     }
   }
+  displayQuestions("data/css.json");
 
-  displayQuestions();
-
-  async function validateAnswer() {
-    const data = await fetchData('data/html.json');
+  async function validateAnswer(quiz: string): Promise<void> {
+    const data = await fetchData(quiz);
     let scoreUser = 0;
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
       }
     });
   }
-  validateAnswer();
+  validateAnswer('data/css.json');
 });
 
 window.onload = function () {
