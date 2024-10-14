@@ -60,9 +60,13 @@ function fisherYatesShuffle(array) {
 var queryStringUrl = window.location.search;
 var urlParamsEndpoint = new URLSearchParams(queryStringUrl);
 var endpointUrl = urlParamsEndpoint.get('endpoint');
-console.log(endpointUrl);
+var title = urlParamsEndpoint.get('title');
 document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('container');
+    var quizTitle = document.querySelector('.quiz-title');
+    if (quizTitle && title) {
+        quizTitle.innerText = title;
+    }
     function fetchData(endpoint) {
         return __awaiter(this, void 0, void 0, function () {
             var response, data, shuffledData;
@@ -113,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    if (endpointUrl !== null) {
-        displayQuestions("".concat(endpointUrl));
+    if (endpointUrl) {
+        displayQuestions(endpointUrl);
     }
     function validateAnswer(quiz) {
         return __awaiter(this, void 0, void 0, function () {
@@ -172,8 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    if (endpointUrl !== null) {
-        validateAnswer("".concat(endpointUrl));
+    if (endpointUrl) {
+        validateAnswer(endpointUrl);
     }
 });
 window.onload = function () {

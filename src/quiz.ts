@@ -19,13 +19,19 @@ function fisherYatesShuffle<T>(array: T[]): T[] {
 const queryStringUrl = window.location.search;
 const urlParamsEndpoint = new URLSearchParams(queryStringUrl);
 const endpointUrl = urlParamsEndpoint.get('endpoint');
-console.log(endpointUrl);
-
+const title = urlParamsEndpoint.get('title');
 
 document.addEventListener('DOMContentLoaded', (): void => {
   const container: HTMLInputElement | null = document.getElementById(
     'container',
   ) as HTMLInputElement;
+  const quizTitle: HTMLInputElement | null = document.querySelector(
+    '.quiz-title',
+  ) as HTMLInputElement;
+
+  if (quizTitle && title) {
+    quizTitle.innerText = title;
+  }
 
   async function fetchData(endpoint: string): Promise<unknown> {
     const response = await fetch(endpoint);
@@ -58,8 +64,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
       });
     }
   }
-  if (endpointUrl !== null) {
-    displayQuestions(`${endpointUrl}`);
+  if (endpointUrl) {
+    displayQuestions(endpointUrl);
   }
 
   async function validateAnswer(quiz: string): Promise<void> {
@@ -118,8 +124,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
     });
   }
 
-  if (endpointUrl !== null) {
-    validateAnswer(`${endpointUrl}`);
+  if (endpointUrl) {
+    validateAnswer(endpointUrl);
   }
 });window.onload = function () {
   const swiperSlide = document.querySelectorAll('.swiper-slide');

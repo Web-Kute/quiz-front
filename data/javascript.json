@@ -6,8 +6,8 @@
     "correctAnswer": "<script>"
   },
   {
-    "id": 1,
-    "question": "Comment modifier le contenu de l'élément HTML : <p id='demo'>This is a demonstration.</p>",
+    "id": 2,
+    "question": "Comment modifier le contenu de l'élément HTML : <p id='demo'>This is a demo.</p>",
     "answers": [" #demo.innerHTML = 'Hello World!';", " document.getElementById('demo').innerHTML = 'Hello World!';", " document.getElementByName('p').innerHTML = 'Hello World!';", " document.getElement('p').innerHTML = 'Hello World!';"],
     "correctAnswer": "document.getElementById('demo').innerHTML = 'Hello World!'"
   }

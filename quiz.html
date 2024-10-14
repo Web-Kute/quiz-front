@@ -186,7 +186,8 @@
   <h2 id="welcome">Bienvenue</h2>
   <header>
     <div class="round">
-      <h1>Quiz HTML5</h1>
+      <h1 class="quiz-title">Quiz</h1>
+      <span class="hidden" data-endpoint="HTML5"></span>
     </div>
   </header>
   <main>
@@ -235,26 +236,26 @@
       progressBar.value = swiper.progress * 110;
     });
 
-    const elapsedStartTime = Date.now() / 1000;
-    const startHours = Math.floor((elapsedStartTime / 3600) % 24);
-    const startMinutes = Math.floor((elapsedStartTime / 60) % 60);
-    const startSeconds = Math.floor(elapsedStartTime % 60);
+    // const elapsedStartTime = Date.now() / 1000;
+    // const startHours = Math.floor((elapsedStartTime / 3600) % 24);
+    // const startMinutes = Math.floor((elapsedStartTime / 60) % 60);
+    // const startSeconds = Math.floor(elapsedStartTime % 60);
 
-    const currentTime = new Date();
+    // const currentTime = new Date();
 
-    //Update progress bar width
-    const quizDuration = 50000;
-    const timeBar = document.getElementById("time-bar");
-    function setProgress(e) {
-      const width = timeBar.offsetWidth;
-      // const clickX = e.offsetX;
-      // timeBar.style.setProperty('--widthprogress', '100');
-      const duration = isFinite(quizDuration);
-      // timeBar.value = (20 / width) * duration;
+    // //Update progress bar width
+    // const quizDuration = 50000;
+    // const timeBar = document.getElementById("time-bar");
+    // function setProgress(e) {
+    //   const width = timeBar.offsetWidth;
+    //   // const clickX = e.offsetX;
+    //   // timeBar.style.setProperty('--widthprogress', '100');
+    //   const duration = isFinite(quizDuration);
+    //   // timeBar.value = (20 / width) * duration;
 
-    }
-    setProgress();
-    timeBar.addEventListener("click", setProgress);
+    // }
+    // setProgress();
+    // timeBar.addEventListener("click", setProgress);
   </script>
 </body>
 
