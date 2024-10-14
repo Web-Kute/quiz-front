@@ -16,6 +16,12 @@ function fisherYatesShuffle<T>(array: T[]): T[] {
   return shuffledArray;
 }
 
+const queryStringUrl = window.location.search;
+const urlParamsEndpoint = new URLSearchParams(queryStringUrl);
+const endpointUrl = urlParamsEndpoint.get('endpoint');
+console.log(endpointUrl);
+
+
 document.addEventListener('DOMContentLoaded', (): void => {
   const container: HTMLInputElement | null = document.getElementById(
     'container',
@@ -52,7 +58,9 @@ document.addEventListener('DOMContentLoaded', (): void => {
       });
     }
   }
-  displayQuestions("data/css.json");
+  if (endpointUrl !== null) {
+    displayQuestions(`${endpointUrl}`);
+  }
 
   async function validateAnswer(quiz: string): Promise<void> {
     const data = await fetchData(quiz);
@@ -109,10 +117,11 @@ document.addEventListener('DOMContentLoaded', (): void => {
       }
     });
   }
-  validateAnswer('data/css.json');
-});
 
-window.onload = function () {
+  if (endpointUrl !== null) {
+    validateAnswer(`${endpointUrl}`);
+  }
+});window.onload = function () {
   const swiperSlide = document.querySelectorAll('.swiper-slide');
   swiperSlide.forEach((slide) => {
     const pagination = slide.getAttribute('aria-label');

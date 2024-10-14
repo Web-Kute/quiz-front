@@ -8,13 +8,12 @@ if (userName !== null) {
 }
 if (chooseNav) {
     chooseNav.addEventListener('click', function (e) {
-        e.preventDefault();
         var target = e.target;
-        if (target.tagName === 'A') {
-            var url = target.getAttribute('href');
-            if (url) {
-                document.location.href = url;
-            }
+        if (target.tagName === 'BUTTON') {
+            var url = "http://127.0.0.1:5500/quiz.html?endpoint=".concat(target.dataset.endpoint);
+            console.log('Endpoint', url);
+            document.location.replace(url);
         }
+        e.stopPropagation();
     });
 }

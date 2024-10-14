@@ -15,13 +15,13 @@ if (userName !== null) {
 
 if (chooseNav) {
   chooseNav.addEventListener('click', (e) => {
-    e.preventDefault();
     const target = e.target as HTMLElement;
-    if (target.tagName === 'A') {
-      const url = target.getAttribute('href');
-      if (url) {
-        document.location.href = url;
-      }
+    if (target.tagName === 'BUTTON') {
+      const url = `http://127.0.0.1:5500/quiz.html?endpoint=${target.dataset.endpoint}`;
+      console.log('Endpoint', url);
+
+      document.location.replace(url);
     }
+    e.stopPropagation();
   });
 }

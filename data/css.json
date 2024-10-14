@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "question": "Lequel des sélecteurs suivants à le poids le plus élevé ?",
+    "question": "Lequel des sélecteurs suivants à le poids(spécificité) le plus élevé ?",
     "answers": ["class", "id", "<p>", "input[type='email']"],
     "correctAnswer": "id"
   },
@@ -51,5 +51,22 @@
       "Une feuille de styles simplifiée"
     ],
     "correctAnswer": "Un pré-processeur pour feuilles de styles"
+  },
+  {
+    "id": 7,
+    "question": "Quelle est la syntaxe correcte pour ajouter la feuille de style externe en CSS ?",
+    "answers": [
+      "<style src = style.css>",
+      "<style src = 'style.css'>",
+      "<stylesheet> style.css </stylesheet>",
+      "<link rel='stylesheet' type='style/css' href='quiz.css'>"
+    ],
+    "correctAnswer": "<link rel='stylesheet' type='style/css' href='quiz.css'>"
+  },
+  {
+    "id": 8,
+    "question": "Quelle propriété est utilisée pour modifier la couleur d'arrière-plan d'un élément ?",
+    "answers": ["bg: color", "color-background", "background-color", "color"],
+    "correctAnswer": "background-color"
   }
 ]

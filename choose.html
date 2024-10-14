@@ -191,34 +191,36 @@
   <main>
     <section>
       <nav id="choose-nav">
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">HTML5
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#html5"></use>
-            </svg>
-          </a>
+        <form action="quiz.html" id="choose-form" method="post">
+          <div class="choose_quiz">
+            <a href="quiz.html?endpoint=data/html.json" data-endpoint="data/html.json" class="btn btn-choose">HTML5
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use x="0" xlink:href="#html5"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="choose_quiz">
+            <a href="quiz.html?endpoint=data/css.json" data-endpoint="data/css.json" class="btn btn-choose">CSS3
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use x="0" xlink:href="#css3"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="choose_quiz">
+            <a href="quiz.html?endpoint=data/javascript.json" data-endpoint="data/javascript.json" class="btn btn-choose">JavaScript
+              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+                <use x="0" xlink:href="#js"></use>
+              </svg>
+            </a>
+          </div>
+        </form>
+        <div>
+          <span class="visually-hidden"></span>
         </div>
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">CSS3
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#css3"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="choose_quiz">
-          <a href="quiz.html" class="btn btn-choose">JavaScript
-            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-              <use x="0" xlink:href="#js"></use>
-            </svg>
-          </a>
-
-        </div>
-
       </nav>
     </section>
   </main>
   <script type="module" src="./dist/js/quiz.js"></script>
-  <script type="module" src="./dist/js/valid-form.js"></script>
   <script type="module" src="./dist/js/choose.js"></script>
 </body>
 

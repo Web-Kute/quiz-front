@@ -57,6 +57,10 @@ function fisherYatesShuffle(array) {
     }
     return shuffledArray;
 }
+var queryStringUrl = window.location.search;
+var urlParamsEndpoint = new URLSearchParams(queryStringUrl);
+var endpointUrl = urlParamsEndpoint.get('endpoint');
+console.log(endpointUrl);
 document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('container');
     function fetchData(endpoint) {
@@ -109,7 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    displayQuestions("data/css.json");
+    if (endpointUrl !== null) {
+        displayQuestions("".concat(endpointUrl));
+    }
     function validateAnswer(quiz) {
         return __awaiter(this, void 0, void 0, function () {
             var data, scoreUser;
@@ -166,7 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    validateAnswer('data/css.json');
+    if (endpointUrl !== null) {
+        validateAnswer("".concat(endpointUrl));
+    }
 });
 window.onload = function () {
     var swiperSlide = document.querySelectorAll('.swiper-slide');

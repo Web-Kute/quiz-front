@@ -6,16 +6,15 @@
 aside {
   position: absolute;
   top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
+  right: 15%;
+  z-index: 100;
 }
 #clock {
   @include mixins.flex-center();
 }
 
 @keyframes progress {
-    100% {
-        stroke-dashoffset: 1256.12939453125;
-    }
+  100% {
+    stroke-dashoffset: 1256.12939453125;
+  }
 }

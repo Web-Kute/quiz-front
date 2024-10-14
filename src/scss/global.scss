@@ -61,6 +61,15 @@ button {
   }
 }
 
+input {
+  &:valid {
+    background-color: functions.color('green-sea');
+    border: 2px solid functions.color('green-sea');
+  }
+  &:invalid {
+    background-color: functions.color('alzarin');
+  }
+}
 /******************/
 body {
   height: 100vh;
@@ -78,10 +87,10 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.05);
 }
 
 section {
+position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -96,11 +105,11 @@ section {
   align-items: center;
   color: functions.color('white');
   background-color: functions.color('sun-flower');
-  &_login {
+  &-login {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    top: -18%;
+    top: 0;
   }
 }
 
@@ -118,6 +127,7 @@ h2 {
   font-size: 2 * variables.$base-font-size;
   color: functions.color('white');
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+  text-transform: capitalize;
 }
 
 .btn {
