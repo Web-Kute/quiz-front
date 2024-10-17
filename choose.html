@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assets/css/reset.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.min.css">
-  <title>Quiz Front-End - Choose</title>
+  <title>Choose a Front-End Quiz</title>
 
 </head>
 
@@ -185,43 +185,40 @@
   <h2 id="welcome">Bienvenue</h2>
   <header>
     <div class="round">
-      <h1>Quiz</h1>
+      <h1 class="quiz-title">Quiz</h1>
     </div>
   </header>
-  <main>
+  <main id="main-content">
     <section>
       <nav id="choose-nav">
-        <form action="quiz.html" id="choose-form" method="post">
-          <div class="choose_quiz">
-            <a href="quiz.html?endpoint=data/html.json&title=HTML5" data-endpoint="data/html.json" class="btn btn-choose">HTML5
-              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-                <use x="0" xlink:href="#html5"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="choose_quiz">
-            <a href="quiz.html?endpoint=data/css.json&title=CSS3" data-endpoint="data/css.json" class="btn btn-choose">CSS3
-              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-                <use x="0" xlink:href="#css3"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="choose_quiz">
-            <a href="quiz.html?endpoint=data/javascript.json&title=JavaScript" data-endpoint="data/javascript.json" class="btn btn-choose">JavaScript
-              <svg class="skills__icon svg" aria-hidden="true" focusable="false">
-                <use x="0" xlink:href="#js"></use>
-              </svg>
-            </a>
-          </div>
-        </form>
-        <div>
-          <span class="visually-hidden"></span>
+        <div class="choose-quiz">
+          <button data-endpoint="data/html.json" data-title="HTML5" class="btn btn-choose">HTML5
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use x="0" xlink:href="#html5"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="choose-quiz">
+          <button data-endpoint="data/css.json" data-title="CSS3" class="btn btn-choose">CSS3
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use x="0" xlink:href="#css3"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="choose-quiz">
+          <button data-endpoint="data/javascript.json" data-title="JavaScript" class="btn btn-choose">JavaScript
+            <svg class="skills__icon svg" aria-hidden="true" focusable="false">
+              <use x="0" xlink:href="#js"></use>
+            </svg>
+          </button>
         </div>
       </nav>
     </section>
   </main>
-  <script type="module" src="./dist/js/quiz.js"></script>
-  <script type="module" src="./dist/js/choose.js"></script>
+  <!-- Swiper JS -->
+  <script type="module" src="./dist/js/choice.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>
