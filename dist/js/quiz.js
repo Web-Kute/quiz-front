@@ -64,6 +64,7 @@ var title = urlParamsEndpoint.get('title');
 document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('container');
     var quizTitle = document.querySelector('.quiz-title');
+    var htmlQuiz = "<section id=\"quiz\">\n      <progress title=\"You cannot interact with this cursor\" class=\"update run\" role=\"progressbar\" id=\"progress-bar\"\n        value=\"0\" max=\"100\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" tabindex=\"0\"\n        aria-label=\"Content loading\u2026\"></progress>\n      <!-- Swiper -->\n      <div class=\"swiper swiper-quiz\">\n        <div id=\"container\" class=\"swiper-wrapper\"></div>\n        <div class=\"swiper-button-next\"></div>\n        <div class=\"swiper-button-prev\"></div>\n\n      </div>\n      <p class=\"score\">Score : <span>0</span></p>\n      <aside>\n        <div class=\"countdown-container\" data-duration=\"180\" data-transition=\"linear\" data-color=\"#28af60\"\n          data-size=\"100\" data-position=\"up\"></div>\n      </aside>\n    </section>";
     if (quizTitle && title) {
         quizTitle.innerText = title;
     }
@@ -83,6 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+    }
+    var mainContainer = document.getElementsByTagName('main')[0];
+    if (mainContainer) {
+        // mainContainer.innerHTML = htmlQuiz;
+        console.log("htmlQuiz");
     }
     function displayQuestions(quiz) {
         return __awaiter(this, void 0, void 0, function () {
@@ -116,9 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
-    }
-    if (endpointUrl) {
-        displayQuestions(endpointUrl);
     }
     function validateAnswer(quiz) {
         return __awaiter(this, void 0, void 0, function () {
@@ -176,8 +179,22 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+    function displayInside() {
+        var htmlPart = "<section id=\"quiz\">\n      <progress title=\"You cannot interact with this cursor\" class=\"update run\" role=\"progressbar\" id=\"progress-bar\"\n        value=\"0\" max=\"100\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" tabindex=\"0\"\n        aria-label=\"Content loading\u2026\"></progress>\n      <!-- Swiper -->\n      <div class=\"swiper swiper-quiz\">\n        <div id=\"container\" class=\"swiper-wrapper\"></div>\n        <div class=\"swiper-button-next\"></div>\n        <div class=\"swiper-button-prev\"></div>\n\n      </div>\n      <p class=\"score\">Score : <span>0</span></p>\n      <aside>\n        <div class=\"countdown-container\" data-duration=\"180\" data-transition=\"linear\" data-color=\"#28af60\"\n          data-size=\"100\" data-position=\"up\"></div>\n      </aside>\n    </section>";
+        if (mainContainer) {
+            mainContainer.innerHTML = htmlPart;
+        }
+    }
+    var selectBtn = document.querySelectorAll('[data-endpoint]');
+    selectBtn.forEach(function (btn) {
+        if (btn instanceof HTMLElement) {
+            var selectedQuiz = btn.dataset.endpoint;
+            console.log(selectedQuiz);
+        }
+    });
     if (endpointUrl) {
         validateAnswer(endpointUrl);
+        displayQuestions(endpointUrl);
     }
 });
 window.onload = function () {

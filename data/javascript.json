@@ -8,7 +8,7 @@
   {
     "id": 2,
     "question": "Comment modifier le contenu de l'élément HTML : <p id='demo'>This is a demo.</p>",
-    "answers": [" #demo.innerHTML = 'Hello World!';", " getElementById('demo').innerHTML = 'Hello World!';", " getElementByName('p').innerHTML = 'Hello World!';", " getElement('p').innerHTML = 'Hello World!';"],
-    "correctAnswer": "getElementById('demo').innerHTML = 'Hello World!'"
+    "answers": [" #demo.innerHTML = 'Hello World!';", "getElementById('demo').innerHTML = 'Hello World!';", " getElementByName('p').innerHTML = 'Hello World!';", " getElement('p').innerHTML = 'Hello World!';"],
+    "correctAnswer": "getElementById('demo').innerHTML = 'Hello World!';"
   }
 ]
