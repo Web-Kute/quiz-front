@@ -152,6 +152,19 @@ h3 {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
+@media (max-width: 599px) {
+  .swiper__quiz-slider {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex: nowrap;
+        flex: nowrap;
+  }
+}
+@media (max-width: 599px) {
+  .swiper__quiz-slider .answer-item {
+    width: 100%;
+  }
+}
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);

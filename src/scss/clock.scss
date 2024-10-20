@@ -8,9 +8,28 @@ aside {
   top: 5%;
   right: 15%;
   z-index: 100;
+  .timer {
+    position: relative;
+    top: 50px;
+    left: 20px;
+    z-index: 10;
+    color: functions.color('white');
+  }
+  .seconds {
+    color: transparent!important;
+  }
 }
+
+.countdown-container {
+  color: transparent !important;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
 #clock {
   @include mixins.flex-center();
+  background-color: functions.color('silver');
 }
 
 @keyframes progress {

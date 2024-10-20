@@ -1,50 +1,56 @@
-import { fisherYatesShuffle } from './random.js';
+import { fisherYatesShuffle, circularClock } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
-import { initSwiper, pagination } from './swiper.js';
+import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered } from './results.js';
 import { showModal } from './modal.js';
+import { timerQuiz } from './timer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const welcome = document.getElementById('welcome');
   const chooseNav = document.getElementById('choose-nav');
   const mainContent = document.getElementById('main-content');
   const quizTitle = document.querySelector('.quiz-title');
+  const timer = document.querySelector('.timer');
   const HIDDEN_CLASS = 'hidden';
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const userName = urlParams.get('name');
 
-  if (userName !== null && welcome) {
-    welcome.innerHTML = `Bienvenue ${userName}`;
+  function init() {
+    if (userName !== null && welcome) {
+      welcome.innerHTML = `Bienvenue ${userName}`;
+    }
   }
+  init();
 
   function renderQuiz() {
     if (chooseNav) {
-      chooseNav.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.tagName === 'BUTTON') {
-          const endpointQuiz = target.dataset.endpoint;
-          const title = target.dataset.title;
-          if (quizTitle && title) {
-            quizTitle.innerText = title;
+      chooseNav.addEventListener(
+        'click',
+        (e) => {
+          const target = e.target.closest('div');
+          if (target) {
+            const endpointQuiz = target.dataset.endpoint;
+            const title = target.dataset.title;
+            if (quizTitle && title) {
+              quizTitle.innerText = title;
+            }
+            if (mainContent) {
+              mainContent.innerHTML = htmlQuiz;
+            }
+            displayQuestions(endpointQuiz);
+            circularClock();
+            validateAnswer(endpointQuiz);
           }
-          displayInside();
-          displayQuestions(endpointQuiz);
-          validateAnswer(endpointQuiz);
-        }
-        e.stopPropagation();
-      });
+          e.stopPropagation();
+        },
+        true,
+      );
     }
   }
 
   renderQuiz();
-
-  async function displayInside() {
-    if (mainContent) {
-      mainContent.innerHTML = htmlQuiz;
-    }
-  }
 
   async function fetchData(endpoint) {
     const response = await fetch(endpoint);
@@ -79,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     initSwiper();
-    await pagination();
+    timerQuiz();
+    await paginationSlider();
   }
 
   async function validateAnswer(quiz) {
@@ -92,10 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'click',
         (e) => {
           const target = e.target;
-          const selectedQuestion = target.closest('.swiper__quiz-slider');
-
-          const allButtons = selectedQuestion
-            ? Array.from(selectedQuestion.querySelectorAll('.answer-item'))
+          const questionsGroup = target.closest('.swiper__quiz-slider');
+          const allButtons = questionsGroup
+            ? Array.from(questionsGroup.querySelectorAll('.answer-item'))
             : [];
 
           if (target.tagName === 'BUTTON') {
@@ -103,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
               const findQuestion = data.find((question) => {
                 return (
                   question.question ===
-                  selectedQuestion?.previousElementSibling?.textContent
+                  questionsGroup?.previousElementSibling?.textContent
                 );
               });
 
@@ -152,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay?.classList.add(HIDDEN_CLASS);
           };
           closeModalBtn.addEventListener('click', closeModal);
-          // Close the modal outside
           overlay?.addEventListener('click', closeModal);
         },
         false,

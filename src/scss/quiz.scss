@@ -81,6 +81,15 @@ h3 {
   flex-wrap: wrap;
   row-gap: 1rem;
   justify-content: space-between;
+  @include mixins.mobile-down() {
+    flex-direction: column;
+    flex: nowrap;
+  }
+  .answer-item {
+    @include mixins.mobile-down() {
+      width: 100%;
+    }
+  }
 }
 
 nav button {

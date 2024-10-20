@@ -1,4 +1,8 @@
 export let answered = [];
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userName = urlParams.get('name');
+
 export function results(nbOfQuestions) {
   if (answered) {
     if (answered.length === nbOfQuestions) {
@@ -7,19 +11,19 @@ export function results(nbOfQuestions) {
       const total = Math.round((correct / nbOfQuestions) * 100);
       switch (true) {
         case total <= 25:
-          notation.textContent = 'Je vous souhaite de trouver votre voie !';
+          notation.textContent = `${total} % Je vous souhaite de trouver votre voie !`;
           break;
         case total >= 26 && total <= 50:
-          notation.textContent = 'Pas si mal';
+          notation.textContent = `${total} % Pas si mal`;
           break;
         case total >= 51 && total <= 75:
-          notation.textContent = 'Pas mal, vous êtes en bonne voie !';
+          notation.textContent = `${total} % Pas mal, ${userName} vous êtes en bonne voie !`;
           break;
         case total >= 76 && total <= 87.5:
-          notation.textContent = 'Alors là ok, on peut parler';
+          notation.textContent = `${total} % Alors là ok, on peut parler`;
           break;
-        case total === 100:
-          notation.textContent = 'Incroyable 100%, on étudie tout cela en laboratoire. Bravo !';
+        case total >= 87.6 && total <= 100:
+          notation.textContent = `${total} % Incroyable 100%, ${userName} on étudie tout cela en laboratoire. Bravo !`;
           break;
         default:
           break;

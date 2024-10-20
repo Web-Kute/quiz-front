@@ -54,7 +54,7 @@
   },
   {
     "id": 7,
-    "question": "Quelle est la syntaxe correcte pour ajouter la feuille de style externe en CSS ?",
+    "question": "Quelle est la syntaxe correcte pour ajouter une feuille de style externe ?",
     "answers": [
       "<style src = style.css>",
       "<style src = 'style.css'>",

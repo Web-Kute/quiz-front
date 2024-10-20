@@ -20,7 +20,7 @@ export function initSwiper() {
   });
 }
 
-export async function pagination() {
+export async function paginationSlider() {
   const swiperSlide = document.querySelectorAll('.swiper-slide');
 
   swiperSlide.forEach((slide) => {

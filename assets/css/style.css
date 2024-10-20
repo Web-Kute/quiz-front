@@ -490,6 +490,19 @@ h3 {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
+@media (max-width: 599px) {
+  .swiper__quiz-slider {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex: nowrap;
+        flex: nowrap;
+  }
+}
+@media (max-width: 599px) {
+  .swiper__quiz-slider .answer-item {
+    width: 100%;
+  }
+}
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
@@ -548,6 +561,23 @@ aside {
   right: 15%;
   z-index: 100;
 }
+aside .timer {
+  position: relative;
+  top: 50px;
+  left: 20px;
+  z-index: 10;
+  color: hsl(0, 0%, 100%);
+}
+aside .seconds {
+  color: transparent !important;
+}
+
+.countdown-container {
+  color: transparent !important;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
 
 #clock {
   display: -ms-flexbox;
@@ -556,6 +586,7 @@ aside {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+  background-color: hsl(204, 8%, 76%);
 }
 
 @keyframes progress {
