@@ -18,10 +18,8 @@ export const htmlQuiz = `<section id="quiz">
     <section class="modal hidden">
       <div class="flex"> <button class="btn-close">⨉</button></div>
       <div>        
-        <h3 class="notation">
-          This is a dummy newsletter form so don't bother trying to test it. Not
-          that I expect you to, anyways. :)
-        </h3>
+        <h3 class="notation"></h3>
+        <h3 class="comment-notation"></h3>
       </div>
     </section>
     <div class="overlay hidden"></div>`;

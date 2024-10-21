@@ -67,4 +67,12 @@
 
 .notation {
   font-size: 2rem;
+  line-height: 30px;
+}
+
+.comment-notation {
+  font-size: 1.2rem;
+  color: functions.color('midnight-blue');
+  width: 80%;
+  margin-top: 2rem;
 }

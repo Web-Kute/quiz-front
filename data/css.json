@@ -56,7 +56,7 @@
     "id": 7,
     "question": "Quelle est la syntaxe correcte pour ajouter une feuille de style externe ?",
     "answers": [
-      "<style src = style.css>",
+      "<css src = style.css></css>",
       "<style src = 'style.css'>",
       "<stylesheet> style.css </stylesheet>",
       "<link rel='stylesheet' type='style/css' href='quiz.css'>"

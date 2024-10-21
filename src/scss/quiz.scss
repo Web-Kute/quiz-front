@@ -11,9 +11,9 @@ h3 {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  color: functions.color('white');
   @include mixins.mobile-down() {
     line-height: 19px;
-    color: functions.color('white');
     width: 100%;
   }
 }
@@ -42,7 +42,7 @@ h3 {
   right: 50%;
   transform: translateX(50%);
   bottom: 100px;
-  color: functions.color('midnight-blue');
+  color: functions.color('white');
   font-size: 0.9rem;
   @include mixins.mobile-down() {
     visibility: hidden;
@@ -116,8 +116,9 @@ nav button {
   border: 2px solid functions.color('white');
   padding: 1rem;
   background-color: functions.color('white');
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
   &:hover {
+    color: functions.color('white');
     background-color: functions.color('midnight-blue');
   }
   &:disabled {
