@@ -11,6 +11,10 @@ h3 {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  @include mixins.mobile-down() {
+    line-height: 15px;
+    color: functions.color('white');
+  }
 }
 
 .swiper-slide {
@@ -37,6 +41,9 @@ h3 {
   bottom: 100px;
   color: functions.color('midnight-blue');
   font-size: 0.9rem;
+  @include mixins.mobile-down() {
+    visibility: hidden;
+  }
 }
 
 .score {
@@ -84,10 +91,12 @@ h3 {
   @include mixins.mobile-down() {
     flex-direction: column;
     flex: nowrap;
+    margin-top: 0.8rem;
   }
   .answer-item {
     @include mixins.mobile-down() {
       width: 100%;
+      font-size: 0.8rem;
     }
   }
 }

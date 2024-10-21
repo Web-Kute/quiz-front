@@ -415,6 +415,12 @@ h3 {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 599px) {
+  h3 {
+    line-height: 15px;
+    color: hsl(0, 0%, 100%);
+  }
+}
 
 .swiper-slide {
   position: relative;
@@ -441,6 +447,11 @@ h3 {
   bottom: 100px;
   color: hsl(210, 29%, 24%);
   font-size: 0.9rem;
+}
+@media (max-width: 599px) {
+  .pagination {
+    visibility: hidden;
+  }
 }
 
 .score {
@@ -496,11 +507,13 @@ h3 {
         flex-direction: column;
     -ms-flex: nowrap;
         flex: nowrap;
+    margin-top: 0.8rem;
   }
 }
 @media (max-width: 599px) {
   .swiper__quiz-slider .answer-item {
     width: 100%;
+    font-size: 0.8rem;
   }
 }
 

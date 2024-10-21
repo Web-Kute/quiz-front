@@ -165,3 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+setTimeout(() => {
+  window.scrollTo({
+    bottom: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+}, 1000);
