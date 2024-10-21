@@ -1,4 +1,4 @@
-// import { fetchData } from "./utils.js";
+import { fetchData } from "./utils.js";
 import { answered, results } from './results.js';
 const HIDDEN_CLASS = 'hidden';
 

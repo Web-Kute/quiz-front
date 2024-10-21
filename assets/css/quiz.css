@@ -71,7 +71,7 @@
 h3 {
   font-family: "Roboto light", sans-serif;
   font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
-  color: hsl(210, 29%, 24%);
+  color: hsl(210, 30%, 24%);
   text-align: center;
   width: 85%;
   margin-left: auto;
@@ -191,7 +191,7 @@ h3 {
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
-  color: hsl(210, 29%, 24%);
+  color: hsl(210, 30%, 24%);
   width: 49%;
   border-radius: 2rem;
   border: 2px solid hsl(0, 0%, 100%);
@@ -201,7 +201,7 @@ nav button {
 }
 nav button:hover {
   color: hsl(0, 0%, 100%);
-  background-color: hsl(210, 29%, 24%);
+  background-color: hsl(210, 30%, 24%);
 }
 nav button:disabled {
   opacity: 0.5;
@@ -222,6 +222,23 @@ nav button:disabled {
 @media (max-width: 599px) {
   #container {
     max-height: 38rem;
+  }
+}
+
+.btn-undo {
+  position: absolute;
+  color: hsl(210, 30%, 24%);
+  top: 16rem;
+  font-size: 2.5rem;
+  transition: color 300ms ease-in-out;
+}
+.btn-undo:hover {
+  color: hsl(0, 0%, 100%);
+}
+@media (max-width: 599px) {
+  .btn-undo {
+    top: 8rem;
+    font-size: 2rem;
   }
 }
 

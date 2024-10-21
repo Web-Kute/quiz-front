@@ -1,4 +1,5 @@
-export const htmlQuiz = `<section id="quiz">
+export const htmlQuiz = ` 
+    <a href="choose.html" class="material-symbols-outlined btn-undo">undo</a><section id="quiz">
       <progress title="You cannot interact with this cursor" class="update run" role="progressbar" id="progress-bar"
         value="0" max="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0"
         aria-label="Content loading…"></progress>
