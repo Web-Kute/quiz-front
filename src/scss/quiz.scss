@@ -5,15 +5,16 @@
 
 h3 {
   font-family: 'Roboto light', sans-serif;
-  font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
   color: functions.color('midnight-blue');
   text-align: center;
   width: 85%;
   margin-left: auto;
   margin-right: auto;
   @include mixins.mobile-down() {
-    line-height: 15px;
+    line-height: 19px;
     color: functions.color('white');
+    width: 100%;
   }
 }
 
@@ -26,10 +27,12 @@ h3 {
     &.correct {
       background-color: functions.color('green-sea');
       pointer-events: none;
+      color: currentColor;
     }
     &.incorrect {
-      background-color: functions.color('pomegranate');
+      background-color: functions.color('alzarin');
       pointer-events: none;
+      color: currentColor;
     }
   }
 }
@@ -63,6 +66,10 @@ h3 {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  @include mixins.mobile-down() {
+    width: 60px;
+    height: 60px;
+  }
   background-color: functions.color('sun-flower');
   transition: background-color 300ms ease-in-out;
   &:hover {
@@ -96,18 +103,19 @@ h3 {
   .answer-item {
     @include mixins.mobile-down() {
       width: 100%;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   }
 }
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
-  color: functions.color('white');
+  color: functions.color('midnight-blue');
   width: 49%;
   border-radius: 2rem;
-  border: 2px solid functions.color('midnight-blue');
+  border: 2px solid functions.color('white');
   padding: 1rem;
+  background-color: functions.color('white');
   transition: background-color 300ms ease-in-out;
   &:hover {
     background-color: functions.color('midnight-blue');
@@ -119,18 +127,23 @@ nav button {
 }
 
 #container {
-  background: linear-gradient(
-    -45deg,
-    hsl(28, 80%, 52%),
-    hsl(283, 39%, 53%),
-    hsl(204, 64%, 44%),
-    hsl(145, 63%, 49%)
-  );
+  // background: linear-gradient(
+  //   -45deg,
+  //   hsl(28, 80%, 52%),
+  //   hsl(283, 39%, 53%),
+  //   hsl(204, 64%, 44%),
+  //   hsl(145, 63%, 49%)
+  // );
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  // animation: gradient 15s ease infinite;
+  background-color: functions.color('black-pearl');
   color: functions.color('white');
-  max-height: 550px;
-  width: 80%;
+  max-height: 35rem;
+  width: 84%;
+  @include mixins.mobile-down() {
+    max-height: 38rem;
+    // width: 95%;
+  }
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -138,7 +151,10 @@ nav button {
 }
 
 progress {
-  --widthprogress: 82%;
+  --widthprogress: 84%;
+  @include mixins.mobile-down() {
+    --widthprogress: 95%;
+  }
   width: var(--widthprogress);
   margin-left: auto;
   margin-right: auto;

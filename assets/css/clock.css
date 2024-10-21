@@ -74,6 +74,12 @@ aside {
   right: 15%;
   z-index: 100;
 }
+@media (max-width: 599px) {
+  aside {
+    top: 2%;
+    right: 5%;
+  }
+}
 aside .timer {
   position: relative;
   top: 50px;

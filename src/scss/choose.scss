@@ -7,7 +7,7 @@ main {
   display: flex;
   justify-content: center;
   @include mixins.mobile-down {
-    width: 80%;
+    width: 92%;
   }
 }
 .choose-quiz {
@@ -23,6 +23,9 @@ main {
       justify-content: center;
       column-gap: 2rem;
     }
+  }
+  button {
+    border: none;
   }
   .skills__icon {
     width: 60%;

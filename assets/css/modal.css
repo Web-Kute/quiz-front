@@ -76,15 +76,23 @@
   -ms-flex-pack: start;
       justify-content: flex-start;
   gap: 0.4rem;
-  width: 450px;
+  width: 28rem;
+  min-height: 16rem;
   padding: 0 1rem 1rem 1rem;
-  min-height: 250px;
   position: absolute;
   top: 20%;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
-  z-index: 2;
+  z-index: 101;
+}
+@media (max-width: 599px) {
+  .modal {
+    width: 90%;
+  }
+}
+.modal h3 {
+  color: hsl(210, 29%, 24%);
 }
 
 .modal .flex {

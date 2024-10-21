@@ -8,6 +8,10 @@ aside {
   top: 5%;
   right: 15%;
   z-index: 100;
+  @include mixins.mobile-down() {
+    top: 2%;
+    right: 5%;
+  }
   .timer {
     position: relative;
     top: 50px;
@@ -16,7 +20,7 @@ aside {
     color: functions.color('white');
   }
   .seconds {
-    color: transparent!important;
+    color: transparent !important;
   }
 }
 

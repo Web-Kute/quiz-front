@@ -70,7 +70,7 @@
 }
 h3 {
   font-family: "Roboto light", sans-serif;
-  font-size: clamp(1rem, 0.4706rem + 2.3529vw, 4rem);
+  font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
   color: hsl(210, 29%, 24%);
   text-align: center;
   width: 85%;
@@ -79,8 +79,9 @@ h3 {
 }
 @media (max-width: 599px) {
   h3 {
-    line-height: 15px;
+    line-height: 19px;
     color: hsl(0, 0%, 100%);
+    width: 100%;
   }
 }
 
@@ -96,10 +97,12 @@ h3 {
 .swiper-slide button.correct {
   background-color: hsl(168, 76%, 36%);
   pointer-events: none;
+  color: currentColor;
 }
 .swiper-slide button.incorrect {
-  background-color: hsl(6, 63%, 46%);
+  background-color: hsl(6, 78%, 57%);
   pointer-events: none;
+  color: currentColor;
 }
 
 .pagination {
@@ -135,6 +138,13 @@ h3 {
   border-radius: 50%;
   background-color: hsl(48, 89%, 50%);
   transition: background-color 300ms ease-in-out;
+}
+@media (max-width: 599px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 60px;
+    height: 60px;
+  }
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
@@ -175,17 +185,18 @@ h3 {
 @media (max-width: 599px) {
   .swiper__quiz-slider .answer-item {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
-  color: hsl(0, 0%, 100%);
+  color: hsl(210, 29%, 24%);
   width: 49%;
   border-radius: 2rem;
-  border: 2px solid hsl(210, 29%, 24%);
+  border: 2px solid hsl(0, 0%, 100%);
   padding: 1rem;
+  background-color: hsl(0, 0%, 100%);
   transition: background-color 300ms ease-in-out;
 }
 nav button:hover {
@@ -197,23 +208,32 @@ nav button:disabled {
 }
 
 #container {
-  background: linear-gradient(-45deg, hsl(28, 80%, 52%), hsl(283, 39%, 53%), hsl(204, 64%, 44%), hsl(145, 63%, 49%));
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-color: hsl(206, 21%, 15%);
   color: hsl(0, 0%, 100%);
-  max-height: 550px;
-  width: 80%;
+  max-height: 35rem;
+  width: 84%;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
 }
+@media (max-width: 599px) {
+  #container {
+    max-height: 38rem;
+  }
+}
 
 progress {
-  --widthprogress: 82%;
+  --widthprogress: 84%;
   width: var(--widthprogress);
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 599px) {
+  progress {
+    --widthprogress: 95%;
+  }
 }
 progress.update {
   accent-color: hsl(282, 44%, 47%);

@@ -7,7 +7,6 @@ export const htmlQuiz = `<section id="quiz">
         <div id="container" class="swiper-wrapper"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-
       </div>
       <p class="score">Score : <span>0</span></p>
       <aside>

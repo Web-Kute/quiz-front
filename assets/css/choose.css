@@ -76,7 +76,7 @@ main {
 }
 @media (max-width: 599px) {
   main {
-    width: 80%;
+    width: 92%;
   }
 }
 
@@ -101,6 +101,9 @@ main {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
   }
+}
+.choose-quiz button {
+  border: none;
 }
 .choose-quiz .skills__icon {
   width: 60%;
