@@ -189,6 +189,30 @@ h3 {
   }
 }
 
+.bg-mask-prev,
+.bg-mask-next {
+  background-color: hsl(210, 29%, 29%);
+  height: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.bg-mask-prev {
+  background-color: hsl(168, 76%, 36%);
+}
+
+.bg-mask-next {
+  background-color: hsl(6, 78%, 57%);
+}
+
+.swiper-button-next::before {
+  content: "";
+  background-color: hsl(210, 29%, 29%);
+  height: 60px;
+  position: absolute;
+  z-index: 2;
+}
+
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
   color: hsl(210, 30%, 24%);
@@ -210,7 +234,7 @@ nav button:disabled {
 
 #container {
   background-size: 400% 400%;
-  background-color: hsl(206, 21%, 15%);
+  background-color: hsl(210, 30%, 24%);
   color: hsl(0, 0%, 100%);
   max-height: 35rem;
   width: 84%;

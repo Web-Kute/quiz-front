@@ -26,7 +26,7 @@ export function results(nbOfQuestions) {
           break;
         case total >= 76 && total <= 87.5:
           notation.textContent = `Score : ${total} % `;
-          commentNotation.textContent = `${student}, Alors là ok, on peut parler`;
+          commentNotation.textContent = `${student} Alors là ok, on peut parler`;
           break;
         case total >= 87.6 && total <= 99.99:
           notation.textContent = `Score : ${total} % `;

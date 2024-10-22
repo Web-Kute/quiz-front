@@ -68,5 +68,47 @@
     "question": "Quelle propriété est utilisée pour modifier la couleur d'arrière-plan d'un élément ?",
     "answers": ["bg: color", "color-background", "background-color", "color"],
     "correctAnswer": "background-color"
+  },
+  {
+    "id": 9,
+    "question": "Peut-on utliser des variables dans les feuilles de styles ?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "id": 10,
+    "question": "Peut-on utliser des variables dans une feuille de styles ?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "id": 11,
+    "question": "Lequel n'est pas un framework CSS ?",
+    "answers": ["Svelte", "Materialize CSS", "Bootstrap", "Tailwind CSS"],
+    "correctAnswer": "Svelte"
+  },
+  {
+    "id": 12,
+    "question": "Pour créer des pages web reponsives on utilise : ",
+    "answers": ["Variables", "Media Queries", "Flexbox", "jQuery"],
+    "correctAnswer": "Media Queries"
+  },
+  {
+    "id": 13,
+    "question": "Laquelle de ces unités est relative à la taille de la police de l'élément racine ? ",
+    "answers": ["em", "rem", "%", "vh"],
+    "correctAnswer": "rem"
+  },
+  {
+    "id": 14,
+    "question": "Quelle est la valeur par défaut de la propriété position en CSS ? ",
+    "answers": ["absolute", "relative", "static", "fixed"],
+    "correctAnswer": "static"
+  },
+  {
+    "id": 15,
+    "question": "Quelle est la syntaxe CSS correcte ? ",
+    "answers": ["{body; color=black;}", "body {color:black;}", "body: color= black", "(body color is black)"],
+    "correctAnswer": "body {color:black;}"
   }
 ]
