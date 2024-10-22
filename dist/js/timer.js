@@ -1,12 +1,19 @@
-let elapsedTime = 1000;
+import { fetchData } from './utils.js';
+import { showModal } from './modal.js';
+import { endpointQuiz } from './choice.js';
+import { results, answered } from './results.js';
+
+export let elapsedTime = 1000;
 let duration = 1000;
 let initChrono = 1;
 let minutes;
 let seconds;
-let clockId = null;
+export let clockId = null;
 const HIDDEN_CLASS = 'hidden';
 
-export function timerQuiz() {
+export async function timerQuiz() {
+  const data = await fetchData(endpointQuiz);
+
   const startChrono = new Date(1980, 6, 31, 1, initChrono, 0).getTime();
   const endChrono = new Date(1980, 6, 31, 1).getTime();
 
@@ -24,9 +31,8 @@ export function timerQuiz() {
 
     if (elapsedTime === 0) {
       clearInterval(clockId);
-      document.querySelector('.modal').classList.remove(HIDDEN_CLASS);
-      document.querySelector('.overlay').classList.remove(HIDDEN_CLASS);
+      results(10);
+      showModal();
     }
   }, duration);
 }
-

@@ -1,4 +1,7 @@
+import { elapsedTime } from './timer.js';
+
 export let answered = [];
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
@@ -9,7 +12,9 @@ export function results(nbOfQuestions) {
       const notation = document.querySelector('.notation');
       const commentNotation = document.querySelector('.comment-notation');
       let correct = answered.filter(Boolean).length;
+      const timerResults = Math.round(correct / answered.length) * 100;
       const total = Math.round((correct / nbOfQuestions) * 100);
+      // const total = elapsedTime ? timerResults : total;
       const student = userName ? `${userName}` : '';
       switch (true) {
         case total <= 25.99:

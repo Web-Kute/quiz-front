@@ -7,8 +7,28 @@
   },
   {
     "id": 2,
-    "question": "Comment modifier le contenu de l'élément HTML : <p id='demo'>This is a demo.</p>",
-    "answers": [" #demo.innerHTML = 'Hello World!';", "getElementById('demo').innerHTML = 'Hello World!';", " getElementByName('p').innerHTML = 'Hello World!';", " getElement('p').innerHTML = 'Hello World!';"],
-    "correctAnswer": "getElementById('demo').innerHTML = 'Hello World!';"
+    "question": "Quelle méthode pour sélectionner l'élément HTML : <p id='demo'>This is a demo</p>",
+    "answers": [
+      "#demo.innerHTML",
+      "getElementById('demo')",
+      "getElementByName('p')",
+      "getElement('p')"
+    ],
+    "correctAnswer": "getElementById('demo')"
+  },
+  {
+    "id": 3,
+    "question": "Le JavaScript est un langage (principalement) côté client ?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "id": 4,
+    "question": "Quand l'évènement DOMContentLoaded est-il déclenché ?",
+    "answers": [
+      "Le document HTML est complètement chargé",
+      "Le document HTML est en cours de chargement"
+    ],
+    "correctAnswer": "Le document HTML est complètement chargé"
   }
 ]

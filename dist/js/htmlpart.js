@@ -15,12 +15,4 @@ export const htmlQuiz = `
         <div class="countdown-container" data-duration="180" data-transition="linear" data-color="#28af60"
           data-size="80" data-position="up"></div>
       </aside>
-    </section>
-    <section class="modal hidden">
-      <div class="flex"> <button class="btn-close">⨉</button></div>
-      <div>        
-        <h3 class="notation"></h3>
-        <h3 class="comment-notation"></h3>
-      </div>
-    </section>
-    <div class="overlay hidden"></div>`;
+    </section>`;

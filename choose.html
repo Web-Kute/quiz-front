@@ -153,7 +153,7 @@
     </div>
   </header>
   <main id="main-content">
-    <section>
+    <section id="choose-container">
       <nav id="choose-nav">
         <div class="choose-quiz" data-endpoint="data/html.json" data-title="HTML5">
           <button class="btn btn-choose">HTML5
@@ -178,7 +178,14 @@
         </div>
       </nav>
     </section>
-
+    <section class="modal hidden">
+      <div class="flex"> <button class="btn-close">⨉</button></div>
+      <div>
+        <h3 class="notation"></h3>
+        <h3 class="comment-notation"></h3>
+      </div>
+    </section>
+    <div class="overlay hidden"></div>
   </main>
 
   <script type="module" src="./dist/js/choice.js"></script>

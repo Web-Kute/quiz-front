@@ -1,14 +1,17 @@
-import { fisherYatesShuffle, circularClock } from './utils.js';
+import { fisherYatesShuffle, circularClock, fetchData } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered } from './results.js';
-import { showModal } from './modal.js';
-import { timerQuiz } from './timer.js';
+import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
+import { timerQuiz, elapsedTime } from './timer.js';
+
+export let endpointQuiz = null;
 
 document.addEventListener('DOMContentLoaded', () => {
   const welcome = document.getElementById('welcome');
   const chooseNav = document.getElementById('choose-nav');
   const mainContent = document.getElementById('main-content');
+  const chooseContainer = document.getElementById('choose-container');
   const quizTitle = document.querySelector('.quiz-title');
   const timer = document.querySelector('.timer');
   const HIDDEN_CLASS = 'hidden';
@@ -24,20 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   init();
 
-  function renderQuiz() {
+  async function renderQuiz() {
+    const data = await fetchData('./data/css.json');
     if (chooseNav) {
       chooseNav.addEventListener(
         'click',
         (e) => {
           const target = e.target.closest('div');
           if (target) {
-            const endpointQuiz = target.dataset.endpoint;
+            endpointQuiz = target.dataset.endpoint;
             const title = target.dataset.title;
             if (quizTitle && title) {
               quizTitle.innerText = title;
             }
-            if (mainContent) {
-              mainContent.innerHTML = htmlQuiz;
+            if (chooseContainer) {
+              chooseContainer.outerHTML = htmlQuiz;
             }
             displayQuestions(endpointQuiz);
             circularClock();
@@ -51,13 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   renderQuiz();
-
-  async function fetchData(endpoint) {
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    const shuffledData = fisherYatesShuffle(data);
-    return shuffledData;
-  }
 
   async function displayQuestions(endpoint) {
     const container = document.getElementById('container');
@@ -148,15 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
               });
             }
           }
+
           results(numberOfQuestions);
-          showModal(data);
-          const modal = document.querySelector('.modal');
-          const overlay = document.querySelector('.overlay');
-          const closeModalBtn = document.querySelector('.btn-close');
-          const closeModal = function () {
-            modal?.classList.add(HIDDEN_CLASS);
-            overlay?.classList.add(HIDDEN_CLASS);
-          };
+          if (answered.length === data.length) {
+            showModal();
+          }
+
           closeModalBtn.addEventListener('click', closeModal);
           overlay?.addEventListener('click', closeModal);
         },
@@ -165,11 +159,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-setTimeout(() => {
-  window.scrollTo({
-    bottom: 0,
-    left: 0,
-    behavior: 'smooth',
-  });
-}, 1000);
