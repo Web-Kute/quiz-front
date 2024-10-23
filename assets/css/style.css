@@ -167,12 +167,12 @@ select {
   font-display: swap;
 }
 :root {
-  --base-color: hsl(210, 30%, 24%);
-  --primary-color: hsl(168, 76%, 36%);
-  --secondary-color: hsl(48, 89%, 50%);
-  --white: hsl(0, 0%, 100%);
-  --clouds: hsl(192, 15%, 94%);
-  --silver: hsl(204, 8%, 76%);
+  --base-color: color("midnight-blue");
+  --primary-color: color("green-sea");
+  --secondary-color: color("sun-flower");
+  --white: color("white");
+  --clouds: color("clouds");
+  --silver: color("silver");
   --size: 40em;
   --widthprogress: 100%;
 }
@@ -438,7 +438,7 @@ h3 {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
 }
 @media (max-width: 599px) {
   h3 {
@@ -490,6 +490,13 @@ h3 {
   margin-right: auto;
   text-align: center;
   margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+@media (max-width: 599px) {
+  .score {
+    top: -3rem;
+  }
 }
 
 .swiper-button-prev,
@@ -607,7 +614,7 @@ nav button:disabled {
 }
 @media (max-width: 599px) {
   #container {
-    max-height: 38rem;
+    max-height: 37rem;
   }
 }
 
@@ -678,7 +685,7 @@ aside .timer {
   top: 50px;
   left: 20px;
   z-index: 10;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
 }
 aside .seconds {
   color: transparent !important;
@@ -698,7 +705,7 @@ aside .seconds {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  background-color: hsl(204, 8%, 76%);
+  background-color: var(--silver);
 }
 
 @keyframes progress {

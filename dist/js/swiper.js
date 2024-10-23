@@ -11,6 +11,10 @@ export function initSwiper() {
     },
     mousewheel: true,
     keyboard: true,
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: true,
+    },
   });
   swiper.on('slideChange', function () {
     const progressBar = document.getElementById('progress-bar');

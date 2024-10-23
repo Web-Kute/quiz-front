@@ -14,6 +14,16 @@ export function fisherYatesShuffle(array) {
   return shuffledArray;
 }
 
+export function showSpinner() {
+  document.querySelector('.spinner').classList.add('show');
+}
+
+export function hideSpinner() {
+  document.querySelector('.spinner').classList.remove('show');
+}
+
+export const capitalize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
+
 export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');
 

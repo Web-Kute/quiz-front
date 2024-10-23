@@ -68,6 +68,17 @@
   font-style: normal;
   font-display: swap;
 }
+:root {
+  --base-color: color("midnight-blue");
+  --primary-color: color("green-sea");
+  --secondary-color: color("sun-flower");
+  --white: color("white");
+  --clouds: color("clouds");
+  --silver: color("silver");
+  --size: 40em;
+  --widthprogress: 100%;
+}
+
 h3 {
   font-family: "Roboto light", sans-serif;
   font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
@@ -76,7 +87,7 @@ h3 {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
 }
 @media (max-width: 599px) {
   h3 {
@@ -128,6 +139,13 @@ h3 {
   margin-right: auto;
   text-align: center;
   margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+@media (max-width: 599px) {
+  .score {
+    top: -3rem;
+  }
 }
 
 .swiper-button-prev,
@@ -245,7 +263,7 @@ nav button:disabled {
 }
 @media (max-width: 599px) {
   #container {
-    max-height: 38rem;
+    max-height: 37rem;
   }
 }
 

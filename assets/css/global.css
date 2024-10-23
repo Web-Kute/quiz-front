@@ -69,12 +69,12 @@
   font-display: swap;
 }
 :root {
-  --base-color: hsl(210, 29%, 24%);
-  --primary-color: hsl(168, 76%, 36%);
-  --secondary-color: hsl(48, 89%, 50%);
-  --white: hsl(0, 0%, 100%);
-  --clouds: hsl(192, 15%, 94%);
-  --silver: hsl(204, 8%, 76%);
+  --base-color: color("midnight-blue");
+  --primary-color: color("green-sea");
+  --secondary-color: color("sun-flower");
+  --white: color("white");
+  --clouds: color("clouds");
+  --silver: color("silver");
   --size: 40em;
   --widthprogress: 100%;
 }

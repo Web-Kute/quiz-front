@@ -1,3 +1,17 @@
+@use 'sass:map';
+
+:root {
+  $base-color: #{color('midnight-blue')};
+  --base-color: #{$base-color};
+  --primary-color: #{color('green-sea')};
+  --secondary-color: #{color('sun-flower')};
+  --white: #{color('white')};
+  --clouds: #{color('clouds')};
+  --silver: #{color('silver')};
+  --size: 40em;
+  --widthprogress: 100%;
+}
+
 $breakpoints: (
   mobile-down: 599px,
   tablet-portrait-up: 600px,
@@ -6,34 +20,34 @@ $breakpoints: (
   tablet-landscape-down: 1199px,
   desktop-up: 1200px,
   desktop-down: 1799px,
-  big-desktop-up: 1800px
+  big-desktop-up: 1800px,
 );
 
 $colors: (
-  "white": hsl(0, 0%, 100%),
-  "clouds": hsl(192, 15%, 94%),
-  "silver": hsl(204, 8%, 76%),
-  "concrete": hsl(184, 9%, 62%),
-  "asbestos": hsl(184, 6%, 53%),
-  "wet-asphalt": hsl(210, 29%, 29%),
-  "midnight-blue": hsl(210, 30%, 24%),
-  "black-pearl": hsl(206, 21%, 15%),
-  "turquoise": hsl(168, 76%, 42%),
-  "emerald": hsl(145, 63%, 49%),
-  "peter-river": hsl(204, 70%, 53%),
-  "amethyst": hsl(283, 39%, 53%),
-  "green-sea": hsl(168, 76%, 36%),
-  "nephritis": hsl(145, 63%, 42%),
-  "belize-hole": hsl(204, 64%, 44%),
-  "wisteria": hsl(282, 44%, 47%),
-  "sun-flower": hsl(48, 89%, 50%),
-  "carrot": hsl(28, 80%, 52%),
-  "alzarin": hsl(6, 78%, 57%),
-  "orange": hsl(37, 90%, 51%),
-  "pumpkin": hsl(24, 100%, 41%),
-  "pomegranate": hsl(6, 63%, 46%),
-  "logocolor": hsl(358, 70%, 52%),
-  "complement-logocolor": hsl(178, 70%, 52%)
+  'white': hsl(0, 0%, 100%),
+  'clouds': hsl(192, 15%, 94%),
+  'silver': hsl(204, 8%, 76%),
+  'concrete': hsl(184, 9%, 62%),
+  'asbestos': hsl(184, 6%, 53%),
+  'wet-asphalt': hsl(210, 29%, 29%),
+  'midnight-blue': hsl(210, 30%, 24%),
+  'black-pearl': hsl(206, 21%, 15%),
+  'turquoise': hsl(168, 76%, 42%),
+  'emerald': hsl(145, 63%, 49%),
+  'peter-river': hsl(204, 70%, 53%),
+  'amethyst': hsl(283, 39%, 53%),
+  'green-sea': hsl(168, 76%, 36%),
+  'nephritis': hsl(145, 63%, 42%),
+  'belize-hole': hsl(204, 64%, 44%),
+  'wisteria': hsl(282, 44%, 47%),
+  'sun-flower': hsl(48, 89%, 50%),
+  'carrot': hsl(28, 80%, 52%),
+  'alzarin': hsl(6, 78%, 57%),
+  'orange': hsl(37, 90%, 51%),
+  'pumpkin': hsl(24, 100%, 41%),
+  'pomegranate': hsl(6, 63%, 46%),
+  'logocolor': hsl(358, 70%, 52%),
+  'complement-logocolor': hsl(178, 70%, 52%),
 );
 
 $base-font-size: 1rem;

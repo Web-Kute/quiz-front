@@ -1,4 +1,5 @@
 import { elapsedTime } from './timer.js';
+import { capitalize } from "./utils.js";
 
 export let answered = [];
 export let correct = 0;
@@ -21,7 +22,7 @@ export function results(nbOfQuestions) {
     if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
       const total = Math.round((correct / nbOfQuestions) * 100);
       const finalScore = elapsedTime === 0 ? timeOutAnswered : total;
-      const student = userName ? `${userName}` : '';
+      const student = userName ? `${capitalize(userName)}` : '';
       switch (true) {
         case finalScore <= 25.99:
           notation.textContent = `Score : ${finalScore} %`;

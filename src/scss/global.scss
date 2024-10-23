@@ -3,16 +3,6 @@
 @use 'mixins';
 @use 'functions';
 
-:root {
-  --base-color: #{functions.color('midnight-blue')};
-  --primary-color: #{functions.color('green-sea')};
-  --secondary-color: #{functions.color('sun-flower')};
-  --white: #{functions.color('white')};
-  --clouds: #{functions.color('clouds')};
-  --silver: #{functions.color('silver')};
-  --size: 40em;
-  --widthprogress: 100%;
-}
 
 *,
 *::before,
