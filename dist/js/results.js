@@ -17,7 +17,8 @@ export function results(nbOfQuestions) {
       answered.length !== 0 && correct !== 0
         ? ((correct / answered.length) * 100).toFixed(2)
         : 0;
-    if (answered.length === nbOfQuestions || timeOutAnswered) {
+
+    if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
       const total = Math.round((correct / nbOfQuestions) * 100);
       const finalScore = elapsedTime === 0 ? timeOutAnswered : total;
       const student = userName ? `${userName}` : '';

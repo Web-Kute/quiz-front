@@ -92,7 +92,7 @@
   }
 }
 .modal h3 {
-  color: hsl(210, 29%, 24%);
+  color: hsl(210, 30%, 24%);
 }
 
 .modal .flex {
@@ -131,7 +131,7 @@
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
-  z-index: 1;
+  z-index: 100;
 }
 
 .hidden {
@@ -145,7 +145,7 @@
 
 .comment-notation {
   font-size: 1.2rem;
-  color: hsl(210, 29%, 24%);
+  color: hsl(210, 30%, 24%);
   width: 80%;
   margin-top: 2rem;
 }/*# sourceMappingURL=modal.css.map */
