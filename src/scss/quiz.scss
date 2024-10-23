@@ -117,12 +117,11 @@ h3 {
 }
 
 .bg-mask-prev {
-background-color: functions.color('green-sea');;
+  background-color: functions.color('green-sea');
 }
 
 .bg-mask-next {
   background-color: functions.color('alzarin');
-
 }
 
 .swiper-button-next::before {
@@ -184,6 +183,13 @@ nav button {
   top: 16rem;
   font-size: 2.5rem;
   transition: color 300ms ease-in-out;
+  &::after {
+    content: 'Retour';
+    position: absolute;
+    font-family: 'Roboto Slab bold';
+    font-size: 1rem;
+    top: 0.8rem;
+  }
   &:hover {
     color: functions.color('white');
   }

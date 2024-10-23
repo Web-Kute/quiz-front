@@ -70,8 +70,8 @@
   {
     "id": 10,
     "question": "Quel attribut spécifie l'URL dans une balise <a> pour la création d'un lien ?",
-    "answers": ["Link", "Href", "URL", "Src"],
-    "correctAnswer": "Href"
+    "answers": ["link", "href", "url", "src"],
+    "correctAnswer": "href"
   },
   {
     "id": 11,

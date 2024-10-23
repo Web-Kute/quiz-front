@@ -1,6 +1,3 @@
-import { fetchData } from './utils.js';
-import { answered, results } from './results.js';
-
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
 export const closeModalBtn = document.querySelector('.btn-close');

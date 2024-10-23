@@ -1,6 +1,8 @@
 import { elapsedTime } from './timer.js';
 
 export let answered = [];
+export let correct = 0;
+export let timeOutAnswered = 0;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -8,13 +10,16 @@ const userName = urlParams.get('name');
 
 export function results(nbOfQuestions) {
   if (answered) {
-    if (answered.length === nbOfQuestions) {
-      const notation = document.querySelector('.notation');
-      const commentNotation = document.querySelector('.comment-notation');
-      let correct = answered.filter(Boolean).length;
-      const timerResults = Math.round(correct / answered.length) * 100;
+    const notation = document.querySelector('.notation');
+    const commentNotation = document.querySelector('.comment-notation');
+    correct = answered.filter(Boolean).length;
+    timeOutAnswered =
+      answered.length !== 0 && correct !== 0
+        ? ((correct / answered.length) * 100).toFixed(2)
+        : 0;
+    if (answered.length === nbOfQuestions || timeOutAnswered) {
       const total = Math.round((correct / nbOfQuestions) * 100);
-      const finalScore = elapsedTime === 0 ? timerResults : total;
+      const finalScore = elapsedTime === 0 ? timeOutAnswered : total;
       const student = userName ? `${userName}` : '';
       switch (true) {
         case finalScore <= 25.99:
@@ -25,7 +30,7 @@ export function results(nbOfQuestions) {
           notation.textContent = `Score : ${finalScore} % `;
           commentNotation.textContent = `Pas si mal, ${student} croyez-en-vous !`;
           break;
-        case finalScore >= 51 && finalScore <= 75:
+        case finalScore >= 51 && finalScore <= 75.99:
           notation.textContent = `Score : ${finalScore} % `;
           commentNotation.textContent = `Bien, ${student} vous êtes en bonne voie !`;
           break;
@@ -45,5 +50,6 @@ export function results(nbOfQuestions) {
           break;
       }
     }
+    return timeOutAnswered;
   }
 }
