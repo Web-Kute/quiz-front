@@ -17,7 +17,7 @@ aside {
     top: 50px;
     left: 20px;
     z-index: 10;
-    color: var(--white);
+    color: functions.color('white');
   }
   .seconds {
     color: transparent !important;
@@ -33,7 +33,7 @@ aside {
 
 #clock {
   @include mixins.flex-center();
-  background-color: var(--silver);
+  background-color: functions.color('silver');
 }
 
 @keyframes progress {

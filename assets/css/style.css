@@ -685,7 +685,7 @@ aside .timer {
   top: 50px;
   left: 20px;
   z-index: 10;
-  color: var(--white);
+  color: hsl(0, 0%, 100%);
 }
 aside .seconds {
   color: transparent !important;
@@ -705,7 +705,7 @@ aside .seconds {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  background-color: var(--silver);
+  background-color: hsl(204, 8%, 76%);
 }
 
 @keyframes progress {
