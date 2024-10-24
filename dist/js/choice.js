@@ -1,4 +1,10 @@
-import { fisherYatesShuffle, circularClock, fetchData } from './utils.js';
+import {
+  fisherYatesShuffle,
+  circularClock,
+  fetchData,
+  showSpinner,
+  hideSpinner,
+} from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered } from './results.js';
@@ -34,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         (e) => {
           const target = e.target.closest('div');
           if (target) {
+            showSpinner();
             endpointQuiz = target.dataset.endpoint;
             const title = target.dataset.title;
             if (quizTitle && title) {
@@ -83,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSwiper();
     timerQuiz();
     await paginationSlider();
+    hideSpinner();
   }
 
   async function validateAnswer(quiz) {
