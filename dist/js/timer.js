@@ -6,7 +6,7 @@ import { endpointQuiz } from './choice.js';
 export let elapsedTime = 1000;
 export let clockId = null;
 let duration = 1000;
-let initChrono = 1;
+let initChrono = 2;
 let minutes;
 let seconds;
 const HIDDEN_CLASS = 'hidden';

@@ -11,8 +11,8 @@ export const htmlQuiz = `
       </div>
       <p class="score">Score : <span>0</span></p>
       <aside>
-        <div class="timer">3 : 00</div>
-        <div class="countdown-container" data-duration="180" data-transition="linear" data-color="#28af60"
+        <div class="timer">2 : 00</div>
+        <div class="countdown-container" data-duration="120" data-transition="linear" data-color="#28af60"
           data-size="80" data-position="up"></div>
       </aside>
     </section>`;

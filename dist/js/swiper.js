@@ -12,7 +12,7 @@ export function initSwiper() {
     mousewheel: true,
     keyboard: true,
     autoplay: {
-      delay: 10000,
+      delay: 20000,
       disableOnInteraction: true,
     },
   });

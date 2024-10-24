@@ -52,12 +52,6 @@
   },
   {
     "id": 8,
-    "question": "Les éléments en ligne sont normalement affichés sans commencer une nouvelle ligne.",
-    "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
-  },
-  {
-    "id": 9,
     "question": "Comment un commentaire est-il inséré dans un document HTML ?",
     "answers": [
       "/* comment */",
@@ -68,27 +62,15 @@
     "correctAnswer": "<!-- comment -->"
   },
   {
-    "id": 10,
-    "question": "Quel attribut spécifie l'URL dans une balise <a> pour la création d'un lien ?",
-    "answers": ["link", "href", "url", "src"],
-    "correctAnswer": "href"
-  },
-  {
-    "id": 11,
+    "id": 9,
     "question": "Quel élément HTML définit le titre d'un document ?",
     "answers": ["title", "head", "meta", "subject"],
     "correctAnswer": "title"
   },
   {
-    "id": 12,
+    "id": 10,
     "question": "Une bonne sémantique HTML aide les moteurs de recherche à indexer votre site.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
-  },
-  {
-    "id": 13,
-    "question": "Quel attribut type de la balise input n'existe pas.",
-    "answers": ["email", "week", "range", "gender"],
-    "correctAnswer": "gender"
   }
 ]

@@ -7,20 +7,20 @@
   },
   {
     "id": 2,
-    "question": "Quelle méthode pour sélectionner l'élément HTML : <p id='demo'>This is a demo</p>",
-    "answers": [
-      "#demo.innerHTML",
-      "getElementById('demo')",
-      "getElementByName('p')",
-      "getElement('p')"
-    ],
-    "correctAnswer": "getElementById('demo')"
+    "question": "Que renvoit l'opération 2 + '2'</p>",
+    "answers": ["4", "undefined", "22", "NaN"],
+    "correctAnswer": "22"
   },
   {
     "id": 3,
-    "question": "Le JavaScript est un langage (principalement) côté client ?",
-    "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "question": "Comment déclarer une fonction en JavaScript ?",
+    "answers": [
+      "function = myFunction()",
+      "function myFunction()",
+      "create myFunction()",
+      "function: myFunction()"
+    ],
+    "correctAnswer": "function myFunction()"
   },
   {
     "id": 4,
@@ -30,5 +30,51 @@
       "Le document HTML est en cours de chargement"
     ],
     "correctAnswer": "Le document HTML est complètement chargé"
+  },
+  {
+    "id": 5,
+    "question": "Quelle syntaxe est correcte pour afficher un message dans la console ?",
+    "answers": [
+      "console.log('Hello World!')",
+      "console.print('Hello World!')",
+      "document.write('Hello World!')",
+      "alert('Hello World!')"
+    ],
+    "correctAnswer": "console.log('Hello World!')"
+  },
+  {
+    "id": 6,
+    "question": "Comment déclarer une variable en JavaScript ?",
+    "answers": ["var", "let", "const", "Toutes les réponses sont correctes"],
+    "correctAnswer": "Toutes les réponses sont correctes"
+  },
+  {
+    "id": 7,
+    "question": "Que renvoit typeof 'Hello World!' ?",
+    "answers": ["string", "number", "boolean", "undefined"],
+    "correctAnswer": "string"
+  },
+  {
+    "id": 8,
+    "question": "Quel opérateur est utlisé pour assigner une valeur à une variable ?",
+    "answers": ["*", "=", "==", "==="],
+    "correctAnswer": "="
+  },
+  {
+    "id": 9,
+    "question": "Quel élément n'est pas un type de données en JavaScript ?",
+    "answers": ["String", "Boolean", "Number", "Float"],
+    "correctAnswer": "Float"
+  },
+  {
+    "id": 10,
+    "question": "Quel est la syntaxe pour déclarer un tableau en JavaScript ?",
+    "answers": [
+      "let array = ['apple','kiwi', 'grappe']",
+      "let array = 'apple','kiwi', 'grappe'",
+      "let array = ('apple','kiwi', 'grappe')",
+      "let array = {'apple','kiwi', 'grappe'}"
+    ],
+    "correctAnswer": "let array = ['apple','kiwi', 'grappe']"
   }
 ]
