@@ -16,10 +16,6 @@ export async function timerQuiz() {
   const startChrono = new Date(1980, 6, 31, 1, initChrono, 0).getTime();
   const endChrono = new Date(1980, 6, 31, 1).getTime();
   const buttons = document.querySelectorAll('.answer-item');
-  buttons.forEach((button) => {
-    button.classList.remove('disabled');
-    button.disabled = false;
-  });
   elapsedTime = startChrono - endChrono;
   let clockId = setInterval(() => {
     elapsedTime -= 1000;

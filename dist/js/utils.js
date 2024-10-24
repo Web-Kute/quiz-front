@@ -28,7 +28,6 @@ export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');
 
   // Injecting the countdown into HTML document
-
   countdownContainer.innerHTML = `
     <svg id="progress-wrapper" width="500" height="500" viewBox="0 0 500 500">
       <circle cx="250" cy="250" r="200" stroke="#c39fe0" stroke-width="25" fill="transparent" id="progress" />

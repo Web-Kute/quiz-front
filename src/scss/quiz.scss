@@ -172,9 +172,6 @@ nav button {
   color: functions.color('white');
   max-height: 35rem;
   width: 84%;
-  @include mixins.mobile-down() {
-    max-height: 37rem;
-  }
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;

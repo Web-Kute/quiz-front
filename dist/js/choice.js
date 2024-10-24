@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizTitle = document.querySelector('.quiz-title');
   const timer = document.querySelector('.timer');
   const HIDDEN_CLASS = 'hidden';
+  const buttons = document.querySelectorAll('.answer-item');
+  const pageBottom = document.getElementById('page-bottom');
+  let viewportWidth = window.innerWidth;
+  let isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    ) || viewportWidth < 600;
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -30,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userName !== null && welcome) {
       welcome.innerHTML = `Bienvenue ${userName}`;
     }
+    buttons.forEach((button) => {
+      button.classList.remove('disabled');
+      button.disabled = false;
+    });
   }
   init();
 
@@ -60,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  document.addEventListener('click', scrollToBottomQuiz);
   renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
@@ -158,11 +170,19 @@ document.addEventListener('DOMContentLoaded', () => {
             showModal();
           }
 
+          scrollToBottomQuiz();
+
           closeModalBtn.addEventListener('click', closeModal);
           overlay?.addEventListener('click', closeModal);
         },
         false,
       );
     });
+  }
+
+  function scrollToBottomQuiz() {
+    if (isMobile) {
+      pageBottom.scrollIntoView();
+    }
   }
 });

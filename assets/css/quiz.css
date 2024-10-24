@@ -261,11 +261,6 @@ nav button:disabled {
   margin-right: auto;
   border-radius: 1rem;
 }
-@media (max-width: 599px) {
-  #container {
-    max-height: 37rem;
-  }
-}
 
 .btn-undo {
   position: absolute;

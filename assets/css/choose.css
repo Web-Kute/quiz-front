@@ -123,4 +123,9 @@ main {
   .choose-quiz .skills__icon {
     width: 40%;
   }
+}
+
+#page-bottom {
+  position: relative;
+  top: 120px;
 }/*# sourceMappingURL=choose.css.map */
