@@ -40,18 +40,13 @@
       "ponts entre les CSS et le JavaScript",
       "feuilles de styles simplifiées"
     ],
-    "correctAnswer": "Un pré-processeur pour feuilles de styles"
+    "correctAnswer": "pré-processeurs pour feuilles de styles"
   },
   {
     "id": 6,
-    "question": "Quelle est la syntaxe correcte pour ajouter une feuille de style externe ?",
-    "answers": [
-      "<css src = style.css></css>",
-      "<style src = 'style.css'>",
-      "<stylesheet> style.css </stylesheet>",
-      "<link rel='stylesheet' type='style/css' href='quiz.css'>"
-    ],
-    "correctAnswer": "<link rel='stylesheet' type='style/css' href='quiz.css'>"
+    "question": "Peut-on utliser des variables dans les feuilles de styles ?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
   },
   {
     "id": 7,

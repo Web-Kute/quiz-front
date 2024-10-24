@@ -37,13 +37,6 @@ CSS
     "correctAnswer": "background-color"
   },
   {
-    "id": 9,
-    "question": "Peut-on utliser des variables dans les feuilles de styles ?",
-    "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
-  },
-
-  {
     "id": 14,
     "question": "Quelle est la valeur par défaut de la propriété position en CSS ? ",
     "answers": ["absolute", "relative", "static", "fixed"],
@@ -55,3 +48,14 @@ CSS
     "answers": ["{body; color=black;}", "body {color:black;}", "body: color= black", "(body color is black)"],
     "correctAnswer": "body {color:black;}"
   }
+  {
+    "id": 6,
+    "question": "Quelle est la syntaxe correcte pour ajouter une feuille de style externe ?",
+    "answers": [
+      "<css src = style.css></css>",
+      "<style src = 'style.css'>",
+      "<stylesheet> style.css </stylesheet>",
+      "<link rel='stylesheet' type='style/css' href='quiz.css'>"
+    ],
+    "correctAnswer": "<link rel='stylesheet' type='style/css' href='quiz.css'>"
+  },

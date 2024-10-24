@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   init();
 
-  async function renderQuiz() {
-    const data = await fetchData('./data/css.json');
+  function renderNavQuizzes() {
     if (chooseNav) {
       chooseNav.addEventListener(
         'click',
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  renderQuiz();
+  renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
     const container = document.getElementById('container');
