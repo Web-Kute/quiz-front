@@ -5,7 +5,7 @@ import {
   showSpinner,
   hideSpinner,
 } from './utils.js';
-import { htmlQuiz } from './htmlpart.js';
+import { htmlQuiz, navButtons } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered } from './results.js';
 import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcome = document.getElementById('welcome');
   const chooseNav = document.getElementById('choose-nav');
   const mainContent = document.getElementById('main-content');
+  const btnUndo = document.querySelector('.btn-undo');
   const chooseContainer = document.getElementById('choose-container');
+  const sliderContainer = document.getElementById('slider-container');
   const quizTitle = document.querySelector('.quiz-title');
-  const timer = document.querySelector('.timer');
   const HIDDEN_CLASS = 'hidden';
   const buttons = document.querySelectorAll('.answer-item');
   const pageBottom = document.getElementById('page-bottom');
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             circularClock();
             validateAnswer(endpointQuiz);
           }
+          btnUndo.classList.toggle('hidden');
           e.stopPropagation();
         },
         true,
@@ -80,6 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
+    // if (sliderContainer) {
+    //   btnUndo.addEventListener(
+    //     'click',
+    //     () => (sliderContainer.outerHTML = navButtons),
+    //   );
+    // }
+
     const container = document.getElementById('container');
     const data = await fetchData(endpoint);
     if (Array.isArray(data)) {

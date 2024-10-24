@@ -138,12 +138,12 @@ h2 {
   padding: 0.5rem 1rem;
   border-radius: 0.325rem;
   color: functions.color('white');
-  background-color: functions.color('wisteria');
+  background-color: functions.color('amethyst');
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   width: 100%;
   transition: background-color 300ms ease-in-out;
   &:hover {
-    background-color: functions.color('pumpkin');
+    background-color: functions.color('wisteria');
   }
 }
 

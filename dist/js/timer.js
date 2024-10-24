@@ -16,6 +16,7 @@ export async function timerQuiz() {
   const startChrono = new Date(1980, 6, 31, 1, initChrono, 0).getTime();
   const endChrono = new Date(1980, 6, 31, 1).getTime();
   const buttons = document.querySelectorAll('.answer-item');
+  const timerClock = document.querySelector('.timer');
   elapsedTime = startChrono - endChrono;
   let clockId = setInterval(() => {
     elapsedTime -= 1000;
@@ -26,7 +27,9 @@ export async function timerQuiz() {
       .toString()
       .padStart(2, '0');
 
-    document.querySelector('.timer').innerHTML = `${minutes} : ${seconds}`;
+    if (timerClock) {
+      timerClock.innerHTML = `${minutes} : ${seconds}`;
+    }
 
     if (elapsedTime === 0) {
       clearInterval(clockId);

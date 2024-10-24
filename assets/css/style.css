@@ -331,13 +331,13 @@ h2 {
   padding: 0.5rem 1rem;
   border-radius: 0.325rem;
   color: hsl(0, 0%, 100%);
-  background-color: hsl(282, 44%, 47%);
+  background-color: hsl(283, 39%, 53%);
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   width: 100%;
   transition: background-color 300ms ease-in-out;
 }
 .btn:hover {
-  background-color: hsl(24, 100%, 41%);
+  background-color: hsl(282, 44%, 47%);
 }
 
 .form-group {
@@ -793,6 +793,18 @@ aside .seconds {
   color: hsl(210, 30%, 24%);
   width: 80%;
   margin-top: 2rem;
+}
+
+.btn-submit {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  margin-top: 1rem;
+  box-shadow: 1px 1px 1px hsl(210, 30%, 24%);
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  color: hsl(210, 30%, 24%);
 }
 
 /* Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx */

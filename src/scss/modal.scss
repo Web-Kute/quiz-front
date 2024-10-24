@@ -76,3 +76,15 @@
   width: 80%;
   margin-top: 2rem;
 }
+
+.btn-submit {
+  width: 100%;
+  color: functions.color('white');
+  margin-top: 1rem;
+  box-shadow: 1px 1px 1px functions.color('midnight-blue');
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: functions.color('midnight-blue');
+  }
+}
