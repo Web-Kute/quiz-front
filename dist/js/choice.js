@@ -33,16 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(queryString);
   const userName = urlParams.get('name');
 
-  function init() {
+  function welcomeStudent() {
     if (userName !== null && welcome) {
       welcome.innerHTML = `Bienvenue ${userName}`;
     }
+  }
+
+  welcomeStudent();
+
+  function init() {
     buttons.forEach((button) => {
       button.classList.remove('disabled');
       button.disabled = false;
     });
   }
-  init();
 
   function renderNavQuizzes() {
     if (chooseNav) {
@@ -60,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (chooseContainer) {
               chooseContainer.outerHTML = htmlQuiz;
             }
+            init();
             displayQuestions(endpointQuiz);
             circularClock();
             validateAnswer(endpointQuiz);
