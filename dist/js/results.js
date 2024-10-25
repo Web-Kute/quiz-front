@@ -26,15 +26,15 @@ export function results(nbOfQuestions) {
       switch (true) {
         case finalScore <= 25.99:
           notation.textContent = `Score : ${finalScore} %`;
-          commentNotation.textContent = `Patience ${student}, les réponses vont venir !`;
+          commentNotation.textContent = `Patience ${student}, les réponses vont venir\u00a0!`;
           break;
         case finalScore >= 26 && finalScore <= 50.99:
           notation.textContent = `Score : ${finalScore} % `;
-          commentNotation.textContent = `Pas si mal, ${student} croyez-en-vous !`;
+          commentNotation.textContent = `Pas si mal, ${student} croyez-en-vous\u00a0!`;
           break;
         case finalScore >= 51 && finalScore <= 75.99:
           notation.textContent = `Score : ${finalScore} % `;
-          commentNotation.textContent = `Bravo, ${student} vous êtes en bonne voie !`;
+          commentNotation.textContent = `Bravo, ${student} vous êtes en bonne voie\u00a0!`;
           break;
         case finalScore >= 76 && finalScore <= 87.5:
           notation.textContent = `Score : ${finalScore} % `;
@@ -42,11 +42,11 @@ export function results(nbOfQuestions) {
           break;
         case finalScore >= 87.6 && finalScore <= 99.99:
           notation.textContent = `Score : ${finalScore} % `;
-          commentNotation.textContent = `Incroyable ${student} vous frôlez la perfection. Bravo !`;
+          commentNotation.textContent = `Incroyable ${student} vous frôlez la perfection. Bravo\u00a0!`;
           break;
         case finalScore === 100:
           notation.textContent = `Score : ${finalScore} % `;
-          commentNotation.textContent = `Incroyable 100%, ${student} on étudie tout cela en laboratoire. Bravo !`;
+          commentNotation.textContent = `Incroyable 100%, ${student} on étudie tout cela en laboratoire. Bravo\u00a0!`;
           break;
         default:
           break;
