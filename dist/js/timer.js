@@ -34,13 +34,14 @@ export async function timerQuiz() {
     if (elapsedTime === 0) {
       clearInterval(clockId);
       results(timeOutAnswered);
+      timerClock.style.color = '#e74d3c';
       buttons.forEach((button) => {
         button.classList.add('disabled');
         button.disabled = true;
       });
       showModal();
-      closeModalBtn.addEventListener('click', closeModal);
-      overlay?.addEventListener('click', closeModal);
+      closeModalBtn.addEventListener('click', closeModal, false);
+      overlay?.addEventListener('click', closeModal, false);
     }
   }, duration);
 }

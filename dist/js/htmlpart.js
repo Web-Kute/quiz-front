@@ -13,7 +13,7 @@ export const htmlQuiz = `
       <aside>
         <div class="timer">2 : 00</div>
         <div class="countdown-container" data-duration="120" data-transition="linear" data-color="#28af60"
-          data-size="80" data-position="up"></div>
+          data-size="90" data-position="up"></div>
       </aside>
     </section>`;
 

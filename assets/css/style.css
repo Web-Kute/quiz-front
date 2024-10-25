@@ -670,19 +670,20 @@ progress.update {
 }
 aside {
   position: absolute;
-  top: 5%;
-  right: 15%;
+  top: 2%;
+  right: 13%;
   z-index: 100;
+  font-size: 1.2rem;
 }
 @media (max-width: 599px) {
   aside {
-    top: 2%;
+    top: 1%;
     right: 5%;
   }
 }
 aside .timer {
   position: relative;
-  top: 50px;
+  top: 56px;
   left: 20px;
   z-index: 10;
   color: hsl(0, 0%, 100%);
@@ -694,8 +695,8 @@ aside .seconds {
 .countdown-container {
   color: transparent !important;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
 }
 
 #clock {
@@ -726,10 +727,10 @@ aside .seconds {
   padding: 0 1rem 1rem 1rem;
   position: absolute;
   top: 20%;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
   z-index: 101;
+  box-shadow: 1px 1px 1px hsl(210, 30%, 24%);
 }
 @media (max-width: 599px) {
   .modal {
@@ -761,8 +762,16 @@ aside .seconds {
 .btn-close {
   transform: translate(10px, -20px);
   padding: 0.5rem 0.7rem;
-  background: #eee;
+  color: hsl(24, 100%, 41%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
+  border: 1px solid hsl(184, 6%, 53%);
+  transition: background-color 300ms ease-in-out;
+  font-size: 1.1rem;
+}
+.btn-close:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(210, 30%, 24%);
 }
 
 .overlay {

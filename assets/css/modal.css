@@ -92,10 +92,10 @@
   padding: 0 1rem 1rem 1rem;
   position: absolute;
   top: 20%;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
   z-index: 101;
+  box-shadow: 1px 1px 1px hsl(210, 30%, 24%);
 }
 @media (max-width: 599px) {
   .modal {
@@ -127,8 +127,16 @@
 .btn-close {
   transform: translate(10px, -20px);
   padding: 0.5rem 0.7rem;
-  background: #eee;
+  color: hsl(24, 100%, 41%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
+  border: 1px solid hsl(184, 6%, 53%);
+  transition: background-color 300ms ease-in-out;
+  font-size: 1.1rem;
+}
+.btn-close:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(210, 30%, 24%);
 }
 
 .overlay {
@@ -159,4 +167,16 @@
   color: hsl(210, 30%, 24%);
   width: 80%;
   margin-top: 2rem;
+}
+
+.btn-submit {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  margin-top: 1rem;
+  box-shadow: 1px 1px 1px hsl(210, 30%, 24%);
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  color: hsl(210, 30%, 24%);
 }/*# sourceMappingURL=modal.css.map */

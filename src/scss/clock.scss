@@ -5,16 +5,17 @@
 
 aside {
   position: absolute;
-  top: 5%;
-  right: 15%;
+  top: 2%;
+  right: 13%;
   z-index: 100;
+  font-size: 1.2rem;
   @include mixins.mobile-down() {
-    top: 2%;
+    top: 1%;
     right: 5%;
   }
   .timer {
     position: relative;
-    top: 50px;
+    top: 56px;
     left: 20px;
     z-index: 10;
     color: functions.color('white');
@@ -27,8 +28,8 @@ aside {
 .countdown-container {
   color: transparent !important;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
 }
 
 #clock {

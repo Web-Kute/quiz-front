@@ -19,29 +19,18 @@ export const CLASSNAMES = {
   DISABLED: 'disabled',
 };
 
-const domElements = {
-  welcome: document.getElementById('welcome'),
-  chooseNav: document.getElementById('choose-nav'),
-  btnUndo: document.querySelector('.btn-undo'),
-  mainContent: document.getElementById('main-content'),
-  chooseContainer: document.getElementById('choose-container'),
-  sliderContainer: document.getElementById('slider-container'),
-  quizTitle: document.querySelector('.quiz-title'),
-  buttons: document.querySelectorAll('.answer-item'),
-  pageBottom: document.getElementById('page-bottom'),
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  // const welcome = document.getElementById('welcome');
-  // const chooseNav = document.getElementById('choose-nav');
-  // const mainContent = document.getElementById('main-content');
-  // const btnUndo = document.querySelector('.btn-undo');
-  // const chooseContainer = document.getElementById('choose-container');
-  // const sliderContainer = document.getElementById('slider-container');
-  // const quizTitle = document.querySelector('.quiz-title');
-  // const buttons = document.querySelectorAll('.answer-item');
-  // const pageBottom = document.getElementById('page-bottom');
-
+  const domElements = {
+    welcome: document.getElementById('welcome'),
+    chooseNav: document.getElementById('choose-nav'),
+    btnUndo: document.querySelector('.btn-undo'),
+    mainContent: document.getElementById('main-content'),
+    chooseContainer: document.getElementById('choose-container'),
+    sliderContainer: document.getElementById('slider-container'),
+    quizTitle: document.querySelector('.quiz-title'),
+    buttons: document.querySelectorAll('.answer-item'),
+    pageBottom: document.getElementById('page-bottom'),
+  };
   let viewportWidth = window.innerWidth;
   let isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -59,15 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   welcomeStudent();
-
-  function init() {
-    // if (e.target === 'BUTTON') {
-    //   buttons.forEach((button) => {
-    //     button.classList.remove(CLASSNAMES['DISABLED']);
-    //     button.disabled = false;
-    //   });
-    // }
-  }
 
   function renderNavQuizzes() {
     if (domElements.chooseNav) {
@@ -110,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('click', scrollToBottomQuiz);
-  cleanup();
+  // cleanup();
   renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
@@ -151,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function validateAnswer(quiz) {
     const data = await fetchData(quiz);
-    let numberOfQuestions = data.length;
+    let totalQuestions = data.length;
     let scoreUser = 0;
     const buttonsNav = document.querySelectorAll('.swiper__quiz-slider');
     buttonsNav.forEach((navQuestion) => {
@@ -190,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (container) {
                   const scoreElement = document.querySelector('.score');
                   if (scoreElement) {
-                    scoreElement.textContent = `Score : ${scoreUser.toString()} / ${data.length}`;
+                    scoreElement.textContent = `Score : ${scoreUser.toString()} / ${totalQuestions}`;
                   }
                 }
               } else {
@@ -216,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
 
-          results(numberOfQuestions);
-          if (answered.length === data.length) {
+          results(totalQuestions);
+          if (answered.length === totalQuestions) {
             showModal();
           }
 
@@ -231,15 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function handleCorrectAnswer(target, score, totalQuestions) {
-    target.classList.add(CLASSNAMES.CORRECT);
-    answered.push(true);
-    updateScore(score + 1, totalQuestions);
-  }
-
   function scrollToBottomQuiz() {
     if (isMobile) {
-      pageBottom.scrollIntoView();
+      domElements.pageBottom.scrollIntoView();
     }
   }
 });
