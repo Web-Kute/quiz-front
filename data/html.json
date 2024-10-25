@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Que signifie HTML ?",
+    "question": "Que signifie HTML\u00a0?",
     "answers": [
       "Hyper Text Markup Language",
       "Home Tool Markup Language",
@@ -11,25 +11,25 @@
   },
   {
     "id": 2,
-    "question": "Qui élabore les normes du Web ?",
+    "question": "Qui élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C"
   },
   {
     "id": 3,
-    "question": "Choisissez l'élément HTML correct pour le titre le plus grand :",
+    "question": "Choisissez l'élément HTML correct pour le titre le plus grand\u00a0:",
     "answers": ["<h1>", "<heading>", "<h6>", "<head>"],
     "correctAnswer": "<h1>"
   },
   {
     "id": 4,
-    "question": "Quelle balise est utilisée pour définir un lien hypertexte en HTML ?",
+    "question": "Quelle balise est utilisée pour définir un lien hypertexte en HTML\u00a0?",
     "answers": ["<link>", "<a>", "<href>", "<hyper>"],
     "correctAnswer": "<a>"
   },
   {
     "id": 5,
-    "question": "Comment ajouter une image à une page web ?",
+    "question": "Comment ajouter une image à une page web\u00a0?",
     "answers": [
       "<src='url'>",
       "<image='url'>",
@@ -40,19 +40,19 @@
   },
   {
     "id": 6,
-    "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau ?",
+    "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau\u00a0?",
     "answers": ["<table>", "<td>", " <tr>", "<th>"],
     "correctAnswer": "<td>"
   },
   {
     "id": 7,
-    "question": "Choisissez l'élément HTML approprié pour définir un texte important.",
+    "question": "Choisissez l'élément HTML approprié pour définir un texte important\u00a0:",
     "answers": ["<b>", "<i>", "<important>", "<strong>"],
     "correctAnswer": "<strong>"
   },
   {
     "id": 8,
-    "question": "Comment un commentaire est-il inséré dans un document HTML ?",
+    "question": "Comment un commentaire est-il inséré dans un document HTML\u00a0?",
     "answers": [
       "/* comment */",
       "<!-- comment -->",
@@ -63,13 +63,13 @@
   },
   {
     "id": 9,
-    "question": "Quel élément HTML définit le titre d'un document ?",
+    "question": "Quel élément HTML définit le titre d'un document\u00a0?",
     "answers": ["title", "head", "meta", "subject"],
     "correctAnswer": "title"
   },
   {
     "id": 10,
-    "question": "Une bonne sémantique HTML aide les moteurs de recherche à indexer votre site.",
+    "question": "Une bonne sémantique HTML aide t-il les moteurs de recherche à indexer votre site\u00a0?",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   }

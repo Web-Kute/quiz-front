@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "question": "Dans quel élément HTML devons-nous placer le JavaScript ?",
+    "question": "Dans quel élément HTML devons-nous placer le JavaScript\u00a0?",
     "answers": ["<js>", "<javascript>", "<scripting>", "<script>"],
     "correctAnswer": "<script>"
   },
   {
     "id": 2,
-    "question": "Que renvoit l'opération 2 + '2'</p>",
+    "question": "Que renvoit l'opération 2 + '2'\u00a0?",
     "answers": ["4", "undefined", "22", "NaN"],
     "correctAnswer": "22"
   },
   {
     "id": 3,
-    "question": "Comment déclarer une fonction en JavaScript ?",
+    "question": "Comment déclarer une fonction en JavaScript\u00a0?",
     "answers": [
       "function = myFunction()",
       "function myFunction()",
@@ -24,7 +24,7 @@
   },
   {
     "id": 4,
-    "question": "Quand l'évènement DOMContentLoaded est-il déclenché ?",
+    "question": "Quand l'évènement DOMContentLoaded est-il déclenché\u00a0?",
     "answers": [
       "Le document HTML est complètement chargé",
       "Le document HTML est en cours de chargement"
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "question": "Quelle syntaxe est correcte pour afficher un message dans la console ?",
+    "question": "Quelle syntaxe est correcte pour afficher un message dans la console\u00a0?",
     "answers": [
       "console.log('Hello World!')",
       "console.print('Hello World!')",
@@ -44,31 +44,31 @@
   },
   {
     "id": 6,
-    "question": "Comment déclarer une variable en JavaScript ?",
+    "question": "Comment déclarer une variable en JavaScript\u00a0?",
     "answers": ["var", "let", "const", "Toutes les réponses sont correctes"],
     "correctAnswer": "Toutes les réponses sont correctes"
   },
   {
     "id": 7,
-    "question": "Que renvoit typeof 'Hello World!' ?",
+    "question": "Que renvoit typeof 'Hello World!'\u00a0?",
     "answers": ["string", "number", "boolean", "undefined"],
     "correctAnswer": "string"
   },
   {
     "id": 8,
-    "question": "Quel opérateur est utlisé pour assigner une valeur à une variable ?",
+    "question": "Quel opérateur est utlisé pour assigner une valeur à une variable\u00a0?",
     "answers": ["*", "=", "==", "==="],
     "correctAnswer": "="
   },
   {
     "id": 9,
-    "question": "Quel élément n'est pas un type de données en JavaScript ?",
+    "question": "Quel élément n'est pas un type de données en JavaScript\u00a0?",
     "answers": ["String", "Boolean", "Number", "Float"],
     "correctAnswer": "Float"
   },
   {
     "id": 10,
-    "question": "Quel est la syntaxe pour déclarer un tableau en JavaScript ?",
+    "question": "Quel est la syntaxe pour déclarer un tableau en JavaScript\u00a0?",
     "answers": [
       "let array = ['apple','kiwi', 'grappe']",
       "let array = 'apple','kiwi', 'grappe'",
