@@ -16,7 +16,7 @@ export function results(nbOfQuestions) {
     correct = answered.filter(Boolean).length;
     timeOutAnswered =
       answered.length !== 0 && correct !== 0
-        ? ((correct / answered.length) * 100).toFixed(2)
+        ? Math.round((correct / answered.length) * 100)
         : 0;
 
     if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
