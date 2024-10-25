@@ -225,10 +225,9 @@ button#name {
 
 input:valid {
   background-color: hsl(168, 76%, 36%);
-  border: 2px solid hsl(168, 76%, 36%);
 }
 input:invalid {
-  background-color: hsl(6, 78%, 57%);
+  background-color: hsl(192, 15%, 94%);
 }
 
 /******************/

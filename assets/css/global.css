@@ -127,10 +127,9 @@ button#name {
 
 input:valid {
   background-color: hsl(168, 76%, 36%);
-  border: 2px solid hsl(168, 76%, 36%);
 }
 input:invalid {
-  background-color: hsl(6, 78%, 57%);
+  background-color: hsl(192, 15%, 94%);
 }
 
 /******************/
@@ -233,13 +232,13 @@ h2 {
   padding: 0.5rem 1rem;
   border-radius: 0.325rem;
   color: hsl(0, 0%, 100%);
-  background-color: hsl(282, 44%, 47%);
+  background-color: hsl(283, 39%, 53%);
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   width: 100%;
   transition: background-color 300ms ease-in-out;
 }
 .btn:hover {
-  background-color: hsl(24, 100%, 41%);
+  background-color: hsl(282, 44%, 47%);
 }
 
 .form-group {

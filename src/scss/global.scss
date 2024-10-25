@@ -54,10 +54,10 @@ button {
 input {
   &:valid {
     background-color: functions.color('green-sea');
-    border: 2px solid functions.color('green-sea');
+    // border: 2px solid functions.color('green-sea');
   }
   &:invalid {
-    background-color: functions.color('alzarin');
+    background-color: functions.color('clouds');
   }
 }
 /******************/
