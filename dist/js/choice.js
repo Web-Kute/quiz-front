@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chooseNav) {
       chooseNav.addEventListener(
         'click',
-        (e) => {
+        async (e) => {
           const target = e.target.closest('div');
           if (target) {
             showSpinner();
@@ -68,12 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             init();
             displayQuestions(endpointQuiz);
             circularClock();
-            validateAnswer(endpointQuiz);
+            await validateAnswer(endpointQuiz);
           }
           btnUndo.classList.toggle('hidden');
           e.stopPropagation();
-        },
-        true,
+        },        true,
       );
     }
   }
@@ -82,13 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
-    // if (sliderContainer) {
-    //   btnUndo.addEventListener(
-    //     'click',
-    //     () => (sliderContainer.outerHTML = navButtons),
-    //   );
-    // }
-
     const container = document.getElementById('container');
     const data = await fetchData(endpoint);
     if (Array.isArray(data)) {
