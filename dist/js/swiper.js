@@ -1,4 +1,5 @@
 export function initSwiper() {
+  const swiperContainer = document.getElementById('slider-container');
   const swiper = new Swiper('.swiper-quiz', {
     cssMode: true,
     direction: 'vertical',
@@ -12,7 +13,7 @@ export function initSwiper() {
     mousewheel: true,
     keyboard: true,
     autoplay: {
-      delay: 20000,
+      delay: 18000,
       disableOnInteraction: true,
     },
   });
@@ -21,6 +22,13 @@ export function initSwiper() {
     if (progressBar instanceof HTMLProgressElement) {
       progressBar.value = swiper.progress * 110;
     }
+  });
+  swiperContainer.addEventListener('mouseout', (e) => {
+    swiper.autoplay.start();
+  });
+
+  swiperContainer.addEventListener('mouseover', (e) => {
+    swiper.autoplay.stop();
   });
 }
 
