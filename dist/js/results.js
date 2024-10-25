@@ -38,7 +38,7 @@ export function results(nbOfQuestions) {
           break;
         case finalScore >= 76 && finalScore <= 87.5:
           notation.textContent = `Score : ${finalScore} % `;
-          commentNotation.textContent = `Très fort, alors là, ${student}, on peut parler`;
+          commentNotation.textContent = `Très fort, alors là, ${student}, on peut parler\u00a0!`;
           break;
         case finalScore >= 87.6 && finalScore <= 99.99:
           notation.textContent = `Score : ${finalScore} % `;
