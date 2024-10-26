@@ -3,7 +3,6 @@
 @use 'mixins';
 @use 'functions';
 
-
 *,
 *::before,
 *::after {
@@ -77,6 +76,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 2rem;
   @include mixins.mobile-down() {
     margin-top: 1rem;
   }
@@ -123,7 +123,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto Medium', sans-serif;
+  font-family: 'Roboto Slab Regular', sans-serif;
   font-size: 2 * variables.$base-font-size;
   color: functions.color('white');
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);

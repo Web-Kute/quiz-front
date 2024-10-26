@@ -256,6 +256,7 @@ header {
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
+  margin-bottom: 2rem;
 }
 @media (max-width: 599px) {
   header {
@@ -313,7 +314,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Roboto Medium", sans-serif;
+  font-family: "Roboto Slab Regular", sans-serif;
   font-size: 2rem;
   color: hsl(0, 0%, 100%);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
@@ -621,7 +622,7 @@ nav button:disabled {
 .btn-undo {
   position: absolute;
   color: hsl(210, 30%, 24%);
-  top: 16rem;
+  top: -2.5rem;
   font-size: 2.5rem;
   transition: color 300ms ease-in-out;
 }
@@ -632,12 +633,16 @@ nav button:disabled {
   font-size: 1rem;
   top: 0.8rem;
 }
+@media (max-width: 599px) {
+  .btn-undo::after {
+    top: 0.55rem;
+  }
+}
 .btn-undo:hover {
   color: hsl(0, 0%, 100%);
 }
 @media (max-width: 599px) {
   .btn-undo {
-    top: 8rem;
     font-size: 2rem;
   }
 }
