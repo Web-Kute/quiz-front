@@ -19,6 +19,9 @@ aside {
     left: 20px;
     z-index: 10;
     color: functions.color('white');
+    &.over {
+      color: functions.color('alzarin');
+    }
   }
   .seconds {
     color: transparent !important;

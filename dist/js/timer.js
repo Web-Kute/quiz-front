@@ -34,7 +34,7 @@ export async function timerQuiz() {
     if (elapsedTime === 0) {
       clearInterval(clockId);
       results(timeOutAnswered);
-      timerClock.style.color = '#e74d3c';
+      timerClock.classList.add('over');
       buttons.forEach((button) => {
         button.classList.add('disabled');
         button.disabled = true;
