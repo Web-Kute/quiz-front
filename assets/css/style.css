@@ -244,7 +244,7 @@ body {
       justify-content: flex-start;
   -ms-flex-direction: column;
       flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 1rem;
   background-color: hsl(204, 70%, 53%);
 }
 
@@ -367,6 +367,7 @@ main {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
+  position: relative;
 }
 @media (max-width: 599px) {
   main {
@@ -725,7 +726,7 @@ aside .seconds {
   min-height: 16rem;
   padding: 0 1rem 1rem 1rem;
   position: absolute;
-  top: 20%;
+  top: 10%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
   z-index: 101;

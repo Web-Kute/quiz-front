@@ -84,6 +84,7 @@ main {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
+  position: relative;
 }
 @media (max-width: 599px) {
   main {

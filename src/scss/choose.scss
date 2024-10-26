@@ -6,6 +6,7 @@
 main {
   display: flex;
   justify-content: center;
+  position: relative;
   @include mixins.mobile-down {
     width: 92%;
   }
@@ -36,6 +37,6 @@ main {
 }
 
 #page-bottom {
-position: relative;
-top: 120px;
+  position: relative;
+  top: 120px;
 }
