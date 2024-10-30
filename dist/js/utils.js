@@ -35,8 +35,7 @@ export function circularClock() {
     <svg id="progress-wrapper" width="500" height="500" viewBox="0 0 500 500">
       <circle cx="250" cy="250" r="200" stroke="#c39fe0" stroke-width="25" fill="transparent" id="progress" />
     </svg>
-    <span class="seconds" id="seconds"></span>
-`;
+    <span class="seconds" id="seconds"></span>`;
   countdownContainer.style.position = 'relative';
 
   const span = document.querySelector('.seconds');
