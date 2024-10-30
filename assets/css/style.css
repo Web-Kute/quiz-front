@@ -247,6 +247,11 @@ body {
   row-gap: 1rem;
   background-color: hsl(204, 70%, 53%);
 }
+@media (max-width: 599px) {
+  body {
+    row-gap: 0;
+  }
+}
 
 header {
   position: relative;
@@ -270,6 +275,10 @@ section {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+}
+
+#choose-container {
+  margin-bottom: 1.5rem;
 }
 
 .round {
@@ -376,18 +385,18 @@ main {
   }
 }
 
-.choose-quiz {
+.quiz-title {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
 }
-.choose-quiz .btn-choose {
+.quiz-title .btn-choose {
   font-size: 2rem;
 }
 @media (max-width: 599px) {
-  .choose-quiz .btn-choose {
+  .quiz-title .btn-choose {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -398,14 +407,14 @@ main {
          column-gap: 2rem;
   }
 }
-.choose-quiz button {
+.quiz-title button {
   border: none;
 }
-.choose-quiz .skills__icon {
+.quiz-title .skills__icon {
   width: 60%;
 }
 @media (max-width: 599px) {
-  .choose-quiz .skills__icon {
+  .quiz-title .skills__icon {
     width: 40%;
   }
 }
@@ -625,6 +634,11 @@ nav button:disabled {
   top: -2.5rem;
   font-size: 2.5rem;
   transition: color 300ms ease-in-out;
+}
+@media (max-width: 599px) {
+  .btn-undo {
+    top: -1.8rem;
+  }
 }
 .btn-undo::after {
   content: "Retour";

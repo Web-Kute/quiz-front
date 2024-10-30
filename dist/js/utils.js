@@ -5,6 +5,8 @@ export async function fetchData(endpoint) {
   return shuffledData;
 }
 
+export let quizList = { HTML5: false, CSS3: false, JavaScript: false };
+
 export function fisherYatesShuffle(array) {
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -22,7 +24,8 @@ export function hideSpinner() {
   document.querySelector('.spinner').classList.remove('showSpinner');
 }
 
-export const capitalize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
+export const capitalize = (word) =>
+  word.charAt(0).toUpperCase() + word.slice(1);
 
 export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');

@@ -7,11 +7,12 @@ import {
 } from './utils.js';
 import { htmlQuiz, navButtons } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
-import { results, answered } from './results.js';
+import { results, answered, userResults } from './results.js';
 import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
 import { timerQuiz, elapsedTime } from './timer.js';
 
 export let endpointQuiz = null;
+export let titleQuiz = null;
 export const CLASSNAMES = {
   CORRECT: 'correct',
   INCORRECT: 'incorrect',
@@ -27,10 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
     mainContent: document.getElementById('main-content'),
     chooseContainer: document.getElementById('choose-container'),
     sliderContainer: document.getElementById('slider-container'),
-    quizTitle: document.querySelector('.quiz-title'),
+    titleQuizElem: document.querySelector('.quiz-title'),
     buttons: document.querySelectorAll('.answer-item'),
     pageBottom: document.getElementById('page-bottom'),
+    quizTitle: document.querySelectorAll('.quiz-title'),
   };
+
+  let quizList = {};
+  // Get existing array from localStorage or initialize empty array
+  let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
+
+  const storedUserQuiz = localStorage.getItem('allQuiz');
+  if (storedUserQuiz) {
+    const quizDone = JSON.parse(storedUserQuiz);
+    quizList = quizDone;
+  } else {
+    console.log('Quiz done not found in local storage');
+  }
+
+  if (quizList !== null) {
+    domElements.quizTitle.forEach((title) => {
+      if (quizList[title.dataset.title]) {
+        title.childNodes[1].disabled = true;
+        title.childNodes[1].classList.add(CLASSNAMES['DISABLED']);
+      }
+    });
+  }
+
   let viewportWidth = window.innerWidth;
   let isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -54,13 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.chooseNav.addEventListener(
         'click',
         async (e) => {
+          e.preventDefault();
           const target = e.target.closest('div');
-          if (target) {
+          if (!target.childNodes[1].classList.contains('disabled')) {
             showSpinner();
+            domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
             endpointQuiz = target.dataset.endpoint;
-            const title = target.dataset.title;
-            if (domElements.quizTitle && title) {
-              domElements.quizTitle.innerText = title;
+            titleQuiz = target.dataset.title;
+            quizList[titleQuiz] = true;
+            if (domElements.titleQuizElem && titleQuiz) {
+              domElements.titleQuizElem.innerText = titleQuiz;
             }
             if (domElements.chooseContainer) {
               domElements.chooseContainer.outerHTML = htmlQuiz;
@@ -70,10 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
             circularClock();
             await validateAnswer(endpointQuiz);
           }
-          domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
           e.stopPropagation();
         },
-        true,
+        false,
       );
     }
   }
@@ -198,6 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
           results(totalQuestions);
           if (answered.length === totalQuestions) {
+            // Add new answers to studentAnswers array
+            studentAnswers.push(userResults);
+            // Save updated array back to localStorage
+            localStorage.setItem('answers', JSON.stringify(studentAnswers));
+            localStorage.setItem('allQuiz', JSON.stringify(quizList));
             showModal();
           }
 

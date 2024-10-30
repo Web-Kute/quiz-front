@@ -149,6 +149,11 @@ body {
   row-gap: 1rem;
   background-color: hsl(204, 70%, 53%);
 }
+@media (max-width: 599px) {
+  body {
+    row-gap: 0;
+  }
+}
 
 header {
   position: relative;
@@ -172,6 +177,10 @@ section {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+}
+
+#choose-container {
+  margin-bottom: 1.5rem;
 }
 
 .round {

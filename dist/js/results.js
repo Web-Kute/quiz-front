@@ -1,15 +1,18 @@
 import { elapsedTime } from './timer.js';
-import { capitalize } from "./utils.js";
+import { capitalize } from './utils.js';
+import { titleQuiz } from './choice.js';
+import { htmlQuiz } from './htmlpart.js';
 
 export let answered = [];
 export let correct = 0;
 export let timeOutAnswered = 0;
-
+export let finalScore;
+export let userResults = {};
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
 
-export function results(nbOfQuestions) {
+export function results(nbOfQuestions, rating, grade) {
   if (answered) {
     const notation = document.querySelector('.notation');
     const commentNotation = document.querySelector('.comment-notation');
@@ -21,37 +24,50 @@ export function results(nbOfQuestions) {
 
     if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
       const total = Math.round((correct / nbOfQuestions) * 100);
-      const finalScore = elapsedTime === 0 ? timeOutAnswered : total;
+      finalScore = elapsedTime === 0 ? timeOutAnswered : total;
       const student = userName ? `${capitalize(userName)}` : '';
       switch (true) {
         case finalScore <= 25.99:
-          notation.textContent = `Score : ${finalScore}%`;
-          commentNotation.textContent = `Patience ${student}, les réponses vont venir\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `Patience ${student}, les réponses vont venir\u00a0!`;
           break;
         case finalScore >= 26 && finalScore <= 50.99:
-          notation.textContent = `Score : ${finalScore}% `;
-          commentNotation.textContent = `Pas si mal, ${student} croyez-en-vous\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `Vous avez les bases, ${student} croyez-en-vous\u00a0!`;
           break;
         case finalScore >= 51 && finalScore <= 75.99:
-          notation.textContent = `Score : ${finalScore}% `;
-          commentNotation.textContent = `Bravo, ${student} vous êtes en bonne voie\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `Bravo, ${student} vous êtes en bonne voie\u00a0!`;
           break;
         case finalScore >= 76 && finalScore <= 87.5:
-          notation.textContent = `Score : ${finalScore}% `;
-          commentNotation.textContent = `Très fort, alors là, ${student}, on peut parler\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `Bravo, ${student} résultats très encourageants\u00a0!`;
           break;
         case finalScore >= 87.6 && finalScore <= 99.99:
-          notation.textContent = `Score : ${finalScore}% `;
-          commentNotation.textContent = `Incroyable ${student} vous frôlez la perfection. Bravo\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `Excellents résultats ${student}, vous frôlez la perfection. Bravo\u00a0!`;
           break;
         case finalScore === 100:
-          notation.textContent = `Score : ${finalScore}% `;
-          commentNotation.textContent = `Incroyable 100%, ${student} on étudie tout cela en laboratoire. Bravo\u00a0!`;
+          rating = `Score : ${finalScore}%`;
+          grade = `100%. Incroyable ${student}. Félicitations, continuez ainsi\u00a0!`;
           break;
         default:
           break;
       }
+
+      if (notation && commentNotation) {
+        notation.textContent = userResults.rating;
+        commentNotation.textContent = userResults.grade;
+      }
+
+      userResults = {
+        titleQuiz,
+        rating,
+        grade,
+        finalScore,
+      };
+
+      return userResults;
     }
-    return timeOutAnswered;
   }
 }

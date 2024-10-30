@@ -65,9 +65,11 @@ body {
   font-family: 'Roboto Regular', sans-serif;
   @include mixins.flex-center();
   justify-content: flex-start;
-
   flex-direction: column;
   row-gap: 1rem;
+  @include mixins.mobile-down() {
+    row-gap: 0;
+  }
   background-color: functions.color('peter-river');
 }
 
@@ -86,6 +88,10 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+#choose-container {
+  margin-bottom: 1.5rem;
 }
 
 .round {
