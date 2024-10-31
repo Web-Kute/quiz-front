@@ -1,15 +1,14 @@
 import { fetchData } from './utils.js';
-import { results, timeOutAnswered } from './results.js';
-import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
-import { endpointQuiz } from './choice.js';
+import { results } from './results.js';
+import { showModal } from './modal.js';
+import { endpointQuiz, totalQuestions } from './choice.js';
 
 export let elapsedTime = 1000;
 export let clockId = null;
 let duration = 1000;
-let initChrono = 2;
+let initChrono = 1;
 let minutes;
 let seconds;
-const HIDDEN_CLASS = 'hidden';
 
 export async function timerQuiz() {
   const data = await fetchData(endpointQuiz);
@@ -33,15 +32,16 @@ export async function timerQuiz() {
 
     if (elapsedTime === 0) {
       clearInterval(clockId);
-      results(timeOutAnswered);
+      console.log(totalQuestions);
+
+      // results(totalQuestions, 'Score : 0%', 'Patience, les réponses vont venir !');
+      results(10, 'Score : 0%', 'Patience, les réponses vont venir !');
       timerClock.classList.add('over');
       buttons.forEach((button) => {
         button.classList.add('disabled');
         button.disabled = true;
       });
       showModal();
-      closeModalBtn.addEventListener('click', closeModal, false);
-      overlay?.addEventListener('click', closeModal, false);
     }
   }, duration);
 }

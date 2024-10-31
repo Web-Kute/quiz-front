@@ -10,30 +10,13 @@ import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
 import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
 import { timerQuiz, elapsedTime } from './timer.js';
+import { domElements, CLASSNAMES } from './domelem.js';
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
-export const CLASSNAMES = {
-  CORRECT: 'correct',
-  INCORRECT: 'incorrect',
-  HIDDEN: 'hidden',
-  DISABLED: 'disabled',
-};
+export let totalQuestions;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const domElements = {
-    welcome: document.getElementById('welcome'),
-    chooseNav: document.getElementById('choose-nav'),
-    btnUndo: document.querySelector('.btn-undo'),
-    mainContent: document.getElementById('main-content'),
-    chooseContainer: document.getElementById('choose-container'),
-    sliderContainer: document.getElementById('slider-container'),
-    titleQuizElem: document.querySelector('.quiz-title'),
-    buttons: document.querySelectorAll('.answer-item'),
-    pageBottom: document.getElementById('page-bottom'),
-    quizTitle: document.querySelectorAll('.quiz-title'),
-  };
-
   let quizList = {};
   // Get existing array from localStorage or initialize empty array
   let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
@@ -104,19 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Add event listener cleanup
-  let eventListeners = [];
-  // Store references
-  eventListeners.push(['click', scrollToBottomQuiz]);
-  // Clean up on component unmount
-  function cleanup() {
-    eventListeners.forEach(([event, handler]) => {
-      document.removeEventListener(event, handler);
-    });
-  }
-
-  document.addEventListener('click', scrollToBottomQuiz);
-  // cleanup();
   renderNavQuizzes();
 
   async function displayQuestions(endpoint) {
@@ -157,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function validateAnswer(quiz) {
     const data = await fetchData(quiz);
-    let totalQuestions = data.length;
+    totalQuestions = data.length;
     let scoreUser = 0;
     const buttonsNav = document.querySelectorAll('.swiper__quiz-slider');
     buttonsNav.forEach((navQuestion) => {
@@ -221,25 +191,37 @@ document.addEventListener('DOMContentLoaded', () => {
               });
             }
           }
-
-          results(totalQuestions);
-          if (answered.length === totalQuestions) {
-            // Add new answers to studentAnswers array
-            studentAnswers.push(userResults);
-            // Save updated array back to localStorage
-            localStorage.setItem('answers', JSON.stringify(studentAnswers));
-            localStorage.setItem('allQuiz', JSON.stringify(quizList));
-            showModal();
-          }
-
+          displayResults();
           scrollToBottomQuiz();
-
-          closeModalBtn.addEventListener('click', closeModal);
-          overlay?.addEventListener('click', closeModal);
         },
         false,
       );
     });
+  }
+  // function results(totalQuestions) {
+  //   const correctAnswers = answered.filter((answer) => answer === true).length;
+  //   const incorrectAnswers = answered.filter((answer) => answer === false).length;
+  //   const percentage = (correctAnswers / totalQuestions) * 100;
+  //   const percentageRounded = percentage.toFixed(2);
+  //   const percentageRoundedInt = parseInt(percentageRounded);
+  //   const percentageRoundedIntString = percentageRoundedInt.toString();
+  //   const percentageRoundedIntStringLength = percentageRoundedIntString.length;
+  //   if (percentageRoundedIntStringLength === 1) {
+  //     userResults = `0${percentageRoundedIntString}%`;
+  //   } else {
+  //     userResults = `${percentageRoundedIntString}%`;
+  //   }
+  // }
+  function displayResults() {
+    results(totalQuestions);
+    if (answered.length === totalQuestions) {
+      if (studentAnswers.length <= 2) {
+        studentAnswers.push(userResults);
+      }
+      localStorage.setItem('answers', JSON.stringify(studentAnswers));
+      localStorage.setItem('allQuiz', JSON.stringify(quizList));
+      showModal();
+    }
   }
 
   function scrollToBottomQuiz() {
@@ -247,4 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
+
+  closeModalBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  document.addEventListener('click', scrollToBottomQuiz);
 });

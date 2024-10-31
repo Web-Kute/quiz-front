@@ -11,22 +11,25 @@ export let userResults = {};
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
+const student = userName ? `${capitalize(userName)}` : '';
 
 export function results(nbOfQuestions, rating, grade) {
   if (answered) {
     const notation = document.querySelector('.notation');
     const commentNotation = document.querySelector('.comment-notation');
+    const total = Math.round((correct / nbOfQuestions) * 100);
     correct = answered.filter(Boolean).length;
-    // timeOutAnswered =
-    //   answered.length !== 0 && correct !== 0
-    //     ? Math.round((correct / answered.length) * 100)
-    //     : 0;
+    console.log('total:', total);
+    if (correct === 0) {
+      rating = `Score : ${total}%`;
+      grade = `Patience ${student}, les réponses vont venir\u00a0!`;
+    } else {
+      timeOutAnswered = Math.round((correct / nbOfQuestions) * 100);
+    }
 
     if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
-      const total = Math.round((correct / nbOfQuestions) * 100);
-      const student = userName ? `${capitalize(userName)}` : '';
       switch (true) {
-        case total <= 25.99:
+        case total === 0 || total <= 25.99:
           rating = `Score : ${total}%`;
           grade = `Patience ${student}, les réponses vont venir\u00a0!`;
           break;
@@ -58,8 +61,11 @@ export function results(nbOfQuestions, rating, grade) {
         notation.textContent = userResults.rating;
         commentNotation.textContent = userResults.grade;
       }
+      const currentTime = new Date().toLocaleString();
+      console.log(currentTime);
 
       userResults = {
+        currentTime,
         titleQuiz,
         rating,
         grade,
