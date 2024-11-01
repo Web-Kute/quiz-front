@@ -1,33 +1,33 @@
 import { elapsedTime } from './timer.js';
 import { capitalize } from './utils.js';
 import { titleQuiz } from './choice.js';
-import { htmlQuiz } from './htmlpart.js';
 
 export let answered = [];
 export let correct = 0;
-export let timeOutAnswered = 0;
 export let total;
 export let userResults = {};
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
 const student = userName ? `${capitalize(userName)}` : '';
+const currentTime = new Date().toLocaleString();
+let rating = '';
+let grade = '';
 
-export function results(nbOfQuestions, rating, grade) {
+export function results(nbOfQuestions) {
   if (answered) {
     const notation = document.querySelector('.notation');
     const commentNotation = document.querySelector('.comment-notation');
-    const total = Math.round((correct / nbOfQuestions) * 100);
+    total = Math.round((correct / nbOfQuestions) * 100);
     correct = answered.filter(Boolean).length;
-    console.log('total:', total);
+
     if (correct === 0) {
-      rating = `Score : ${total}%`;
-      grade = `Patience ${student}, les réponses vont venir\u00a0!`;
+      total = 0;
     } else {
-      timeOutAnswered = Math.round((correct / nbOfQuestions) * 100);
+      total = Math.round((correct / nbOfQuestions) * 100);
     }
 
-    if (answered.length === nbOfQuestions || timeOutAnswered >= 0) {
+    if (answered.length === nbOfQuestions || total >= 0) {
       switch (true) {
         case total === 0 || total <= 25.99:
           rating = `Score : ${total}%`;
@@ -57,13 +57,6 @@ export function results(nbOfQuestions, rating, grade) {
           break;
       }
 
-      if (notation && commentNotation) {
-        notation.textContent = userResults.rating;
-        commentNotation.textContent = userResults.grade;
-      }
-      const currentTime = new Date().toLocaleString();
-      console.log(currentTime);
-
       userResults = {
         currentTime,
         titleQuiz,
@@ -71,6 +64,16 @@ export function results(nbOfQuestions, rating, grade) {
         grade,
         total,
       };
+
+      if (notation && commentNotation && userResults) {
+        notation.textContent = userResults.rating;
+        commentNotation.textContent = userResults.grade;
+      } else {
+        notation.textContent = 'Sorry';
+        commentNotation.textContent = 'Results not available';
+      }
+
+
 
       return userResults;
     }

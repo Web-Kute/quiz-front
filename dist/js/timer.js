@@ -1,12 +1,12 @@
 import { fetchData } from './utils.js';
 import { results } from './results.js';
 import { showModal } from './modal.js';
-import { endpointQuiz, totalQuestions } from './choice.js';
+import { displayResults, endpointQuiz, totalQuestions } from './choice.js';
 
 export let elapsedTime = 1000;
 export let clockId = null;
 let duration = 1000;
-let initChrono = 1;
+let initChrono = 2;
 let minutes;
 let seconds;
 
@@ -32,10 +32,7 @@ export async function timerQuiz() {
 
     if (elapsedTime === 0) {
       clearInterval(clockId);
-      console.log(totalQuestions);
-
-      // results(totalQuestions, 'Score : 0%', 'Patience, les réponses vont venir !');
-      results(10, 'Score : 0%', 'Patience, les réponses vont venir !');
+      displayResults();
       timerClock.classList.add('over');
       buttons.forEach((button) => {
         button.classList.add('disabled');

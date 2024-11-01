@@ -15,12 +15,19 @@ import { domElements, CLASSNAMES } from './domelem.js';
 export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
+let quizList = {};
+let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
+export function displayResults() {
+  results(totalQuestions);
+  if (studentAnswers.length <= 2) {
+    studentAnswers.push(userResults);
+  }
+  localStorage.setItem('answers', JSON.stringify(studentAnswers));
+  localStorage.setItem('allQuiz', JSON.stringify(quizList));
+  showModal();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  let quizList = {};
-  // Get existing array from localStorage or initialize empty array
-  let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
-
   const storedUserQuiz = localStorage.getItem('allQuiz');
   if (storedUserQuiz) {
     const quizDone = JSON.parse(storedUserQuiz);
@@ -191,7 +198,11 @@ document.addEventListener('DOMContentLoaded', () => {
               });
             }
           }
-          displayResults();
+
+          if (answered.length === totalQuestions) {
+            displayResults();
+          }
+
           scrollToBottomQuiz();
         },
         false,
@@ -212,17 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //     userResults = `${percentageRoundedIntString}%`;
   //   }
   // }
-  function displayResults() {
-    results(totalQuestions);
-    if (answered.length === totalQuestions) {
-      if (studentAnswers.length <= 2) {
-        studentAnswers.push(userResults);
-      }
-      localStorage.setItem('answers', JSON.stringify(studentAnswers));
-      localStorage.setItem('allQuiz', JSON.stringify(quizList));
-      showModal();
-    }
-  }
 
   function scrollToBottomQuiz() {
     if (isMobile) {
