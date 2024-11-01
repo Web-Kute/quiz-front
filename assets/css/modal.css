@@ -194,14 +194,25 @@
 }
 
 .btn-modal-start {
+  position: relative;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   font-size: 5rem;
   color: hsl(168, 76%, 36%);
   background-color: hsl(192, 15%, 94%);
-  transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out, transform 300ms ease-in-out;
 }
 .btn-modal-start:hover {
   color: hsl(282, 44%, 47%);
+  transform: scale(1.2);
+}
+.btn-modal-start::after {
+  content: "Commencer";
+  position: absolute;
+  font-family: "Roboto Slab bold", serif;
+  font-size: 1.5rem;
+  top: 5rem;
+  left: -1.8rem;
+  color: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=modal.css.map */

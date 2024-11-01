@@ -104,19 +104,34 @@
   width: 5rem;
   height: 5rem;
 }
+
 .btn-start-container {
   position: relative;
   z-index: 101;
 }
+
 .btn-modal-start {
+  position: relative;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   font-size: 5rem;
   color: functions.color('green-sea');
   background-color: functions.color('clouds');
-  transition: color 300ms ease-in-out;
+  transition:
+    color 300ms ease-in-out,
+    transform 300ms ease-in-out;
   &:hover {
     color: functions.color('wisteria');
+    transform: scale(1.2);
+  }
+  &::after {
+    content: 'Commencer';
+    position: absolute;
+    font-family: 'Roboto Slab bold', serif;
+    font-size: 1.5rem;
+    top: 5rem;
+    left: -1.8rem;
+    color: functions.color('white');
   }
 }
