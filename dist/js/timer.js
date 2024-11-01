@@ -1,5 +1,4 @@
 import { fetchData } from './utils.js';
-import { results } from './results.js';
 import { showModal } from './modal.js';
 import { displayResults, endpointQuiz, totalQuestions } from './choice.js';
 

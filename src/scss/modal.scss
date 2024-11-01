@@ -57,7 +57,7 @@
   }
 }
 
-.overlay {
+.overlay, .overlay-start {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -96,4 +96,22 @@
   &:hover {
     color: functions.color('midnight-blue');
   }
+}
+
+.modal-start {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+}
+.btn-start-container {
+  position: relative;
+  z-index: 101;
+}
+.btn-modal-start {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-size: 5rem;
+  color: functions.color('green-sea');
+  background-color: functions.color('clouds');
 }

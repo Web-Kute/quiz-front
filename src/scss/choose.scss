@@ -6,6 +6,7 @@
 main {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   @include mixins.mobile-down {
     width: 92%;

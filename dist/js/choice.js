@@ -5,11 +5,16 @@ import {
   showSpinner,
   hideSpinner,
 } from './utils.js';
-import { htmlQuiz, navButtons } from './htmlpart.js';
+import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
-import { showModal, closeModal, closeModalBtn, overlay } from './modal.js';
-import { timerQuiz, elapsedTime } from './timer.js';
+import {
+  showModal,
+  showModalStart,
+  closeModal,
+  closeModalBtn,
+  overlay,
+} from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
 
 export let endpointQuiz = null;
@@ -17,6 +22,7 @@ export let titleQuiz = null;
 export let totalQuestions;
 let quizList = {};
 let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
+
 export function displayResults() {
   results(totalQuestions);
   if (studentAnswers.length <= 2) {
@@ -84,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             // init();
             displayQuestions(endpointQuiz);
-            circularClock();
             await validateAnswer(endpointQuiz);
           }
           e.stopPropagation();
@@ -127,9 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initSwiper();
-    timerQuiz();
+
     await paginationSlider();
     hideSpinner();
+    showModalStart();
   }
 
   async function validateAnswer(quiz) {
