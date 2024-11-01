@@ -798,7 +798,8 @@ aside .seconds {
   background-color: hsl(210, 30%, 24%);
 }
 
-.overlay, .overlay-start {
+.overlay,
+.overlay-start {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -858,6 +859,10 @@ aside .seconds {
   font-size: 5rem;
   color: hsl(168, 76%, 36%);
   background-color: hsl(192, 15%, 94%);
+  transition: color 300ms ease-in-out;
+}
+.btn-modal-start:hover {
+  color: hsl(282, 44%, 47%);
 }
 
 /* Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx */

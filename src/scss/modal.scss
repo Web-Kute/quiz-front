@@ -57,7 +57,8 @@
   }
 }
 
-.overlay, .overlay-start {
+.overlay,
+.overlay-start {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -114,4 +115,8 @@
   font-size: 5rem;
   color: functions.color('green-sea');
   background-color: functions.color('clouds');
+  transition: color 300ms ease-in-out;
+  &:hover {
+    color: functions.color('wisteria');
+  }
 }
