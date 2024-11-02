@@ -16,6 +16,7 @@ import {
   overlay,
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
+import { saveFile } from './filesaver.js';
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
@@ -235,6 +236,21 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
+  // saveFile('Bobby', "denis.txt");
+
+  let result;
+  let text;
+  const resultsFile = studentAnswers
+    .map((quiz) => {
+      result = Object.values(quiz);
+      text = `${result}\u00a0`;
+      return text;
+    })
+    .join(', ');
+
+  domElements.btnSaveFile.addEventListener('click', () => {
+    saveFile(JSON.stringify(resultsFile), 'denis.txt');
+  });
 
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);

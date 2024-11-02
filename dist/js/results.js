@@ -62,7 +62,6 @@ export function results(nbOfQuestions) {
         titleQuiz,
         rating,
         grade,
-        total,
       };
 
       if (notation && commentNotation && userResults) {

@@ -9,6 +9,7 @@ export const domElements = {
   buttons: document.querySelectorAll('.answer-item'),
   pageBottom: document.getElementById('page-bottom'),
   quizTitle: document.querySelectorAll('.quiz-title'),
+  btnSaveFile: document.querySelector('.btn-submit'),
 };
 
 export const CLASSNAMES = {
