@@ -89,17 +89,4 @@ document.addEventListener('DOMContentLoaded', function () {
     name.addEventListener('focus', validateName);
     name.addEventListener('keyup', validateName);
   }
-
-  //   const blob = new Blob(['denis', 'godec'], { type: 'text/plain' });
-  // Convert Blob to File
-  //   const file = new File("Hello", 'jesse.txt');
-  //   const url = URL.createObjectURL(file);
-//   const link = document.createElement('a');
-//   link.setAttribute('title', 'koala.txt');
-//   // link.href = "";
-//   //   link.download = blob;
-//   link.innerText = 'Envoyer au formateur';
-//   form.appendChild(link);
-//   link.click();
-//   //   URL.revokeObjectURL(url);
 });
