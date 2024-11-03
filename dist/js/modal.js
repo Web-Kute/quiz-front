@@ -1,7 +1,6 @@
 import { domElements, CLASSNAMES } from './domelem.js';
 import { timerQuiz } from './timer.js';
 import { circularClock } from "./utils.js";
-// import { swiper } from "./swiper.js";
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
@@ -33,5 +32,3 @@ export const closeModalStart = function () {
 modalBtnStart.addEventListener('click', closeModalStart);
 modalBtnStart.addEventListener('click', timerQuiz);
 modalBtnStart.addEventListener('click', circularClock);
-
-// console.log(initSwiper);

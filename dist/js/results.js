@@ -1,4 +1,3 @@
-import { elapsedTime } from './timer.js';
 import { capitalize } from './utils.js';
 import { titleQuiz } from './choice.js';
 
@@ -9,8 +8,8 @@ export let userResults = {};
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
-const student = userName ? `${capitalize(userName)}` : '';
-const currentTime = new Date().toLocaleString();
+export const student = userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';
 
@@ -71,8 +70,6 @@ export function results(nbOfQuestions) {
         notation.textContent = 'Sorry';
         commentNotation.textContent = 'Results not available';
       }
-
-
 
       return userResults;
     }

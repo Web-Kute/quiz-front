@@ -1,13 +1,12 @@
 import {
   fisherYatesShuffle,
-  circularClock,
   fetchData,
   showSpinner,
   hideSpinner,
 } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
-import { results, answered, userResults } from './results.js';
+import { results, answered, userResults, student } from './results.js';
 import {
   showModal,
   showModalStart,
@@ -216,40 +215,47 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
   }
-  // function results(totalQuestions) {
-  //   const correctAnswers = answered.filter((answer) => answer === true).length;
-  //   const incorrectAnswers = answered.filter((answer) => answer === false).length;
-  //   const percentage = (correctAnswers / totalQuestions) * 100;
-  //   const percentageRounded = percentage.toFixed(2);
-  //   const percentageRoundedInt = parseInt(percentageRounded);
-  //   const percentageRoundedIntString = percentageRoundedInt.toString();
-  //   const percentageRoundedIntStringLength = percentageRoundedIntString.length;
-  //   if (percentageRoundedIntStringLength === 1) {
-  //     userResults = `0${percentageRoundedIntString}%`;
-  //   } else {
-  //     userResults = `${percentageRoundedIntString}%`;
-  //   }
-  // }
 
   function scrollToBottomQuiz() {
     if (isMobile) {
       domElements.pageBottom.scrollIntoView();
     }
   }
-  // saveFile('Bobby', "denis.txt");
 
   let result;
   let text;
+  const devFileName = `${student}.txt`;
+
   const resultsFile = studentAnswers
     .map((quiz) => {
       result = Object.values(quiz);
       text = `${result}\u00a0`;
-      return text;
+      return `${student}\u00a0${text}`;
     })
     .join(', ');
 
+  function download_file(name, contents, mime_type) {
+    mime_type = mime_type || 'text/plain;charset=utf-8"';
+
+    const blob = new Blob([contents], { type: mime_type });
+
+    const dlink = document.createElement('a');
+    dlink.download = name;
+    dlink.href = window.URL.createObjectURL(blob);
+    dlink.onclick = function () {
+      // revokeObjectURL needs a delay to work properly
+      const that = this;
+      setTimeout(function () {
+        window.URL.revokeObjectURL(that.href);
+      }, 1500);
+    };
+
+    dlink.click();
+    dlink.remove();
+  }
+
   domElements.btnSaveFile.addEventListener('click', () => {
-    saveFile(JSON.stringify(resultsFile), 'denis.txt');
+    download_file(devFileName, resultsFile);
   });
 
   closeModalBtn.addEventListener('click', closeModal);

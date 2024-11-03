@@ -52,7 +52,7 @@
   },
   {
     "id": 8,
-    "question": "Comment un commentaire est-il inséré dans un document HTML\u00a0?",
+    "question": "Comment inséré un commentaire dans un document HTML\u00a0?",
     "answers": [
       "/* comment */",
       "<!-- comment -->",
