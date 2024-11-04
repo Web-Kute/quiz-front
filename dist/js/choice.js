@@ -6,6 +6,7 @@ import {
 } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
+import { download_file } from './filesaver.js';
 import { results, answered, userResults, student } from './results.js';
 import {
   showModal,
@@ -15,12 +16,13 @@ import {
   overlay,
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
-import { saveFile } from './filesaver.js';
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 let quizList = {};
+let result;
+let text;
 let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 
 export function displayResults() {
@@ -32,6 +34,21 @@ export function displayResults() {
   localStorage.setItem('allQuiz', JSON.stringify(quizList));
   showModal();
 }
+/**
+ * Generates a string representation of the student's quiz answers.
+ *
+ * The function maps over the `studentAnswers` array, extracting the values for each quiz and formatting them as a string. The resulting strings are joined together with a comma and space separator.
+ *
+ * @param {string} student - The name of the student.
+ * @returns {string} A comma-separated string of the student's quiz answers.
+ */
+export const resultsFile = studentAnswers
+  .map((quiz) => {
+    result = Object.values(quiz);
+    text = `${result}\u00a0`;
+    return `${student}\u00a0${text}`;
+  })
+  .join(', ');
 
 document.addEventListener('DOMContentLoaded', () => {
   const storedUserQuiz = localStorage.getItem('allQuiz');
@@ -221,42 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
-
-  let result;
-  let text;
-  const devFileName = `${student}.txt`;
-
-  const resultsFile = studentAnswers
-    .map((quiz) => {
-      result = Object.values(quiz);
-      text = `${result}\u00a0`;
-      return `${student}\u00a0${text}`;
-    })
-    .join(', ');
-
-  function download_file(name, contents, mime_type) {
-    mime_type = mime_type || 'text/plain;charset=utf-8"';
-
-    const blob = new Blob([contents], { type: mime_type });
-
-    const dlink = document.createElement('a');
-    dlink.download = name;
-    dlink.href = window.URL.createObjectURL(blob);
-    dlink.onclick = function () {
-      // revokeObjectURL needs a delay to work properly
-      const that = this;
-      setTimeout(function () {
-        window.URL.revokeObjectURL(that.href);
-      }, 1500);
-    };
-
-    dlink.click();
-    dlink.remove();
-  }
-
-  domElements.btnSaveFile.addEventListener('click', () => {
-    download_file(devFileName, resultsFile);
-  });
 
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
