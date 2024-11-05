@@ -191,6 +191,7 @@
 .btn-start-container {
   position: relative;
   z-index: 101;
+  transform: translateY(-50%);
 }
 
 .btn-modal-start {

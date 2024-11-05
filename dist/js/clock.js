@@ -65,6 +65,7 @@ export function circularClock() {
         timeSpan.innerHTML = `<i class="fa-solid fa-check"></i>`;
       }
     }, 1000);
+console.log(secondsCountdown);
   };
 
   const adjustFontSize = (size) => {

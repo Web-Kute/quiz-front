@@ -6,7 +6,6 @@ import {
 } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
-import { download_file } from './filesaver.js';
 import { results, answered, userResults, student } from './results.js';
 import {
   showModal,
@@ -25,10 +24,18 @@ let result;
 let text;
 let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 
+export let isDuplicateQuiz = false;
+
 export function displayResults() {
   results(totalQuestions);
-  if (studentAnswers.length <= 2) {
+  if (!isDuplicateQuiz && studentAnswers.length <= 2) {
     studentAnswers.push(userResults);
+  } else {
+    domElements.buttons.forEach((button) => {
+      button.classList.add('disabled');
+      button.disabled = true;
+    });
+    console.log('Already done');
   }
   localStorage.setItem('answers', JSON.stringify(studentAnswers));
   localStorage.setItem('allQuiz', JSON.stringify(quizList));
@@ -99,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
             endpointQuiz = target.dataset.endpoint;
             titleQuiz = target.dataset.title;
             quizList[titleQuiz] = true;
+            isDuplicateQuiz = studentAnswers.some(
+              (answer) => Object.values(answer)[1] === titleQuiz,
+            );
             if (domElements.titleQuizElem && titleQuiz) {
               domElements.titleQuizElem.innerText = titleQuiz;
             }

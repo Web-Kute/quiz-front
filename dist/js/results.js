@@ -1,10 +1,12 @@
-import { capitalize } from './utils.js';
+// import { capitalize } from './utils.js';
 import { titleQuiz } from './choice.js';
 
 export let answered = [];
 export let correct = 0;
 export let total;
 export let userResults = {};
+export const capitalize = (word) =>
+  word.charAt(0).toUpperCase() + word.slice(1);
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');

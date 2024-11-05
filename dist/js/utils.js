@@ -1,3 +1,6 @@
+import { totalQuestions } from './choice.js';
+import { answered } from './results.js';
+
 export async function fetchData(endpoint) {
   const response = await fetch(endpoint);
   const data = await response.json();
@@ -24,12 +27,9 @@ export function hideSpinner() {
   document.querySelector('.spinner').classList.remove('showSpinner');
 }
 
-export const capitalize = (word) =>
-  word.charAt(0).toUpperCase() + word.slice(1);
-
+export let secondsCountdown = null;
 export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');
-
   // Injecting the countdown into HTML document
   countdownContainer.innerHTML = `
     <svg id="progress-wrapper" width="500" height="500" viewBox="0 0 500 500">
@@ -82,11 +82,13 @@ export function circularClock() {
 
   const renderSeconds = (duration) => {
     timeSpan.innerHTML = duration;
-    const secondsCountdown = setInterval(() => {
+    secondsCountdown = setInterval(() => {
       duration--;
       timeSpan.innerHTML = duration;
-      if (duration === 0) {
+      if (duration === 0 || answered.length === totalQuestions) {
         clearInterval(secondsCountdown);
+        progressWrapper.style.animation = 'none';
+        progress.style.stroke = '#e74d3c';
         timeSpan.innerHTML = `<i class="fa-solid fa-check"></i>`;
       }
     }, 1000);

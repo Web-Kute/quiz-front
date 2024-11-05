@@ -1,6 +1,6 @@
 import { domElements } from './domelem.js';
 import { resultsFile } from './choice.js';
-import { results, answered, userResults, student } from './results.js';
+import { student } from './results.js';
 
 const devFileName = `${student}.txt`;
 

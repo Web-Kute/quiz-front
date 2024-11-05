@@ -1,6 +1,6 @@
 import { domElements, CLASSNAMES } from './domelem.js';
-import { timerQuiz } from './timer.js';
-import { circularClock } from "./utils.js";
+import { timerQuiz, stopTimer } from './timer.js';
+import { circularClock } from './utils.js';
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
@@ -12,6 +12,7 @@ export const closeModalBtn = document.querySelector('.btn-close');
 export async function showModal() {
   modal.classList.remove(CLASSNAMES['HIDDEN']);
   overlay.classList.remove(CLASSNAMES['HIDDEN']);
+  stopTimer();
 }
 
 export async function showModalStart() {
