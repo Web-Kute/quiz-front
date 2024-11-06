@@ -15,6 +15,12 @@ import {
   overlay,
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
+import { devFileName, download_file } from './filesaver.js';
+
+domElements.btnSaveFile.addEventListener('click', () => {
+  console.log(devFileName);
+  download_file(devFileName, resultsFile);
+});
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
@@ -30,12 +36,6 @@ export function displayResults() {
   results(totalQuestions);
   if (!isDuplicateQuiz && studentAnswers.length <= 2) {
     studentAnswers.push(userResults);
-  } else {
-    domElements.buttons.forEach((button) => {
-      button.classList.add('disabled');
-      button.disabled = true;
-    });
-    console.log('Already done');
   }
   localStorage.setItem('answers', JSON.stringify(studentAnswers));
   localStorage.setItem('allQuiz', JSON.stringify(quizList));

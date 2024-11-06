@@ -2,7 +2,7 @@ import { domElements } from './domelem.js';
 import { resultsFile } from './choice.js';
 import { student } from './results.js';
 
-const devFileName = `${student}.txt`;
+export const devFileName = `${student}.txt`;
 
 export function download_file(name, contents, mime_type) {
   mime_type = mime_type || 'text/plain;charset=utf-8"';
@@ -23,7 +23,3 @@ export function download_file(name, contents, mime_type) {
   dlink.click();
   dlink.remove();
 }
-
-domElements.btnSaveFile.addEventListener('click', () => {
-  download_file(devFileName, resultsFile);
-});
