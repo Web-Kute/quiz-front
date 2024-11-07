@@ -7,6 +7,7 @@ import {
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
+import { modalBtnStart } from './modal.js';
 import {
   showModal,
   showModalStart,
@@ -24,7 +25,6 @@ let quizList = {};
 
 export let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
-
 export function displayResults() {
   results(totalQuestions);
   if (!isDuplicateQuiz && studentAnswers.length <= 2) {
@@ -131,6 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.appendChild(button);
           });
         });
+      }
+      // Check if the student has already answered 3 quizzes
+      if (studentAnswers.length === 3) {
+        const buttons = document.querySelectorAll('.answer-item');
+        buttons.forEach((button) => {
+          button.classList.add('disabled');
+          button.disabled = true;
+        });
+        modalBtnStart.classList.add('hidden');
       }
     } catch (error) {
       console.error('Failed to display questions:', error);
