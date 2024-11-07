@@ -6,7 +6,7 @@ import {
 } from './utils.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
-import { results, answered, userResults, student } from './results.js';
+import { results, answered, userResults } from './results.js';
 import {
   showModal,
   showModalStart,
@@ -15,21 +15,14 @@ import {
   overlay,
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
-import { devFileName, download_file } from './filesaver.js';
-
-domElements.btnSaveFile.addEventListener('click', () => {
-  console.log(devFileName);
-  download_file(devFileName, resultsFile);
-});
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
-let quizList = {};
-let result;
-let text;
-let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 
+let quizList = {};
+
+export let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
 
 export function displayResults() {
@@ -41,21 +34,6 @@ export function displayResults() {
   localStorage.setItem('allQuiz', JSON.stringify(quizList));
   showModal();
 }
-/**
- * Generates a string representation of the student's quiz answers.
- *
- * The function maps over the `studentAnswers` array, extracting the values for each quiz and formatting them as a string. The resulting strings are joined together with a comma and space separator.
- *
- * @param {string} student - The name of the student.
- * @returns {string} A comma-separated string of the student's quiz answers.
- */
-export const resultsFile = studentAnswers
-  .map((quiz) => {
-    result = Object.values(quiz);
-    text = `${result}\u00a0`;
-    return `${student}\u00a0${text}`;
-  })
-  .join(', ');
 
 document.addEventListener('DOMContentLoaded', () => {
   const storedUserQuiz = localStorage.getItem('allQuiz');
@@ -116,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
               domElements.chooseContainer.outerHTML = htmlQuiz;
             }
             // init();
-            displayQuestions(endpointQuiz);
+            await displayQuestions(endpointQuiz);
             await validateAnswer(endpointQuiz);
           }
           e.stopPropagation();

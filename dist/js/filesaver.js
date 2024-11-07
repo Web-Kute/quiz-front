@@ -1,5 +1,3 @@
-import { domElements } from './domelem.js';
-import { resultsFile } from './choice.js';
 import { student } from './results.js';
 
 export const devFileName = `${student}.txt`;

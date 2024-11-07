@@ -1,6 +1,9 @@
 import { domElements, CLASSNAMES } from './domelem.js';
 import { timerQuiz, stopTimer } from './timer.js';
 import { circularClock } from './utils.js';
+import { studentAnswers } from './choice.js';
+import { devFileName, download_file } from './filesaver.js';
+import { student } from './results.js';
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
@@ -9,9 +12,23 @@ export const overlayStart = document.querySelector('.overlay-start');
 export const modalBtnStart = document.querySelector('.btn-modal-start');
 export const closeModalBtn = document.querySelector('.btn-close');
 
+let result;
+let text;
+let resultsFile;
+
 export async function showModal() {
   modal.classList.remove(CLASSNAMES['HIDDEN']);
   overlay.classList.remove(CLASSNAMES['HIDDEN']);
+  localStorage.setItem('answers', JSON.stringify(studentAnswers));
+
+  resultsFile = studentAnswers
+    .map((quiz) => {
+      // result = Object.values(quiz);
+      text = `${Object.values(quiz)}\u00a0`;
+      return `${student}\u00a0${text}`;
+    })
+    .join(', ');
+
   stopTimer();
 }
 
@@ -33,3 +50,6 @@ export const closeModalStart = function () {
 modalBtnStart.addEventListener('click', closeModalStart);
 modalBtnStart.addEventListener('click', timerQuiz);
 modalBtnStart.addEventListener('click', circularClock);
+domElements.btnSaveFile.addEventListener('click', () => {
+  download_file(devFileName, resultsFile);
+});
