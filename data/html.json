@@ -17,8 +17,8 @@
   },
   {
     "id": 3,
-    "question": "Choisissez l'élément HTML correct pour le titre le plus grand\u00a0:",
-    "answers": ["<h1>", "<heading>", "<h6>", "<head>"],
+    "question": "Quel balise définit le titre le plus grand\u00a0?",
+    "answers": ["<h1>", "<heading>", "<h6>", "<header>"],
     "correctAnswer": "<h1>"
   },
   {
@@ -70,6 +70,18 @@
   {
     "id": 10,
     "question": "Une bonne sémantique HTML aide t-il les moteurs de recherche à indexer votre site\u00a0?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "id": 11,
+    "question": "Laquelle de ces balises HTML n'est pas une balise sémantique\u00a0?",
+    "answers": ["<header>", "<span>", "<article>", "<footer>"],
+    "correctAnswer": "<span>"
+  },
+  {
+    "id": 12,
+    "question": "L'accessibilité Web est-elle utile pour tous les utilisateurs\u00a0?",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   }

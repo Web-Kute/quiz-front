@@ -71,5 +71,17 @@
     "question": "Laquelle de ces unités est relative à la taille de la police de l'élément racine\u00a0?",
     "answers": ["em", "rem", "%", "vh"],
     "correctAnswer": "rem"
+  },
+  {
+    "id": 11,
+    "question": "La taille de la police de l'élément racine est de 16px. Quelle est la taille de la police de h1{font-size: 1.5rem}\u00a0?",
+    "answers": ["24px", "16px", "1.5px", "24.5px"],
+    "correctAnswer": "24px"
+  },
+  {
+    "id": 12,
+    "question": "Quelle est la valeur par défaut de la propriété display\u00a0?",
+    "answers": ["block", "inline", "inline-block", "none"],
+    "correctAnswer": "block"
   }
 ]

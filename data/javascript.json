@@ -76,5 +76,17 @@
       "let array = {'apple','kiwi', 'grappe'}"
     ],
     "correctAnswer": "let array = ['apple','kiwi', 'grappe']"
+  },
+  {
+    "id": 11,
+    "question": "JavaScript est un langage orienté objet\u00a0?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Vrai"
+  },
+  {
+    "id": 12,
+    "question": "Quel élément HTML fournit une zone graphique pour dessiner en JavaScript\u00a0?",
+    "answers": ["<canvas>", "<svg>", "<div>", "<img>"],
+    "correctAnswer": "<canvas>"
   }
 ]
