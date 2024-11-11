@@ -21,8 +21,7 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 
-let quizList = {};
-
+export let quizList = JSON.parse(localStorage.getItem('allquiz')) || [];
 export let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
 export function displayResults() {
@@ -235,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
-
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
   document.addEventListener('click', scrollToBottomQuiz);

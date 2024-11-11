@@ -10,7 +10,8 @@ export const capitalize = (word) =>
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
-export const student = userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+export const student =
+  userName !== null ? `${capitalize(userName)}` : 'Developpeur';
 const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';
@@ -59,6 +60,7 @@ export function results(nbOfQuestions) {
       }
 
       userResults = {
+        student,
         currentTime,
         titleQuiz,
         rating,
