@@ -4,6 +4,7 @@ import {
   showSpinner,
   hideSpinner,
 } from './utils.js';
+import { studentId, getLoginId } from './loggin.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
@@ -21,21 +22,22 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 
-export let quizList = JSON.parse(localStorage.getItem('allquiz')) || [];
-export let studentAnswers = JSON.parse(localStorage.getItem('answers')) || [];
+export let quizList = JSON.parse(sessionStorage.getItem('allquiz')) || [];
+export let studentAnswers = JSON.parse(sessionStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
 export function displayResults() {
   results(totalQuestions);
   if (!isDuplicateQuiz && studentAnswers.length <= 2) {
     studentAnswers.push(userResults);
   }
-  localStorage.setItem('answers', JSON.stringify(studentAnswers));
-  localStorage.setItem('allQuiz', JSON.stringify(quizList));
+  sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
+  sessionStorage.setItem('allQuiz', JSON.stringify(quizList));
   showModal();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const storedUserQuiz = localStorage.getItem('allQuiz');
+
+  const storedUserQuiz = sessionStorage.getItem('allQuiz');
   if (storedUserQuiz) {
     const quizDone = JSON.parse(storedUserQuiz);
     quizList = quizDone;
@@ -61,7 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const userName = urlParams.get('name');
-
+  const userLogged = urlParams.get('logged');
+  // sessionStorage.removeItem('answers');
+  if (userLogged === 'true') {
+    console.log(studentAnswers);
+  }
   function welcomeStudent() {
     if (userName !== null && domElements.welcome) {
       domElements.welcome.innerHTML = `Bienvenue ${userName}`;

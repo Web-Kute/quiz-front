@@ -44,6 +44,7 @@
                 autocomplete="on" required>
             </div>
             <div id="error-email" class="error hide" aria-live="polite"></div>
+            <input id="logged" type="hidden" name="logged" value="false">
 
             <button type="submit" id="submit" class="btn btn-primary">Enregistrer</button>
 
@@ -53,7 +54,7 @@
     </section>
 
   </main>
-  <script type="module" src="./dist/js/valid.js"></script>
+  <script type="module" src="./dist/js/loggin.js"></script>
   <script>
     (async function () {
       // Polyfill for older browsers

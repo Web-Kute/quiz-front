@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', (): void => {
   const form: HTMLFormElement | null = document.getElementById(
     'login',
   ) as HTMLFormElement;
-  // const submitBtn: HTMLInputElement | null = document.getElementById(
-  //   'submit',
-  // ) as HTMLInputElement;
+  const logged: HTMLFormElement | null = document.getElementById(
+    'logged',
+  ) as HTMLFormElement;
 
   const errorName: HTMLElement | null = document.getElementById('error-name');
   const errorEmail: HTMLElement | null = document.getElementById('error-email');
@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', (): void => {
         if (isValid) {
           studentId.push(name.value);
           studentId.push(email.value);
+          logged.value = true;
+        } else {
+          logged.value = false;
         }
 
         sessionStorage.setItem('loginId', JSON.stringify(studentId));
