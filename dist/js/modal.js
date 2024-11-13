@@ -1,9 +1,8 @@
 import { domElements, CLASSNAMES } from './domelem.js';
 import { timerQuiz, stopTimer } from './timer.js';
 import { circularClock } from './utils.js';
-import { studentAnswers } from './choice.js';
-import { devFileName, download_file } from './filesaver.js';
-import { student } from './results.js';
+import { studentAnswers, student } from './choice.js';
+import { download_file } from './filesaver.js';
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
@@ -12,7 +11,6 @@ export const overlayStart = document.querySelector('.overlay-start');
 export const modalBtnStart = document.querySelector('.btn-modal-start');
 export const closeModalBtn = document.querySelector('.btn-close');
 
-let result;
 let text;
 let resultsFile;
 
@@ -51,5 +49,5 @@ modalBtnStart.addEventListener('click', closeModalStart);
 modalBtnStart.addEventListener('click', timerQuiz);
 modalBtnStart.addEventListener('click', circularClock);
 domElements.btnSaveFile.addEventListener('click', () => {
-  download_file(devFileName, resultsFile);
+  download_file(`${student}.txt`, resultsFile);
 });

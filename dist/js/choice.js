@@ -3,6 +3,7 @@ import {
   fetchData,
   showSpinner,
   hideSpinner,
+  capitalize,
 } from './utils.js';
 import { studentId, getLoginId } from './loggin.js';
 import { htmlQuiz } from './htmlpart.js';
@@ -35,7 +36,16 @@ export function displayResults() {
   showModal();
 }
 
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const userName = urlParams.get('name');
+  const userLogged = urlParams.get('logged');
+
+  export const student =
+    userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+
 document.addEventListener('DOMContentLoaded', () => {
+  console.log(studentId, student);
 
   const storedUserQuiz = sessionStorage.getItem('allQuiz');
   if (storedUserQuiz) {
@@ -60,13 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
       navigator.userAgent,
     ) || viewportWidth < 600;
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const userName = urlParams.get('name');
-  const userLogged = urlParams.get('logged');
+
   // sessionStorage.removeItem('answers');
-  if (userLogged === 'true') {
-    console.log(studentAnswers);
+  if (userLogged === true) {
+    console.log(userLogged);
   }
   function welcomeStudent() {
     if (userName !== null && domElements.welcome) {

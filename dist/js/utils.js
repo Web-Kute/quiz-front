@@ -27,6 +27,9 @@ export function hideSpinner() {
   document.querySelector('.spinner').classList.remove('showSpinner');
 }
 
+export const capitalize = (word) =>
+  word.charAt(0).toUpperCase() + word.slice(1);
+
 export let secondsCountdown = null;
 export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');

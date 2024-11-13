@@ -1,17 +1,15 @@
 // import { capitalize } from './utils.js';
-import { titleQuiz } from './choice.js';
+import { titleQuiz, student } from './choice.js';
 
 export let answered = [];
 export let correct = 0;
 export let total;
 export let userResults = {};
-export const capitalize = (word) =>
-  word.charAt(0).toUpperCase() + word.slice(1);
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const userName = urlParams.get('name');
-export const student =
-  userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// const userName = urlParams.get('name');
+
 const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';

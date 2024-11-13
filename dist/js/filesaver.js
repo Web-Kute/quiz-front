@@ -1,7 +1,3 @@
-import { student } from './results.js';
-
-export const devFileName = `${student}.txt`;
-
 export function download_file(name, contents, mime_type) {
   mime_type = mime_type || 'text/plain;charset=utf-8"';
 
