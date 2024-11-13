@@ -23,7 +23,7 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 
-export let quizList = JSON.parse(sessionStorage.getItem('allquiz')) || [];
+export let quizList = JSON.parse(sessionStorage.getItem('allQuiz')) || {};
 export let studentAnswers = JSON.parse(sessionStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
 export function displayResults() {
@@ -36,25 +36,16 @@ export function displayResults() {
   showModal();
 }
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const userName = urlParams.get('name');
-  const userLogged = urlParams.get('logged');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userName = urlParams.get('name');
+const userLogged = urlParams.get('logged');
 
-  export const student =
-    userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+export const student =
+  userName !== null ? `${capitalize(userName)}` : 'Developpeur';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(studentId, student);
-
-  const storedUserQuiz = sessionStorage.getItem('allQuiz');
-  if (storedUserQuiz) {
-    const quizDone = JSON.parse(storedUserQuiz);
-    quizList = quizDone;
-  } else {
-    console.log('Quiz done not found in local storage');
-  }
-
+  //Check if a quiz have been already done
   if (quizList !== null) {
     domElements.quizTitle.forEach((title) => {
       if (quizList[title.dataset.title]) {
@@ -69,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent,
     ) || viewportWidth < 600;
-
 
   // sessionStorage.removeItem('answers');
   if (userLogged === true) {
