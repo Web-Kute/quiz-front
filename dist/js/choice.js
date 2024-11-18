@@ -5,7 +5,7 @@ import {
   hideSpinner,
   capitalize,
 } from './utils.js';
-import { studentId, getLoginId } from './loggin.js';
+// import { studentId, getLoginId } from './login.js';
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
@@ -23,16 +23,23 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 
-export let quizList = JSON.parse(sessionStorage.getItem('allQuiz')) || {};
+export let quizList = {};
+quizList = JSON.parse(sessionStorage.getItem('allQuiz')) || {};
+
 export let studentAnswers = JSON.parse(sessionStorage.getItem('answers')) || [];
 export let isDuplicateQuiz = false;
+let isDouble = false;
 export function displayResults() {
   results(totalQuestions);
-  if (!isDuplicateQuiz && studentAnswers.length <= 2) {
+  // console.log(isDuplicateQuiz, isDouble);
+
+  if (!isDouble && studentAnswers.length <= 2) {
     studentAnswers.push(userResults);
+  } else {
+    alert('Déjà fait');
   }
-  sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
   sessionStorage.setItem('allQuiz', JSON.stringify(quizList));
+  sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
   showModal();
 }
 
@@ -45,7 +52,7 @@ export const student =
   userName !== null ? `${capitalize(userName)}` : 'Developpeur';
 
 document.addEventListener('DOMContentLoaded', () => {
-  //Check if a quiz have been already done
+  //Check if a quiz have already been done
   if (quizList !== null) {
     domElements.quizTitle.forEach((title) => {
       if (quizList[title.dataset.title]) {
@@ -61,13 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
       navigator.userAgent,
     ) || viewportWidth < 600;
 
-  // sessionStorage.removeItem('answers');
-  if (userLogged === true) {
-    console.log(userLogged);
-  }
   function welcomeStudent() {
     if (userName !== null && domElements.welcome) {
-      domElements.welcome.innerHTML = `Bienvenue ${userName}`;
+      domElements.welcome.innerHTML = `Bienvenue ${student}`;
     }
   }
 
@@ -85,10 +88,66 @@ document.addEventListener('DOMContentLoaded', () => {
             domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
             endpointQuiz = target.dataset.endpoint;
             titleQuiz = target.dataset.title;
+
+            const isDoubled = studentAnswers.forEach((quiz) => {
+              // console.log(quiz.titleQuiz === titleQuiz);
+              let done =
+                quiz.titleQuiz === titleQuiz
+                  ? console.log(true)
+                  : console.log(false);
+              console.log('Done: ', done);
+
+  
+              // console.log({
+              //   quiz,
+              //   titleQuizExists: 'titleQuiz' in quiz,
+              //   titleQuizValue: quiz.titleQuiz,
+              // });
+            });
+            // console.log('Check: ', isDoubled, titleQuiz);
+
+            // studentAnswers.forEach((quiz) => {
+            //   // console.log({
+            //   //   quiz,
+            //   //   titleQuizExists: 'titleQuiz' in quiz,
+            //   //   titleQuizValue: quiz.titleQuiz,
+            //   // });
+            // });
+
+            // console.log(Object.keys(studentAnswers[1]) === 'JavaScript');
+            // studentAnswers.map((quiz) => {
+            //   console.log(
+            //     'titleQuiz' in quiz,
+            //     quiz.hasOwnProperty('titleQuiz'),
+            //   );
+            // });
+
+            // 'key' in object;
+            // object.hasOwnProperty('key');
+            // object?.key
+
+            // const checkIfKeyExist = (objectName, keyName) => {
+            //   let keyExist = Object.keys(objectName).some(
+            //     (key) => key === keyName,
+            //   );
+            //   return keyExist;
+            // };
+            // // console.log(checkIfKeyExist(quizList, titleQuiz));
+            // if (checkIfKeyExist(quizList, titleQuiz)) {
+            //   console.log('Winner');
+            // } else {
+            //   console.log('Looser');
+            // }
+            // console.log('QL: ', quizList, 'CSS32' in quizList, isDuplicateQuiz);
             quizList[titleQuiz] = true;
             isDuplicateQuiz = studentAnswers.some(
               (answer) => Object.values(answer)[1] === titleQuiz,
             );
+            // let exists = Object.values(studentAnswers).some((k) => {
+            //   return studentAnswers[k] === titleQuiz;
+            // });
+            // console.log('exists', exists);
+
             if (domElements.titleQuizElem && titleQuiz) {
               domElements.titleQuizElem.innerText = titleQuiz;
             }
@@ -134,6 +193,13 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         });
       }
+      // console.log(
+      //   quizList,
+      //   Object.keys(quizList).length,
+      //   JSON.parse(sessionStorage.getItem('allQuiz')),
+      //   studentAnswers,
+      // );
+      // let isDone = quizList.some
       // Check if the student has already answered 3 quizzes
       if (studentAnswers.length === 3) {
         const buttons = document.querySelectorAll('.answer-item');
