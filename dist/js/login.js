@@ -3,10 +3,6 @@ import { domElements } from './domelem.js';
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 
-sessionStorage.removeItem('allQuiz');
-sessionStorage.removeItem('answers');
-sessionStorage.removeItem('loginId');
-
 document.addEventListener('DOMContentLoaded', () => {
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -69,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
       studentId.push(domElements.name.value);
       studentId.push(domElements.email.value);
       domElements.logged.value = true;
+      sessionStorage.removeItem('allQuiz');
+      sessionStorage.removeItem('answers');
+      sessionStorage.removeItem('loginId');
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
       getLoginId = JSON.parse(sessionStorage.getItem('loginId'));
       location.href = `choose.html?name=${domElements.name.value}&logged=${domElements.logged.value}`;
