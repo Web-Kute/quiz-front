@@ -103,6 +103,14 @@ main {
 }
 .quiz-title .btn-choose {
   font-size: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 @media (max-width: 599px) {
   .quiz-title .btn-choose {
@@ -110,8 +118,8 @@ main {
     display: flex;
     -ms-flex-align: center;
         align-items: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -moz-column-gap: 2rem;
          column-gap: 2rem;
   }

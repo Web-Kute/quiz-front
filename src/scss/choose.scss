@@ -18,11 +18,14 @@ main {
   flex-direction: column;
   .btn-choose {
     font-size: 2 * variables.$base-font-size;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 2rem;
     @include mixins.mobile-down {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       column-gap: 2rem;
     }
   }

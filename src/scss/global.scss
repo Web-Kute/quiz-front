@@ -51,7 +51,7 @@ button {
 }
 
 input {
-  &.valid {
+  &.valid, &.btn-submit {
     background-color: functions.color('green-sea');
   }
   &.invalid {

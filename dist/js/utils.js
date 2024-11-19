@@ -8,8 +8,6 @@ export async function fetchData(endpoint) {
   return shuffledData;
 }
 
-export let quizList = { HTML5: false, CSS3: false, JavaScript: false };
-
 export function fisherYatesShuffle(array) {
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {

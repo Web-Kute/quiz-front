@@ -3,6 +3,10 @@ import { domElements } from './domelem.js';
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 
+sessionStorage.removeItem('allQuiz');
+sessionStorage.removeItem('answers');
+sessionStorage.removeItem('loginId');
+
 document.addEventListener('DOMContentLoaded', () => {
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

@@ -125,10 +125,10 @@ button#name {
   text-transform: capitalize;
 }
 
-input:valid {
+input.valid, input.btn-submit {
   background-color: hsl(168, 76%, 36%);
 }
-input:invalid {
+input.invalid {
   background-color: hsl(192, 15%, 94%);
 }
 
