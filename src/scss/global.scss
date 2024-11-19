@@ -51,11 +51,10 @@ button {
 }
 
 input {
-  &:valid {
+  &.valid {
     background-color: functions.color('green-sea');
-    // border: 2px solid functions.color('green-sea');
   }
-  &:invalid {
+  &.invalid {
     background-color: functions.color('clouds');
   }
 }
