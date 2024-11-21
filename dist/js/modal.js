@@ -21,7 +21,6 @@ export async function showModal() {
 
   resultsFile = studentAnswers
     .map((quiz) => {
-      // result = Object.values(quiz);
       text = `${Object.values(quiz)}\u00a0`;
       return `${student}\u00a0${text}`;
     })

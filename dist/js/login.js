@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       location.href = `choose.html?name=${domElements.name.value}&logged=${domElements.logged.value}`;
     }
   }
+
   domElements.form.addEventListener('submit', isValidForm);
 
   if (domElements.email) {

@@ -1,4 +1,4 @@
-import { fetchData } from './utils.js';
+import { fetchData, disabledAllButtons } from './utils.js';
 import { showModal } from './modal.js';
 import { displayResults, endpointQuiz } from './choice.js';
 
@@ -38,10 +38,7 @@ export async function timerQuiz() {
       clearInterval(clockId);
       displayResults();
       timerClock.classList.add('over');
-      buttons.forEach((button) => {
-        button.classList.add('disabled');
-        button.disabled = true;
-      });
+      disabledAllButtons(buttons);
       showModal();
     }
   }, duration);

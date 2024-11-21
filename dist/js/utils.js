@@ -1,5 +1,6 @@
 import { totalQuestions } from './choice.js';
 import { answered } from './results.js';
+import { CLASSNAMES } from './domelem.js';
 
 export async function fetchData(endpoint) {
   const response = await fetch(endpoint);
@@ -28,7 +29,15 @@ export function hideSpinner() {
 export const capitalize = (word) =>
   word.charAt(0).toUpperCase() + word.slice(1);
 
+export function disabledAllButtons(elemBtn) {
+  elemBtn.forEach((button) => {
+    button.classList.add(CLASSNAMES['DISABLED']);
+    button.disabled = true;
+  });
+}
+
 export let secondsCountdown = null;
+
 export function circularClock() {
   const countdownContainer = document.querySelector('.countdown-container');
   // Injecting the countdown into HTML document

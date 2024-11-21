@@ -6,10 +6,6 @@ export let correct = 0;
 export let total;
 export let userResults = {};
 
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// const userName = urlParams.get('name');
-
 const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';
