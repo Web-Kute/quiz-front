@@ -11,7 +11,6 @@ export const overlayStart = document.querySelector('.overlay-start');
 export const modalBtnStart = document.querySelector('.btn-modal-start');
 export const closeModalBtn = document.querySelector('.btn-close');
 
-let text;
 let resultsFile;
 
 export async function showModal() {
@@ -21,8 +20,7 @@ export async function showModal() {
 
   resultsFile = studentAnswers
     .map((quiz) => {
-      text = `${Object.values(quiz)}\u00a0`;
-      return `${student}\u00a0${text}`;
+      return `${Object.values(quiz)}\u00a0`;
     })
     .join(', ');
 

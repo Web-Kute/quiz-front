@@ -45,7 +45,6 @@ export function displayResults() {
 
   sessionStorage.setItem('allQuiz', JSON.stringify(quizList));
   sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
-  showModal();
 }
 
 const queryString = window.location.search;
@@ -56,6 +55,7 @@ const userLogged = urlParams.get('logged');
 export const student =
   userName !== null ? `${capitalize(userName)}` : 'Developpeur';
 
+//////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   // Check if a quiz have already been done
   if (quizList !== null) {
@@ -142,10 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (studentAnswers.length === 3) {
         const buttons = document.querySelectorAll('.answer-item');
-        buttons.forEach((button) => {
-          button.classList.add('disabled');
-          button.disabled = true;
-        });
+        disabledAllButtons(buttons);
         modalBtnStart.classList.add('hidden');
       }
     } catch (error) {
@@ -228,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (answered.length === totalQuestions) {
             displayResults();
+            showModal();
           }
 
           scrollToBottomQuiz();
