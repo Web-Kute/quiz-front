@@ -16,6 +16,11 @@ export const domElements = {
   pageBottom: document.getElementById('page-bottom'),
   quizTitle: document.querySelectorAll('.quiz-title'),
   btnSaveFile: document.querySelector('.btn-submit'),
+  showResults: document.querySelector('.show-results'),
+  burgerMenuBtn: document.getElementById('burger-menu'),
+  mainMenu: document.querySelector('.main-menu'),
+  showResults: document.querySelector('.show-results'),
+  logoutBtn: document.querySelector('.logout-btn'),
 };
 
 export const CLASSNAMES = {

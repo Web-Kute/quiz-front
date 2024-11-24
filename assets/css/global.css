@@ -155,6 +155,45 @@ body {
   }
 }
 
+h1 {
+  font-family: "Roboto Slab bold", serif;
+  font-size: 3rem;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 599px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-family: "Roboto Slab Regular", sans-serif;
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: hsl(0, 0%, 100%);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+  text-transform: capitalize;
+}
+@media (max-width: 599px) {
+  h2 {
+    display: none;
+  }
+}
+
+button#burger-menu {
+  font-size: 3rem;
+  color: hsl(210, 30%, 24%);
+  border: none;
+  padding: 0;
+  transition: color 300ms ease-in-out;
+}
+button#burger-menu:hover {
+  color: hsl(6, 63%, 46%);
+}
+
 header {
   position: relative;
   display: -ms-flexbox;
@@ -163,12 +202,57 @@ header {
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
-  margin-bottom: 2rem;
+}
+header.choose-quiz {
+  -ms-flex-align: center;
+      align-items: center;
+}
+header div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 @media (max-width: 599px) {
   header {
     margin-top: 1rem;
   }
+}
+
+.main-content {
+  position: relative;
+}
+
+.main-menu {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 10;
+}
+.main-menu ul {
+  list-style: none;
+  width: 100%;
+}
+.main-menu ul li {
+  padding: 1rem;
+  background-color: hsl(283, 39%, 53%);
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+.main-menu ul li:first-child {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.main-menu ul li:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(6, 63%, 46%);
+}
+.main-menu ul li a {
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
 }
 
 section {
@@ -208,33 +292,6 @@ section {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-}
-
-h1 {
-  font-family: "Roboto Slab bold", serif;
-  font-size: 3rem;
-  color: hsl(0, 0%, 100%);
-  text-align: center;
-  letter-spacing: 5px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 599px) {
-  h1 {
-    font-size: 2rem;
-  }
-}
-
-h2 {
-  font-family: "Roboto Slab Regular", sans-serif;
-  font-size: 2rem;
-  color: hsl(0, 0%, 100%);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-  text-transform: capitalize;
-}
-@media (max-width: 599px) {
-  h2 {
-    display: none;
-  }
 }
 
 .btn {

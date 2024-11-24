@@ -19,6 +19,8 @@ import {
   overlay,
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
+import { showBurgerMenu } from './menu.js';
+import { clearSessionStorage } from './login.js';
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const target = e.target.closest('div');
           if (!target.childNodes[1].classList.contains('disabled')) {
             showSpinner();
-            domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
+            // domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
             endpointQuiz = target.dataset.endpoint;
             titleQuiz = target.dataset.title;
 
@@ -240,6 +242,16 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
+  // if (domElements.logoutBtn) {
+  //   console.log(domElements.logoutBtn);
+  //   domElements.logoutBtn.addEventListener('click', () => clearSessionStorage);
+  // }
+  domElements.logoutBtn.addEventListener('click', () => {
+    sessionStorage.removeItem('allQuiz');
+    sessionStorage.removeItem('answers');
+    sessionStorage.removeItem('loginId');
+    location.href = 'index.html';
+  });
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
   document.addEventListener('click', scrollToBottomQuiz);

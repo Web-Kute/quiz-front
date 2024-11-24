@@ -36,6 +36,12 @@ export function disabledAllButtons(elemBtn) {
   });
 }
 
+export function clearSessionStorage() {
+  sessionStorage.removeItem('allQuiz');
+  sessionStorage.removeItem('answers');
+  sessionStorage.removeItem('loginId');
+}
+
 export let secondsCountdown = null;
 
 export function circularClock() {

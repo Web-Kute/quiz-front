@@ -1,7 +1,13 @@
 import { domElements } from './domelem.js';
+// import { clearSessionStorage } from './utils.js';
 
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('studentId')) || [];
+export function clearSessionStorage() {
+  sessionStorage.removeItem('allQuiz');
+  sessionStorage.removeItem('answers');
+  sessionStorage.removeItem('loginId');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const emailRegex =
@@ -13,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let nameValid = false;
   let emailValid = false;
-  domElements.logged.value = false;
+  // domElements.logged.value = false;
   // let isValid = nameValid && emailValid;
 
   function validateName() {
@@ -65,16 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
       studentId.push(domElements.name.value);
       studentId.push(domElements.email.value);
       domElements.logged.value = true;
-      sessionStorage.removeItem('allQuiz');
-      sessionStorage.removeItem('answers');
-      sessionStorage.removeItem('loginId');
+      clearSessionStorage();
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
       getLoginId = JSON.parse(sessionStorage.getItem('loginId'));
       location.href = `choose.html?name=${domElements.name.value}&logged=${domElements.logged.value}`;
     }
   }
 
-  domElements.form.addEventListener('submit', isValidForm);
+  if (domElements.form) {
+    domElements.form.addEventListener('submit', isValidForm);
+  }
 
   if (domElements.email) {
     domElements.email.addEventListener('focus', validateEmail);
