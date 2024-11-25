@@ -2,7 +2,8 @@ import { domElements } from './domelem.js';
 // import { clearSessionStorage } from './utils.js';
 
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
-export let getLoginId = JSON.parse(sessionStorage.getItem('studentId')) || [];
+export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
+
 export function clearSessionStorage() {
   sessionStorage.removeItem('allQuiz');
   sessionStorage.removeItem('answers');

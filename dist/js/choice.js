@@ -20,7 +20,7 @@ import {
 } from './modal.js';
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
-import { clearSessionStorage } from './login.js';
+import { getLoginId } from './login.js';
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
@@ -55,8 +55,13 @@ const userName = urlParams.get('name');
 const userLogged = urlParams.get('logged');
 
 export const student =
-  userName !== null ? `${capitalize(userName)}` : 'Developpeur';
+  getLoginId[0] !== null ? `${capitalize(getLoginId[0])}` : 'Développeur';
 
+export function welcomeStudent() {
+  if (getLoginId[0] !== null && domElements.welcome) {
+    domElements.welcome.innerHTML = `${student}`;
+  }
+}
 //////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   // Check if a quiz have already been done
@@ -74,12 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent,
     ) || viewportWidth < 600;
-
-  function welcomeStudent() {
-    if (userName !== null && domElements.welcome) {
-      domElements.welcome.innerHTML = `${student}`;
-    }
-  }
 
   welcomeStudent();
 
@@ -246,11 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
   //   console.log(domElements.logoutBtn);
   //   domElements.logoutBtn.addEventListener('click', () => clearSessionStorage);
   // }
-  domElements.logoutBtn.addEventListener('click', () => {
-    sessionStorage.removeItem('allQuiz');
-    sessionStorage.removeItem('answers');
-    sessionStorage.removeItem('loginId');
-    location.href = 'index.html';
+  domElements.mainMenu.addEventListener('click', (e) => {
+    if (e.target.id === 'logout' || e.target.className === 'logout-btn') {
+      sessionStorage.removeItem('allQuiz');
+      sessionStorage.removeItem('answers');
+      sessionStorage.removeItem('loginId');
+      location.href = 'index.html';
+    }
   });
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);

@@ -1,0 +1,45 @@
+@use 'typography';
+@use 'variables';
+@use 'mixins';
+@use 'functions';
+
+table {
+  background-color: functions.color('white');
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-collapse: collapse;
+}
+
+caption {
+  font-size: 1.5rem;
+  color: functions.color('white');
+  background-color: functions.color('midnight-blue');
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+thead {
+  font-size: 1.2rem;
+  color: functions.color('midnight-blue');
+  border: 1px solid functions.color('green-sea');
+  line-height: 2.5;
+}
+
+tbody {
+  tr {
+    &:nth-child(odd) {
+      color: functions.color('white');
+      background-color: functions.color('clouds');
+    }
+    &:nth-child(odd) {
+      background-color: functions.color('green-sea');
+    }
+  }
+  td {
+    padding: 7px;
+  }
+}
+tfoot {
+  padding: 20px;
+}

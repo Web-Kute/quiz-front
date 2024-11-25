@@ -42,9 +42,14 @@ export const closeModalStart = function () {
   overlayStart.classList.add(CLASSNAMES['HIDDEN']);
 };
 
-modalBtnStart.addEventListener('click', closeModalStart);
-modalBtnStart.addEventListener('click', timerQuiz);
-modalBtnStart.addEventListener('click', circularClock);
-domElements.btnSaveFile.addEventListener('click', () => {
-  download_file(`${student}.txt`, resultsFile);
-});
+if (modalBtnStart) {
+  modalBtnStart.addEventListener('click', closeModalStart);
+  modalBtnStart.addEventListener('click', timerQuiz);
+  modalBtnStart.addEventListener('click', circularClock);
+}
+
+if (domElements.btnSaveFile) {
+  domElements.btnSaveFile.addEventListener('click', () => {
+    download_file(`${student}.txt`, resultsFile);
+  });
+}

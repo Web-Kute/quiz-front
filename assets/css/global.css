@@ -224,8 +224,15 @@ header div {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  min-width: 200px;
   background-color: hsl(0, 0%, 100%);
   z-index: 10;
+}
+.main-menu a {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: block;
 }
 @media (max-width: 599px) {
   .main-menu {
@@ -237,7 +244,6 @@ header div {
   width: 100%;
 }
 .main-menu ul li {
-  padding: 1rem;
   background-color: hsl(283, 39%, 53%);
   border-bottom: 1px solid white;
   cursor: pointer;

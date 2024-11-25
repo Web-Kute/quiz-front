@@ -322,8 +322,15 @@ header div {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  min-width: 200px;
   background-color: hsl(0, 0%, 100%);
   z-index: 10;
+}
+.main-menu a {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: block;
 }
 @media (max-width: 599px) {
   .main-menu {
@@ -335,7 +342,6 @@ header div {
   width: 100%;
 }
 .main-menu ul li {
-  padding: 1rem;
   background-color: hsl(283, 39%, 53%);
   border-bottom: 1px solid white;
   cursor: pointer;
@@ -1004,4 +1010,42 @@ aside .seconds {
   100% {
     transform: rotate(360deg);
   }
+}
+table {
+  background-color: hsl(0, 0%, 100%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-collapse: collapse;
+}
+
+caption {
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(210, 30%, 24%);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+thead {
+  font-size: 1.2rem;
+  color: hsl(210, 30%, 24%);
+  border: 1px solid hsl(168, 76%, 36%);
+  line-height: 2.5;
+}
+
+tbody tr:nth-child(odd) {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(192, 15%, 94%);
+}
+tbody tr:nth-child(odd) {
+  background-color: hsl(168, 76%, 36%);
+}
+tbody td {
+  padding: 7px;
+}
+
+tfoot {
+  padding: 20px;
 }/*# sourceMappingURL=style.css.map */
