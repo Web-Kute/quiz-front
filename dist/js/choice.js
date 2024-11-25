@@ -254,5 +254,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
-  document.addEventListener('click', scrollToBottomQuiz);
+  domElements.mainContent.addEventListener('click', scrollToBottomQuiz);
 });
