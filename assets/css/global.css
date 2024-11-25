@@ -177,11 +177,6 @@ h2 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
   text-transform: capitalize;
 }
-@media (max-width: 599px) {
-  h2 {
-    display: none;
-  }
-}
 
 button#burger-menu {
   font-size: 3rem;
@@ -231,6 +226,11 @@ header div {
   width: 100%;
   background-color: hsl(0, 0%, 100%);
   z-index: 10;
+}
+@media (max-width: 599px) {
+  .main-menu {
+    width: 200px;
+  }
 }
 .main-menu ul {
   list-style: none;

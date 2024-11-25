@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const nameValue = domElements.name.value;
-    const isNameLengthValid = nameValue.length >= 5 && nameValue.length < 25;
+    const isNameLengthValid = nameValue.length >= 3 && nameValue.length < 15;
     const hasNoDigits = !/\d/.test(nameValue);
     const isNotEmpty = nameValue !== '';
     const isNameInvalid = !(isNameLengthValid && hasNoDigits && isNotEmpty);

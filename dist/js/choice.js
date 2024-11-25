@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function welcomeStudent() {
     if (userName !== null && domElements.welcome) {
-      domElements.welcome.innerHTML = `Bienvenue ${student}`;
+      domElements.welcome.innerHTML = `${student}`;
     }
   }
 
