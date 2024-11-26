@@ -4,6 +4,7 @@
 @use 'functions';
 
 table {
+  min-width: 350px;
   background-color: functions.color('white');
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -27,7 +28,11 @@ thead {
 }
 
 tbody {
+  th {
+    padding-left: 10px;
+  }
   tr {
+    padding: 1rem;
     &:nth-child(odd) {
       color: functions.color('white');
       background-color: functions.color('clouds');
@@ -42,4 +47,13 @@ tbody {
 }
 tfoot {
   padding: 20px;
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  #quiz-table-results {
+    display: block;
+  }
 }

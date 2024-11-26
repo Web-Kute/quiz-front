@@ -80,6 +80,7 @@
 }
 
 table {
+  min-width: 350px;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -103,6 +104,12 @@ thead {
   line-height: 2.5;
 }
 
+tbody th {
+  padding-left: 10px;
+}
+tbody tr {
+  padding: 1rem;
+}
 tbody tr:nth-child(odd) {
   color: hsl(0, 0%, 100%);
   background-color: hsl(192, 15%, 94%);
@@ -116,4 +123,13 @@ tbody td {
 
 tfoot {
   padding: 20px;
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  #quiz-table-results {
+    display: block;
+  }
 }/*# sourceMappingURL=results.css.map */

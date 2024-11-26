@@ -324,7 +324,7 @@ header div {
   width: 100%;
   min-width: 200px;
   background-color: hsl(0, 0%, 100%);
-  z-index: 10;
+  z-index: 110;
 }
 .main-menu a {
   width: 100%;
@@ -375,6 +375,7 @@ section {
   position: relative;
   width: 10rem;
   height: 10rem;
+  margin: 0.5rem;
   border-radius: 50%;
   display: -ms-flexbox;
   display: flex;
@@ -1012,6 +1013,7 @@ aside .seconds {
   }
 }
 table {
+  min-width: 350px;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1035,6 +1037,12 @@ thead {
   line-height: 2.5;
 }
 
+tbody th {
+  padding-left: 10px;
+}
+tbody tr {
+  padding: 1rem;
+}
 tbody tr:nth-child(odd) {
   color: hsl(0, 0%, 100%);
   background-color: hsl(192, 15%, 94%);
@@ -1048,4 +1056,13 @@ tbody td {
 
 tfoot {
   padding: 20px;
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  #quiz-table-results {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */

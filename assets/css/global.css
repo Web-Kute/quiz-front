@@ -226,7 +226,7 @@ header div {
   width: 100%;
   min-width: 200px;
   background-color: hsl(0, 0%, 100%);
-  z-index: 10;
+  z-index: 110;
 }
 .main-menu a {
   width: 100%;
@@ -277,6 +277,7 @@ section {
   position: relative;
   width: 10rem;
   height: 10rem;
+  margin: 0.5rem;
   border-radius: 50%;
   display: -ms-flexbox;
   display: flex;

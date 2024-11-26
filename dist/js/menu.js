@@ -15,8 +15,6 @@ const closeOutside = (e) => {
   }
 };
 
-export function mainMenu() {}
-// location.href = `choose.html?name=${domElements.name.value}&logged=${domElements.logged.value}`;
 export const mainMenuHtml = `<ul>
           <li class="main-menu-list quiz-list"><a href="choose.html">Liste Quiz</a></li>
           <li class="main-menu-list show-result"><a href="results.html">Résultats</a></li>

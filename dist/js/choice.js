@@ -58,8 +58,10 @@ export const student =
   getLoginId[0] !== null ? `${capitalize(getLoginId[0])}` : 'Développeur';
 
 export function welcomeStudent() {
-  if (getLoginId[0] !== null && domElements.welcome) {
+  if (getLoginId[0] && domElements.welcome) {
     domElements.welcome.innerHTML = `${student}`;
+  } else {
+    domElements.welcome.innerHTML = 'Bienvenue';
   }
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -253,7 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
       location.href = 'index.html';
     }
   });
+if (closeModalBtn) {
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
+}
+
   domElements.mainContent.addEventListener('click', scrollToBottomQuiz);
 });
