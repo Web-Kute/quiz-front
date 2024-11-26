@@ -21,6 +21,7 @@ export const domElements = {
   mainMenu: document.querySelector('.main-menu'),
   showResults: document.querySelector('.show-results'),
   logoutBtn: document.querySelector('.logout-btn'),
+  result: document.getElementById('result'),
   quizTableResults: document.getElementById('quiz-table-results'),
   quizResults: document.getElementById('quiz-results'),
 };

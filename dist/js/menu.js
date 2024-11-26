@@ -7,7 +7,7 @@ export function showBurgerMenu() {
 
 export const mainMenuHtml = `<ul>
           <li class="main-menu-list quiz-list"><a href="choose.html">Liste Quiz</a></li>
-          <li class="main-menu-list show-result"><a href="results.html">Résultats</a></li>
+          <li class="main-menu-list show-result"><a href="#" id="result">Résultats</a></li>
           <li class="main-menu-list logout-btn"><a href="#" id="logout">Se déconnecter</a></li>
         </ul>`;
 
@@ -25,10 +25,14 @@ const closeOutside = (e) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const urlHash = window.location.href;
+
   if (domElements.mainMenu) {
     domElements.mainMenu.innerHTML = mainMenuHtml;
   }
   const logout = document.getElementById('logout');
+  const result = document.getElementById('result');
+
   function confirmLogout() {
     if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?') === true) {
       clearSessionStorage();
@@ -36,6 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       console.log('cancel');
     }
+  }
+
+  function confirmResult() {
+    if (!urlHash.includes('results.html')) {
+      if (confirm('Si vous quittez, vous perdrez vos réponses !') === true) {
+        location.href = 'results.html';
+      } else {
+        console.log('cancel');
+      }
+    }
+  }
+
+  if (result) {
+    result.addEventListener('click', confirmResult);
   }
   if (logout) {
     logout.addEventListener('click', confirmLogout);

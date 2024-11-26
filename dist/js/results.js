@@ -6,7 +6,7 @@ export let correct = 0;
 export let total;
 export let userResults = {};
 
-const currentTime = new Date().toLocaleDateString();
+export const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';
 
