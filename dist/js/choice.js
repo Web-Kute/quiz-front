@@ -3,7 +3,6 @@ import {
   fetchData,
   showSpinner,
   hideSpinner,
-  capitalize,
   disabledAllButtons,
 } from './utils.js';
 // import { studentId, getLoginId } from './login.js';
@@ -53,6 +52,10 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
 const userLogged = urlParams.get('logged');
+
+const capitalize = (word = '') => {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+};
 
 export const student =
   getLoginId[0] !== null ? `${capitalize(getLoginId[0])}` : 'Développeur';
@@ -243,18 +246,15 @@ document.addEventListener('DOMContentLoaded', () => {
       domElements.pageBottom.scrollIntoView();
     }
   }
-  // if (domElements.logoutBtn) {
-  //   console.log(domElements.logoutBtn);
-  //   domElements.logoutBtn.addEventListener('click', () => clearSessionStorage);
-  // }
-  domElements.mainMenu.addEventListener('click', (e) => {
-    if (e.target.id === 'logout' || e.target.className === 'logout-btn') {
-      sessionStorage.removeItem('allQuiz');
-      sessionStorage.removeItem('answers');
-      sessionStorage.removeItem('loginId');
-      location.href = 'index.html';
-    }
-  });
+
+  // domElements.mainMenu.addEventListener('click', (e) => {
+  //   if (e.target.id === 'logout' || e.target.className === 'logout-btn') {
+  //     sessionStorage.removeItem('allQuiz');
+  //     sessionStorage.removeItem('answers');
+  //     sessionStorage.removeItem('loginId');
+  //     location.href = 'index.html';
+  //   }
+  // });
 if (closeModalBtn) {
   closeModalBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);

@@ -8,7 +8,7 @@ const headTableHtml = `<caption>
       </caption>
       <thead>
         <tr>
-          <th scope="col">${studentAnswers[0].student}</th>
+          <th scope="col"><strong>${studentAnswers[0].student}</strong></th>
           <th scope="col">${studentAnswers[0].currentTime}</th>
           <th scope="col">Quiz Front-End</th>
         </tr>
@@ -23,8 +23,8 @@ const tfootHtml = `<tfoot>
 
 const dataTable = studentAnswers.map((quiz) => {
   let quizRow = `<tr>
-    <th scope="row">${quiz.titleQuiz}</th>
-      <td>${quiz.rating}</td>
+    <th scope="row"><strong>${quiz.titleQuiz}</strong> => </th>
+      <td>${quiz.rating}, </td>
       <td>${quiz.grade}</td>
     </tr>`;
   return (domElements.quizResults.innerHTML = quizRow);

@@ -26,11 +26,6 @@ export function hideSpinner() {
   document.querySelector('.spinner').classList.remove('showSpinner');
 }
 
-export const capitalize = (word = '') => {
-  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-};
-
-
 export function disabledAllButtons(elemBtn) {
   elemBtn.forEach((button) => {
     button.classList.add(CLASSNAMES['DISABLED']);

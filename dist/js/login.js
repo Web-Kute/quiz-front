@@ -1,5 +1,4 @@
 import { domElements } from './domelem.js';
-// import { clearSessionStorage } from './utils.js';
 
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
@@ -20,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let nameValid = false;
   let emailValid = false;
-  // domElements.logged.value = false;
-  // let isValid = nameValid && emailValid;
 
   function validateName() {
     if (domElements.name === null) {
