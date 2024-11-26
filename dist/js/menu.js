@@ -6,7 +6,7 @@ export function showBurgerMenu() {
 }
 
 export const mainMenuHtml = `<ul>
-          <li class="main-menu-list quiz-list"><a href="choose.html">Liste Quiz</a></li>
+          <li class="main-menu-list quiz-list"><a href="choose.html">Liste des Quiz</a></li>
           <li class="main-menu-list show-result"><a href="#" id="result">Résultats</a></li>
           <li class="main-menu-list logout-btn"><a href="#" id="logout">Se déconnecter</a></li>
         </ul>`;
