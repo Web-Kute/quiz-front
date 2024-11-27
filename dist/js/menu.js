@@ -6,9 +6,9 @@ export function showBurgerMenu() {
 }
 
 export const mainMenuHtml = `<ul>
-          <li class="main-menu-list quiz-list"><a href="choose.html">Liste des Quiz</a></li>
-          <li class="main-menu-list show-result"><a href="#" id="result">Résultats</a></li>
-          <li class="main-menu-list logout-btn"><a href="#" id="logout">Se déconnecter</a></li>
+          <li class="main-menu-list quiz-list"><a href="choose.html" class="">Liste des Quiz</a></li>
+          <li class="main-menu-list show-result"><a href="#" class="" id="result">Résultats</a></li>
+          <li class="main-menu-list logout-btn"><a href="#" class="" id="logout">Se déconnecter</a></li>
         </ul>`;
 
 const closeOutside = (e) => {
@@ -25,13 +25,21 @@ const closeOutside = (e) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const urlHash = window.location.href;
+  // domElements.mainMenu.addEventListener('click', (e) => {
+  //   console.log('click', e.target.tagName);
+  //   if (e.target.tagName === 'A') {
+  //     e.target.classList.toggle('active');
+  //   }
+  // });
+  const urlPath = window.location.pathname;
+  // console.log('urlPath: ', urlPath);
 
   if (domElements.mainMenu) {
     domElements.mainMenu.innerHTML = mainMenuHtml;
   }
   const logout = document.getElementById('logout');
   const result = document.getElementById('result');
+  const showResult = document.querySelector('.show-result');
 
   function confirmLogout() {
     if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?') === true) {
@@ -43,12 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function confirmResult() {
-    if (!urlHash.includes('results.html')) {
-      if (confirm('Si vous quittez, vous perdrez vos réponses !') === true) {
+    const hasParameters = window.location.search.length > 0;
+    console.log('urlPath: ', hasParameters);
+    if (hasParameters) {
+      if (
+        confirm('Si vous quittez cette page, vous perdrez vos réponses !') ===
+        true
+      ) {
         location.href = 'results.html';
       } else {
         console.log('cancel');
       }
+    } else {
+      location.href = 'results.html';
     }
   }
 

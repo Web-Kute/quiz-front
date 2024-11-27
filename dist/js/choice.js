@@ -94,13 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
         async (e) => {
           e.preventDefault();
           const target = e.target.closest('div');
+
           if (!target.childNodes[1].classList.contains('disabled')) {
             showSpinner();
-            // domElements.btnUndo.classList.toggle(CLASSNAMES['HIDDEN']);
             endpointQuiz = target.dataset.endpoint;
             titleQuiz = target.dataset.title;
 
             quizList[titleQuiz] = true;
+            const url = `?quiz=${titleQuiz}`;
 
             if (domElements.titleQuizElem && titleQuiz) {
               domElements.titleQuizElem.innerText = titleQuiz;
@@ -109,6 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
               domElements.chooseContainer.outerHTML = htmlQuiz;
             }
             await displayQuestions(endpointQuiz);
+            //add parameter to url
+            window.history.pushState(
+              {},
+              '',
+              `${location.pathname}?quiz=${titleQuiz}`,
+            );
+
             await validateAnswer(endpointQuiz);
           }
           e.stopPropagation();
@@ -247,18 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // domElements.mainMenu.addEventListener('click', (e) => {
-  //   if (e.target.id === 'logout' || e.target.className === 'logout-btn') {
-  //     sessionStorage.removeItem('allQuiz');
-  //     sessionStorage.removeItem('answers');
-  //     sessionStorage.removeItem('loginId');
-  //     location.href = 'index.html';
-  //   }
-  // });
-if (closeModalBtn) {
-  closeModalBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
-}
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+  }
 
   domElements.mainContent.addEventListener('click', scrollToBottomQuiz);
 });

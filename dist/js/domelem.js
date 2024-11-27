@@ -24,6 +24,7 @@ export const domElements = {
   result: document.getElementById('result'),
   quizTableResults: document.getElementById('quiz-table-results'),
   quizResults: document.getElementById('quiz-results'),
+  listItem: document.querySelector('.main-menu-list'),
 };
 
 export const CLASSNAMES = {

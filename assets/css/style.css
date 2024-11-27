@@ -358,6 +358,9 @@ header div {
   color: hsl(0, 0%, 100%);
   text-transform: uppercase;
 }
+.main-menu ul li a.active {
+  background-color: hsl(6, 63%, 46%);
+}
 
 section {
   position: relative;

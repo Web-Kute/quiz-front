@@ -162,6 +162,9 @@ header {
       a {
         color: functions.color('white');
         text-transform: uppercase;
+        &.active {
+          background-color: functions.color('pomegranate');
+        }
       }
     }
   }
