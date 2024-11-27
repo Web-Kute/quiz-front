@@ -132,4 +132,17 @@ tfoot {
   #quiz-table-results {
     display: block;
   }
+  #quiz-table-results .btn-print {
+    display: none;
+  }
+  #quiz-table-results tbody th {
+    padding-left: 10px;
+  }
+  #quiz-table-results tbody tr {
+    padding: 1rem;
+    color: hsl(210, 30%, 24%);
+  }
+  #quiz-table-results tbody td {
+    padding: 7px;
+  }
 }/*# sourceMappingURL=results.css.map */

@@ -55,5 +55,20 @@ tfoot {
   }
   #quiz-table-results {
     display: block;
+    .btn-print {
+      display: none;
+    }
+    tbody {
+      th {
+        padding-left: 10px;
+      }
+      tr {
+        padding: 1rem;
+        color: functions.color('midnight-blue');
+      }
+      td {
+        padding: 7px;
+      }
+    }
   }
 }

@@ -101,29 +101,6 @@ main {
   -ms-flex-direction: column;
       flex-direction: column;
 }
-.quiz-title .btn-choose {
-  font-size: 2rem;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
-@media (max-width: 599px) {
-  .quiz-title .btn-choose {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-  }
-}
 .quiz-title button {
   border: none;
 }
@@ -133,6 +110,38 @@ main {
 @media (max-width: 599px) {
   .quiz-title .skills__icon {
     width: 40%;
+  }
+}
+
+.btn-choose {
+  font-size: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  opacity: 0.8;
+}
+.btn-choose:hover {
+  opacity: 1;
+  background-color: hsl(282, 44%, 47%);
+}
+.btn-choose:disabled {
+  transform: rotateY(180deg);
+}
+@media (max-width: 599px) {
+  .btn-choose {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 }
 

@@ -125,7 +125,7 @@ button#name {
   text-transform: capitalize;
 }
 
-input.valid, input.btn-submit {
+input.valid {
   background-color: hsl(168, 76%, 36%);
 }
 input.invalid {
@@ -186,7 +186,7 @@ button#burger-menu {
   transition: color 300ms ease-in-out;
 }
 button#burger-menu:hover {
-  color: hsl(6, 63%, 46%);
+  color: hsl(192, 15%, 94%);
 }
 
 header {
@@ -254,7 +254,7 @@ header div {
 }
 .main-menu ul li:hover {
   color: hsl(0, 0%, 100%);
-  background-color: hsl(6, 63%, 46%);
+  background-color: hsl(168, 76%, 36%);
 }
 .main-menu ul li a {
   color: hsl(0, 0%, 100%);
@@ -315,7 +315,23 @@ section {
   transition: background-color 300ms ease-in-out;
 }
 .btn:hover {
+  background-color: hsl(168, 76%, 36%);
+}
+
+.btn-print,
+.btn-submit {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 1rem 0;
+  color: hsl(0, 0%, 100%);
   background-color: hsl(282, 44%, 47%);
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+}
+.btn-print:hover,
+.btn-submit:hover {
+  background-color: hsl(168, 76%, 36%);
 }
 
 .form-group {

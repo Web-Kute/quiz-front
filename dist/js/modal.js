@@ -50,6 +50,7 @@ if (modalBtnStart) {
 
 if (domElements.btnSaveFile) {
   domElements.btnSaveFile.addEventListener('click', () => {
-    download_file(`${student}.txt`, resultsFile);
+    // download_file(`${student}.txt`, resultsFile);
+    location.href = 'results.html';
   });
 }

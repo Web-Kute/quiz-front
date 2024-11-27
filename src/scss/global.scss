@@ -51,8 +51,7 @@ button {
 }
 
 input {
-  &.valid,
-  &.btn-submit {
+  &.valid {
     background-color: functions.color('green-sea');
   }
   &.invalid {
@@ -101,7 +100,7 @@ button#burger-menu {
   padding: 0;
   transition: color 300ms ease-in-out;
   &:hover {
-    color: functions.color('pomegranate');
+    color: functions.color('clouds');
   }
 }
 
@@ -157,7 +156,7 @@ header {
       }
       &:hover {
         color: functions.color('white');
-        background-color: functions.color('pomegranate');
+        background-color: functions.color('green-sea');
       }
       a {
         color: functions.color('white');
@@ -213,7 +212,22 @@ section {
   width: 100%;
   transition: background-color 300ms ease-in-out;
   &:hover {
-    background-color: functions.color('wisteria');
+    background-color: functions.color('green-sea');
+  }
+}
+
+.btn-print,
+.btn-submit {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 1rem 0;
+  color: functions.color('white');
+  background-color: functions.color('wisteria');
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: functions.color('green-sea');
   }
 }
 

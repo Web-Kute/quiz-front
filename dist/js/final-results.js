@@ -1,10 +1,16 @@
 import { showBurgerMenu } from './menu.js';
 import { domElements } from './domelem.js';
 import { getLoginId } from './login.js';
-import { currentTime } from './results.js'
-import { student, welcomeStudent, studentAnswers, quizList, capitalize } from './choice.js';
+import { currentTime } from './results.js';
+import {
+  student,
+  welcomeStudent,
+  studentAnswers,
+  quizList,
+  capitalize,
+} from './choice.js';
 
-const headTableHtml =`<caption>
+const headTableHtml = `<caption>
         Front-end Web Developer
       </caption>
       <thead>
@@ -17,8 +23,8 @@ const headTableHtml =`<caption>
 
 const tfootHtml = `<tfoot>
         <tr>
-          <th scope="row" colspan="2"></th>
-          <td>&nbsp;</td>
+
+          <td colspan="3"><input type="submit" class="btn-print" value="Imprimer les résultats"></td>
         </tr>
       </tfoot>`;
 
@@ -33,3 +39,9 @@ const dataTable = studentAnswers.map((quiz) => {
 
 domElements.quizTableResults.innerHTML =
   headTableHtml + dataTable.join('') + tfootHtml;
+
+const handlePrint = () => {
+  window.print();
+};
+
+document.querySelector('.btn-print').addEventListener('click', handlePrint);

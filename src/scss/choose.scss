@@ -16,19 +16,7 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  .btn-choose {
-    font-size: 2 * variables.$base-font-size;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    column-gap: 2rem;
-    @include mixins.mobile-down {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      column-gap: 2rem;
-    }
-  }
+
   button {
     border: none;
   }
@@ -37,6 +25,28 @@ main {
     @include mixins.mobile-down {
       width: 40%;
     }
+  }
+}
+
+.btn-choose {
+  font-size: 2 * variables.$base-font-size;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 2rem;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    background-color: functions.color('wisteria');
+  }
+  &:disabled {
+    transform: rotateY(180deg);
+  }
+  @include mixins.mobile-down {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 2rem;
   }
 }
 
