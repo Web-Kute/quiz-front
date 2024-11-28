@@ -25,7 +25,10 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 export let gameOver = false;
-
+// setter function to update gameOver
+export function setGameOver(value) {
+  gameOver = value;
+}
 export let quizList = {};
 quizList = JSON.parse(sessionStorage.getItem('allQuiz')) || {};
 
@@ -239,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           if (answered.length === totalQuestions) {
-            gameOver = true;
+            setGameOver(true);
             displayResults();
             showModal();
           }

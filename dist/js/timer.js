@@ -1,7 +1,6 @@
 import { fetchData, disabledAllButtons } from './utils.js';
 import { showModal } from './modal.js';
-import { displayResults, endpointQuiz, gameOver } from './choice.js';
-
+import { displayResults, endpointQuiz, setGameOver } from './choice.js';
 export let elapsedTime = 1000;
 export let clockId = null;
 let duration = 1000;
@@ -36,7 +35,7 @@ export async function timerQuiz() {
 
     if (elapsedTime === 0) {
       clearInterval(clockId);
-      gameOver = true;
+      setGameOver(true); // Using a setter function instead of direct assignment
       displayResults();
       timerClock.classList.add('over');
       disabledAllButtons(buttons);
