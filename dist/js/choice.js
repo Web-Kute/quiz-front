@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function displayQuestions(endpoint) {
     const container = document.getElementById('container');
+    document.getElementById('quiz-list').classList.remove('active');
     try {
       const data = await fetchData(endpoint);
       if (Array.isArray(data)) {

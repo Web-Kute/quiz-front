@@ -50,7 +50,7 @@
   },
   {
     "id": 7,
-    "question": "Trouvez l'intrus\u00a0?",
+    "question": "Trouvez l'intrus.",
     "answers": ["Svelte", "Materialize CSS", "Bootstrap", "Tailwind CSS"],
     "correctAnswer": "Svelte"
   },

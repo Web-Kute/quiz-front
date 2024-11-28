@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "question": "Qui élabore les normes du Web\u00a0?",
+    "question": "Quel organisme élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C"
   },

@@ -62,7 +62,7 @@
   },
   {
     "id": 9,
-    "question": "Quel élément n'est pas un type de données JavaScript\u00a0?",
+    "question": "Quel élément n'est pas un type de données primitives JavaScript\u00a0?",
     "answers": ["String", "Boolean", "Number", "Float"],
     "correctAnswer": "Float"
   },
