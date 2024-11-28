@@ -22,7 +22,6 @@ const headTableHtml = `<caption>
 
 const tfootHtml = `<tfoot>
         <tr>
-
           <td colspan="3"><input type="submit" class="btn-print" value="Imprimer les résultats"></td>
         </tr>
       </tfoot>`;

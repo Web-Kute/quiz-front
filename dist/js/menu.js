@@ -1,3 +1,4 @@
+import { gameOver } from './choice.js';
 import { domElements } from './domelem.js';
 import { clearSessionStorage } from './utils.js';
 
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function confirmResult() {
     const hasParameters = window.location.search.length > 0;
     console.log('urlPath: ', hasParameters);
-    if (hasParameters) {
+    if (hasParameters && !gameOver) {
       if (
         confirm('Si vous quittez cette page, vous perdrez vos réponses !') ===
         true

@@ -117,13 +117,13 @@
   height: 5rem;
   border-radius: 50%;
   font-size: 5rem;
-  color: functions.color('green-sea');
+  color: functions.color('wisteria');
   background-color: functions.color('clouds');
   transition:
     color 300ms ease-in-out,
     transform 300ms ease-in-out;
   &:hover {
-    color: functions.color('wisteria');
+    color: functions.color('green-sea');
     transform: scale(1.2);
   }
   &::after {

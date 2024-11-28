@@ -188,12 +188,12 @@
   height: 5rem;
   border-radius: 50%;
   font-size: 5rem;
-  color: hsl(168, 76%, 36%);
+  color: hsl(282, 44%, 47%);
   background-color: hsl(192, 15%, 94%);
   transition: color 300ms ease-in-out, transform 300ms ease-in-out;
 }
 .btn-modal-start:hover {
-  color: hsl(282, 44%, 47%);
+  color: hsl(168, 76%, 36%);
   transform: scale(1.2);
 }
 .btn-modal-start::after {
