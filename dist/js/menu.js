@@ -2,8 +2,10 @@ import { gameOver } from './choice.js';
 import { domElements } from './domelem.js';
 import { clearSessionStorage } from './utils.js';
 
+const { burgerMenuBtn, mainMenu } = domElements;
+
 export function showBurgerMenu() {
-  domElements.mainMenu.classList.toggle('show');
+  mainMenu.classList.toggle('show');
 }
 
 export const mainMenuHtml = `<ul>
@@ -18,9 +20,9 @@ const closeOutside = (e) => {
     e.target.id !== 'main-menu' &&
     e.target.className !== 'main-menu-list'
   ) {
-    if (domElements.mainMenu) {
-      domElements.mainMenu.classList.add('hide');
-      domElements.mainMenu.classList.remove('show');
+    if (mainMenu) {
+      mainMenu.classList.add('hide');
+      mainMenu.classList.remove('show');
     }
   }
 };
@@ -28,8 +30,8 @@ const closeOutside = (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   const urlPath = window.location.pathname;
 
-  if (domElements.mainMenu) {
-    domElements.mainMenu.innerHTML = mainMenuHtml;
+  if (mainMenu) {
+    mainMenu.innerHTML = mainMenuHtml;
   }
 
   const quizList = document.getElementById('quiz-list');
@@ -50,40 +52,45 @@ document.addEventListener('DOMContentLoaded', () => {
   function confirmQuizList() {
     const hasParameters = window.location.search.length > 0;
     if (!gameOver && hasParameters) {
-      if (
-        confirm('Si vous quittez cette page, vous perdrez vos réponses !') ===
-        true
-      ) {
-        location.href = 'choose.html';
-      }
+      queueMicrotask(() => {
+        if (
+          confirm('Si vous quittez cette page, vous perdrez vos réponses !')
+        ) {
+          window.location.href = 'choose.html';
+        }
+      });
     } else {
-      location.href = 'choose.html';
+      window.location.href = 'choose.html';
     }
   }
 
   function confirmResult() {
     const hasParameters = window.location.search.length > 0;
-    if (hasParameters && !gameOver) {
-      if (
-        confirm('Si vous quittez cette page, vous perdrez vos réponses !') ===
-        true
-      ) {
-        location.href = 'results.html';
-      }
+    if (!gameOver && hasParameters) {
+      queueMicrotask(() => {
+        if (
+          confirm('Si vous quittez cette page, vous perdrez vos réponses !')
+        ) {
+          window.location.href = 'results.html';
+        }
+      });
     } else {
-      location.href = 'results.html';
+      window.location.href = 'results.html';
     }
   }
 
   function confirmLogout() {
-    if (
-      confirm(
-        'Êtes-vous sûr de vouloir vous déconnecter ? Toutes les données seront perdues.',
-      ) === true
-    ) {
-      location.href = 'index.html';
-      clearSessionStorage();
-    }
+    // Use a microtask to defer the heavy operation
+    queueMicrotask(() => {
+      if (
+        confirm(
+          'Êtes-vous sûr de vouloir vous déconnecter ? Toutes les données seront perdues.',
+        )
+      ) {
+        clearSessionStorage();
+        window.location.href = 'index.html';
+      }
+    });
   }
 
   if (quizList) {
@@ -99,6 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', closeOutside);
-if (domElements.burgerMenuBtn) {
-  domElements.burgerMenuBtn.addEventListener('click', showBurgerMenu);
+if (burgerMenuBtn) {
+  burgerMenuBtn.addEventListener('click', showBurgerMenu);
 }

@@ -9,6 +9,8 @@ export function clearSessionStorage() {
   sessionStorage.removeItem('loginId');
 }
 
+const { name, email, logged, form, errorName, errorEmail } = domElements;
+
 document.addEventListener('DOMContentLoaded', () => {
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -21,42 +23,42 @@ document.addEventListener('DOMContentLoaded', () => {
   let emailValid = false;
 
   function validateName() {
-    if (domElements.name === null) {
+    if (name === null) {
       return;
     }
 
-    const nameValue = domElements.name.value;
+    const nameValue = name.value;
     const isNameLengthValid = nameValue.length >= 3 && nameValue.length < 15;
     const hasNoDigits = !/\d/.test(nameValue);
     const isNotEmpty = nameValue !== '';
     const isNameInvalid = !(isNameLengthValid && hasNoDigits && isNotEmpty);
 
-    if (isNameInvalid && domElements.errorName) {
-      domElements.errorName.textContent = NAME_TEXT_ERROR;
-      domElements.errorName.classList.replace('hide', 'show');
-      domElements.name.classList.remove('valid');
+    if (isNameInvalid && errorName) {
+      errorName.textContent = NAME_TEXT_ERROR;
+      errorName.classList.replace('hide', 'show');
+      name.classList.remove('valid');
       nameValid = false;
-    } else if (domElements.errorName && !isNameInvalid) {
-      domElements.errorName.textContent = '';
-      domElements.errorName.classList.replace('show', 'hide');
-      domElements.name.classList.add('valid');
+    } else if (errorName && !isNameInvalid) {
+      errorName.textContent = '';
+      errorName.classList.replace('show', 'hide');
+      name.classList.add('valid');
       nameValid = true;
     }
   }
 
   function validateEmail() {
-    if (domElements.email) {
-      const isValidEmail = emailRegex.test(domElements.email.value);
-      if (domElements.errorEmail && !isValidEmail) {
-        domElements.errorEmail.textContent = EMAIL_TEXT_ERROR;
-        domElements.errorEmail.classList.replace('hide', 'show');
-        domElements.email.classList.remove('valid');
+    if (email) {
+      const isValidEmail = emailRegex.test(email.value);
+      if (errorEmail && !isValidEmail) {
+        errorEmail.textContent = EMAIL_TEXT_ERROR;
+        errorEmail.classList.replace('hide', 'show');
+        email.classList.remove('valid');
         emailValid = false;
       } else {
-        if (domElements.errorEmail) {
-          domElements.errorEmail.textContent = '';
-          domElements.errorEmail.classList.replace('show', 'hide');
-          domElements.email.classList.add('valid');
+        if (errorEmail) {
+          errorEmail.textContent = '';
+          errorEmail.classList.replace('show', 'hide');
+          email.classList.add('valid');
           emailValid = true;
         }
       }
@@ -66,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function isValidForm(event) {
     event.preventDefault();
     if (nameValid && emailValid) {
-      studentId.push(domElements.name.value);
-      studentId.push(domElements.email.value);
-      domElements.logged.value = true;
+      studentId.push(name.value);
+      studentId.push(email.value);
+      logged.value = true;
       clearSessionStorage();
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
       getLoginId = JSON.parse(sessionStorage.getItem('loginId'));
@@ -76,17 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (domElements.form) {
-    domElements.form.addEventListener('submit', isValidForm);
+  if (form) {
+    form.addEventListener('submit', isValidForm);
   }
 
-  if (domElements.email) {
-    domElements.email.addEventListener('focus', validateEmail);
-    domElements.email.addEventListener('keyup', validateEmail);
+  if (email) {
+    email.addEventListener('focus', validateEmail);
+    email.addEventListener('keyup', validateEmail);
   }
 
-  if (domElements.name) {
-    domElements.name.addEventListener('focus', validateName);
-    domElements.name.addEventListener('keyup', validateName);
+  if (name) {
+    name.addEventListener('focus', validateName);
+    name.addEventListener('keyup', validateName);
   }
 });

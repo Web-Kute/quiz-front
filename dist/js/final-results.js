@@ -9,7 +9,7 @@ import {
   quizList,
   capitalize,
 } from './choice.js';
-
+const { quizResults, quizTableResults } = domElements;
 const headTableHtml = `<caption>
         Quiz Front-End
       </caption>
@@ -32,10 +32,10 @@ const dataTable = studentAnswers.map((quiz) => {
       <td>${quiz.rating}, </td>
       <td>${quiz.grade}</td>
     </tr>`;
-  return (domElements.quizResults.innerHTML = quizRow);
+  return (quizResults.innerHTML = quizRow);
 });
 
-domElements.quizTableResults.innerHTML =
+quizTableResults.innerHTML =
   headTableHtml + dataTable.join('') + tfootHtml;
 
 const handlePrint = () => {

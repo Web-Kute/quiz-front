@@ -1,3 +1,4 @@
+// Utility functions
 import {
   fisherYatesShuffle,
   fetchData,
@@ -5,14 +6,17 @@ import {
   hideSpinner,
   disabledAllButtons,
 } from './utils.js';
-// import { studentId, getLoginId } from './login.js';
+
+// Core functionality
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
 import { results, answered, userResults } from './results.js';
-import { modalBtnStart } from './modal.js';
+
+// UI Components
 import {
   showModal,
   showModalStart,
+  modalBtnStart,
   closeModal,
   closeModalBtn,
   overlay,
@@ -20,6 +24,18 @@ import {
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
+
+const {
+  welcome,
+  quizTitle,
+  chooseNav,
+  chooseContainer,
+  titleQuizElem,
+  buttons,
+  pageBottom,
+  mainContent,
+} = domElements;
+const { CORRECT, INCORRECT, HIDDEN, DISABLED } = CLASSNAMES;
 
 export let endpointQuiz = null;
 export let titleQuiz = null;
@@ -65,20 +81,20 @@ export const student =
   getLoginId[0] !== null ? `${capitalize(getLoginId[0])}` : 'Développeur';
 
 export function welcomeStudent() {
-  if (getLoginId[0] && domElements.welcome) {
-    domElements.welcome.innerHTML = `${student}`;
+  if (getLoginId[0] && welcome) {
+    welcome.innerHTML = `${student}`;
   } else {
-    domElements.welcome.innerHTML = 'Bienvenue';
+    welcome.innerHTML = 'Bienvenue';
   }
 }
 //////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   // Check if a quiz have already been done
   if (quizList !== null) {
-    domElements.quizTitle.forEach((title) => {
+    quizTitle.forEach((title) => {
       if (quizList[title.dataset.title]) {
         title.childNodes[1].disabled = true;
-        title.childNodes[1].classList.add(CLASSNAMES['DISABLED']);
+        title.childNodes[1].classList.add(DISABLED);
       }
     });
   }
@@ -92,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
   welcomeStudent();
 
   function renderNavQuizzes() {
-    if (domElements.chooseNav) {
-      domElements.chooseNav.addEventListener(
+    if (chooseNav) {
+      chooseNav.addEventListener(
         'click',
         async (e) => {
           e.preventDefault();
@@ -107,11 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
             quizList[titleQuiz] = true;
             const url = `?quiz=${titleQuiz}`;
 
-            if (domElements.titleQuizElem && titleQuiz) {
-              domElements.titleQuizElem.innerText = titleQuiz;
+            if (titleQuizElem && titleQuiz) {
+              titleQuizElem.innerText = titleQuiz;
             }
-            if (domElements.chooseContainer) {
-              domElements.chooseContainer.outerHTML = htmlQuiz;
+            if (chooseContainer) {
+              chooseContainer.outerHTML = htmlQuiz;
             }
             await displayQuestions(endpointQuiz);
             //add parameter to url
@@ -186,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         (e) => {
           // make sure all buttons is valid
           if (e.target.tagName === 'BUTTON') {
-            domElements.buttons.forEach((button) => {
-              button.classList.remove(CLASSNAMES['DISABLED']);
+            buttons.forEach((button) => {
+              button.classList.remove(DISABLED);
               button.disabled = false;
             });
           }
@@ -210,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 findQuestion &&
                 findQuestion.correctAnswer === target.textContent
               ) {
-                target.classList.add(CLASSNAMES['CORRECT']);
+                target.classList.add(CORRECT);
                 answered.push(true);
                 scoreUser += 1;
                 if (container) {
@@ -220,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   }
                 }
               } else {
-                target.classList.add(CLASSNAMES['INCORRECT']);
+                target.classList.add(INCORRECT);
                 answered.push(false);
               }
               allButtons.forEach((button) => {
@@ -229,11 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     findQuestion &&
                     button.textContent === findQuestion.correctAnswer
                   ) {
-                    button.classList.add(CLASSNAMES['CORRECT']);
+                    button.classList.add(CORRECT);
                   }
                   if (
-                    !button.classList.contains(CLASSNAMES['CORRECT']) &&
-                    !button.classList.contains(CLASSNAMES['INCORRECT'])
+                    !button.classList.contains(CORRECT) &&
+                    !button.classList.contains(INCORRECT)
                   ) {
                     button.disabled = true;
                   }
@@ -257,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function scrollToBottomQuiz() {
     if (isMobile) {
-      domElements.pageBottom.scrollIntoView();
+      pageBottom.scrollIntoView();
     }
   }
 
@@ -266,5 +282,5 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeModal);
   }
 
-  domElements.mainContent.addEventListener('click', scrollToBottomQuiz);
+  mainContent.addEventListener('click', scrollToBottomQuiz);
 });

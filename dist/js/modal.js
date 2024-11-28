@@ -13,9 +13,12 @@ export const closeModalBtn = document.querySelector('.btn-close');
 
 let resultsFile;
 
+const { btnSaveFile } = domElements;
+const { HIDDEN } = CLASSNAMES;
+
 export async function showModal() {
-  modal.classList.remove(CLASSNAMES['HIDDEN']);
-  overlay.classList.remove(CLASSNAMES['HIDDEN']);
+  modal.classList.remove(HIDDEN);
+  overlay.classList.remove(HIDDEN);
   localStorage.setItem('answers', JSON.stringify(studentAnswers));
 
   resultsFile = studentAnswers
@@ -28,18 +31,18 @@ export async function showModal() {
 }
 
 export async function showModalStart() {
-  modalStart.classList.remove(CLASSNAMES['HIDDEN']);
-  overlayStart.classList.remove(CLASSNAMES['HIDDEN']);
+  modalStart.classList.remove(HIDDEN);
+  overlayStart.classList.remove(HIDDEN);
 }
 
 export const closeModal = function () {
-  modal.classList.add(CLASSNAMES['HIDDEN']);
-  overlay.classList.add(CLASSNAMES['HIDDEN']);
+  modal.classList.add(HIDDEN);
+  overlay.classList.add(HIDDEN);
 };
 
 export const closeModalStart = function () {
-  modalStart.classList.add(CLASSNAMES['HIDDEN']);
-  overlayStart.classList.add(CLASSNAMES['HIDDEN']);
+  modalStart.classList.add(HIDDEN);
+  overlayStart.classList.add(HIDDEN);
 };
 
 if (modalBtnStart) {
@@ -48,8 +51,8 @@ if (modalBtnStart) {
   modalBtnStart.addEventListener('click', circularClock);
 }
 
-if (domElements.btnSaveFile) {
-  domElements.btnSaveFile.addEventListener('click', () => {
+if (btnSaveFile) {
+  btnSaveFile.addEventListener('click', () => {
     // download_file(`${student}.txt`, resultsFile);
     location.href = 'results.html';
   });

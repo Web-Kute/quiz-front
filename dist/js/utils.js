@@ -2,6 +2,8 @@ import { totalQuestions } from './choice.js';
 import { answered } from './results.js';
 import { CLASSNAMES } from './domelem.js';
 
+const { DISABLED } = CLASSNAMES;
+
 export async function fetchData(endpoint) {
   const response = await fetch(endpoint);
   const data = await response.json();
@@ -10,6 +12,8 @@ export async function fetchData(endpoint) {
 }
 
 export function fisherYatesShuffle(array) {
+  if (!Array.isArray(array)) throw new TypeError('Input must be an array');
+  if (array.length === 0) return array;
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -28,7 +32,7 @@ export function hideSpinner() {
 
 export function disabledAllButtons(elemBtn) {
   elemBtn.forEach((button) => {
-    button.classList.add(CLASSNAMES['DISABLED']);
+    button.classList.add(DISABLED);
     button.disabled = true;
   });
 }
