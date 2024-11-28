@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const logout = document.getElementById('logout');
   const showResult = document.querySelector('.show-result');
 
-  if (urlPath === '/choose.html' && window.location.search.length === 0) {
+  if (urlPath.includes('choose.html') && window.location.search.length === 0) {
     quizList.classList.add('active');
   } else if (window.location.search.length !== 0) {
     quizList.classList.remove('active');
   }
 
-  if (urlPath === '/results.html') {
+  if (urlPath.includes('results.html')) {
     result.classList.add('active');
   }
 
