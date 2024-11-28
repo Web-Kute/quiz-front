@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Que signifie CSS\u00a0?",
+    "question": "Que représente l'acronyme CSS\u00a0?",
     "answers": [
       "Cascading Style Sheets",
       "Create Simple Samples",
@@ -44,13 +44,13 @@
   },
   {
     "id": 6,
-    "question": "Peut-on utliser des variables dans les feuilles de styles\u00a0?",
+    "question": "Peut-on utiliser des variables dans les feuilles de styles\u00a0?",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },
   {
     "id": 7,
-    "question": "Lequel n'est pas un framework CSS\u00a0?",
+    "question": "Quel est l'intrus\u00a0?",
     "answers": ["Svelte", "Materialize CSS", "Bootstrap", "Tailwind CSS"],
     "correctAnswer": "Svelte"
   },
@@ -62,19 +62,19 @@
   },
   {
     "id": 9,
-    "question": "Pour créer des pages web reponsives on utilise\u00a0: ",
+    "question": "Pour la création de pages web adaptatives, on fait appel à\u00a0: ",
     "answers": ["Des variables", "Des Media Queries", "Des Flexbox", "jQuery"],
     "correctAnswer": "Des Media Queries"
   },
   {
     "id": 10,
-    "question": "Laquelle de ces unités est relative à la taille de la police de l'élément racine\u00a0?",
+    "question": "Laquelle de ces unités correspond à la taille de la police de l'élément racine\u00a0?",
     "answers": ["em", "rem", "%", "vh"],
     "correctAnswer": "rem"
   },
   {
     "id": 11,
-    "question": "La taille de la police de l'élément racine est de 16px. Quelle est la taille de la police de h1{font-size: 1.5rem}\u00a0?",
+    "question": "Si la taille de la police de l'élément racine est de 16px. Quelle est la taille de la police de h1{font-size: 1.5rem}\u00a0?",
     "answers": ["24px", "16px", "1.5px", "24.5px"],
     "correctAnswer": "24px"
   },

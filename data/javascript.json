@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Dans quel élément HTML devons-nous placer le JavaScript\u00a0?",
+    "question": "Quel est l'élément HTML approprié pour l'insertion du code JavaScript\u00a0?",
     "answers": ["<js>", "<javascript>", "<scripting>", "<script>"],
     "correctAnswer": "<script>"
   },
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "question": "Quelle syntaxe est correcte pour afficher un message dans la console\u00a0?",
+    "question": "Quelle est la syntaxe appropriée pour afficher un message dans la console\u00a0?",
     "answers": [
       "console.log('Hello World!')",
       "console.print('Hello World!')",
@@ -56,7 +56,7 @@
   },
   {
     "id": 8,
-    "question": "Quel opérateur est utlisé pour assigner une valeur à une variable\u00a0?",
+    "question": "Quel est l'opérateur requis pour assigner une valeur à une variable\u00a0?",
     "answers": ["*", "=", "==", "==="],
     "correctAnswer": "="
   },
@@ -79,7 +79,7 @@
   },
   {
     "id": 11,
-    "question": "JavaScript est un langage orienté objet\u00a0?",
+    "question": "JavaScript est un langage orienté objet\u00a0.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },

@@ -17,19 +17,19 @@
   },
   {
     "id": 3,
-    "question": "Quel balise définit le titre le plus grand\u00a0?",
+    "question": "Quelle balise HTML définit le titre le plus grand\u00a0?",
     "answers": ["<h1>", "<heading>", "<h6>", "<header>"],
     "correctAnswer": "<h1>"
   },
   {
     "id": 4,
-    "question": "Quelle balise est utilisée pour définir un lien hypertexte en HTML\u00a0?",
+    "question": "Quelle balise HTML est utilisée pour définir un lien hypertexte\u00a0?",
     "answers": ["<link>", "<a>", "<href>", "<hyper>"],
     "correctAnswer": "<a>"
   },
   {
     "id": 5,
-    "question": "Comment ajouter une image à une page web\u00a0?",
+    "question": "Comment intégrer une image au sein d'une page web\u00a0?",
     "answers": [
       "<src='url'>",
       "<image='url'>",
@@ -52,7 +52,7 @@
   },
   {
     "id": 8,
-    "question": "Comment inséré un commentaire dans un document HTML\u00a0?",
+    "question": "Comment insérer un commentaire dans un document HTML\u00a0?",
     "answers": [
       "/* comment */",
       "<!-- comment -->",
@@ -69,19 +69,19 @@
   },
   {
     "id": 10,
-    "question": "Une bonne sémantique HTML aide t-il les moteurs de recherche à indexer votre site\u00a0?",
+    "question": "Une sémantique HTML bien structurée aide les moteurs de recherche à mieux référencer votre site\u00a0.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },
   {
     "id": 11,
-    "question": "Laquelle de ces balises HTML n'est pas une balise sémantique\u00a0?",
+    "question": "Parmi ces balises HTML, laquelle n'est pas considérée comme une balise sémantique\u00a0?",
     "answers": ["<header>", "<span>", "<article>", "<footer>"],
     "correctAnswer": "<span>"
   },
   {
     "id": 12,
-    "question": "L'accessibilité Web est-elle utile pour tous les utilisateurs\u00a0?",
+    "question": "L'accessibilité Web est utile pour tous les utilisateurs\u00a0.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   }
