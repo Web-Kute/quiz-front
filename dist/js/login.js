@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearSessionStorage();
       sessionStorage.setItem('loginId', JSON.stringify(studentId));
       getLoginId = JSON.parse(sessionStorage.getItem('loginId'));
-      location.href = `choose.html?name=${domElements.name.value}&logged=${domElements.logged.value}`;
+      location.href = `choose.html`;
     }
   }
 

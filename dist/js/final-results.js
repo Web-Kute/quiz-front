@@ -11,13 +11,12 @@ import {
 } from './choice.js';
 
 const headTableHtml = `<caption>
-        Front-end Web Developer
+        Quiz Front-End
       </caption>
       <thead>
         <tr>
           <th scope="col">${capitalize(getLoginId[0])}</th>
-          <th scope="col">${currentTime}</th>
-          <th scope="col">Quiz Front-End</th>
+          <th scope="col" colspan="2">${currentTime}</th>
         </tr>
       </thead>`;
 
