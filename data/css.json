@@ -20,7 +20,7 @@
     "question": "Pourquoi utilise-t-on généralement des CSS\u00a0?",
     "answers": [
       "Pour améliorer le code HTML",
-      "Pour séparer le contenu de la présentation pages",
+      "Pour séparer le contenu de la présentation des pages",
       "Pour faire des dégradés de couleurs"
     ],
     "correctAnswer": "Pour séparer le contenu de la présentation des pages"
