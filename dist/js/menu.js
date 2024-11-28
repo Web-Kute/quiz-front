@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Êtes-vous sûr de vouloir vous déconnecter ? Toutes les données seront perdues.',
       ) === true
     ) {
-      clearSessionStorage();
       location.href = 'index.html';
+      clearSessionStorage();
     }
   }
 
