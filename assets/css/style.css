@@ -711,7 +711,7 @@ nav button {
 }
 nav button:hover {
   color: hsl(0, 0%, 100%);
-  background-color: hsl(210, 30%, 24%);
+  background-color: hsl(168, 76%, 42%);
 }
 nav button:disabled {
   opacity: 0.5;
