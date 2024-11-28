@@ -69,7 +69,7 @@
   },
   {
     "id": 10,
-    "question": "Une sémantique HTML bien structurée aide les moteurs de recherche à mieux référencer votre site\u00a0.",
+    "question": "Une sémantique HTML bien structurée aide les moteurs de recherche à mieux référencer votre site.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },
@@ -81,7 +81,7 @@
   },
   {
     "id": 12,
-    "question": "L'accessibilité Web est utile pour tous les utilisateurs\u00a0.",
+    "question": "L'accessibilité Web est utile pour tous les utilisateurs.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   }

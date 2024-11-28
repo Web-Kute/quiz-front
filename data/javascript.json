@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "question": "Que renvoit l'opération 2 + '2'\u00a0?",
+    "question": "Que retourne l'opération 2 + '2'\u00a0?",
     "answers": ["4", "undefined", "22", "NaN"],
     "correctAnswer": "22"
   },
@@ -50,7 +50,7 @@
   },
   {
     "id": 7,
-    "question": "Que renvoit typeof 'Hello World!'\u00a0?",
+    "question": "Que retourne typeof 'Hello World!'\u00a0?",
     "answers": ["string", "number", "boolean", "undefined"],
     "correctAnswer": "string"
   },
@@ -62,13 +62,13 @@
   },
   {
     "id": 9,
-    "question": "Quel élément n'est pas un type de données en JavaScript\u00a0?",
+    "question": "Quel élément n'est pas un type de données JavaScript\u00a0?",
     "answers": ["String", "Boolean", "Number", "Float"],
     "correctAnswer": "Float"
   },
   {
     "id": 10,
-    "question": "Quel est la syntaxe pour déclarer un tableau en JavaScript\u00a0?",
+    "question": "Quelle est la syntaxe pour déclarer un tableau(array) en JavaScript\u00a0?",
     "answers": [
       "let array = ['apple','kiwi', 'grappe']",
       "let array = 'apple','kiwi', 'grappe'",
@@ -79,7 +79,7 @@
   },
   {
     "id": 11,
-    "question": "JavaScript est un langage orienté objet\u00a0.",
+    "question": "JavaScript est un langage orienté objet.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai"
   },

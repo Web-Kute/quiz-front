@@ -23,7 +23,7 @@
       "Pour séparer le contenu de la présentation pages",
       "Pour faire des dégradés de couleurs"
     ],
-    "correctAnswer": "Pour séparer le contenu de la présentation pages"
+    "correctAnswer": "Pour séparer le contenu de la présentation des pages"
   },
   {
     "id": 4,
@@ -50,7 +50,7 @@
   },
   {
     "id": 7,
-    "question": "Quel est l'intrus\u00a0?",
+    "question": "Trouvez l'intrus\u00a0?",
     "answers": ["Svelte", "Materialize CSS", "Bootstrap", "Tailwind CSS"],
     "correctAnswer": "Svelte"
   },
