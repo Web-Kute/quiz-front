@@ -50,7 +50,7 @@
   },
   {
     "id": 7,
-    "question": "Que retourne typeof 'Hello World!'\u00a0?",
+    "question": "Que renvoie l'opérateur typeof 'Hello World!'\u00a0?",
     "answers": ["string", "number", "boolean", "undefined"],
     "correctAnswer": "string"
   },
