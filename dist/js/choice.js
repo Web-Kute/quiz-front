@@ -73,10 +73,15 @@ const urlParams = new URLSearchParams(queryString);
 const userName = urlParams.get('name');
 const userLogged = urlParams.get('logged');
 
-export const capitalize = (word = '') => {
-  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+// export const capitalize = (word = '') => {
+//   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+// };
+export const capitalize = (phrase = '') => {
+  return phrase
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 };
-
 export const student =
   getLoginId[0] !== null ? `${capitalize(getLoginId[0])}` : 'Développeur';
 

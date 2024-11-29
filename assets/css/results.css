@@ -103,6 +103,10 @@ thead {
   color: hsl(210, 30%, 24%);
   border: 1px solid hsl(168, 76%, 36%);
   line-height: 2.5;
+  text-transform: capitalize;
+}
+thead th:first-child {
+  width: 53%;
 }
 
 tbody th {
@@ -120,6 +124,7 @@ tbody tr:nth-child(odd) {
 }
 tbody td {
   padding: 7px;
+  font-size: 0.85rem;
 }
 
 tfoot {

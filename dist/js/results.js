@@ -1,5 +1,5 @@
 // import { capitalize } from './utils.js';
-import { titleQuiz, student } from './choice.js';
+import { titleQuiz, student, capitalize } from './choice.js';
 
 export let answered = [];
 export let correct = 0;
@@ -27,27 +27,27 @@ export function results(nbOfQuestions) {
       switch (true) {
         case total === 0 || total <= 25.99:
           rating = `Score : ${total}%`;
-          grade = `Patience ${student}, les réponses vont venir\u00a0!`;
+          grade = `Patience ${capitalize(student)}, les réponses vont venir\u00a0!`;
           break;
         case total >= 26 && total <= 50.99:
           rating = `Score : ${total}%`;
-          grade = `Vous avez les bases, ${student} croyez-en-vous\u00a0!`;
+          grade = `Vous avez les bases, ${capitalize(student)} croyez-en-vous\u00a0!`;
           break;
         case total >= 51 && total <= 75.99:
           rating = `Score : ${total}%`;
-          grade = `Bravo, ${student} vous êtes en bonne voie\u00a0!`;
+          grade = `Bravo, ${capitalize(student)} vous êtes en bonne voie\u00a0!`;
           break;
         case total >= 76 && total <= 87.5:
           rating = `Score : ${total}%`;
-          grade = `Bravo, ${student} résultats très encourageants\u00a0!`;
+          grade = `Bravo, ${capitalize(student)} résultats très encourageants\u00a0!`;
           break;
         case total >= 87.6 && total <= 99.99:
           rating = `Score : ${total}%`;
-          grade = `Excellents résultats ${student}, vous frôlez la perfection. Bravo\u00a0!`;
+          grade = `Excellents résultats ${capitalize(student)}, vous frôlez la perfection. Bravo\u00a0!`;
           break;
         case total === 100:
           rating = `Score : ${total}%`;
-          grade = `100%. Incroyable ${student}. Félicitations, continuez ainsi\u00a0!`;
+          grade = `100%. Incroyable ${capitalize(student)}. Félicitations, continuez ainsi\u00a0!`;
           break;
         default:
           break;

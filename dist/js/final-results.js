@@ -15,8 +15,8 @@ const headTableHtml = `<caption>
       </caption>
       <thead>
         <tr>
-          <th scope="col">${capitalize(getLoginId[0])}</th>
-          <th scope="col" colspan="2">${currentTime}</th>
+          <th scope="col" colspan="2">${capitalize(getLoginId[0])}</th>
+          <th scope="col">${currentTime}</th>
         </tr>
       </thead>`;
 

@@ -26,6 +26,10 @@ thead {
   color: functions.color('midnight-blue');
   border: 1px solid functions.color('green-sea');
   line-height: 2.5;
+  text-transform: capitalize;
+  th:first-child {
+    width: 53%;
+  }
 }
 
 tbody {
@@ -44,6 +48,7 @@ tbody {
   }
   td {
     padding: 7px;
+    font-size: 0.85rem;
   }
 }
 tfoot {
