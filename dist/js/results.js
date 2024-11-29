@@ -31,15 +31,15 @@ export function results(nbOfQuestions) {
           break;
         case total >= 26 && total <= 50.99:
           rating = `Score : ${total}%`;
-          grade = `Vous avez les bases, ${capitalize(student)} croyez-en-vous\u00a0!`;
+          grade = `Vous avez les bases, ${capitalize(student)}, croyez-en-vous\u00a0!`;
           break;
         case total >= 51 && total <= 75.99:
           rating = `Score : ${total}%`;
-          grade = `Bravo, ${capitalize(student)} vous êtes en bonne voie\u00a0!`;
+          grade = `Bravo, ${capitalize(student)}, vous êtes en bonne voie\u00a0!`;
           break;
         case total >= 76 && total <= 87.5:
           rating = `Score : ${total}%`;
-          grade = `Bravo, ${capitalize(student)} résultats très encourageants\u00a0!`;
+          grade = `Bravo, ${capitalize(student)}, résultats très encourageants\u00a0!`;
           break;
         case total >= 87.6 && total <= 99.99:
           rating = `Score : ${total}%`;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="circles">
 
 <head>
   <meta charset="UTF-8">
@@ -187,20 +187,7 @@
     <div id="page-bottom"></div>
   </main>
   <script type="module" src="./dist/js/final-results.js"></script>
-  <script>
-    (async function () {
-      // Polyfill for older browsers
-      if (CSS['paintWorklet'] === undefined) {
-        await import('https://unpkg.com/css-paint-polyfill');
-      }
-
-      // Looking for the source of the Paint Worklet?
-      // ~> Go check out https://github.com/bramus/css-houdini-circles
-      CSS.paintWorklet.addModule(
-        'https://unpkg.com/css-houdini-circles/dist/circles.js',
-      );
-    })();
-  </script>
+  <script src="./dist/js/houdini.js"></script>
 </body>
 
 </html>
