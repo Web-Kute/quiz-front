@@ -4,49 +4,48 @@
 @use 'functions';
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   position: relative;
+
   @include mixins.mobile-down {
     width: 92%;
   }
 }
+
 .quiz-title {
   position: relative;
   display: flex;
   flex-direction: column;
 
-  button {
-    border: none;
-  }
   .skills__icon {
-    width: 60%;
-    @include mixins.mobile-down {
-      width: 40%;
-    }
+    width: clamp(40%, 50%, 60%);
+  }
+
+  button {
+    border: 1px solid functions.color('white');
   }
 }
 
 .btn-choose {
-  font-size: 2 * variables.$base-font-size;
+  $btn-font-size: 2 * variables.$base-font-size;
+
+  font-size: $btn-font-size;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  column-gap: 2rem;
+  justify-content: space-between;
+  gap: 2rem;
   opacity: 0.8;
+  transition: all 0.3s ease;
+
   &:hover {
     opacity: 1;
     background-color: functions.color('wisteria');
+    transform: skew(-1deg);
   }
+
   &:disabled {
     transform: rotateY(180deg);
-  }
-  @include mixins.mobile-down {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    column-gap: 2rem;
   }
 }
 
@@ -54,3 +53,5 @@ main {
   position: relative;
   top: 120px;
 }
+
+///////////////////////////////////

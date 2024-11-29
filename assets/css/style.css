@@ -255,16 +255,11 @@ body {
 
 h1 {
   font-family: "Roboto Slab bold", serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.7279rem + 0.7269vw, 3rem);
   color: hsl(0, 0%, 100%);
   text-align: center;
   letter-spacing: 5px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 599px) {
-  h1 {
-    font-size: 2rem;
-  }
 }
 
 h2 {
@@ -376,10 +371,11 @@ section {
 
 .round {
   position: relative;
-  width: 10rem;
-  height: 10rem;
-  margin: 0.5rem;
+  aspect-ratio: 1;
+  width: clamp(8rem, 8vw, 10rem);
   border-radius: 50%;
+  margin: 0.5rem;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.25);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -388,12 +384,7 @@ section {
       align-items: center;
   color: hsl(0, 0%, 100%);
   background-color: hsl(48, 89%, 50%);
-}
-@media (max-width: 599px) {
-  .round {
-    width: 6rem;
-    height: 6rem;
-  }
+  background: radial-gradient(circle at 30px 30px, hsl(37, 90%, 51%), hsl(48, 89%, 50%));
 }
 .round-login {
   position: relative;
@@ -456,12 +447,8 @@ section {
 }
 
 main {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  display: grid;
+  place-items: center;
   position: relative;
 }
 @media (max-width: 599px) {
@@ -477,16 +464,11 @@ main {
   -ms-flex-direction: column;
       flex-direction: column;
 }
-.quiz-title button {
-  border: none;
-}
 .quiz-title .skills__icon {
-  width: 60%;
+  width: 50%;
 }
-@media (max-width: 599px) {
-  .quiz-title .skills__icon {
-    width: 40%;
-  }
+.quiz-title button {
+  border: 1px solid hsl(0, 0%, 100%);
 }
 
 .btn-choose {
@@ -495,30 +477,19 @@ main {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  gap: 2rem;
   opacity: 0.8;
+  transition: all 0.3s ease;
 }
 .btn-choose:hover {
   opacity: 1;
   background-color: hsl(282, 44%, 47%);
+  transform: skew(-1deg);
 }
 .btn-choose:disabled {
   transform: rotateY(180deg);
-}
-@media (max-width: 599px) {
-  .btn-choose {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-  }
 }
 
 #page-bottom {

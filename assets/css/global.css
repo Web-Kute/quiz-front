@@ -157,16 +157,11 @@ body {
 
 h1 {
   font-family: "Roboto Slab bold", serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.7279rem + 0.7269vw, 3rem);
   color: hsl(0, 0%, 100%);
   text-align: center;
   letter-spacing: 5px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 599px) {
-  h1 {
-    font-size: 2rem;
-  }
 }
 
 h2 {
@@ -278,10 +273,11 @@ section {
 
 .round {
   position: relative;
-  width: 10rem;
-  height: 10rem;
-  margin: 0.5rem;
+  aspect-ratio: 1;
+  width: clamp(8rem, 8vw, 10rem);
   border-radius: 50%;
+  margin: 0.5rem;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.25);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -290,12 +286,7 @@ section {
       align-items: center;
   color: hsl(0, 0%, 100%);
   background-color: hsl(48, 89%, 50%);
-}
-@media (max-width: 599px) {
-  .round {
-    width: 6rem;
-    height: 6rem;
-  }
+  background: radial-gradient(circle at 30px 30px, hsl(37, 90%, 51%), hsl(48, 89%, 50%));
 }
 .round-login {
   position: relative;
