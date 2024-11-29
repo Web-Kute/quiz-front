@@ -35,20 +35,29 @@ thead {
 tbody {
   th {
     padding-left: 10px;
+    text-align: left;
+    width: 20%;
   }
   tr {
     padding: 1rem;
-    &:nth-child(odd) {
-      color: functions.color('white');
+    &:nth-child(even) {
+      color: functions.color('black-pearl');
       background-color: functions.color('clouds');
     }
     &:nth-child(odd) {
+      color: functions.color('white');
       background-color: functions.color('green-sea');
     }
   }
   td {
-    padding: 7px;
+    padding: 7px 5px;
     font-size: 0.85rem;
+    width: 18%;
+    text-align: center;
+    &:last-child {
+      width: 62%;
+      text-align: left;
+    }
   }
 }
 tfoot {

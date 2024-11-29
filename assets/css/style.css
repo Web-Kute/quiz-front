@@ -873,9 +873,10 @@ aside .seconds {
 }
 
 .modal p {
-  font-size: 0.9rem;
-  color: hsl(204, 8%, 76%);
-  margin: 0.4rem 0 0.2rem;
+  font-size: 1.2rem;
+  color: hsl(210, 29%, 29%);
+  margin: 0.4rem 0 0rem;
+  text-align: center;
 }
 
 .btn-open {
@@ -1060,20 +1061,29 @@ thead th:first-child {
 
 tbody th {
   padding-left: 10px;
+  text-align: left;
+  width: 20%;
 }
 tbody tr {
   padding: 1rem;
 }
-tbody tr:nth-child(odd) {
-  color: hsl(0, 0%, 100%);
+tbody tr:nth-child(even) {
+  color: hsl(206, 21%, 15%);
   background-color: hsl(192, 15%, 94%);
 }
 tbody tr:nth-child(odd) {
+  color: hsl(0, 0%, 100%);
   background-color: hsl(168, 76%, 36%);
 }
 tbody td {
-  padding: 7px;
+  padding: 7px 5px;
   font-size: 0.85rem;
+  width: 18%;
+  text-align: center;
+}
+tbody td:last-child {
+  width: 62%;
+  text-align: left;
 }
 
 tfoot {

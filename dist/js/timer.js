@@ -3,6 +3,9 @@ import { showModal } from './modal.js';
 import { displayResults, endpointQuiz, setGameOver } from './choice.js';
 export let elapsedTime = 1000;
 export let clockId = null;
+export let remainingTime = 0;
+export let elapsedTimeAfterBegin = 0;
+export let timeDisplay;
 
 let initChrono = 2;
 let minutes;
@@ -50,6 +53,10 @@ export async function timerQuiz() {
       seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000)
         .toString()
         .padStart(2, '0');
+
+      remainingTime = Math.floor(elapsedTime / 1000);
+      elapsedTimeAfterBegin = initChrono * 60 - remainingTime;
+      timeDisplay = `en ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
       if (timerClock) {
         timerClock.innerHTML = `${minutes} : ${seconds}`;

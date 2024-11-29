@@ -114,9 +114,10 @@
 }
 
 .modal p {
-  font-size: 0.9rem;
-  color: hsl(204, 8%, 76%);
-  margin: 0.4rem 0 0.2rem;
+  font-size: 1.2rem;
+  color: hsl(210, 29%, 29%);
+  margin: 0.4rem 0 0rem;
+  text-align: center;
 }
 
 .btn-open {

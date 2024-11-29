@@ -1,5 +1,11 @@
 import { domElements, CLASSNAMES } from './domelem.js';
-import { timerQuiz, stopTimer } from './timer.js';
+import {
+  timerQuiz,
+  stopTimer,
+  timeDisplay,
+  elapsedTimeAfterBegin,
+  remainingTime,
+} from './timer.js';
 import { circularClock } from './utils.js';
 import { studentAnswers, student } from './choice.js';
 import { download_file } from './filesaver.js';
@@ -15,8 +21,8 @@ let resultsFile;
 
 const { btnSaveFile } = domElements;
 const { HIDDEN } = CLASSNAMES;
-
 export async function showModal() {
+  const timing = document.querySelector('.timing');
   modal.classList.remove(HIDDEN);
   overlay.classList.remove(HIDDEN);
   localStorage.setItem('answers', JSON.stringify(studentAnswers));
@@ -26,7 +32,10 @@ export async function showModal() {
       return `${Object.values(quiz)}\u00a0`;
     })
     .join(', ');
-
+  const minutes = Math.floor(elapsedTimeAfterBegin / 60);
+  const seconds = elapsedTimeAfterBegin % 60;
+  const timeOver = `Temps écoulé : ${minutes}min : ${seconds}sec`;
+  timing.innerHTML = `${timeOver}`;
   stopTimer();
 }
 

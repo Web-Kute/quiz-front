@@ -32,9 +32,10 @@
 }
 
 .modal p {
-  font-size: 0.9rem;
-  color: functions.color('silver');
-  margin: 0.4rem 0 0.2rem;
+  font-size: 1.2rem;
+  color: functions.color('wet-asphalt');
+  margin: 0.4rem 0 0rem;
+  text-align: center;
 }
 
 .btn-open {
@@ -86,18 +87,6 @@
   width: 80%;
   margin-top: 2rem;
 }
-
-// .btn-submit {
-//   width: 100%;
-//   color: functions.color('white');
-//   margin-top: 1rem;
-//   box-shadow: 1px 1px 1px functions.color('midnight-blue');
-//   transition: color 300ms ease-in-out;
-//   cursor: pointer;
-//   &:hover {
-//     color: functions.color('midnight-blue');
-//   }
-// }
 
 .modal-start {
   position: absolute;
