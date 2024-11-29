@@ -27,8 +27,10 @@ thead {
   border: 1px solid functions.color('green-sea');
   line-height: 2.5;
   text-transform: capitalize;
+  text-align: center;
   th:first-child {
     width: 53%;
+    text-align: end;
   }
 }
 
