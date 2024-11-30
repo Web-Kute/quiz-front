@@ -80,12 +80,22 @@
 }
 
 table#quiz-table-results {
-  min-width: 350px;
   margin-top: 1.4rem;
+  margin-bottom: 2rem;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-collapse: collapse;
+}
+@media (min-width: 600px) {
+  table#quiz-table-results {
+    min-width: 350px;
+  }
+}
+@media (max-width: 599px) {
+  table#quiz-table-results {
+    min-width: 290px;
+  }
 }
 
 caption {

@@ -27,6 +27,6 @@
 
 @property --num-circles {
   syntax: "<number>";
-  initial-value: 5;
+  initial-value: 45;
   inherits: false;
 }/*# sourceMappingURL=houdini.css.map */

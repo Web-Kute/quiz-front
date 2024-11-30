@@ -60,7 +60,7 @@ input {
 }
 /******************/
 body {
-  height: 100vh;
+  // height: 100vh;
   font-family: 'Roboto Regular', sans-serif;
   @include mixins.flex-center();
   justify-content: flex-start;
