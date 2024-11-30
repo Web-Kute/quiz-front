@@ -118,7 +118,7 @@ thead {
 }
 thead th:first-child {
   width: 53%;
-  text-align: end;
+  text-align: center;
 }
 
 tbody th {
