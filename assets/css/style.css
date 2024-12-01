@@ -214,7 +214,6 @@ fieldset {
 
 input,
 button {
-  padding: 7px 10px;
   border-radius: 0.325rem;
   border: 1px solid hsl(204, 8%, 76%);
 }
@@ -223,6 +222,9 @@ button#name {
   text-transform: capitalize;
 }
 
+input {
+  padding: 7px 10px;
+}
 input.valid {
   background-color: hsl(168, 76%, 36%);
 }
@@ -254,7 +256,7 @@ body {
 
 h1 {
   font-family: "Roboto Slab bold", serif;
-  font-size: clamp(2.5rem, 1.9557rem + 1.4539vw, 4.5rem);
+  font-size: clamp(2rem, 1.4557rem + 1.4539vw, 4rem);
   color: hsl(0, 0%, 100%);
   text-align: center;
   letter-spacing: 3px;
@@ -262,19 +264,27 @@ h1 {
 }
 
 h2 {
-  font-family: "Roboto Slab Regular", sans-serif;
+  font-family: "Roboto Slab bold", serif;
+  font-size: clamp(2.5rem, 1.9557rem + 1.4539vw, 4.5rem);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+h3 {
+  font-family: "Roboto Slab bold", serif;
   font-size: 2rem;
   margin-right: 1rem;
   color: hsl(0, 0%, 100%);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-  text-transform: capitalize;
 }
 
 button#burger-menu {
   font-size: 3rem;
-  color: hsl(210, 30%, 24%);
+  color: hsl(210, 29%, 29%);
+  padding-top: 4px;
   border: none;
-  padding: 0;
   transition: color 300ms ease-in-out;
 }
 button#burger-menu:hover {
@@ -290,21 +300,22 @@ header {
   -ms-flex-pack: center;
       justify-content: center;
 }
-header.choose-quiz {
-  -ms-flex-align: center;
-      align-items: center;
-}
-header h1 {
+header h2 {
   line-height: 40px;
 }
-header h2 {
+header h3 {
+  font-family: "Roboto Slab bold", serif;
   font-size: clamp(1.2rem, 1.0639rem + 0.3635vw, 1.7rem);
   margin: 0;
+  text-transform: capitalize;
 }
-@media (max-width: 599px) {
-  header {
-    margin-top: 1rem;
-  }
+
+header div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 20px;
 }
 
 .main-content {
