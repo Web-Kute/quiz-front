@@ -74,7 +74,7 @@ body {
 
 h1 {
   font-family: variables.$heading-font-family;
-  font-size: clamp(2rem, 1.7279rem + 0.7269vw, 3rem);
+  font-size: clamp(2.5rem, 1.8196rem + 1.8174vw, 5rem);
   color: functions.color('white');
   text-align: center;
   letter-spacing: 5px;
