@@ -77,7 +77,7 @@ h1 {
   font-size: clamp(2.5rem, 1.9557rem + 1.4539vw, 4.5rem);
   color: functions.color('white');
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -109,9 +109,12 @@ header {
   &.choose-quiz {
     align-items: center;
   }
-  div {
-    display: flex;
-    justify-content: center;
+  h1 {
+    line-height: 40px;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 1.0639rem + 0.3635vw, 1.7rem);
+    margin: 0;
   }
   @include mixins.mobile-down() {
     margin-top: 1rem;
@@ -181,9 +184,9 @@ section {
   aspect-ratio: 1;
   width: clamp(10rem, 8vw, 12rem);
   border-radius: 50%;
-  margin: 0.5rem;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.25);
   @include mixins.flex-center();
+  flex-direction: column;
   color: functions.color('white');
   background-color: functions.color('sun-flower');
   background: radial-gradient(
@@ -196,6 +199,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     top: 0;
+    padding-top: 10px;
   }
 }
 
