@@ -7,25 +7,29 @@
       "Home Tool Markup Language",
       "Hyperlinks and Text Markup Language"
     ],
-    "correctAnswer": "Hyper Text Markup Language"
+    "correctAnswer": "Hyper Text Markup Language",
+    "explanation": "HTML est l'abréviation de Hyper Text Markup Language, qui est un langage de balisage utilisé pour structurer le contenu d'une page web."
   },
   {
     "id": 2,
     "question": "Quel organisme élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
-    "correctAnswer": "W3C"
+    "correctAnswer": "W3C",
+    "explanation": "Le W3C (World Wide Web Consortium) est l'organisme qui élabore les normes du Web, notamment HTML."
   },
   {
     "id": 3,
     "question": "Quelle balise HTML définit le titre le plus grand\u00a0?",
     "answers": ["<h1>", "<heading>", "<h6>", "<header>"],
-    "correctAnswer": "<h1>"
+    "correctAnswer": "<h1>",
+    "explanation": "<h1> est utilisé pour définir le titre le plus important d'une page web."
   },
   {
     "id": 4,
     "question": "Quelle balise HTML est utilisée pour définir un lien hypertexte\u00a0?",
     "answers": ["<link>", "<a>", "<href>", "<hyper>"],
-    "correctAnswer": "<a>"
+    "correctAnswer": "<a>",
+    "explanation": "<a> est utilisée pour créer un lien hypertexte vers une autre page ou un autre endroit sur le Web."
   },
   {
     "id": 5,
@@ -36,19 +40,22 @@
       "<media src='url'>",
       "<img src='url'>"
     ],
-    "correctAnswer": "<img src='url'>"
+    "correctAnswer": "<img src='url'>",
+    "explanation": "<img> est utilisé pour intégrer une image dans une page web, en spécifiant l'URL de l'image."
   },
   {
     "id": 6,
     "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau\u00a0?",
     "answers": ["<table>", "<td>", " <tr>", "<th>"],
-    "correctAnswer": "<td>"
+    "correctAnswer": "<td>",
+    "explanation": "<td> est utilisée pour définir une cellule de tableau."
   },
   {
     "id": 7,
     "question": "Choisissez l'élément HTML approprié pour définir un texte important\u00a0:",
     "answers": ["<b>", "<i>", "<important>", "<strong>"],
-    "correctAnswer": "<strong>"
+    "correctAnswer": "<strong>",
+    "explanation": "<strong> est utilisé pour définir un texte important ou en gras."
   },
   {
     "id": 8,
@@ -59,30 +66,35 @@
       "// comment //",
       "# comment"
     ],
-    "correctAnswer": "<!-- comment -->"
+    "correctAnswer": "<!-- comment -->",
+    "explanation": "<!-- comment --> est utilisé pour insérer un commentaire dans un document HTML."
   },
   {
     "id": 9,
     "question": "Quel élément HTML définit le titre d'un document\u00a0?",
     "answers": ["title", "head", "meta", "subject"],
-    "correctAnswer": "title"
+    "correctAnswer": "title",
+    "explanation": "title se place dans la balise <head> d'un document HTML."
   },
   {
     "id": 10,
     "question": "Une sémantique HTML bien structurée aide les moteurs de recherche à mieux référencer votre site.",
     "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "correctAnswer": "Vrai",
+    "explanation": "Les balises sémantiques comme <header>, <nav>, <article>, <section>, <footer>, etc., aident les moteurs de recherche à mieux comprendre la structure de votre site."
   },
   {
     "id": 11,
     "question": "Parmi ces balises HTML, laquelle n'est pas considérée comme une balise sémantique\u00a0?",
     "answers": ["<header>", "<span>", "<article>", "<footer>"],
-    "correctAnswer": "<span>"
+    "correctAnswer": "<span>",
+    "explanation": "<span> n'est pas considérée comme une balise sémantique."
   },
   {
     "id": 12,
     "question": "L'accessibilité Web est utile pour tous les utilisateurs.",
     "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "correctAnswer": "Vrai",
+    "explanation": "L'accessibilité Web est essentielle pour garantir que tous les utilisateurs, y compris les personnes avec des handicaps, puissent utiliser votre site de manière efficace."
   }
 ]

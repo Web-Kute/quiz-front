@@ -25,6 +25,10 @@ export const domElements = {
   quizTableResults: document.getElementById('quiz-table-results'),
   quizResults: document.getElementById('quiz-results'),
   listItem: document.querySelector('.main-menu-list'),
+  quizContainer: document.getElementById('quiz-container'),
+  htmlAnswers: document.getElementById('html-answers'),
+  cssAnswers: document.getElementById('css-answers'),
+  jsAnswers: document.getElementById('js-answers'),
 };
 
 export const CLASSNAMES = {

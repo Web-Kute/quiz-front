@@ -14,6 +14,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu,play_circle&display=block"
     crossorigin>
+  <link rel="stylesheet" href="./dist/accordion.min.css">
   <link rel="stylesheet" href="./assets/css/style.min.css">
   <title>Resultats Front-End Quiz</title>
 
@@ -168,26 +169,56 @@
     </div>
   </header>
   <main id="main-content">
-    <table id="quiz-table-results">
-      <caption>
-        Front-end Web Developer
-      </caption>
-      <thead>
-        <tr>
-          <th scope="col">Bruce</th>
-          <th scope="col">24/11/2024</th>
-          <th scope="col">Quiz Front-End</th>
-        </tr>
-      </thead>
-      <tbody id="quiz-results">
+    <section>
+      <table id="quiz-table-results">
+        <caption>
+          Front-end Web Developer
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Bruce</th>
+            <th scope="col">24/11/2024</th>
+            <th scope="col">Quiz Front-End</th>
+          </tr>
+        </thead>
+        <tbody id="quiz-results">
 
-      </tbody>
+        </tbody>
 
-    </table>
+      </table>
+    </section>
+    <section>
+      <div class="accordion-container">
+        <div class="ac">
+          <h2 class="ac-header">
+            <button type="button" class="ac-trigger">HTML5 / Réponses</button>
+          </h2>
+          <div class="ac-panel hidden" id="html-answers"></div>
+        </div>
+
+        <div class="ac">
+          <h2 class="ac-header">
+            <button type="button" class="ac-trigger">CSS3 / Réponses</button>
+          </h2>
+          <div class="ac-panel hidden" id="css-answers"></div>
+        </div>
+
+        <div class="ac">
+          <h2 class="ac-header">
+            <button type="button" class="ac-trigger">JavaScript / Réponses</button>
+          </h2>
+          <div class="ac-panel hidden" id="js-answers"></div>
+        </div>
+      </div>
+    </section>
     <div id="page-bottom"></div>
   </main>
   <script type="module" src="./dist/js/final-results.js"></script>
   <script src="./dist/js/houdini.js"></script>
+  <script src="./dist/accordion.min.js"></script>
+  <script>
+    new Accordion('.accordion-container');
+  </script>
 </body>
 
 </html>

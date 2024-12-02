@@ -1,0 +1,58 @@
+@use 'typography';
+@use 'variables';
+@use 'mixins';
+@use 'functions';
+
+.accordion-container {
+  @include mixins.tablet-portrait-up {
+    width: 80%;
+  }
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+h2.ac-header {
+  color: functions.color('white');
+  background-color: functions.color('asbestos');
+  &.active {
+    color: functions.color('white');
+    background-color: hsl(282, 44%, 47%, 0.9);
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: functions.color('wisteria');
+    }
+  }
+}
+
+.ac-header .ac-trigger {
+  color: functions.color('white');
+}
+
+button.ac-trigger {
+  border-radius: 0;
+}
+
+.ac .ac-trigger:focus {
+  color: functions.color('white');
+}
+
+.title-item {
+  font-size: clamp(1rem, 0.9456rem + 0.1454vw, 1.2rem);
+  background-color: functions.color('clouds');
+  padding: 0.5rem 1rem;
+}
+
+.code-item {
+  display: block;
+  font-family: 'Heebo Bold', sans-serif;
+  color: functions.color('green-sea');
+  font-size: clamp(0.7rem, 0.6456rem + 0.1454vw, 0.9rem);
+  padding: 0 1rem;
+}
+
+.text-item {
+  font-size: clamp(0.8rem, 0.7456rem + 0.1454vw, 1rem);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  padding: 0 1rem;
+}

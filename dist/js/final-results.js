@@ -2,6 +2,7 @@ import { showBurgerMenu } from './menu.js';
 import { domElements } from './domelem.js';
 import { getLoginId } from './login.js';
 import { currentTime } from './results.js';
+import { populateQuizExplanation } from "./accordion.js";
 import {
   student,
   welcomeStudent,

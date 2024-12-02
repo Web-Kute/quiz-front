@@ -7,13 +7,15 @@
       "Create Simple Samples",
       "Create Syntactically Sheets"
     ],
-    "correctAnswer": "Cascading Style Sheets"
+    "correctAnswer": "Cascading Style Sheets",
+    "explanation": "CSS est l'abréviation de Cascading Style Sheets, qui est un langage utilisé pour décrire la présentation des documents HTML."
   },
   {
     "id": 2,
     "question": "Lequel des sélecteurs suivants à le poids(spécificité) le plus élevé\u00a0?",
     "answers": ["class", "id", "<p>", "input[type='email']"],
-    "correctAnswer": "id"
+    "correctAnswer": "id",
+    "explanation": "Les sélecteurs id ont le poids(spécificité) le plus élevé ex : 0 1 0 0."
   },
   {
     "id": 3,
@@ -23,13 +25,15 @@
       "Pour séparer le contenu de la présentation des pages",
       "Pour faire des dégradés de couleurs"
     ],
-    "correctAnswer": "Pour séparer le contenu de la présentation des pages"
+    "correctAnswer": "Pour séparer le contenu de la présentation des pages",
+    "explanation": "CSS est utilisé pour séparer le contenu de la présentation des pages, ce qui rend le code plus lisible et plus facile à maintenir."
   },
   {
     "id": 4,
     "question": "Laquelle de ces propriétés CSS définit une marge interne\u00a0?",
     "answers": ["margin", "spacein", "spaceout", "padding"],
-    "correctAnswer": "padding"
+    "correctAnswer": "padding",
+    "explanation": "padding est utilisé pour définir la marge interne d'une boîte, tandis que margin est utilisé pour définir la marge externe."
   },
   {
     "id": 5,
@@ -40,48 +44,56 @@
       "ponts entre les CSS et le JavaScript",
       "feuilles de styles simplifiées"
     ],
-    "correctAnswer": "pré-processeurs pour feuilles de styles"
+    "correctAnswer": "pré-processeurs pour feuilles de styles",
+    "explanation": "SASS et Less sont des pré-processeurs pour feuilles de styles qui permettent d'écrire des feuilles de styles plus lisibles et maintenables."
   },
   {
     "id": 6,
     "question": "Peut-on utiliser des variables dans les feuilles de styles\u00a0?",
     "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "correctAnswer": "Vrai",
+    "explanation": "Les variables CSS permettent de stocker des valeurs qui peuvent être réutilisées dans le code CSS."
   },
   {
     "id": 7,
     "question": "Trouvez l'intrus.",
     "answers": ["Svelte", "Materialize CSS", "Bootstrap", "Tailwind CSS"],
-    "correctAnswer": "Svelte"
+    "correctAnswer": "Svelte",
+    "explanation": "Svelte est un framework JavaScript qui permet de créer des applications web rapides et performantes, mais il n'est pas une feuille de style."
   },
   {
     "id": 8,
     "question": "Peut-on créer des animations CSS sans utiliser JavaScript\u00a0?",
     "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "correctAnswer": "Vrai",
+    "explanation": "Les animations CSS permettent de créer des animations sans utiliser JavaScript."
   },
   {
     "id": 9,
     "question": "Pour la création de pages web adaptatives, on fait appel à\u00a0: ",
     "answers": ["Des variables", "Des Media Queries", "Des Flexbox", "jQuery"],
-    "correctAnswer": "Des Media Queries"
+    "correctAnswer": "Des Media Queries",
+    "explanation": "Les Media Queries permettent de créer des pages web adaptatives en fonction de la taille de l'écran."
   },
   {
     "id": 10,
     "question": "Laquelle de ces unités correspond à la taille de la police de l'élément racine\u00a0?",
     "answers": ["em", "rem", "%", "vh"],
-    "correctAnswer": "rem"
+    "correctAnswer": "rem",
+    "explanation": "rem est une unité de mesure qui correspond à la taille de la police de l'élément racine."
   },
   {
     "id": 11,
     "question": "Si la taille de la police de l'élément racine est de 16px. Quelle est la taille de la police de h1{font-size: 1.5rem}\u00a0?",
     "answers": ["24px", "16px", "1.5px", "24.5px"],
-    "correctAnswer": "24px"
+    "correctAnswer": "24px",
+    "explanation": "1.5rem = 1.5 * 16px = 24px"
   },
   {
     "id": 12,
     "question": "Quelle est la valeur par défaut de la propriété display\u00a0?",
     "answers": ["block", "inline", "inline-block", "none"],
-    "correctAnswer": "block"
+    "correctAnswer": "block",
+    "explanation": "La valeur par défaut de la propriété display est block, ce qui signifie que les éléments sont affichés en bloc."
   }
 ]

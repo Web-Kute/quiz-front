@@ -3,13 +3,15 @@
     "id": 1,
     "question": "Quel est l'élément HTML approprié pour l'insertion du code JavaScript\u00a0?",
     "answers": ["<js>", "<javascript>", "<scripting>", "<script>"],
-    "correctAnswer": "<script>"
+    "correctAnswer": "<script>",
+    "explanation": "L'élément HTML <script> est utilisé pour intégrer ou faire référence à un script exécutable dans une page web."
   },
   {
     "id": 2,
     "question": "Que retourne l'opération 2 + '2'\u00a0?",
     "answers": ["4", "undefined", "22", "NaN"],
-    "correctAnswer": "22"
+    "correctAnswer": "22",
+    "explanation": "En JavaScript, l'opération 2 + '2' renvoie une chaîne de caractères '22' car l'opérateur + est utilisé pour concaténer des chaînes de caractères."
   },
   {
     "id": 3,
@@ -20,16 +22,15 @@
       "create myFunction()",
       "function: myFunction()"
     ],
-    "correctAnswer": "function myFunction()"
+    "correctAnswer": "function myFunction()",
+    "explanation": "function myFunction() est une fonction nommée. Il existe 6 manières de déclarer une fonction en JavaScript(ex: fonction anonyme, fonction flèchée, fonction auto-appelée, etc.)."
   },
   {
     "id": 4,
-    "question": "Quand l'évènement DOMContentLoaded est-il déclenché\u00a0?",
-    "answers": [
-      "Le document HTML est complètement chargé",
-      "Le document HTML est en cours de chargement"
-    ],
-    "correctAnswer": "Le document HTML est complètement chargé"
+    "question": "JavaScript est-il identique à Java\u00a0?",
+    "answers": ["Vrai", "Faux"],
+    "correctAnswer": "Faux",
+    "explanation": "Le code Java est compilé alors que le code JavaScript est interprété."
   },
   {
     "id": 5,
@@ -40,31 +41,36 @@
       "document.write('Hello World!')",
       "alert('Hello World!')"
     ],
-    "correctAnswer": "console.log('Hello World!')"
+    "correctAnswer": "console.log('Hello World!')",
+    "explanation": "Il existe différentes méthodes : console.info(),  console.error(), console.clear(), console.table(), console.warn()..."
   },
   {
     "id": 6,
     "question": "Comment déclarer une variable en JavaScript\u00a0?",
     "answers": ["var", "let", "const", "Toutes les réponses sont correctes"],
-    "correctAnswer": "Toutes les réponses sont correctes"
+    "correctAnswer": "Toutes les réponses sont correctes",
+    "explanation": "var, let et const sont tous utilisés pour déclarer des variables, mais let et const sont préférés pour des raisons de sécurité(scope, etc.)."
   },
   {
     "id": 7,
     "question": "Que renvoie l'opérateur typeof 'Hello World!'\u00a0?",
     "answers": ["string", "number", "boolean", "undefined"],
-    "correctAnswer": "string"
+    "correctAnswer": "string",
+    "explanation": "typeof 'Hello World!' renvoie la chaîne de caractères 'string'."
   },
   {
     "id": 8,
     "question": "Quel est l'opérateur requis pour assigner une valeur à une variable\u00a0?",
     "answers": ["*", "=", "==", "==="],
-    "correctAnswer": "="
+    "correctAnswer": "=",
+    "explanation": "= est l'opérateur requis pour assigner une valeur à une variable en JavaScript."
   },
   {
     "id": 9,
     "question": "Quel élément n'est pas un type de données primitives JavaScript\u00a0?",
     "answers": ["String", "Boolean", "Number", "Float"],
-    "correctAnswer": "Float"
+    "correctAnswer": "Float",
+    "explanation": "Float n'est pas un type de données primitives, mais plutôt un type de données pour les nombres à virgule flottante."
   },
   {
     "id": 10,
@@ -75,18 +81,21 @@
       "let array = ('apple','kiwi', 'grappe')",
       "let array = {'apple','kiwi', 'grappe'}"
     ],
-    "correctAnswer": "let array = ['apple','kiwi', 'grappe']"
+    "correctAnswer": "let array = ['apple','kiwi', 'grappe']",
+    "explanation": "let array = [] est la syntaxe pour déclarer un tableau en JavaScript."
   },
   {
     "id": 11,
     "question": "JavaScript est un langage orienté objet.",
     "answers": ["Vrai", "Faux"],
-    "correctAnswer": "Vrai"
+    "correctAnswer": "Vrai",
+    "explanation": "JavaScript est un langage de Programmation Orienté Objet(POO)."
   },
   {
     "id": 12,
     "question": "Quel élément HTML fournit une zone graphique pour dessiner en JavaScript\u00a0?",
     "answers": ["<canvas>", "<svg>", "<div>", "<img>"],
-    "correctAnswer": "<canvas>"
+    "correctAnswer": "<canvas>",
+    "explanation": "<canvas> est utilisé pour dessiner des graphique en 2D ou 3D en JavaScript."
   }
 ]
