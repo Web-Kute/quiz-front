@@ -11,7 +11,7 @@ export const domElements = {
   mainContent: document.getElementById('main-content'),
   chooseContainer: document.getElementById('choose-container'),
   sliderContainer: document.getElementById('slider-container'),
-  titleQuizElem: document.querySelector('.quiz-title'),
+  titleQuizElem: document.querySelector('.quiz-page-title'),
   buttons: document.querySelectorAll('.answer-item'),
   pageBottom: document.getElementById('page-bottom'),
   quizTitle: document.querySelectorAll('.quiz-title'),
