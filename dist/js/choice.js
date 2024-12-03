@@ -52,21 +52,23 @@ export let studentAnswers = JSON.parse(sessionStorage.getItem('answers')) || [];
 
 export function displayResults() {
   results(totalQuestions);
-  const buttons = document.querySelectorAll('.answer-item');
-  disabledAllButtons(buttons);
-  const isDuplicateTitle = studentAnswers.some(
-    (quiz) => quiz.titleQuiz === titleQuiz,
-  );
+  disabledAllButtons(document.querySelectorAll('.answer-item'));
 
-  if (!isDuplicateTitle && studentAnswers.length <= 2) {
-    studentAnswers.push(userResults);
-  } else {
-    alert('Ce Quiz a déjà été fait !');
-  }
-
-  sessionStorage.setItem('allQuiz', JSON.stringify(quizList));
-  sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
+  !studentAnswers.some((quiz) => quiz.titleQuiz === titleQuiz) &&
+  studentAnswers.length <= 2
+    ? (studentAnswers.push(userResults),
+      sessionStorage.setItem('allQuiz', JSON.stringify(quizList)),
+      sessionStorage.setItem('answers', JSON.stringify(studentAnswers)))
+    : alert('Ce Quiz a déjà été fait !');
 }
+
+export let datahtml = [];
+datahtml = JSON.parse(sessionStorage.getItem('datahtml'));
+export let datacss = [];
+datacss = JSON.parse(sessionStorage.getItem('datacss'));
+export let datajs = [];
+datajs = JSON.parse(sessionStorage.getItem('datajs'));
+let swallowData = [];
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -217,17 +219,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (target.tagName === 'BUTTON') {
             if (Array.isArray(data)) {
-              const findQuestion = data.find((question) => {
+              const currentQuestion = data.find((question) => {
                 return (
                   question.question ===
                   questionsGroup?.previousElementSibling?.textContent
                 );
               });
 
-              if (
-                findQuestion &&
-                findQuestion.correctAnswer === target.textContent
-              ) {
+              currentQuestion.userAnswer = target.textContent;
+
+              const { correctAnswer, userAnswer } = currentQuestion;
+
+              if (currentQuestion && correctAnswer === target.textContent) {
                 target.classList.add(CORRECT);
                 answered.push(true);
                 scoreUser += 1;
@@ -241,12 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 target.classList.add(INCORRECT);
                 answered.push(false);
               }
+
+              swallowData.push(currentQuestion);
+              if (quiz.includes('html')) {
+                sessionStorage.setItem('datahtml', JSON.stringify(swallowData));
+              } else if (quiz.includes('css')) {
+                sessionStorage.setItem('datacss', JSON.stringify(swallowData));
+              } else if (quiz.includes('javascript')) {
+                sessionStorage.setItem('datajs', JSON.stringify(swallowData));
+              }
+
               allButtons.forEach((button) => {
                 if (button instanceof HTMLButtonElement) {
-                  if (
-                    findQuestion &&
-                    button.textContent === findQuestion.correctAnswer
-                  ) {
+                  if (currentQuestion && button.textContent === correctAnswer) {
                     button.classList.add(CORRECT);
                   }
                   if (

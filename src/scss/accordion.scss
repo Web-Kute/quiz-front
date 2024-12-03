@@ -48,6 +48,9 @@ button.ac-trigger {
   color: functions.color('green-sea');
   font-size: clamp(0.7rem, 0.6456rem + 0.1454vw, 0.9rem);
   padding: 0 1rem;
+  &.error-user {
+    color: functions.color('pomegranate');
+  }
 }
 
 .text-item {

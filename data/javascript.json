@@ -23,7 +23,7 @@
       "function: myFunction()"
     ],
     "correctAnswer": "function myFunction()",
-    "explanation": "function myFunction() est une fonction nommée. Il existe 6 manières de déclarer une fonction en JavaScript(ex: fonction anonyme, fonction flèchée, fonction auto-appelée, etc.)."
+    "explanation": "function myFunction() est une fonction nommée. Il existe 6 manières de déclarer une fonction (ex: fonction anonyme, fonction flèchée, fonction auto-appelée, etc.)."
   },
   {
     "id": 4,
@@ -82,7 +82,7 @@
       "let array = {'apple','kiwi', 'grappe'}"
     ],
     "correctAnswer": "let array = ['apple','kiwi', 'grappe']",
-    "explanation": "let array = [] est la syntaxe pour déclarer un tableau en JavaScript."
+    "explanation": "let array = ['apple','kiwi', 'grappe'] est correct. Il est également possible de le déclarer ainsi : let array = new Array('apple','kiwi', 'grappe'); "
   },
   {
     "id": 11,

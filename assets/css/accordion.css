@@ -127,6 +127,9 @@ button.ac-trigger {
   font-size: clamp(0.7rem, 0.6456rem + 0.1454vw, 0.9rem);
   padding: 0 1rem;
 }
+.code-item.error-user {
+  color: hsl(6, 63%, 46%);
+}
 
 .text-item {
   font-size: clamp(0.8rem, 0.7456rem + 0.1454vw, 1rem);
