@@ -67,7 +67,7 @@
       "# comment"
     ],
     "correctAnswer": "<!-- comment -->",
-    "explanation": "<!-- comment --> est utilisé pour insérer un commentaire dans un document HTML."
+    "explanation": "Un commentaire HTML est utilisé pour ajouter des notes explicatives au balisage ou pour empêcher le navigateur d'interpréter des parties spécifiques du document."
   },
   {
     "id": 9,
