@@ -4,9 +4,7 @@
 @use 'functions';
 
 .accordion-container {
-  @include mixins.tablet-portrait-up {
-    width: 80%;
-  }
+
   margin: 0 auto;
   margin-bottom: 2rem;
 }
@@ -24,8 +22,22 @@ h2.ac-header {
   }
 }
 
+.header-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .ac-header .ac-trigger {
+  font-family: 'Roboto Regular', sans-serif;
   color: functions.color('white');
+}
+
+.ac-header_correct {
+  font-family: 'Heebo ExtraLight', sans-serif;
+  margin-right: 2rem;
+  strong {
+    font-family: 'Heebo Regular', sans-serif;
+  }
 }
 
 button.ac-trigger {
@@ -37,6 +49,7 @@ button.ac-trigger {
 }
 
 .title-item {
+  font-family: 'Roboto Regular', sans-serif;
   font-size: clamp(1rem, 0.9456rem + 0.1454vw, 1.2rem);
   background-color: functions.color('clouds');
   padding: 0.5rem 1rem;

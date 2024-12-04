@@ -203,7 +203,7 @@ header {
       justify-content: center;
 }
 header h2 {
-  line-height: 40px;
+  line-height: clamp(2.5rem, 2.3299rem + 0.4543vw, 3.125rem);
 }
 header h3 {
   font-family: "Roboto Slab bold", serif;
@@ -276,6 +276,11 @@ section {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+}
+@media (min-width: 600px) {
+  section.content-results {
+    width: 50%;
+  }
 }
 
 #choose-container {

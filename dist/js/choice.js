@@ -24,6 +24,8 @@ import {
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
+// export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
+
 
 const {
   welcome,
@@ -87,7 +89,7 @@ export const student =
 export function welcomeStudent() {
   if (getLoginId[0] && welcome) {
     welcome.innerHTML = `${student}`;
-  } else {
+  } else if (welcome) {
     welcome.innerHTML = 'Bienvenue';
   }
 }
@@ -293,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
   }
-
-  mainContent.addEventListener('click', scrollToBottomQuiz);
+  if (mainContent) {
+    mainContent.addEventListener('click', scrollToBottomQuiz);
+  }
 });

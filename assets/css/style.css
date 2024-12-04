@@ -301,7 +301,7 @@ header {
       justify-content: center;
 }
 header h2 {
-  line-height: 40px;
+  line-height: clamp(2.5rem, 2.3299rem + 0.4543vw, 3.125rem);
 }
 header h3 {
   font-family: "Roboto Slab bold", serif;
@@ -374,6 +374,11 @@ section {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+}
+@media (min-width: 600px) {
+  section.content-results {
+    width: 50%;
+  }
 }
 
 #choose-container {
@@ -1074,12 +1079,12 @@ tbody tr:nth-child(odd) {
 tbody td {
   padding: 7px 5px;
   font-size: 0.85rem;
-  width: 18%;
+  width: 25%;
   text-align: center;
 }
 tbody td:last-child {
-  width: 62%;
-  text-align: left;
+  width: 55%;
+  text-align: center;
 }
 
 tfoot {
@@ -1111,11 +1116,6 @@ tfoot {
   margin: 0 auto;
   margin-bottom: 2rem;
 }
-@media (min-width: 600px) {
-  .accordion-container {
-    width: 80%;
-  }
-}
 
 h2.ac-header {
   color: hsl(0, 0%, 100%);
@@ -1130,8 +1130,24 @@ h2.ac-header.active:hover {
   background-color: hsl(282, 44%, 47%);
 }
 
+.header-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
 .ac-header .ac-trigger {
+  font-family: "Roboto Regular", sans-serif;
   color: hsl(0, 0%, 100%);
+}
+
+.ac-header_correct {
+  font-family: "Heebo ExtraLight", sans-serif;
+  margin-right: 2rem;
+}
+.ac-header_correct strong {
+  font-family: "Heebo Regular", sans-serif;
 }
 
 button.ac-trigger {
@@ -1143,6 +1159,7 @@ button.ac-trigger {
 }
 
 .title-item {
+  font-family: "Roboto Regular", sans-serif;
   font-size: clamp(1rem, 0.9456rem + 0.1454vw, 1.2rem);
   background-color: hsl(192, 15%, 94%);
   padding: 0.5rem 1rem;

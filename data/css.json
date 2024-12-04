@@ -15,7 +15,7 @@
     "question": "Lequel des sélecteurs suivants à le poids(spécificité) le plus élevé\u00a0?",
     "answers": ["class", "id", "<p>", "input[type='email']"],
     "correctAnswer": "id",
-    "explanation": "Les sélecteurs id ont le poids(spécificité) le plus élevé ex : 0 1 0 0."
+    "explanation": "Les sélecteurs id ont le poids(spécificité) le plus élevé ex : 0 1 0 0. Si deux règles CSS différentes  pointent vers un même élément, c'est le sélecteur ayant la valeur de spécificité la plus élevée qui l'emportera."
   },
   {
     "id": 3,
@@ -52,7 +52,7 @@
     "question": "Peut-on utiliser des variables dans les feuilles de styles\u00a0?",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai",
-    "explanation": "Les variables CSS permettent de stocker des valeurs qui peuvent être réutilisées dans le code CSS."
+    "explanation": "Les variables CSS permettent de stocker des valeurs qui peuvent être réutilisées dans le code CSS(ex:font-size: var(--font-size-title);)."
   },
   {
     "id": 7,
@@ -80,20 +80,20 @@
     "question": "Laquelle de ces unités correspond à la taille de la police de l'élément racine\u00a0?",
     "answers": ["em", "rem", "%", "vh"],
     "correctAnswer": "rem",
-    "explanation": "rem est une unité de mesure qui correspond à la taille de la police de l'élément racine."
+    "explanation": "rem(root em) est une unité de mesure qui correspond à la taille de la police de l'élément racine."
   },
   {
     "id": 11,
     "question": "Si la taille de la police de l'élément racine est de 16px. Quelle est la taille de la police de h1{font-size: 1.5rem}\u00a0?",
     "answers": ["24px", "16px", "1.5px", "24.5px"],
     "correctAnswer": "24px",
-    "explanation": "1.5rem = 1.5 * 16px = 24px"
+    "explanation": "Le calcul de conversion : 1.5rem = 1.5 * 16px = 24px"
   },
   {
     "id": 12,
     "question": "Quelle est la valeur par défaut de la propriété display\u00a0?",
     "answers": ["block", "inline", "inline-block", "none"],
     "correctAnswer": "block",
-    "explanation": "La valeur par défaut de la propriété display est block, ce qui signifie que les éléments sont affichés en bloc."
+    "explanation": "La valeur par défaut de la propriété display est block, ce qui signifie que les boîtes sont affichés en bloc."
   }
 ]

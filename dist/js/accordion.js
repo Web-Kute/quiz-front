@@ -7,18 +7,14 @@ import {
   datacss,
   datajs,
 } from './choice.js';
-import { answered } from './results.js';
 
-const {
-  htmlAnswers,
-  cssAnswers,
-  jsAnswers,
-} = domElements;
+const { htmlAnswers, cssAnswers, jsAnswers } = domElements;
 
-export function populateQuizExplanation(quiz, elem, title) {
+export async function populateQuizExplanation(quiz, elem, title, endpoint) {
   let quizCorrect =
     studentAnswers.find((answer) => answer.titleQuiz === title)?.correct || 0;
-
+  const data = await fetchData(endpoint);
+  const totalQuestions = data.length;
   quiz.forEach((question) => {
     const h4 = document.createElement('h4');
     h4.className = 'title-item';
@@ -41,15 +37,22 @@ export function populateQuizExplanation(quiz, elem, title) {
     elem.appendChild(codeUser);
     elem.appendChild(p);
   });
-  elem.previousElementSibling.childNodes[1].textContent = `${title} | ${quizCorrect} bonnes réponses`;
+  elem.previousElementSibling.childNodes[1].innerHTML = `<div class="header-title"><span>${title}</span>  <span class="ac-header_correct">Bonnes réponses : <strong>${quizCorrect}/${totalQuestions}</strong></span></div>`;
 }
 
 datahtml !== null
-  ? populateQuizExplanation(datahtml, htmlAnswers, 'HTML5')
+  ? populateQuizExplanation(datahtml, htmlAnswers, 'HTML5', './data/html.json')
   : null;
-datacss !== null ? populateQuizExplanation(datacss, cssAnswers, 'CSS3') : null;
+datacss !== null
+  ? populateQuizExplanation(datacss, cssAnswers, 'CSS3', './data/css.json')
+  : null;
 datajs !== null
-  ? populateQuizExplanation(datajs, jsAnswers, 'JavaScript')
+  ? populateQuizExplanation(
+      datajs,
+      jsAnswers,
+      'JavaScript',
+      './data/javascript.json',
+    )
   : null;
 
 function highLightAccordionHeader(quizList, elem) {

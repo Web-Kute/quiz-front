@@ -1,14 +1,17 @@
 import { domElements } from './domelem.js';
-
+// import { clearSessionStorage } from './utils.js';
+// clearSessionStorage();
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
-
-export function clearSessionStorage() {
+console.log(getLoginId);
+function clearSessionStorage() {
   sessionStorage.removeItem('allQuiz');
   sessionStorage.removeItem('answers');
   sessionStorage.removeItem('loginId');
+  sessionStorage.removeItem('datahtml');
+  sessionStorage.removeItem('datacss');
+  sessionStorage.removeItem('datajs');
 }
-
 const { name, email, logged, form, errorName, errorEmail } = domElements;
 
 document.addEventListener('DOMContentLoaded', () => {

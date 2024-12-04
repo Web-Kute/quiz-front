@@ -115,7 +115,7 @@ header {
   flex-direction: column;
   justify-content: center;
   h2 {
-    line-height: 40px;
+    line-height: clamp(2.5rem, 2.3299rem + 0.4543vw, 3.125rem);
   }
   h3 {
     font-family: variables.$heading-font-family;
@@ -183,6 +183,11 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
+  &.content-results {
+    @include mixins.tablet-portrait-up {
+      width: 50%;
+    }
+  }
 }
 
 #choose-container {

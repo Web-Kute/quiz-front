@@ -41,6 +41,9 @@ export function clearSessionStorage() {
   sessionStorage.removeItem('allQuiz');
   sessionStorage.removeItem('answers');
   sessionStorage.removeItem('loginId');
+  sessionStorage.removeItem('datahtml');
+  sessionStorage.removeItem('datacss');
+  sessionStorage.removeItem('datajs');
 }
 
 export let secondsCountdown = null;
