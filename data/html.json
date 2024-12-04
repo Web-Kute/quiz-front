@@ -15,7 +15,7 @@
     "question": "Quel organisme élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C",
-    "explanation": "Le W3C (World Wide Web Consortium), fondé le 1er octobre 1994, est un organisme de standardisation qui élabore les normes du technologies Web, notamment HTML et CSS."
+    "explanation": "Le W3C (World Wide Web Consortium), fondé par Tim Berners-Lee le 1er octobre 1994, est un organisme de standardisation qui élabore les normes du technologies Web, notamment HTML et CSS."
   },
   {
     "id": 3,
