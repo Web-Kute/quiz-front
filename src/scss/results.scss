@@ -10,8 +10,7 @@ table#quiz-table-results {
   @include mixins.mobile-down {
     min-width: 290px;
   }
-  margin-top: 1.4rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   background-color: functions.color('white');
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -70,10 +69,16 @@ tbody {
 }
 tfoot {
   padding: 20px;
+  .result-footer {
+    text-align: center;
+  }
 }
 
 @media print {
   header {
+    display: none;
+  }
+  .content-results {
     display: none;
   }
   #quiz-table-results {

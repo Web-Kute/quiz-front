@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const NAME_TEXT_ERROR =
-    'Le prénom doit contenir uniquement des lettres entre 3 et 15 caractères !';
-  const EMAIL_TEXT_ERROR = "Le format email n'est pas valide !";
+    `Le prénom doit contenir
+      uniquement des lettres
+      entre 3 et 15 caractères !`;
+  const EMAIL_TEXT_ERROR = `Le format email n'est pas valide !`;
 
   let nameValid = false;
   let emailValid = false;

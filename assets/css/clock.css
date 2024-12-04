@@ -81,20 +81,27 @@
 
 aside {
   position: absolute;
-  top: 2%;
+  top: 6%;
   right: 13%;
   z-index: 100;
   font-size: 1.2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
 }
 @media (max-width: 599px) {
   aside {
-    top: 1%;
+    top: 4%;
     right: 5%;
   }
 }
 aside .timer {
-  position: relative;
-  top: 56px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   left: 20px;
   z-index: 10;
   color: hsl(0, 0%, 100%);

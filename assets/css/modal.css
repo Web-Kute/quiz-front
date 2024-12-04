@@ -105,6 +105,9 @@
 .modal h3 {
   color: hsl(210, 30%, 24%);
 }
+.modal .btn-submit {
+  width: 100%;
+}
 
 .modal .flex {
   display: -ms-flexbox;

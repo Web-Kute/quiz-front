@@ -181,12 +181,9 @@ header div {
 
 section {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  &.content-results {
-    @include mixins.tablet-portrait-up {
-      width: 50%;
-    }
+  &#slider-container {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -235,12 +232,11 @@ section {
 .btn-print,
 .btn-submit {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 1rem 0;
   color: functions.color('white');
   background-color: functions.color('wisteria');
   transition: background-color 300ms ease-in-out;
+  width: 55%;
   cursor: pointer;
   &:hover {
     background-color: functions.color('green-sea');
@@ -258,6 +254,7 @@ section {
   margin-left: 0.325rem;
   max-width: 11rem;
   color: functions.color('white');
+  text-align: left;
 }
 
 .hide {

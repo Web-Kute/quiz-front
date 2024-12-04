@@ -5,17 +5,21 @@
 
 aside {
   position: absolute;
-  top: 2%;
+  top: 6%;
   right: 13%;
   z-index: 100;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @include mixins.mobile-down() {
-    top: 1%;
+    top: 4%;
     right: 5%;
   }
   .timer {
-    position: relative;
-    top: 56px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     left: 20px;
     z-index: 10;
     color: functions.color('white');

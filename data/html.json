@@ -15,14 +15,14 @@
     "question": "Quel organisme élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C",
-    "explanation": "Le W3C (World Wide Web Consortium) est l'organisme qui élabore les normes du Web, notamment HTML."
+    "explanation": "Le W3C (World Wide Web Consortium), fondé le 1er octobre 1994, est un organisme de standardisation qui élabore les normes du technologies Web, notamment HTML et CSS."
   },
   {
     "id": 3,
     "question": "Quelle balise HTML définit le titre le plus grand\u00a0?",
     "answers": ["<h1>", "<heading>", "<h6>", "<header>"],
     "correctAnswer": "<h1>",
-    "explanation": "<h1> est utilisé pour définir le titre le plus important d'une page web."
+    "explanation": "<h1> est utilisé pour définir le titre le plus important d'une page web. Une prtaique SEO courante est d'avoir un seul <h1> par page."
   },
   {
     "id": 4,
@@ -81,14 +81,14 @@
     "question": "Une sémantique HTML bien structurée aide les moteurs de recherche à mieux référencer votre site.",
     "answers": ["Vrai", "Faux"],
     "correctAnswer": "Vrai",
-    "explanation": "Les balises sémantiques comme <header>, <nav>, <article>, <section>, <footer>, etc., aident les moteurs de recherche à mieux comprendre la structure de votre site."
+    "explanation": "Les balises sémantiques comme <header>, <nav>, <article>, <section>, <footer>, etc., aident les moteurs de recherche (SEO) à mieux comprendre la structure de votre site."
   },
   {
     "id": 11,
     "question": "Parmi ces balises HTML, laquelle n'est pas considérée comme une balise sémantique\u00a0?",
     "answers": ["<header>", "<span>", "<article>", "<footer>"],
     "correctAnswer": "<span>",
-    "explanation": "<span> n'est pas considérée comme une balise sémantique."
+    "explanation": "Une balise sémantique est une balise qui donne une indication sur le contenu qu’elle entoure. <span> n'est pas une balise sémantique car elle ne donne aucune indication sur le contenu qu’elle entoure."
   },
   {
     "id": 12,

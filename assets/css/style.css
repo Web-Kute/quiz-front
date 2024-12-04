@@ -370,15 +370,12 @@ header div {
 
 section {
   position: relative;
+}
+section#slider-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-}
-@media (min-width: 600px) {
-  section.content-results {
-    width: 50%;
-  }
 }
 
 #choose-container {
@@ -428,12 +425,11 @@ section {
 .btn-print,
 .btn-submit {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 1rem 0;
   color: hsl(0, 0%, 100%);
   background-color: hsl(282, 44%, 47%);
   transition: background-color 300ms ease-in-out;
+  width: 55%;
   cursor: pointer;
 }
 .btn-print:hover,
@@ -454,6 +450,7 @@ section {
   margin-left: 0.325rem;
   max-width: 11rem;
   color: hsl(0, 0%, 100%);
+  text-align: left;
 }
 
 .hide {
@@ -780,20 +777,27 @@ progress.update {
 }
 aside {
   position: absolute;
-  top: 2%;
+  top: 6%;
   right: 13%;
   z-index: 100;
   font-size: 1.2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
 }
 @media (max-width: 599px) {
   aside {
-    top: 1%;
+    top: 4%;
     right: 5%;
   }
 }
 aside .timer {
-  position: relative;
-  top: 56px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   left: 20px;
   z-index: 10;
   color: hsl(0, 0%, 100%);
@@ -852,6 +856,9 @@ aside .seconds {
 }
 .modal h3 {
   color: hsl(210, 30%, 24%);
+}
+.modal .btn-submit {
+  width: 100%;
 }
 
 .modal .flex {
@@ -1019,8 +1026,7 @@ aside .seconds {
   }
 }
 table#quiz-table-results {
-  margin-top: 1.4rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1090,9 +1096,15 @@ tbody td:last-child {
 tfoot {
   padding: 20px;
 }
+tfoot .result-footer {
+  text-align: center;
+}
 
 @media print {
   header {
+    display: none;
+  }
+  .content-results {
     display: none;
   }
   #quiz-table-results {
@@ -1115,6 +1127,11 @@ tfoot {
 .accordion-container {
   margin: 0 auto;
   margin-bottom: 2rem;
+}
+@media (min-width: 600px) {
+  .accordion-container {
+    width: 60%;
+  }
 }
 
 h2.ac-header {

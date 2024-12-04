@@ -80,8 +80,7 @@
 }
 
 table#quiz-table-results {
-  margin-top: 1.4rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -151,9 +150,15 @@ tbody td:last-child {
 tfoot {
   padding: 20px;
 }
+tfoot .result-footer {
+  text-align: center;
+}
 
 @media print {
   header {
+    display: none;
+  }
+  .content-results {
     display: none;
   }
   #quiz-table-results {

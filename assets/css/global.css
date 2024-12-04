@@ -272,15 +272,12 @@ header div {
 
 section {
   position: relative;
+}
+section#slider-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-}
-@media (min-width: 600px) {
-  section.content-results {
-    width: 50%;
-  }
 }
 
 #choose-container {
@@ -330,12 +327,11 @@ section {
 .btn-print,
 .btn-submit {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 1rem 0;
   color: hsl(0, 0%, 100%);
   background-color: hsl(282, 44%, 47%);
   transition: background-color 300ms ease-in-out;
+  width: 55%;
   cursor: pointer;
 }
 .btn-print:hover,
@@ -356,6 +352,7 @@ section {
   margin-left: 0.325rem;
   max-width: 11rem;
   color: hsl(0, 0%, 100%);
+  text-align: left;
 }
 
 .hide {
