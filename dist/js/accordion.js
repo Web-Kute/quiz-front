@@ -9,9 +9,16 @@ import {
 } from './choice.js';
 import { answered } from './results.js';
 
-const { htmlAnswers, cssAnswers, jsAnswers } = domElements;
+const {
+  htmlAnswers,
+  cssAnswers,
+  jsAnswers,
+} = domElements;
 
-export function populateQuizExplanation(quiz, elem) {
+export function populateQuizExplanation(quiz, elem, title) {
+  let quizCorrect =
+    studentAnswers.find((answer) => answer.titleQuiz === title)?.correct || 0;
+
   quiz.forEach((question) => {
     const h4 = document.createElement('h4');
     h4.className = 'title-item';
@@ -34,11 +41,16 @@ export function populateQuizExplanation(quiz, elem) {
     elem.appendChild(codeUser);
     elem.appendChild(p);
   });
+  elem.previousElementSibling.childNodes[1].textContent = `${title} | ${quizCorrect} bonnes réponses`;
 }
 
-datahtml !== null ? populateQuizExplanation(datahtml, htmlAnswers) : null;
-datacss !== null ? populateQuizExplanation(datacss, cssAnswers) : null;
-datajs!== null ? populateQuizExplanation(datajs, jsAnswers) : null;
+datahtml !== null
+  ? populateQuizExplanation(datahtml, htmlAnswers, 'HTML5')
+  : null;
+datacss !== null ? populateQuizExplanation(datacss, cssAnswers, 'CSS3') : null;
+datajs !== null
+  ? populateQuizExplanation(datajs, jsAnswers, 'JavaScript')
+  : null;
 
 function highLightAccordionHeader(quizList, elem) {
   if (quizList) {

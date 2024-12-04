@@ -29,6 +29,9 @@ export const domElements = {
   htmlAnswers: document.getElementById('html-answers'),
   cssAnswers: document.getElementById('css-answers'),
   jsAnswers: document.getElementById('js-answers'),
+  htmlAnswersBtn: document.querySelector('.html-answers'),
+  cssAnswersBtn: document.querySelector('.css-answers'),
+  jsAnswersBtn: document.querySelector('.js-answers'),
 };
 
 export const CLASSNAMES = {

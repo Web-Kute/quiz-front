@@ -1,4 +1,3 @@
-// import { capitalize } from './utils.js';
 import { titleQuiz, student, capitalize } from './choice.js';
 
 export let answered = [];
@@ -59,6 +58,7 @@ export function results(nbOfQuestions) {
         titleQuiz,
         rating,
         grade,
+        correct,
       };
 
       if (notation && commentNotation && userResults) {
