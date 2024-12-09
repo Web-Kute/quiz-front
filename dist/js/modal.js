@@ -17,13 +17,14 @@ export const modalStart = document.querySelector('.modal-start');
 export const overlayStart = document.querySelector('.overlay-start');
 export const modalBtnStart = document.querySelector('.btn-modal-start');
 export const closeModalBtn = document.querySelector('.btn-close');
-
+export let bonusTime = 0;
 let resultsFile;
 
 const { btnSaveFile } = domElements;
 const { HIDDEN } = CLASSNAMES;
 export async function showModal() {
   const timing = document.querySelector('.timing');
+  const points = document.querySelector('.points');
   modal.classList.remove(HIDDEN);
   overlay.classList.remove(HIDDEN);
   localStorage.setItem('answers', JSON.stringify(studentAnswers));
