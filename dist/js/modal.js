@@ -5,10 +5,10 @@ import {
   timeDisplay,
   elapsedTimeAfterBegin,
   remainingTime,
+  initChrono,
 } from './timer.js';
 import { circularClock } from './utils.js';
 import { studentAnswers, student } from './choice.js';
-import { download_file } from './filesaver.js';
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');
@@ -16,13 +16,14 @@ export const modalStart = document.querySelector('.modal-start');
 export const overlayStart = document.querySelector('.overlay-start');
 export const modalBtnStart = document.querySelector('.btn-modal-start');
 export const closeModalBtn = document.querySelector('.btn-close');
-
+export let bonusTime = 0;
 let resultsFile;
 
 const { btnSaveFile } = domElements;
 const { HIDDEN } = CLASSNAMES;
 export async function showModal() {
   const timing = document.querySelector('.timing');
+  const points = document.querySelector('.points');
   modal.classList.remove(HIDDEN);
   overlay.classList.remove(HIDDEN);
   localStorage.setItem('answers', JSON.stringify(studentAnswers));

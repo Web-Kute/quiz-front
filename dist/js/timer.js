@@ -7,7 +7,7 @@ export let remainingTime = 0;
 export let elapsedTimeAfterBegin = 0;
 export let timeDisplay;
 
-let initChrono = 2;
+export let initChrono = 2;
 let minutes;
 let seconds;
 
