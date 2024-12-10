@@ -1,5 +1,6 @@
 import { gameOver } from './choice.js';
 import { domElements } from './domelem.js';
+import { getLoginId } from './login.js';
 import { clearSessionStorage } from './utils.js';
 
 const { burgerMenuBtn, mainMenu } = domElements;
@@ -8,10 +9,12 @@ export function showBurgerMenu() {
   mainMenu.classList.toggle('show');
 }
 
+const loginOut = getLoginId.length === 0 ? 'Se connecter' : 'Se déconnecter';
+
 export const mainMenuHtml = `<ul>
           <li class="main-menu-list quiz-list"><a href="#" class="" id="quiz-list">Liste des Quiz</a></li>
           <li class="main-menu-list show-result"><a href="#" class="" id="result">Résultats</a></li>
-          <li class="main-menu-list logout-btn"><a href="#" class="" id="logout">Se déconnecter</a></li>
+          <li class="main-menu-list logout-btn"><a href="#" class="" id="logout">${loginOut}</a></li>
         </ul>`;
 
 const closeOutside = (e) => {
