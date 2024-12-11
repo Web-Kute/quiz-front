@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "accordion-js": "^3.3.4",
+    "countup.js": "^2.8.0",
     "file-saver": "^2.0.5",
     "swiper": "^11.1.14"
   },
