@@ -12,5 +12,6 @@ function houdini() {
     );
   })();
 }
-
-houdini();
+setTimeout(() => {
+  houdini();
+}, 300);
