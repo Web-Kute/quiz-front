@@ -42,7 +42,7 @@ const tfootHtml = `<tfoot>
 const dataTable = studentAnswers.map((quiz) => {
   let quizRow = `<tr>
     <th scope="row"><strong>${quiz.titleQuiz}</strong></th>
-      <td>Score : ${quiz.rating} %</td>
+      <td>Score : ${quiz.rating}%</td>
       <td>${quiz.grade}</td>
     </tr>`;
   return (quizResults.innerHTML = quizRow);
