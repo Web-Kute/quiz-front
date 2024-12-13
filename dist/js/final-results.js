@@ -11,12 +11,13 @@ import {
   capitalize,
 } from './choice.js';
 const { quizResults, quizTableResults } = domElements;
+const userStudentName = getLoginId[0] ? capitalize(getLoginId[0]) : 'Jane Doe';
 const headTableHtml = `<caption>
         Quiz Front-End
       </caption>
       <thead>
         <tr>
-          <th scope="col" colspan="2">${capitalize(getLoginId[0])}</th>
+          <th scope="col" colspan="2">${userStudentName}</th>
           <th scope="col">${currentTime}</th>
         </tr>
       </thead>`;

@@ -4,12 +4,7 @@
 @use 'functions';
 
 table#quiz-table-results {
-  @include mixins.tablet-portrait-up {
-    min-width: 350px;
-  }
-  @include mixins.mobile-down {
-    min-width: 290px;
-  }
+  min-width: 350px;
   margin: 2rem auto;
   background-color: functions.color('white');
   border-bottom-left-radius: 10px;
@@ -34,7 +29,6 @@ thead {
   text-transform: capitalize;
   text-align: center;
   th:first-child {
-    width: 53%;
     text-align: center;
   }
 }

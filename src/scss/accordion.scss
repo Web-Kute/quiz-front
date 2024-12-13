@@ -4,6 +4,7 @@
 @use 'functions';
 
 .accordion-container {
+  min-width: 350px;
   @include mixins.tablet-portrait-up() {
     width: 60%;
   }

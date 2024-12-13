@@ -80,21 +80,12 @@
 }
 
 table#quiz-table-results {
+  min-width: 350px;
   margin: 2rem auto;
   background-color: hsl(0, 0%, 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-collapse: collapse;
-}
-@media (min-width: 600px) {
-  table#quiz-table-results {
-    min-width: 350px;
-  }
-}
-@media (max-width: 599px) {
-  table#quiz-table-results {
-    min-width: 290px;
-  }
 }
 
 caption {
@@ -116,7 +107,6 @@ thead {
   text-align: center;
 }
 thead th:first-child {
-  width: 53%;
   text-align: center;
 }
 
@@ -129,7 +119,7 @@ tbody tr {
   padding: 1rem;
 }
 tbody tr:nth-child(even) {
-  color: hsl(206, 21%, 15%);
+  color: #1e272e;
   background-color: hsl(192, 15%, 94%);
 }
 tbody tr:nth-child(odd) {

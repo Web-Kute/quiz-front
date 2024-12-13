@@ -80,6 +80,7 @@
 }
 
 .accordion-container {
+  min-width: 350px;
   margin: 0 auto;
   margin-bottom: 2rem;
 }

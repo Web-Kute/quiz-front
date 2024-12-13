@@ -83,17 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function confirmLogout() {
-    // Use a microtask to defer the heavy operation
-    queueMicrotask(() => {
-      if (
-        confirm(
-          'Êtes-vous sûr de vouloir vous déconnecter ? Toutes les données seront perdues.',
-        )
-      ) {
-        clearSessionStorage();
-        window.location.href = 'index.html';
-      }
-    });
+    if (loginOut === 'Se connecter') {
+      clearSessionStorage();
+      window.location.href = 'index.html';
+    } else {
+      // Use a microtask to defer the heavy operation
+      queueMicrotask(() => {
+        if (
+          confirm(
+            'Êtes-vous sûr de vouloir vous déconnecter ? \u000DToutes les données seront perdues.',
+          )
+        ) {
+          clearSessionStorage();
+          window.location.href = 'index.html';
+        }
+      });
+    }
   }
 
   if (quizList) {
