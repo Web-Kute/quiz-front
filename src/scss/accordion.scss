@@ -4,9 +4,12 @@
 @use 'functions';
 
 .accordion-container {
-  min-width: 350px;
   @include mixins.tablet-portrait-up() {
-    width: 60%;
+    min-width: 33.75rem;
+    max-width: 60vw;
+  }
+  @include mixins.mobile-down() {
+    min-width: var(--accordion-size);
   }
   margin: 0 auto;
   margin-bottom: 2rem;

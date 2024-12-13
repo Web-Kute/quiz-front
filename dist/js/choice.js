@@ -92,6 +92,12 @@ export function welcomeStudent() {
     welcome.innerHTML = 'Bienvenue';
   }
 }
+
+export let viewportWidth = window.innerWidth;
+
+export let isMobile =
+  /Android|webOS|iPhone/i.test(navigator.userAgent) || viewportWidth < 600;
+
 //////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   // Check if a quiz have already been done
@@ -103,12 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  let viewportWidth = window.innerWidth;
-  let isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    ) || viewportWidth < 600;
 
   welcomeStudent();
 

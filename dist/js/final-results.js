@@ -2,16 +2,27 @@ import { showBurgerMenu } from './menu.js';
 import { domElements } from './domelem.js';
 import { getLoginId } from './login.js';
 import { currentTime } from './results.js';
-import { populateQuizExplanation } from "./accordion.js";
+import { populateQuizExplanation } from './accordion.js';
 import {
   student,
   welcomeStudent,
   studentAnswers,
   quizList,
   capitalize,
+  viewportWidth,
+  isMobile,
 } from './choice.js';
+
 const { quizResults, quizTableResults } = domElements;
 const userStudentName = getLoginId[0] ? capitalize(getLoginId[0]) : 'Jane Doe';
+
+const tableSize = quizTableResults.getBoundingClientRect();
+if (isMobile) {
+  document
+    .querySelector('.accordion-container')
+    .style.setProperty('--accordion-size', tableSize.width + 'px');
+}
+
 const headTableHtml = `<caption>
         Quiz Front-End
       </caption>
@@ -37,8 +48,7 @@ const dataTable = studentAnswers.map((quiz) => {
   return (quizResults.innerHTML = quizRow);
 });
 
-quizTableResults.innerHTML =
-  headTableHtml + dataTable.join('') + tfootHtml;
+quizTableResults.innerHTML = headTableHtml + dataTable.join('') + tfootHtml;
 
 const handlePrint = () => {
   window.print();
