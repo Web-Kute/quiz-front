@@ -1,4 +1,4 @@
-import { CountUp } from '../../node_modules/countup.js/dist/countUp.js';
+import { CountUp } from './countUp.min.js';
 import { titleQuiz, student, capitalize } from './choice.js';
 
 export let answered = [];
