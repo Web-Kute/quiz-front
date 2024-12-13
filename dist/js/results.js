@@ -1,4 +1,4 @@
-import { CountUp } from './countUp.min.js';
+import { CountUp } from '../../node_modules/countup.js/dist/countUp.js';
 import { titleQuiz, student, capitalize } from './choice.js';
 
 export let answered = [];
@@ -12,7 +12,7 @@ let grade = '';
 
 // Options new CountUp
 let options = {
-  duration: 10,
+  duration: 8,
   useEasing: true,
   useGrouping: true,
   separator: '',
