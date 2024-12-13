@@ -26,7 +26,6 @@ import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
 // export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
 
-
 const {
   welcome,
   quizTitle,
