@@ -52,14 +52,14 @@ export let studentAnswers = JSON.parse(sessionStorage.getItem('answers')) || [];
 
 export function displayResults() {
   results(totalQuestions);
-  disabledAllButtons(document.querySelectorAll('.answer-item'));
-
   !studentAnswers.some((quiz) => quiz.titleQuiz === titleQuiz) &&
   studentAnswers.length <= 2
     ? (studentAnswers.push(userResults),
       sessionStorage.setItem('allQuiz', JSON.stringify(quizList)),
       sessionStorage.setItem('answers', JSON.stringify(studentAnswers)))
-    : alert('Ce Quiz a déjà été fait !');
+    : alert(
+        'Vous avez déjà réalisé ce quiz !\u000DPourquoi ne pas choisir un autre quiz ?',
+      );
 }
 
 export let datahtml = [];
@@ -273,9 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (answered.length === totalQuestions) {
             setGameOver(true);
             displayResults();
+            disabledAllButtons(document.querySelectorAll('.answer-item'));
             setTimeout(() => {
               showModal();
-            }, 1000);
+            }, 600);
           }
 
           scrollToBottomQuiz();

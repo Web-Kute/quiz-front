@@ -79,6 +79,14 @@
   --widthprogress: 100%;
 }
 
+@keyframes animateModal {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 10%;
+  }
+}
 .modal {
   display: -ms-flexbox;
   display: flex;
@@ -91,6 +99,7 @@
   min-height: 16rem;
   padding: 0 1rem 1rem 1rem;
   position: absolute;
+  animation: animateModal 500ms ease-out;
   top: 10%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 15px;

@@ -840,6 +840,16 @@ aside .seconds {
     stroke-dashoffset: 1256.1293945313;
   }
 }
+@keyframes animateModal {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+  }
+}
 .modal {
   display: -ms-flexbox;
   display: flex;
@@ -852,6 +862,7 @@ aside .seconds {
   min-height: 16rem;
   padding: 0 1rem 1rem 1rem;
   position: absolute;
+  animation: animateModal 500ms ease-out;
   top: 10%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
