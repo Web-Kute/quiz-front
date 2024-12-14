@@ -95,6 +95,7 @@ table#quiz-table-results {
 @media (max-width: 599px) {
   table#quiz-table-results {
     width: -webkit-fill-available;
+    min-width: 280px;
   }
 }
 
