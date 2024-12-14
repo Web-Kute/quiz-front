@@ -273,7 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (answered.length === totalQuestions) {
             setGameOver(true);
             displayResults();
-            showModal();
+            setTimeout(() => {
+              showModal();
+            }, 1000);
           }
 
           scrollToBottomQuiz();
