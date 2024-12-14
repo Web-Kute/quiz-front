@@ -8,7 +8,7 @@ import {
 } from './timer.js';
 import { circularClock } from './utils.js';
 import { studentAnswers, student, quizList } from './choice.js';
-import { download_file } from './filesaver.js';
+// import { download_file } from './filesaver.js';
 
 export const modal = document.querySelector('.modal');
 export const overlay = document.querySelector('.overlay');

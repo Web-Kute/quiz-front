@@ -1,5 +1,5 @@
 import { fetchData } from './utils.js';
-import { domElements, CLASSNAMES } from './domelem.js';
+import { domElements } from './domelem.js';
 import {
   quizList,
   studentAnswers,

@@ -24,7 +24,6 @@ import {
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
-// export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
 
 const {
   welcome,

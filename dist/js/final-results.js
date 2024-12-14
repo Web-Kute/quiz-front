@@ -4,12 +4,8 @@ import { getLoginId } from './login.js';
 import { currentTime } from './results.js';
 import { populateQuizExplanation } from './accordion.js';
 import {
-  student,
-  welcomeStudent,
   studentAnswers,
-  quizList,
   capitalize,
-  viewportWidth,
   isMobile,
 } from './choice.js';
 

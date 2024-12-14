@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizList = document.getElementById('quiz-list');
   const result = document.getElementById('result');
   const logout = document.getElementById('logout');
-  const showResult = document.querySelector('.show-result');
 
   if (urlPath.includes('choose.html') && window.location.search.length === 0) {
     quizList.classList.add('active');

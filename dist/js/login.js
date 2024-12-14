@@ -1,6 +1,5 @@
 import { domElements } from './domelem.js';
-// import { clearSessionStorage } from './utils.js';
-// clearSessionStorage();
+
 export const studentId = JSON.parse(sessionStorage.getItem('studentId')) || [];
 export let getLoginId = JSON.parse(sessionStorage.getItem('loginId')) || [];
 

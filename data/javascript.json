@@ -93,7 +93,7 @@
   },
   {
     "id": 12,
-    "question": "Quel élément HTML fournit une zone graphique pour dessiner en JavaScript\u00a0?",
+    "question": "Quel élément HTML fournit une zone graphique(canevas) pour dessiner en JavaScript\u00a0?",
     "answers": ["<canvas>", "<svg>", "<div>", "<img>"],
     "correctAnswer": "<canvas>",
     "explanation": "<canvas> est utilisé pour dessiner des graphiques en 2D ou 3D en JavaScript."
