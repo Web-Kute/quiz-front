@@ -7,7 +7,7 @@ import {
   remainingTime,
 } from './timer.js';
 import { circularClock } from './utils.js';
-import { studentAnswers, student } from './choice.js';
+import { studentAnswers, student, quizList } from './choice.js';
 import { download_file } from './filesaver.js';
 
 export const modal = document.querySelector('.modal');
@@ -52,6 +52,7 @@ export const closeModal = function () {
 export const closeModalStart = function () {
   modalStart.classList.add(HIDDEN);
   overlayStart.classList.add(HIDDEN);
+  sessionStorage.setItem('allQuiz', JSON.stringify(quizList));
 };
 
 if (modalBtnStart) {
