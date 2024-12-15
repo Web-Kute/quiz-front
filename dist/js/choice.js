@@ -10,7 +10,7 @@ import {
 // Core functionality
 import { htmlQuiz } from './htmlpart.js';
 import { initSwiper, paginationSlider } from './swiper.js';
-import { results, answered, userResults } from './results.js';
+import { results, answered, userResults, total } from './results.js';
 
 // UI Components
 import {
@@ -24,6 +24,7 @@ import {
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
+import { elapsedTime, initChrono } from './timer.js';
 
 const {
   welcome,
@@ -41,6 +42,7 @@ export let endpointQuiz = null;
 export let titleQuiz = null;
 export let totalQuestions;
 export let gameOver = false;
+export let pointsTotaux;
 // setter function to update gameOver
 export function setGameOver(value) {
   gameOver = value;
@@ -274,18 +276,40 @@ document.addEventListener('DOMContentLoaded', () => {
             setGameOver(true);
             displayResults();
             disabledAllButtons(document.querySelectorAll('.answer-item'));
+            const timeElem = document.querySelector('.timer');
+            const bonusTime =
+              timeElem.textContent.split(':')[0] +
+              timeElem.textContent.split(':')[1];
+
             setTimeout(() => {
               showModal();
             }, 600);
           }
 
+          const percentScore = document.querySelector('.notation').textContent;
+          const bonusMax = 12;
+          // Convert milliseconds to seconds
+          const elapsedTimeInSeconds = Math.floor(elapsedTime / 1000);
+          const coefficient = 0.1;
+          const initChronoSecondes = initChrono * 60;
+
+          if (elapsedTimeInSeconds === initChronoSecondes) {
+            pointsTotaux = Number(percentScore);
+          } else {
+            pointsTotaux =
+              Number(percentScore) +
+              (initChronoSecondes - elapsedTimeInSeconds) * coefficient;
+          }
+
+          document.querySelector('.points').textContent =
+            `Score + Bonus : ${pointsTotaux} points`;
           scrollToBottomQuiz();
         },
         false,
       );
     });
   }
-
+  // +(bonusMax - (initChronoSecondes - elapsedTimeInSeconds) * coefficient);
   function scrollToBottomQuiz() {
     if (isMobile) {
       pageBottom.scrollIntoView();
