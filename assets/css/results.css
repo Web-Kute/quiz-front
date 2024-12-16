@@ -124,7 +124,6 @@ thead th:first-child {
 tbody th {
   padding-left: 10px;
   text-align: left;
-  width: 13%;
 }
 tbody tr {
   padding: 1rem;
@@ -140,11 +139,9 @@ tbody tr:nth-child(odd) {
 tbody td {
   padding: 7px 5px;
   font-size: 0.85rem;
-  width: 32%;
   text-align: center;
 }
 tbody td:last-child {
-  width: 55%;
   text-align: center;
 }
 

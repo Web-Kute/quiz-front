@@ -45,7 +45,6 @@ tbody {
   th {
     padding-left: 10px;
     text-align: left;
-    width: 13%;
   }
   tr {
     padding: 1rem;
@@ -61,10 +60,8 @@ tbody {
   td {
     padding: 7px 5px;
     font-size: 0.85rem;
-    width: 32%;
     text-align: center;
     &:last-child {
-      width: 55%;
       text-align: center;
     }
   }
