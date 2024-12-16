@@ -24,7 +24,7 @@ import {
 import { domElements, CLASSNAMES } from './domelem.js';
 import { showBurgerMenu } from './menu.js';
 import { getLoginId } from './login.js';
-import { elapsedTime, initChrono } from './timer.js';
+import { elapsedTime, initChrono, elapsedTimeAfterBegin } from './timer.js';
 
 const {
   welcome,
@@ -272,44 +272,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
 
+          function totalPoints() {
+            const pointScore = document.querySelector('.points');
+            const percentScore =
+              document.querySelector('.notation').textContent;
+            const bonusMax = 12;
+            // Convert milliseconds to seconds
+            const elapsedTimeInSeconds = Math.floor(elapsedTime / 1000);
+            const coefficient = 0.1;
+            const initChronoSecondes = initChrono * 60;
+
+            let calculateBonus =
+              (initChronoSecondes - elapsedTimeInSeconds) * coefficient;
+            let bonusTime = bonusMax - calculateBonus;
+
+            if (Number(percentScore) === 0) {
+              bonusTime = 0;
+              pointsTotaux = 0;
+            } else {
+              pointsTotaux = Number(percentScore) + bonusTime;
+            }
+            pointScore.textContent = `Score : ${Math.ceil(pointsTotaux)} points`;
+            userResults.pointsTotaux = Math.ceil(pointsTotaux);
+            sessionStorage.setItem('answers', JSON.stringify(studentAnswers));
+          }
+
           if (answered.length === totalQuestions) {
             setGameOver(true);
-            displayResults();
             disabledAllButtons(document.querySelectorAll('.answer-item'));
-            const timeElem = document.querySelector('.timer');
-            const bonusTime =
-              timeElem.textContent.split(':')[0] +
-              timeElem.textContent.split(':')[1];
 
             setTimeout(() => {
               showModal();
-            }, 600);
+            }, 300);
+
+            displayResults();
+            totalPoints();
           }
 
-          const percentScore = document.querySelector('.notation').textContent;
-          const bonusMax = 12;
-          // Convert milliseconds to seconds
-          const elapsedTimeInSeconds = Math.floor(elapsedTime / 1000);
-          const coefficient = 0.1;
-          const initChronoSecondes = initChrono * 60;
-
-          if (elapsedTimeInSeconds === initChronoSecondes) {
-            pointsTotaux = Number(percentScore);
-          } else {
-            pointsTotaux =
-              Number(percentScore) +
-              (initChronoSecondes - elapsedTimeInSeconds) * coefficient;
-          }
-
-          document.querySelector('.points').textContent =
-            `Score + Bonus : ${pointsTotaux} points`;
           scrollToBottomQuiz();
         },
         false,
       );
     });
   }
-  // +(bonusMax - (initChronoSecondes - elapsedTimeInSeconds) * coefficient);
+
   function scrollToBottomQuiz() {
     if (isMobile) {
       pageBottom.scrollIntoView();

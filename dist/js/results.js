@@ -10,17 +10,6 @@ export const currentTime = new Date().toLocaleDateString();
 let rating = '';
 let grade = '';
 
-// Options new CountUp
-let options = {
-  duration: 8,
-  useEasing: true,
-  useGrouping: true,
-  separator: '',
-  decimal: '',
-  prefix: 'Score : ',
-  suffix: '%',
-};
-
 export function results(nbOfQuestions) {
   if (answered) {
     const notation = document.querySelector('.notation');
@@ -64,17 +53,29 @@ export function results(nbOfQuestions) {
           break;
       }
 
-      let scoring = new CountUp('score-animated', total, options);
-      scoring.start();
-
       userResults = {
         student,
         currentTime,
         titleQuiz,
         rating,
+        pointsTotaux: 0,
         grade,
         correct,
       };
+
+      // Options new CountUp
+      let options = {
+        duration: 8,
+        useEasing: true,
+        useGrouping: true,
+        separator: '',
+        decimal: '',
+        prefix: `${titleQuiz} : `,
+        suffix: '%',
+      };
+
+      let scoring = new CountUp('score-animated', total, options);
+      scoring.start();
 
       if (notation && commentNotation && userResults) {
         notation.textContent = userResults.rating;

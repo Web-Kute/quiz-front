@@ -5,6 +5,7 @@ import {
   timeDisplay,
   elapsedTimeAfterBegin,
   remainingTime,
+  initChrono,
 } from './timer.js';
 import { circularClock } from './utils.js';
 import { studentAnswers, student, quizList } from './choice.js';
@@ -32,9 +33,10 @@ export async function showModal() {
       return `${Object.values(quiz)}\u00a0`;
     })
     .join(', ');
-  const minutes = Math.floor(elapsedTimeAfterBegin / 60);
-  const seconds = elapsedTimeAfterBegin % 60;
-  const timeOver = `Temps écoulé : ${minutes}min : ${seconds}sec`;
+  // const minutes = Math.floor(elapsedTimeAfterBegin / 60);
+  // const seconds = elapsedTimeAfterBegin % 60;
+
+  const timeOver = `Bonus temps : ${initChrono * 60 - elapsedTimeAfterBegin} seconde(s)`;
   timing.innerHTML = `${timeOver}`;
   stopTimer();
 }

@@ -3,11 +3,7 @@ import { domElements } from './domelem.js';
 import { getLoginId } from './login.js';
 import { currentTime } from './results.js';
 import { populateQuizExplanation } from './accordion.js';
-import {
-  studentAnswers,
-  capitalize,
-  isMobile,
-} from './choice.js';
+import { studentAnswers, capitalize, isMobile } from './choice.js';
 
 const { quizResults, quizTableResults } = domElements;
 const userStudentName = getLoginId[0] ? capitalize(getLoginId[0]) : 'Jane Doe';
@@ -38,7 +34,7 @@ const tfootHtml = `<tfoot>
 const dataTable = studentAnswers.map((quiz) => {
   let quizRow = `<tr>
     <th scope="row"><strong>${quiz.titleQuiz}</strong></th>
-      <td>Score : ${quiz.rating}%</td>
+      <td>Score : ${quiz.pointsTotaux} points</td>
       <td>${quiz.grade}</td>
     </tr>`;
   return (quizResults.innerHTML = quizRow);

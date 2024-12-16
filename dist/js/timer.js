@@ -1,6 +1,12 @@
 import { fetchData, disabledAllButtons } from './utils.js';
 import { showModal } from './modal.js';
-import { displayResults, endpointQuiz, setGameOver } from './choice.js';
+import {
+  displayResults,
+  endpointQuiz,
+  setGameOver,
+  pointsTotaux,
+} from './choice.js';
+import { userResults } from './results.js';
 export let elapsedTime = 1000;
 export let clockId = null;
 export let remainingTime = 0;
@@ -68,6 +74,9 @@ export async function timerQuiz() {
         displayResults();
         timerClock.classList.add('over');
         disabledAllButtons(buttons);
+        userResults.pointsTotaux = 0;
+        document.querySelector('.points').textContent =
+          `Score final : ${userResults.rating} points`;
         showModal();
       }
     }, TIMER_UPDATE_INTERVAL);
