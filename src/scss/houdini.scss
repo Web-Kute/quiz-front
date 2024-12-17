@@ -1,8 +1,80 @@
 @use 'sass:map';
 @use 'functions';
 
-@supports (background: paint(paintWorketExample)) {
+@supports not (background: paint(paintWorketExample)) {
   /* ... */
+  body {
+    background:
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.15) 30%,
+          rgba(255, 255, 255, 0.3) 32%,
+          rgba(255, 255, 255, 0) 33%
+        )
+        0 0,
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.1) 11%,
+          rgba(255, 255, 255, 0.3) 13%,
+          rgba(255, 255, 255, 0) 14%
+        )
+        0 0,
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 17%,
+          rgba(255, 255, 255, 0.43) 19%,
+          rgba(255, 255, 255, 0) 20%
+        )
+        0 110px,
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 11%,
+          rgba(255, 255, 255, 0.4) 13%,
+          rgba(255, 255, 255, 0) 14%
+        ) -130px -170px,
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 11%,
+          rgba(255, 255, 255, 0.4) 13%,
+          rgba(255, 255, 255, 0) 14%
+        )
+        130px 370px,
+      radial-gradient(
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.1) 11%,
+          rgba(255, 255, 255, 0.2) 13%,
+          rgba(255, 255, 255, 0) 14%
+        )
+        0 0,
+      linear-gradient(
+        45deg,
+        hsla(210, 30%, 24%) 0%,
+        hsla(210, 29%, 29%) 20%,
+        hsla(168, 76%, 42%) 30%,
+        hsla(204, 70%, 53%) 40%,
+        hsla(204, 64%, 44%) 50%,
+        hsla(282, 44%, 47%) 60%,
+        hsla(282, 44%, 47%) 70%,
+        hsla(6, 63%, 46%) 80%,
+        hsla(24, 100%, 41%) 90%,
+        hsla(37, 90%, 51%) 100%
+      );
+    background-size:
+      470px 470px,
+      970px 970px,
+      410px 410px,
+      610px 610px,
+      530px 530px,
+      730px 730px,
+      100% 100%;
+    background-color: hsla(6, 63%, 46%);
+  }
+  .btn-choose {
+    opacity: 1;
+  }
+  nav button:disabled {
+    opacity: 0.80!important;
+  }
 }
 
 .circles {
