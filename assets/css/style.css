@@ -912,18 +912,46 @@ aside .seconds {
 }
 
 .btn-close {
-  transform: translate(10px, -20px);
-  padding: 0.5rem 0.7rem;
+  position: relative;
+  transform: translate(26px, -18px);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   color: hsl(24, 100%, 41%);
   background-color: hsl(0, 0%, 100%);
-  border-radius: 50%;
   border: 1px solid hsl(184, 6%, 53%);
-  transition: background-color 300ms ease-in-out;
-  font-size: 1.1rem;
 }
+
 .btn-close:hover {
   color: hsl(0, 0%, 100%);
+}
+
+.btn-close:before,
+.btn-close:after {
+  position: absolute;
+  left: 16px;
+  top: 7px;
+  content: " ";
+  height: 20px;
+  width: 2px;
   background-color: hsl(210, 30%, 24%);
+  transition: background-color 200ms ease-in-out;
+}
+
+.btn-close:hover::before {
+  background-color: hsl(6, 78%, 57%);
+}
+
+.btn-close:hover::after {
+  background-color: hsl(6, 78%, 57%);
+}
+
+.btn-close:before {
+  transform: rotate(45deg);
+}
+
+.btn-close:after {
+  transform: rotate(-45deg);
 }
 
 .overlay,

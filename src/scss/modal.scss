@@ -49,18 +49,41 @@
 }
 
 .btn-close {
-  transform: translate(10px, -20px);
-  padding: 0.5rem 0.7rem;
+  position: relative;
+  transform: translate(26px, -18px);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   color: functions.color('pumpkin');
   background-color: functions.color('white');
-  border-radius: 50%;
   border: 1px solid functions.color('asbestos');
-  transition: background-color 300ms ease-in-out;
-  font-size: 1.1rem;
-  &:hover {
-    color: functions.color('white');
-    background-color: functions.color('midnight-blue');
-  }
+}
+.btn-close:hover {
+  color: functions.color('white');
+}
+.btn-close:before,
+.btn-close:after {
+  position: absolute;
+  left: 16px;
+  top: 7px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: functions.color('midnight-blue');
+  transition: background-color 200ms ease-in-out;
+}
+.btn-close:hover::before {
+  background-color: functions.color('alzarin');
+}
+.btn-close:hover::after {
+  background-color: functions.color('alzarin');
+}
+
+.btn-close:before {
+  transform: rotate(45deg);
+}
+.btn-close:after {
+  transform: rotate(-45deg);
 }
 
 .overlay,
