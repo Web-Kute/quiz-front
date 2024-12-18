@@ -135,26 +135,40 @@ h3.points {
 
 .btn-modal-start {
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  display: block;
+  font-size: 80px;
+  background-color: #fff;
+  top: 20px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  font-size: 5rem;
-  color: functions.color('wisteria');
-  background-color: functions.color('clouds');
-  transition:
-    color 300ms ease-in-out,
-    transform 300ms ease-in-out;
+  border: 5px solid functions.color('wisteria');
+  transition: border 300ms;
+  cursor: pointer;
   &:hover {
-    color: functions.color('green-sea');
-    transform: scale(1.2);
+    border-color: functions.color('green-sea');
+  }
+  &::before {
+    content: ' ';
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 50%;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
   }
   &::after {
-    content: 'Commencer';
+    content: '\25B6';
     position: absolute;
-    font-family: 'Roboto Slab bold', serif;
-    font-size: 1.5rem;
-    top: 5rem;
-    left: -1.8rem;
-    color: functions.color('white');
+    top: 12px;
+    left: 20px;
+    color: functions.color('wisteria');
+    font-size: 42px;
+    transition: color 300ms;
+  }
+  &:hover::after {
+    color: functions.color('green-sea');
   }
 }

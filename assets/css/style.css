@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* https://github.com/Lazzzer00/Best-CSS-Reset-2024 */
 *,
 *::before,
@@ -513,7 +514,6 @@ main {
 }
 
 @supports not (background: paint(paintWorketExample)) {
-  /* ... */
   body {
     background: radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 30%, rgba(255, 255, 255, 0.3) 32%, rgba(255, 255, 255, 0) 33%) 0 0, radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 11%, rgba(255, 255, 255, 0.3) 13%, rgba(255, 255, 255, 0) 14%) 0 0, radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 17%, rgba(255, 255, 255, 0.43) 19%, rgba(255, 255, 255, 0) 20%) 0 110px, radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) -130px -170px, radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) 130px 370px, radial-gradient(rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 11%, rgba(255, 255, 255, 0.2) 13%, rgba(255, 255, 255, 0) 14%) 0 0, linear-gradient(45deg, hsl(210, 30%, 24%) 0%, hsl(210, 29%, 29%) 20%, hsl(168, 76%, 42%) 30%, hsl(204, 70%, 53%) 40%, hsl(204, 64%, 44%) 50%, hsl(282, 44%, 47%) 60%, hsl(282, 44%, 47%) 70%, hsl(6, 63%, 46%) 80%, hsl(24, 100%, 41%) 90%, hsl(37, 90%, 51%) 100%);
     background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
@@ -539,7 +539,6 @@ main {
 }
 @supports (background: paint(paintWorketExample)) {
   .circles {
-    /* ... */
     background-image: paint(circles);
   }
 }
@@ -1004,26 +1003,42 @@ h3.points {
 
 .btn-modal-start {
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  display: block;
+  font-size: 80px;
+  background-color: #fff;
+  top: 20px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  font-size: 5rem;
-  color: hsl(282, 44%, 47%);
-  background-color: hsl(192, 15%, 94%);
-  transition: color 300ms ease-in-out, transform 300ms ease-in-out;
+  border: 5px solid hsl(282, 44%, 47%);
+  transition: border 300ms;
+  cursor: pointer;
 }
 .btn-modal-start:hover {
-  color: hsl(168, 76%, 36%);
-  transform: scale(1.2);
+  border-color: hsl(168, 76%, 36%);
+}
+.btn-modal-start::before {
+  content: " ";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  z-index: -1;
 }
 .btn-modal-start::after {
-  content: "Commencer";
+  content: "▶";
   position: absolute;
-  font-family: "Roboto Slab bold", serif;
-  font-size: 1.5rem;
-  top: 5rem;
-  left: -1.8rem;
-  color: hsl(0, 0%, 100%);
+  top: 12px;
+  left: 20px;
+  color: hsl(282, 44%, 47%);
+  font-size: 42px;
+  transition: color 300ms;
+}
+.btn-modal-start:hover::after {
+  color: hsl(168, 76%, 36%);
 }
 
 /* Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx */

@@ -2,7 +2,6 @@
 @use 'functions';
 
 @supports not (background: paint(paintWorketExample)) {
-  /* ... */
   body {
     background:
       radial-gradient(
@@ -88,7 +87,6 @@
   --seed: 42;
 
   @supports (background: paint(paintWorketExample)) {
-    /* ... */
     background-image: paint(circles);
   }
 

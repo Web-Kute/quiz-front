@@ -7,7 +7,6 @@ table#quiz-table-results {
   @include mixins.tablet-portrait-up() {
     min-width: 450px;
     max-width: calc(100vw - 0.875rem);
-    // min-width: calc(100vw - 0.875rem);
   }
   @include mixins.mobile-down() {
     width: -webkit-fill-available;
