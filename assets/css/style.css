@@ -1011,8 +1011,7 @@ h3.points {
 
 .btn-modal-start {
   position: relative;
-  display: block;
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -1028,19 +1027,19 @@ h3.points {
   position: absolute;
   width: 90px;
   height: 90px;
-  background-color: white;
   border-radius: 50%;
-  top: -10px;
-  left: -10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 100%);
   z-index: -1;
 }
 .btn-modal-start::after {
   content: "▶";
-  position: absolute;
-  top: 29px;
-  left: 34px;
+  position: relative;
+  left: 4px;
+  font-size: 45px;
   color: hsl(282, 44%, 47%);
-  scale: 3.5;
   transition: color 300ms;
 }
 .btn-modal-start:hover::after {
