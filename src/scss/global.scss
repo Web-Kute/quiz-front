@@ -100,19 +100,20 @@ h3 {
 
 button#burger-menu {
   position: relative;
-  top: 2px;
+  top: 5px;
   left: 1.25rem;
+  height: 0;
   scale: 3.5;
   @include mixins.mobile-down() {
-    top: 0;
+    top: -5px;
     left: 0.6rem;
     scale: 2.5;
   }
-  color: functions.color('wet-asphalt');
+  color: functions.color('white');
   border: none;
   transition: color 300ms ease-in-out;
   &:hover {
-    color: functions.color('clouds');
+    color: functions.color('midnight-blue');
   }
 }
 
