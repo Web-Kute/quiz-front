@@ -1187,7 +1187,7 @@ tbody tr:nth-child(even) {
 }
 tbody tr:nth-child(odd) {
   color: hsl(0, 0%, 100%);
-  background-color: hsl(168, 76%, 36%);
+  background-color: hsl(210, 30%, 24%);
 }
 tbody td {
   padding: 7px 5px;
