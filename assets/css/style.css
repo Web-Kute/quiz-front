@@ -283,8 +283,8 @@ h3 {
 
 button#burger-menu {
   position: relative;
-  left: 1.25rem;
   top: 2px;
+  left: 1.25rem;
   scale: 3.5;
   color: hsl(210, 29%, 29%);
   border: none;
@@ -292,6 +292,7 @@ button#burger-menu {
 }
 @media (max-width: 599px) {
   button#burger-menu {
+    top: 0;
     left: 0.6rem;
     scale: 2.5;
   }
@@ -1012,7 +1013,6 @@ h3.points {
 .btn-modal-start {
   position: relative;
   display: block;
-  font-size: 80px;
   background-color: #fff;
   top: 20px;
   width: 80px;
@@ -1039,10 +1039,10 @@ h3.points {
 .btn-modal-start::after {
   content: "▶";
   position: absolute;
-  top: 12px;
-  left: 20px;
+  top: 29px;
+  left: 34px;
   color: hsl(282, 44%, 47%);
-  font-size: 42px;
+  scale: 3.5;
   transition: color 300ms;
 }
 .btn-modal-start:hover::after {

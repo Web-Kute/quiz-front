@@ -100,10 +100,11 @@ h3 {
 
 button#burger-menu {
   position: relative;
-  left: 1.25rem;
   top: 2px;
+  left: 1.25rem;
   scale: 3.5;
   @include mixins.mobile-down() {
+    top: 0;
     left: 0.6rem;
     scale: 2.5;
   }

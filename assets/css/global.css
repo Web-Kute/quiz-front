@@ -184,8 +184,8 @@ h3 {
 
 button#burger-menu {
   position: relative;
-  left: 1.25rem;
   top: 2px;
+  left: 1.25rem;
   scale: 3.5;
   color: hsl(210, 29%, 29%);
   border: none;
@@ -193,6 +193,7 @@ button#burger-menu {
 }
 @media (max-width: 599px) {
   button#burger-menu {
+    top: 0;
     left: 0.6rem;
     scale: 2.5;
   }
