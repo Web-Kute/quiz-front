@@ -182,25 +182,40 @@ h3 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-button#burger-menu {
+.togglemenu {
   position: relative;
-  top: 5px;
-  left: 1.25rem;
-  height: 0;
-  scale: 3.5;
-  color: hsl(0, 0%, 100%);
+  left: 0.65rem;
+  top: clamp(0.3125rem, -0.0107rem + 0.8632vw, 1.5rem);
+  width: 35px;
+  height: 35px;
+  scale: 1.1;
   border: none;
-  transition: color 300ms ease-in-out;
+  cursor: pointer;
 }
 @media (max-width: 599px) {
-  button#burger-menu {
-    top: -5px;
-    left: 0.6rem;
-    scale: 2.5;
+  .togglemenu {
+    scale: 0.9;
   }
 }
-button#burger-menu:hover {
-  color: hsl(210, 30%, 24%);
+.togglemenu:hover .togglemenu__bar {
+  background-color: hsl(210, 30%, 24%);
+}
+.togglemenu__bar {
+  position: relative;
+  z-index: -1;
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin-top: 4px;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  transition: background-color 300ms ease;
+}
+.togglemenu__bar:nth-child(2) {
+  height: 3px;
+}
+.togglemenu__bar:hover {
+  background-color: hsl(210, 30%, 24%);
 }
 
 header {

@@ -5,9 +5,19 @@ import { clearSessionStorage } from './utils.js';
 
 const { burgerMenuBtn, mainMenu } = domElements;
 
-export function showBurgerMenu() {
-  mainMenu.classList.toggle('show');
-}
+export const showBurgerMenu = (e) => {
+  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SPAN') {
+    mainMenu.classList.toggle('show');
+    if (mainMenu.classList.contains('show')) {
+      mainMenu.setAttribute('aria-expanded', 'true');
+      burgerMenuBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      mainMenu.setAttribute('aria-expanded', 'false');
+      burgerMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+  e.stopPropagation();
+};
 
 const loginOut = getLoginId.length === 0 ? 'Se connecter' : 'Se déconnecter';
 
@@ -113,6 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', closeOutside);
+
 if (burgerMenuBtn) {
-  burgerMenuBtn.addEventListener('click', showBurgerMenu);
+  document
+    .querySelector('.togglemenu-container')
+    .addEventListener('click', showBurgerMenu);
 }

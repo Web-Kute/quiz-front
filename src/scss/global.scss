@@ -98,22 +98,39 @@ h3 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-button#burger-menu {
+.togglemenu {
   position: relative;
-  top: 5px;
-  left: 1.25rem;
-  height: 0;
-  scale: 3.5;
+  left: 0.65rem;
+  top: clamp(0.3125rem, -0.0107rem + 0.8632vw, 1.5rem);
+  width: 35px;
+  height: 35px;
+  scale: 1.1;
   @include mixins.mobile-down() {
-    top: -5px;
-    left: 0.6rem;
-    scale: 2.5;
+    scale: 0.9;
   }
-  color: functions.color('white');
   border: none;
-  transition: color 300ms ease-in-out;
+  cursor: pointer;
   &:hover {
-    color: functions.color('midnight-blue');
+    .togglemenu__bar {
+      background-color: functions.color('midnight-blue');
+    }
+  }
+  &__bar {
+    position: relative;
+    z-index: -1;
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-top: 4px;
+    border-radius: 10px;
+    background-color: functions.color('white');
+    transition: background-color 300ms ease;
+    &:nth-child(2) {
+      height: 3px;
+    }
+    &:hover {
+      background-color: functions.color('midnight-blue');
+    }
   }
 }
 
