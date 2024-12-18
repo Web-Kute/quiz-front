@@ -282,11 +282,19 @@ h3 {
 }
 
 button#burger-menu {
-  font-size: 3rem;
+  position: relative;
+  left: 1.25rem;
+  top: 2px;
+  scale: 3.5;
   color: hsl(210, 29%, 29%);
-  padding-top: 4px;
   border: none;
   transition: color 300ms ease-in-out;
+}
+@media (max-width: 599px) {
+  button#burger-menu {
+    left: 0.6rem;
+    scale: 2.5;
+  }
 }
 button#burger-menu:hover {
   color: hsl(192, 15%, 94%);
@@ -314,8 +322,8 @@ header h3 {
 header div {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   margin-bottom: 20px;
 }
 
