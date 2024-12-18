@@ -183,26 +183,38 @@ h3.points {
     border-color: functions.color('green-sea');
   }
   &::before {
-    content: " ";
+    content: ' ';
     position: absolute;
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: functions.color('white');
     z-index: -1;
   }
   &::after {
-    content: "\25B6";
-    position: relative;
-    left: 4px;
-    font-size: 45px;
-    color: functions.color('wisteria');
+    // content: "\A";
+    // position: relative;
+    // left: 4px;
+    // font-size: 45px;
+    // color: functions.color('wisteria');
+    // transition: color 300ms;
+    content: '\A';
+    position: absolute;
+    color: #8d43ad;
+    left: calc(50% + 22px);
+    top: 50%;
     transition: color 300ms;
+    transform: translate(-50%, -40%);
+    scale: 1.2;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 25px solid functions.color('wisteria');
+    border-right: 25px solid transparent;
   }
   &:hover::after {
-   color: functions.color('green-sea');
+    border-left-color: functions.color('green-sea');
   }
 }
