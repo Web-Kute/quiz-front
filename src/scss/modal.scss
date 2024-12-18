@@ -211,8 +211,8 @@ h3.points {
     scale: 1.2;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 25px solid functions.color('wisteria');
-    border-right: 25px solid transparent;
+    border-left: 30px solid functions.color('wisteria');
+    border-right: 20px solid transparent;
   }
   &:hover::after {
     border-left-color: functions.color('green-sea');
