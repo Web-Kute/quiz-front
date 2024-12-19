@@ -296,7 +296,7 @@ h3 {
   }
 }
 .togglemenu:hover .togglemenu__bar {
-  background-color: hsl(210, 30%, 24%);
+  background-color: hsl(206, 21%, 15%);
 }
 .togglemenu__bar {
   position: relative;
