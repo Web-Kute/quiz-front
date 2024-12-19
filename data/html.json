@@ -15,14 +15,14 @@
     "question": "Quel organisme élabore les normes du Web\u00a0?",
     "answers": ["Microsoft", "Google", "Mozilla", "W3C"],
     "correctAnswer": "W3C",
-    "explanation": "Le W3C (World Wide Web Consortium), fondé par Tim Berners-Lee le 1er octobre 1994, est un organisme de standardisation qui élabore les normes du technologies Web, notamment HTML et CSS."
+    "explanation": "Le W3C (World Wide Web Consortium), fondé, le 1er octobre 1994, par Tim Berners-Lee, est un organisme de standardisation qui élabore les normes du technologies Web, notamment HTML et CSS."
   },
   {
     "id": 3,
     "question": "Quelle balise HTML définit le titre le plus grand\u00a0?",
     "answers": ["<h1>", "<heading>", "<h6>", "<header>"],
     "correctAnswer": "<h1>",
-    "explanation": "<h1> est utilisé pour définir le titre le plus important d'une page web. Une prtaique SEO courante est d'avoir un seul <h1> par page."
+    "explanation": "<h1> est le titre le plus important d'une page web. Une pratique SEO courante est d'avoir un seul <h1> par page."
   },
   {
     "id": 4,
@@ -41,14 +41,14 @@
       "<img src='url'>"
     ],
     "correctAnswer": "<img src='url'>",
-    "explanation": "<img> est utilisé pour intégrer une image dans une page web, en spécifiant l'URL de l'image."
+    "explanation": "<img> est utilisé pour intégrer une image dans une page web, en spécifiant l'URL de l'image via l'attribut src."
   },
   {
     "id": 6,
     "question": "Quelle balise HTML est utilisée pour définir une cellule de tableau\u00a0?",
     "answers": ["<table>", "<td>", " <tr>", "<th>"],
     "correctAnswer": "<td>",
-    "explanation": "<td> est utilisée pour définir une cellule de tableau."
+    "explanation": "<td> <table data> est une cellule de tableau. <tr> <table row> est une ligne de tableau. <th> <table head> est un en-tête de tableau."
   },
   {
     "id": 7,
