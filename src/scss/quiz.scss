@@ -149,12 +149,19 @@ nav button {
     background-color 300ms ease-in-out,
     color 300ms ease-in-out;
   &:hover {
-    color: functions.color('white');
-    background-color: functions.color('turquoise');
+    color: functions.color('midnight-blue');
+    background-color: lighten(functions.color('turquoise'), 10%);
   }
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+}
+
+nav#choose-nav button {
+  &:hover {
+    color: functions.color('white');
+    background-color: darken(functions.color('wisteria'), 5%);
   }
 }
 

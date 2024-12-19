@@ -195,12 +195,6 @@ h3.points {
     z-index: -1;
   }
   &::after {
-    // content: "\A";
-    // position: relative;
-    // left: 4px;
-    // font-size: 45px;
-    // color: functions.color('wisteria');
-    // transition: color 300ms;
     content: '\A';
     position: absolute;
     color: #8d43ad;

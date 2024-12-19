@@ -461,7 +461,7 @@ section#slider-container {
 }
 .btn-print:hover,
 .btn-submit:hover {
-  background-color: hsl(168, 76%, 36%);
+  background-color: #107561;
 }
 
 .form-group {
@@ -741,12 +741,17 @@ nav button {
   transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 nav button:hover {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(168, 76%, 42%);
+  color: hsl(210, 30%, 24%);
+  background-color: #28e2bc;
 }
 nav button:disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+nav#choose-nav button:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: #7e3c9a;
 }
 
 #container {
@@ -1155,7 +1160,7 @@ table#quiz-table-results {
 caption {
   font-size: 1.5rem;
   color: hsl(0, 0%, 100%);
-  background-color: hsl(210, 30%, 24%);
+  background-color: #107561;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding-top: 1rem;
@@ -1182,7 +1187,7 @@ tbody tr {
   padding: 1rem;
 }
 tbody tr:nth-child(even) {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
   background-color: hsl(192, 15%, 94%);
 }
 tbody tr:nth-child(odd) {
@@ -1246,7 +1251,7 @@ tfoot .result-footer {
 }
 
 h2.ac-header {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
   background-color: hsl(192, 15%, 94%);
 }
 h2.ac-header.active {
@@ -1270,7 +1275,7 @@ h2.ac-header.active:hover {
 
 .ac-header .ac-trigger {
   font-family: "Roboto Regular", sans-serif;
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
 }
 
 .ac-header_correct {
@@ -1286,7 +1291,7 @@ button.ac-trigger {
 }
 
 .ac .ac-trigger:focus {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
 }
 
 .title-item {

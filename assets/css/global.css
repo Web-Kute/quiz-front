@@ -363,7 +363,7 @@ section#slider-container {
 }
 .btn-print:hover,
 .btn-submit:hover {
-  background-color: hsl(168, 76%, 36%);
+  background-color: #107561;
 }
 
 .form-group {

@@ -102,7 +102,7 @@ table#quiz-table-results {
 caption {
   font-size: 1.5rem;
   color: hsl(0, 0%, 100%);
-  background-color: hsl(210, 30%, 24%);
+  background-color: #107561;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding-top: 1rem;
@@ -129,7 +129,7 @@ tbody tr {
   padding: 1rem;
 }
 tbody tr:nth-child(even) {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
   background-color: hsl(192, 15%, 94%);
 }
 tbody tr:nth-child(odd) {

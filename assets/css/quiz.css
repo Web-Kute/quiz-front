@@ -242,12 +242,17 @@ nav button {
   transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 nav button:hover {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(168, 76%, 42%);
+  color: hsl(210, 30%, 24%);
+  background-color: #28e2bc;
 }
 nav button:disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+nav#choose-nav button:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: #7e3c9a;
 }
 
 #container {

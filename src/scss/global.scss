@@ -266,7 +266,7 @@ section {
   width: 55%;
   cursor: pointer;
   &:hover {
-    background-color: functions.color('green-sea');
+    background-color: darken(functions.color('green-sea'), 10%);
   }
 }
 
