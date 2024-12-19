@@ -47,7 +47,7 @@ export function results(nbOfQuestions) {
           break;
         case total === 100:
           rating = total;
-          grade = `100%. Incroyable ${capitalize(student)}. Félicitations, continuez ainsi\u00a0!`;
+          grade = `100% !!! Félicitations ${capitalize(student)}, performance exceptionnelle, continuez ainsi\u00a0!`;
           break;
         default:
           break;
