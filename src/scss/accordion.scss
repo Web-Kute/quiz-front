@@ -16,9 +16,12 @@
 }
 
 h2.ac-header {
-  color: functions.color('white');
-  background-color: functions.color('asbestos');
+  color: functions.color('black-pearl');
+  background-color: functions.color('clouds');
   &.active {
+    .ac-trigger {
+      color: functions.color('white');
+    }
     color: functions.color('white');
     background-color: hsl(282, 44%, 47%, 0.9);
     transition: background-color 0.3s ease-in-out;
@@ -35,7 +38,7 @@ h2.ac-header {
 
 .ac-header .ac-trigger {
   font-family: 'Roboto Regular', sans-serif;
-  color: functions.color('white');
+  color: functions.color('black-pearl');
 }
 
 .ac-header_correct {
@@ -51,7 +54,7 @@ button.ac-trigger {
 }
 
 .ac .ac-trigger:focus {
-  color: functions.color('white');
+  color: functions.color('black-pearl');
 }
 
 .title-item {

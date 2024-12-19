@@ -1246,13 +1246,16 @@ tfoot .result-footer {
 }
 
 h2.ac-header {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(184, 6%, 53%);
+  color: #1e272e;
+  background-color: hsl(192, 15%, 94%);
 }
 h2.ac-header.active {
   color: hsl(0, 0%, 100%);
   background-color: hsla(282, 44%, 47%, 0.9);
   transition: background-color 0.3s ease-in-out;
+}
+h2.ac-header.active .ac-trigger {
+  color: hsl(0, 0%, 100%);
 }
 h2.ac-header.active:hover {
   background-color: hsl(282, 44%, 47%);
@@ -1267,7 +1270,7 @@ h2.ac-header.active:hover {
 
 .ac-header .ac-trigger {
   font-family: "Roboto Regular", sans-serif;
-  color: hsl(0, 0%, 100%);
+  color: #1e272e;
 }
 
 .ac-header_correct {
@@ -1283,7 +1286,7 @@ button.ac-trigger {
 }
 
 .ac .ac-trigger:focus {
-  color: hsl(0, 0%, 100%);
+  color: #1e272e;
 }
 
 .title-item {
