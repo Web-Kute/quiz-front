@@ -79,14 +79,6 @@
   --widthprogress: 100%;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

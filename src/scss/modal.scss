@@ -52,7 +52,7 @@
   position: relative;
   transform: translate(26px, -18px);
   width: 35px;
-  height: 35px;
+  aspect-ratio: 1;
   border-radius: 50%;
   color: functions.color('pumpkin');
   background-color: functions.color('white');
@@ -132,49 +132,11 @@ h3.points {
   transform: translateY(-50%);
 }
 
-// .btn-modal-start {
-//   position: relative;
-//   display: block;
-//   background-color: #fff;
-//   width: 80px;
-//   height: 80px;
-//   border-radius: 50%;
-//   border: 5px solid functions.color('wisteria');
-//   transition: border 300ms;
-//   cursor: pointer;
-//   &:hover {
-//     border-color: functions.color('green-sea');
-//   }
-//   &::before {
-//     content: ' ';
-//     position: absolute;
-//     width: 90px;
-//     height: 90px;
-//     background-color: white;
-//     border-radius: 50%;
-//     top: -10px;
-//     left: -10px;
-//     z-index: -1;
-//   }
-//   &::after {
-//     content: '\25B6';
-//     position: absolute;
-//     top: 29px;
-//     left: 34px;
-//     color: functions.color('wisteria');
-//     scale: 3.5;
-//     transition: color 300ms;
-//   }
-//   &:hover::after {
-//     color: functions.color('green-sea');
-//   }
-// }
-
 .btn-modal-start {
   position: relative;
   background-color: functions.color('white');
   width: 80px;
-  height: 80px;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 5px solid functions.color('wisteria');
   transition: border 300ms;
@@ -186,7 +148,7 @@ h3.points {
     content: ' ';
     position: absolute;
     width: 90px;
-    height: 90px;
+    aspect-ratio: 1;
     border-radius: 50%;
     top: 50%;
     left: 50%;
