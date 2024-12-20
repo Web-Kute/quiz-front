@@ -96,7 +96,7 @@
 }
 
 h2.ac-header {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
   background-color: hsl(192, 15%, 94%);
 }
 h2.ac-header.active {
@@ -120,7 +120,7 @@ h2.ac-header.active:hover {
 
 .ac-header .ac-trigger {
   font-family: "Roboto Regular", sans-serif;
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
 }
 
 .ac-header_correct {
@@ -136,7 +136,7 @@ button.ac-trigger {
 }
 
 .ac .ac-trigger:focus {
-  color: #1e272e;
+  color: hsl(206, 21%, 15%);
 }
 
 .title-item {

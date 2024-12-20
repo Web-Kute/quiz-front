@@ -177,14 +177,6 @@ select {
   --widthprogress: 100%;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -862,7 +854,7 @@ aside .seconds {
 .countdown-container {
   color: transparent !important;
   border-radius: 50%;
-  height: 90px;
+  aspect-ratio: 1;
   width: 90px;
 }
 
@@ -945,7 +937,7 @@ aside .seconds {
   position: relative;
   transform: translate(26px, -18px);
   width: 35px;
-  height: 35px;
+  aspect-ratio: 1;
   border-radius: 50%;
   color: hsl(24, 100%, 41%);
   background-color: hsl(0, 0%, 100%);
@@ -1035,7 +1027,7 @@ h3.points {
   position: relative;
   background-color: hsl(0, 0%, 100%);
   width: 80px;
-  height: 80px;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 5px solid hsl(282, 44%, 47%);
   transition: border 300ms;
@@ -1048,7 +1040,7 @@ h3.points {
   content: " ";
   position: absolute;
   width: 90px;
-  height: 90px;
+  aspect-ratio: 1;
   border-radius: 50%;
   top: 50%;
   left: 50%;
