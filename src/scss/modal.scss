@@ -24,6 +24,7 @@
   box-shadow: 1px 1px 1px functions.color('midnight-blue');
   h3 {
     color: functions.color('midnight-blue');
+    text-shadow: none;
   }
   .btn-submit {
     width: 100%;
@@ -56,10 +57,11 @@
   color: functions.color('pumpkin');
   background-color: functions.color('white');
   border: 1px solid functions.color('asbestos');
+  &:hover {
+    color: functions.color('white');
+  }
 }
-.btn-close:hover {
-  color: functions.color('white');
-}
+
 .btn-close:before,
 .btn-close:after {
   content: ' ';
@@ -71,9 +73,11 @@
   background-color: functions.color('midnight-blue');
   transition: background-color 200ms ease-in-out;
 }
+
 .btn-close:hover::before {
   background-color: functions.color('alzarin');
 }
+
 .btn-close:hover::after {
   background-color: functions.color('alzarin');
 }
@@ -81,6 +85,7 @@
 .btn-close:before {
   transform: rotate(45deg);
 }
+
 .btn-close:after {
   transform: rotate(-45deg);
 }
