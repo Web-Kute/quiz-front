@@ -53,30 +53,27 @@ body {
   background-color: functions.color('peter-river');
 }
 
-h1 {
+:is(h1, h2, h3) {
   font-family: variables.$heading-font-family;
-  font-size: clamp(2rem, 1.4557rem + 1.4539vw, 4rem);
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
   color: functions.color('white');
+}
+
+h1 {
+  font-size: clamp(2rem, 1.4557rem + 1.4539vw, 4rem);
   text-transform: capitalize;
   letter-spacing: 3px;
-  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
 }
 
 h2 {
-  font-family: variables.$heading-font-family;
   font-size: clamp(2.5rem, 1.9557rem + 1.4539vw, 4.5rem);
-  color: functions.color('white');
   text-align: center;
   letter-spacing: 3px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 h3 {
-  font-family: variables.$heading-font-family;
   font-size: 2 * variables.$base-font-size;
   margin-right: 1rem;
-  color: functions.color('white');
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .togglemenu {
