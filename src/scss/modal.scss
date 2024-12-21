@@ -19,7 +19,6 @@
   animation: animateModal 500ms ease-out;
   top: 10%;
   background-color: functions.color('white');
-  // border: 1px solid functions.color('silver');
   border-radius: 15px;
   z-index: 101;
   box-shadow: 1px 1px 1px functions.color('midnight-blue');
@@ -63,10 +62,10 @@
 }
 .btn-close:before,
 .btn-close:after {
+  content: ' ';
   position: absolute;
   left: 16px;
   top: 7px;
-  content: ' ';
   height: 20px;
   width: 2px;
   background-color: functions.color('midnight-blue');
@@ -159,7 +158,7 @@ h3.points {
   &::after {
     content: '\A';
     position: absolute;
-    color: #8d43ad;
+    color: functions.color('wisteria');
     left: calc(50% + 22px);
     top: 50%;
     transition: color 300ms;

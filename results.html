@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assets/css/reset.min.css">
-  <link rel="stylesheet" href="./assets/css/swiper.min.css">
-  <link rel="stylesheet" href="./dist/accordion.min.css">
+  <link rel="preload" href="./assets/css/swiper.min.css" as="style">
+  <link rel="preload" href="./dist/accordion.min.css" as="style">
   <link rel="stylesheet" href="./assets/css/style.min.css">
   <title>Resultats Front-End Quiz</title>
 
@@ -214,7 +214,7 @@
     <div id="page-bottom"></div>
   </main>
   <script type="module" src="./dist/js/final-results.js"></script>
-  <script defer type="module" src="./dist/js/houdini.js" crossorigin="anonymous"></script>
+  <script defer type="module" src="./dist/js/houdini.js"></script>
   <script src="./dist/accordion.min.js"></script>
   <script>
     new Accordion('.accordion-container');

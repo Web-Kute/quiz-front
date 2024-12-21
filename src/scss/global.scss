@@ -16,17 +16,6 @@ select {
 a {
   text-decoration: none;
 }
-// Reset original HTML button
-button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  background-color: transparent;
-  outline: 0;
-  padding: 0;
-  cursor: pointer;
-}
 
 fieldset {
   border: none;
