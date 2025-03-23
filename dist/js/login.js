@@ -15,10 +15,9 @@ const { name, email, logged, form, errorName, errorEmail } = domElements;
 
 document.addEventListener('DOMContentLoaded', () => {
   const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{2,32}@[a-zA-Z0-9-]+\.[a-zA-Z]{2,5}$/;
 
-  const NAME_TEXT_ERROR =
-    `Le prénom doit contenir
+  const NAME_TEXT_ERROR = `Le prénom doit contenir
       uniquement des lettres
       entre 3 et 15 caractères !`;
   const EMAIL_TEXT_ERROR = `Le format email n'est pas valide !`;

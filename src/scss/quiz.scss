@@ -6,7 +6,7 @@
 h3 {
   font-family: 'Roboto light', sans-serif;
   font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
-  color: functions.color('midnight-blue');
+  color: var(--base-color);
   text-align: center;
   width: 85%;
   margin-left: auto;
@@ -42,7 +42,7 @@ h3 {
   right: 50%;
   transform: translateX(50%);
   bottom: 100px;
-  color: functions.color('white');
+  color: var(--white);
   font-size: 0.9rem;
   @include mixins.mobile-down() {
     visibility: hidden;
@@ -51,7 +51,7 @@ h3 {
 
 .score {
   font-size: 1.1rem;
-  color: functions.color('white');
+  color: var(--white);
   width: 120px;
   height: 25px;
   margin-left: auto;
@@ -67,7 +67,7 @@ h3 {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: functions.color('white');
+  color: var(--white);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -139,17 +139,17 @@ h3 {
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
-  color: functions.color('midnight-blue');
+  color: var(--base-color);
   width: 49%;
   border-radius: 2rem;
-  border: 2px solid functions.color('white');
+  border: 2px solid var(--white);
   padding: 1rem;
-  background-color: functions.color('white');
+  background-color: var(--white);
   transition:
     background-color 300ms ease-in-out,
     color 300ms ease-in-out;
   &:hover {
-    color: functions.color('midnight-blue');
+    color: var(--base-color);
     background-color: lighten(functions.color('turquoise'), 10%);
   }
   &:disabled {
@@ -160,15 +160,15 @@ nav button {
 
 nav#choose-nav button {
   &:hover {
-    color: functions.color('white');
+    color: var(--white);
     background-color: darken(functions.color('wisteria'), 5%);
   }
 }
 
 #container {
   background-size: 400% 400%;
-  background-color: functions.color('midnight-blue');
-  color: functions.color('white');
+  background-color: var(--base-color);
+  color: var(--white);
   max-height: 35rem;
   width: 84%;
   padding: 0 1.5rem;
@@ -179,7 +179,7 @@ nav#choose-nav button {
 
 .btn-undo {
   position: absolute;
-  color: functions.color('midnight-blue');
+  color: var(--base-color);
   top: -2.5rem;
   @include mixins.mobile-down() {
     top: -1.8rem;
@@ -197,7 +197,7 @@ nav#choose-nav button {
     }
   }
   &:hover {
-    color: functions.color('white');
+    color: var(--white);
   }
   @include mixins.mobile-down() {
     font-size: 2rem;

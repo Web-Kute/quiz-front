@@ -10,6 +10,7 @@ select {
   &:focus-visible {
     outline: 2px dotted functions.color('silver');
     outline-offset: 2px;
+    caret-color: functions.color('black-pearl');
   }
 }
 
