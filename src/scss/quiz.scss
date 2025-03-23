@@ -3,21 +3,6 @@
 @use 'mixins';
 @use 'functions';
 
-h3 {
-  font-family: 'Roboto light', sans-serif;
-  font-size: clamp(1.2rem, 0.4632rem + 2.3579vw, 4rem);
-  color: var(--base-color);
-  text-align: center;
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--white);
-  @include mixins.mobile-down() {
-    line-height: 19px;
-    width: 100%;
-  }
-}
-
 .swiper-slide {
   position: relative;
   display: flex;
@@ -42,7 +27,7 @@ h3 {
   right: 50%;
   transform: translateX(50%);
   bottom: 100px;
-  color: var(--white);
+  color: functions.color('white');
   font-size: 0.9rem;
   @include mixins.mobile-down() {
     visibility: hidden;
@@ -51,7 +36,7 @@ h3 {
 
 .score {
   font-size: 1.1rem;
-  color: var(--white);
+  color: functions.color('white');
   width: 120px;
   height: 25px;
   margin-left: auto;
@@ -67,7 +52,7 @@ h3 {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: var(--white);
+  color: functions.color('white');
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -139,17 +124,17 @@ h3 {
 
 nav button {
   font-size: clamp(1rem, 0.9118rem + 0.3922vw, 1.5rem);
-  color: var(--base-color);
+  color: functions.color('wet-asphalt');
   width: 49%;
   border-radius: 2rem;
-  border: 2px solid var(--white);
+  border: 2px solid functions.color('white');
   padding: 1rem;
-  background-color: var(--white);
+  background-color: functions.color('white');
   transition:
     background-color 300ms ease-in-out,
     color 300ms ease-in-out;
   &:hover {
-    color: var(--base-color);
+    color: functions.color('midnight-blue');
     background-color: lighten(functions.color('turquoise'), 10%);
   }
   &:disabled {
@@ -160,15 +145,15 @@ nav button {
 
 nav#choose-nav button {
   &:hover {
-    color: var(--white);
+    color: functions.color('white');
     background-color: darken(functions.color('wisteria'), 5%);
   }
 }
 
 #container {
   background-size: 400% 400%;
-  background-color: var(--base-color);
-  color: var(--white);
+  background-color: functions.color('midnight-blue');
+  color: functions.color('white');
   max-height: 35rem;
   width: 84%;
   padding: 0 1.5rem;
@@ -179,7 +164,7 @@ nav#choose-nav button {
 
 .btn-undo {
   position: absolute;
-  color: var(--base-color);
+  color: functions.color('midnight-blue');
   top: -2.5rem;
   @include mixins.mobile-down() {
     top: -1.8rem;
@@ -197,7 +182,7 @@ nav#choose-nav button {
     }
   }
   &:hover {
-    color: var(--white);
+    color: functions.color('white');
   }
   @include mixins.mobile-down() {
     font-size: 2rem;
